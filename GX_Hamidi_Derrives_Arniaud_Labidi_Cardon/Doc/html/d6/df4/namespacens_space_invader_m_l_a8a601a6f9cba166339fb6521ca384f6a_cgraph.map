@@ -1,0 +1,19 @@
+<map id="nsSpaceInvaderML::SpaceInvaders" name="nsSpaceInvaderML::SpaceInvaders">
+<area shape="rect" id="node2" href="$df/dea/namespacens_space_invader___a_c.html#aafe47a3a233a2e864342825b071d449f" title="Alias vers une ligne vide de l&#39;esapce. " alt="" coords="855,114,1007,155"/>
+<area shape="rect" id="node3" href="$d6/df4/namespacens_space_invader_m_l.html#a1e5b1a782d0c208ee64cea3081a0593b" title="Alias forme d&#39;un envahisseur. " alt="" coords="287,273,523,300"/>
+<area shape="rect" id="node4" href="$d6/df4/namespacens_space_invader_m_l.html#a291ecc5ebaf75a421853611edc07baa9" title="Alias forme d&#39;un joueur. " alt="" coords="303,324,506,351"/>
+<area shape="rect" id="node5" href="$d6/df4/namespacens_space_invader_m_l.html#a29984d3c7459ba52916a7919a8b907c2" title="Permet d&#39;afficher l&#39;espace de jeu. " alt="" coords="311,375,499,417"/>
+<area shape="rect" id="node11" href="$d6/df4/namespacens_space_invader_m_l.html#a5554852c8370cf515995f786b24fd73b" title="nsSpaceInvaderML::GotoXY" alt="" coords="309,441,500,468"/>
+<area shape="rect" id="node12" href="$d6/df4/namespacens_space_invader_m_l.html#a3c03ba9f6374c8c4491f84086dabe85d" title="Simule le jeu du joueur. C&#39;est ici que le joueur choisit ce qu&#39;il fait. S&#39;il décide de tirer..." alt="" coords="299,59,510,85"/>
+<area shape="rect" id="node15" href="$d6/df4/namespacens_space_invader_m_l.html#a22e6a7bcd3e405888200d70c3049fce6" title="recalcule l&#39;espace (déplacement des torpilles et des missiles) à chaque fois qu&#39;un belligérant a joué..." alt="" coords="299,514,511,555"/>
+<area shape="rect" id="node17" href="$d6/df4/namespacens_space_invader_m_l.html#acc51ff969888c05e2761bb70d96d69af" title="Simule le jeu de l&#39;envahisseur. C&#39;est ici que l&#39;envahisseur joue. En bout de ligne l&#39;envahisseur desc..." alt="" coords="309,127,501,169"/>
+<area shape="rect" id="node6" href="$d6/df4/namespacens_space_invader_m_l.html#a4c2f23fd0fe492225030f358faf6c6b6" title="Fonction effaçant le contenu de l&#39;écran. " alt="" coords="571,340,789,367"/>
+<area shape="rect" id="node7" href="$d6/df4/namespacens_space_invader_m_l.html#a80c935c1ce04a64532ffe9747b64d890" title="nsSpaceInvaderML::Colour" alt="" coords="588,391,772,417"/>
+<area shape="rect" id="node8" href="$d6/df4/namespacens_space_invader_m_l.html#a1f16c83e0a38520fdceedaf3a0d4820e" title="Alias mettant en jaune la couleur du texte du terminal. " alt="" coords="584,441,776,468"/>
+<area shape="rect" id="node9" href="$d6/df4/namespacens_space_invader_m_l.html#acad3aafab401555cc0115b663ac7affa" title="Alias mettant en vert la couleur du texte du terminal. " alt="" coords="585,492,775,519"/>
+<area shape="rect" id="node10" href="$df/dea/namespacens_space_invader___a_c.html#a733d414a6fb837a95ed4ddf3afb6181f" title="Alias remetant la couleur du texte du terminal à sa valeur par défaut. " alt="" coords="604,274,756,315"/>
+<area shape="rect" id="node13" href="$d6/df4/namespacens_space_invader_m_l.html#aa825424ce93a693f502227e08344a4db" title="Renvoie vrai si le belligérant meurt. " alt="" coords="837,16,1024,43"/>
+<area shape="rect" id="node14" href="$d6/df4/namespacens_space_invader_m_l.html#abe94d297a09d9bb9f577b1d4bc2347b1" title="Simule le tir d&#39;un belligérant. Renvoie vrai si le belligérant a gagné (faux sinon). " alt="" coords="591,71,769,97"/>
+<area shape="rect" id="node16" href="$d6/df4/namespacens_space_invader_m_l.html#a899f41f7d070f886e1438605ed0649a6" title="enlève de l&#39;espace le belligérant qui a perdu. " alt="" coords="583,543,777,569"/>
+<area shape="rect" id="node18" href="$d6/df4/namespacens_space_invader_m_l.html#a44dca6df2361704c9ca228b8847ad44c" title="Descend l&#39;envahisseur d&#39;une ligne dans l&#39;espace. " alt="" coords="577,121,783,148"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="nsSpaceInvader_AC::ManageMe" name="nsSpaceInvader_AC::ManageMe">
+<area shape="rect" id="node2" href="$df/dea/namespacens_space_invader___a_c.html#ad27737c4ba55e022e31b1b07080b7cf9" title="Simule un déplacement gauche en retranchant une unité de déplacement à toutes les abscisses des objet..." alt="" coords="205,5,357,47"/>
+<area shape="rect" id="node4" href="$df/dea/namespacens_space_invader___a_c.html#a3acc3bbf8cb476facb36885fa84ea097" title="Simule un déplacement droit en ajoutant une unité de déplacement à toutes les abscisses des objets en..." alt="" coords="205,71,357,112"/>
+<area shape="rect" id="node3" href="$df/dea/namespacens_space_invader___a_c.html#a1e35b120c4c0d7c3ecdc1bef32746467" title="Trouve le minimum d&#39;un vecteur de CPosition de la coordonées en X (abscisse). " alt="" coords="407,13,589,39"/>
+<area shape="rect" id="node5" href="$df/dea/namespacens_space_invader___a_c.html#a989bfe84c52a31839f85370874bae1f9" title="Trouve le maximum d&#39;un vecteur de CPosition de la coordonées en X (abscisse). " alt="" coords="405,78,591,105"/>
+</map>

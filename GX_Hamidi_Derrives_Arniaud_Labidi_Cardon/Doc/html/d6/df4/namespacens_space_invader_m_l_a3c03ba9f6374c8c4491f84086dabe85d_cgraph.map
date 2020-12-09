@@ -1,0 +1,5 @@
+<map id="nsSpaceInvaderML::ManageMe" name="nsSpaceInvaderML::ManageMe">
+<area shape="rect" id="node2" href="$d6/df4/namespacens_space_invader_m_l.html#aa825424ce93a693f502227e08344a4db" title="Renvoie vrai si le belligérant meurt. " alt="" coords="491,5,677,32"/>
+<area shape="rect" id="node3" href="$df/dea/namespacens_space_invader___a_c.html#aafe47a3a233a2e864342825b071d449f" title="Alias vers une ligne vide de l&#39;esapce. " alt="" coords="508,67,660,109"/>
+<area shape="rect" id="node4" href="$d6/df4/namespacens_space_invader_m_l.html#abe94d297a09d9bb9f577b1d4bc2347b1" title="Simule le tir d&#39;un belligérant. Renvoie vrai si le belligérant a gagné (faux sinon). " alt="" coords="264,45,443,72"/>
+</map>

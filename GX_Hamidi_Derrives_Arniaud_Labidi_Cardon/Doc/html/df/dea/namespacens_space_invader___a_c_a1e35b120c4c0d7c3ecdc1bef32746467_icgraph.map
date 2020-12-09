@@ -1,0 +1,8 @@
+<map id="nsSpaceInvader_AC::MinX" name="nsSpaceInvader_AC::MinX">
+<area shape="rect" id="node2" href="$df/dea/namespacens_space_invader___a_c.html#ad27737c4ba55e022e31b1b07080b7cf9" title="Simule un déplacement gauche en retranchant une unité de déplacement à toutes les abscisses des objet..." alt="" coords="236,39,388,80"/>
+<area shape="rect" id="node3" href="$df/dea/namespacens_space_invader___a_c.html#abe820b6890289f3db21c30b25ed962e2" title="Simule le jeu du joueur. C&#39;est ici que le joueur choisit ce qu&#39;il fait. S&#39;il décide de tirer..." alt="" coords="436,5,588,47"/>
+<area shape="rect" id="node7" href="$df/dea/namespacens_space_invader___a_c.html#ad139b483cd32f32870b9fca20e1a3c38" title="ManageInvaders Simule le jeu de l&#39;envahisseur. " alt="" coords="436,71,588,112"/>
+<area shape="rect" id="node4" href="$df/dea/namespacens_space_invader___a_c.html#a84e7c837aad38b838b1d0072306214a7" title="Fonction principale du jeu sans option. " alt="" coords="636,39,788,80"/>
+<area shape="rect" id="node5" href="$df/dea/namespacens_space_invader___a_c.html#aa5b75c36c80474c3b5cf32921cccca30" title="nsSpaceInvader_AC::ppal" alt="" coords="836,46,1013,73"/>
+<area shape="rect" id="node6" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1061,46,1112,73"/>
+</map>

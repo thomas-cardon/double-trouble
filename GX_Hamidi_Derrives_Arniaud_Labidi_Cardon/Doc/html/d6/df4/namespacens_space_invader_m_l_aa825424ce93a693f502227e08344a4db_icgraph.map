@@ -1,0 +1,7 @@
+<map id="nsSpaceInvaderML::IsDead" name="nsSpaceInvaderML::IsDead">
+<area shape="rect" id="node2" href="$d6/df4/namespacens_space_invader_m_l.html#abe94d297a09d9bb9f577b1d4bc2347b1" title="Simule le tir d&#39;un belligérant. Renvoie vrai si le belligérant a gagné (faux sinon). " alt="" coords="240,21,419,47"/>
+<area shape="rect" id="node6" href="$d6/df4/namespacens_space_invader_m_l.html#a3c03ba9f6374c8c4491f84086dabe85d" title="Simule le jeu du joueur. C&#39;est ici que le joueur choisit ce qu&#39;il fait. S&#39;il décide de tirer..." alt="" coords="467,71,677,98"/>
+<area shape="rect" id="node3" href="$d6/df4/namespacens_space_invader_m_l.html#acc51ff969888c05e2761bb70d96d69af" title="Simule le jeu de l&#39;envahisseur. C&#39;est ici que l&#39;envahisseur joue. En bout de ligne l&#39;envahisseur desc..." alt="" coords="476,5,668,47"/>
+<area shape="rect" id="node4" href="$d6/df4/namespacens_space_invader_m_l.html#a8a601a6f9cba166339fb6521ca384f6a" title="simule le jeux " alt="" coords="725,42,959,69"/>
+<area shape="rect" id="node5" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1007,42,1057,69"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="nsSpaceInvaderML::Shoot" name="nsSpaceInvaderML::Shoot">
+<area shape="rect" id="node2" href="$d6/df4/namespacens_space_invader_m_l.html#acc51ff969888c05e2761bb70d96d69af" title="Simule le jeu de l&#39;envahisseur. C&#39;est ici que l&#39;envahisseur joue. En bout de ligne l&#39;envahisseur desc..." alt="" coords="241,5,433,47"/>
+<area shape="rect" id="node5" href="$d6/df4/namespacens_space_invader_m_l.html#a3c03ba9f6374c8c4491f84086dabe85d" title="Simule le jeu du joueur. C&#39;est ici que le joueur choisit ce qu&#39;il fait. S&#39;il décide de tirer..." alt="" coords="232,71,443,98"/>
+<area shape="rect" id="node3" href="$d6/df4/namespacens_space_invader_m_l.html#a8a601a6f9cba166339fb6521ca384f6a" title="simule le jeux " alt="" coords="491,42,724,69"/>
+<area shape="rect" id="node4" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="772,42,823,69"/>
+</map>

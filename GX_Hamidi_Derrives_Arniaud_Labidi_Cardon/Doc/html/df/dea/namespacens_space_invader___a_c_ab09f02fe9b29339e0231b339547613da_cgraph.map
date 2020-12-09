@@ -1,0 +1,7 @@
+<map id="nsSpaceInvader_AC::DisplaySpace" name="nsSpaceInvader_AC::DisplaySpace">
+<area shape="rect" id="node2" href="$df/dea/namespacens_space_invader___a_c.html#a8d4d7535d06251471c6ef0492280342d" title="Fonction effaçant le contenu de l&#39;écran. " alt="" coords="205,5,357,47"/>
+<area shape="rect" id="node3" href="$df/dea/namespacens_space_invader___a_c.html#a9d8cc91969339350809212307542abb5" title="nsSpaceInvader_AC::\lCouleur" alt="" coords="205,71,357,112"/>
+<area shape="rect" id="node4" href="$df/dea/namespacens_space_invader___a_c.html#a6135e3151e31ea571ef20cc5222dd2be" title="Couleur de l&#39;envahisseur. " alt="" coords="205,136,357,177"/>
+<area shape="rect" id="node5" href="$df/dea/namespacens_space_invader___a_c.html#a04155c156b0de377ed52f52b2ea81bd0" title="Couleur liée à mes objets (vaisseaux et tropilles). " alt="" coords="205,201,357,243"/>
+<area shape="rect" id="node6" href="$df/dea/namespacens_space_invader___a_c.html#a733d414a6fb837a95ed4ddf3afb6181f" title="Alias remetant la couleur du texte du terminal à sa valeur par défaut. " alt="" coords="205,267,357,308"/>
+</map>

@@ -1,0 +1,13 @@
+digraph "nsSpaceInvader_AC::DisplaySpace"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="nsSpaceInvader_AC::\lDisplaySpace",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="nsSpaceInvader_AC::\lKInvadersColor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d77/_my_const___a_c_8h.html#a6135e3151e31ea571ef20cc5222dd2be",tooltip="Couleur de l&#39;envahisseur. "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="nsSpaceInvader_AC::\lKMyColor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d77/_my_const___a_c_8h.html#a04155c156b0de377ed52f52b2ea81bd0",tooltip="Couleur liée à mes objets (vaisseaux et tropilles). "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="nsSpaceInvader_AC::\lKReset",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d77/_my_const___a_c_8h.html#a733d414a6fb837a95ed4ddf3afb6181f",tooltip="Alias remetant la couleur du texte du terminal à sa valeur par défaut. "];
+}

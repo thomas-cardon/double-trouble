@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>SpaceInvaders:  Fichier source de /Users/alain/Documents/Code/QT/G6_Berno_Casali_Ernst_Laporte_Palermo/main.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../Space_Invaders_Alien.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SpaceInvaders
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Ebauche d&#39;une réalisation d&#39;un space invader</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="../../namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">/Users/alain/Documents/Code/QT/G6_Berno_Casali_Ernst_Laporte_Palermo/main.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../df/d0a/main_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dd/d9d/_space_invader___a_c_8h.html">Correc_prof/SpaceInvader_AC.h</a>&quot;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dc/d35/_space_invader___m_l_8h.html">Correc_prof/SpaceInvader_ML.h</a>&quot;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using namespace </span><a class="code" href="../../d8/dcc/namespacestd.html">std</a>;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   15</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Quel jeu lancer? &quot;</span>;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">string</span> Nom;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    cin &gt;&gt; Nom;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span> (Nom == <span class="stringliteral">&quot;Alain&quot;</span>)</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="../../df/dea/namespacens_space_invader___a_c.html#aa5b75c36c80474c3b5cf32921cccca30">nsSpaceInvader_AC::ppal</a>(<span class="stringliteral">&quot;../G6_Berno_Casali_Ernst_Laporte_Palermo/Correc_prof/&quot;</span>);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (Nom == <span class="stringliteral">&quot;Marc&quot;</span>)</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="../../d6/df4/namespacens_space_invader_m_l.html#a8a601a6f9cba166339fb6521ca384f6a">nsSpaceInvaderML::SpaceInvaders</a> ();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div><div class="ttc" id="_space_invader___a_c_8h_html"><div class="ttname"><a href="../../dd/d9d/_space_invader___a_c_8h.html">SpaceInvader_AC.h</a></div><div class="ttdoc">Fichier décrivant l&amp;#39;ensemble des signatures vers les fonctions utilisées dans le jeu. </div></div>
+<div class="ttc" id="namespacestd_html"><div class="ttname"><a href="../../d8/dcc/namespacestd.html">std</a></div></div>
+<div class="ttc" id="main_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d0a/main_8cpp_source.html#l00015">main.cpp:15</a></div></div>
+<div class="ttc" id="namespacens_space_invader___a_c_html_aa5b75c36c80474c3b5cf32921cccca30"><div class="ttname"><a href="../../df/dea/namespacens_space_invader___a_c.html#aa5b75c36c80474c3b5cf32921cccca30">nsSpaceInvader_AC::ppal</a></div><div class="ttdeci">int ppal(const string &amp;Path)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d53/_space_invader___a_c_8cpp_source.html#l00355">SpaceInvader_AC.cpp:355</a></div></div>
+<div class="ttc" id="_space_invader___m_l_8h_html"><div class="ttname"><a href="../../dc/d35/_space_invader___m_l_8h.html">SpaceInvader_ML.h</a></div></div>
+<div class="ttc" id="namespacens_space_invader_m_l_html_a8a601a6f9cba166339fb6521ca384f6a"><div class="ttname"><a href="../../d6/df4/namespacens_space_invader_m_l.html#a8a601a6f9cba166339fb6521ca384f6a">nsSpaceInvaderML::SpaceInvaders</a></div><div class="ttdeci">void SpaceInvaders(void)</div><div class="ttdoc">simule le jeux </div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dfb/_space_inavder___m_l_8cpp_source.html#l00290">SpaceInavder_ML.cpp:290</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

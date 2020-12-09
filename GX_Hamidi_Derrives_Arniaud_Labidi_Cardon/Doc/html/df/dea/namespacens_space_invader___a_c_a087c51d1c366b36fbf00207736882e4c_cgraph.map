@@ -1,0 +1,4 @@
+<map id="nsSpaceInvader_AC::ManageCollisions" name="nsSpaceInvader_AC::ManageCollisions">
+<area shape="rect" id="node2" href="$df/dea/namespacens_space_invader___a_c.html#a924e3702512a7455faeaa341c2f243c3" title="Gère les collisions (multiples) entre les missiles et les tropilles. " alt="" coords="205,5,401,61"/>
+<area shape="rect" id="node3" href="$df/dea/namespacens_space_invader___a_c.html#aa0ebe083b0556d4f7dc4ca994675e893" title="Gère les collisions entre les objets et les vaisseaux. Si une collision est détéctée (même coordonées..." alt="" coords="207,85,400,141"/>
+</map>

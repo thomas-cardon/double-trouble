@@ -1,0 +1,11 @@
+digraph "nsSpaceInvader_AC::ShowFile"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="nsSpaceInvader_AC::\lShowFile",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="nsSpaceInvader_AC::\lset_input_mode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d53/_space_invader___a_c_8cpp.html#a09d383207738ac755bddbfc3a0f4550e",tooltip="Permet d&#39;activer la saisie à la volée. Utile pour gérer les déplacement du joueur sans appuyer sur la..."];
+  Node2 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

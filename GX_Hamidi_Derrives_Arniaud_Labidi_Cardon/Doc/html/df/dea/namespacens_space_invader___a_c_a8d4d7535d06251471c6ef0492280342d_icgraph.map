@@ -1,0 +1,6 @@
+<map id="nsSpaceInvader_AC::ClearScreen" name="nsSpaceInvader_AC::ClearScreen">
+<area shape="rect" id="node2" href="$df/dea/namespacens_space_invader___a_c.html#ab09f02fe9b29339e0231b339547613da" title="Permet d&#39;afficher l&#39;espace de jeu. " alt="" coords="205,5,357,47"/>
+<area shape="rect" id="node3" href="$df/dea/namespacens_space_invader___a_c.html#a84e7c837aad38b838b1d0072306214a7" title="Fonction principale du jeu sans option. " alt="" coords="405,5,557,47"/>
+<area shape="rect" id="node4" href="$df/dea/namespacens_space_invader___a_c.html#aa5b75c36c80474c3b5cf32921cccca30" title="nsSpaceInvader_AC::ppal" alt="" coords="605,13,783,39"/>
+<area shape="rect" id="node5" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="831,13,881,39"/>
+</map>
