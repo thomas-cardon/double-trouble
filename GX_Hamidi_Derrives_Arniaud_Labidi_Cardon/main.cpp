@@ -1,25 +1,31 @@
 /*!
-  * \file main.cpp
-  * \author Alain Casali Marc Laporte
-  * \date 7 janvier 2016
-  * \brief Projet de C++ simulant un SpaceInvader
-  * \version 1.0
-  * \bug Aucun connu
-  */
+ * \file   main.cpp
+ * \authors Alain Casali, Marc Laporte
+ * \date december 8 2016
+ * \brief   Terminal's color management
+ *          beginning of the project titled "catch me if you can"
+ */
 
 #include <iostream>
-#include "Correc_prof/SpaceInvader_AC.h"
-#include "Correc_prof/SpaceInvader_ML.h"
-using namespace std;
+#include "Correc_Prof/game.h"
 
+using namespace std;
+/**
+ * @brief main
+ * @return return 0 iff everything is OK, 1 if we have an exception, 2 if we can't load the params' file
+ */
 int main()
 {
-    cout << "Quel jeu lancer? ";
-    string Nom;
-    cin >> Nom;
-    if (Nom == "Alain")
-        nsSpaceInvader_AC::ppal("../G6_Berno_Casali_Ernst_Laporte_Palermo/Correc_prof/");
-    else if (Nom == "Marc")
-        nsSpaceInvaderML::SpaceInvaders ();
-    return 0;
-}
+    try
+    {
+        return ppal ();
+    }
+    catch (...)
+    {
+        cerr << "ca c'est mal passe quelque part" << endl;
+        return 1;
+    }
+} //main ()
+
+
+

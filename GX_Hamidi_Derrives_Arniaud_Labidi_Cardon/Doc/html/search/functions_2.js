@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gotoxy',['GotoXY',['../d6/df4/namespacens_space_invader_m_l.html#a5554852c8370cf515995f786b24fd73b',1,'nsSpaceInvaderML']]]
+  ['initgrid',['InitGrid',['../gridmanagement_8cpp.html#af00a54b22936aa9f51f2a68d7069ee14',1,'InitGrid(CMat &amp;Mat, unsigned NbLine, unsigned NbColumn, CPosition &amp;PosPlayer1, CPosition &amp;PosPlayer2):&#160;gridmanagement.cpp'],['../gridmanagement_8h.html#af00a54b22936aa9f51f2a68d7069ee14',1,'InitGrid(CMat &amp;Mat, unsigned NbLine, unsigned NbColumn, CPosition &amp;PosPlayer1, CPosition &amp;PosPlayer2):&#160;gridmanagement.cpp']]]
 ];

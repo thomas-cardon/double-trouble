@@ -1,36 +1,30 @@
 var indexSectionsWithContent =
 {
-  0: "cdgiklmnprsv",
-  1: "n",
-  2: "ms",
-  3: "cdgikmprsv",
-  4: "k",
-  5: "cs",
-  6: "c",
-  7: "l"
+  0: "acdgikmpstv",
+  1: "a",
+  2: "gmpt",
+  3: "cdimps",
+  4: "kv",
+  5: "c"
 };
 
 var indexSectionNames =
 {
   0: "all",
-  1: "namespaces",
+  1: "classes",
   2: "files",
   3: "functions",
   4: "variables",
-  5: "typedefs",
-  6: "defines",
-  7: "pages"
+  5: "typedefs"
 };
 
 var indexSectionLabels =
 {
-  0: "Tout",
-  1: "Espaces de nommage",
-  2: "Fichiers",
-  3: "Fonctions",
+  0: "All",
+  1: "Classes",
+  2: "Files",
+  3: "Functions",
   4: "Variables",
-  5: "Définitions de type",
-  6: "Macros",
-  7: "Pages"
+  5: "Typedefs"
 };
 
