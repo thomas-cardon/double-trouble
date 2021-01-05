@@ -7,7 +7,7 @@
  */
 
 #include <iostream>
-#include "Correc_Prof/game.h"
+#include "Nos_fichiers/game.h"
 
 using namespace std;
 /**

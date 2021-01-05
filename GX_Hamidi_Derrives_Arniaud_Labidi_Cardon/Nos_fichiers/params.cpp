@@ -2,19 +2,19 @@
 #include <fstream>
 #include <iostream>
 #include <algorithm>
-#include "params.h"
-
+#include "./params.h"
 
 using namespace std;
 
-
+/*
+ * -> Retiré la ligne doublon d'attribution de la touche à l'action KeyRight
+ */
 void InitParams (CMyParam & Param)
 {
     //Move Keys
     Param.MapParamChar["KeyUp"]   = 'z';
     Param.MapParamChar["KeyDown"] = 's';
     Param.MapParamChar["KeyLeft"] = 'q';
-    Param.MapParamChar["KeyRight"] = 'd';
     Param.MapParamChar["KeyRight"] = 'd';
     Param.MapParamChar["TokenP1"] = 'O';
     Param.MapParamChar["TokenP2"] = 'X';
@@ -41,7 +41,7 @@ int LoadParams (CMyParam & Param, const std::string & FileName)
     while (ifs >> Key)
     {
         char tmp;
-        ifs >> tmp;
+        ifs >> tmp;        
         if (find (KAuthorizedKey.VParamChar.begin(), KAuthorizedKey.VParamChar.end(), Key) != KAuthorizedKey.VParamChar.end())
             ifs >> Param.MapParamChar[Key];
         else if (find (KAuthorizedKey.VParamUnsigned.begin(), KAuthorizedKey.VParamUnsigned.end(), Key) != KAuthorizedKey.VParamUnsigned.end())

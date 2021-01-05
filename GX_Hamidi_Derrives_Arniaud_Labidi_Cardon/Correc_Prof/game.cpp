@@ -65,7 +65,7 @@ int ppal (void)
     CPosition PosPlayer1, PosPlayer2;
 
     CMyParam Param;
-    int RetVal = LoadParams(Param, "../PacMan/Nos_Fichiers/config.yaml");
+    int RetVal = LoadParams(Param, "../PacMan With Doc/Nos_fichiers/config.yaml");
     if (RetVal != 0)
     {
         return RetVal;

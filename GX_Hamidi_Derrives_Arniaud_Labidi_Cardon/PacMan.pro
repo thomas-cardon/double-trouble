@@ -4,16 +4,18 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-    Correc_Prof/game.cpp \
-    Correc_Prof/gridmanagement.cpp \
-    Correc_Prof/params.cpp \
+    Nos_fichiers/game.cpp \
+    Nos_fichiers/gridmanagement.cpp \
+    Nos_fichiers/nsutil.cpp \
+    Nos_fichiers/params.cpp \
     main.cpp
 
 DISTFILES += \
     Nos_fichiers/config.yaml
 
 HEADERS += \
-    Correc_Prof/game.h \
-    Correc_Prof/gridmanagement.h \
-    Correc_Prof/params.h \
-    Correc_Prof/type.h
+    Nos_fichiers/game.h \
+    Nos_fichiers/gridmanagement.h \
+    Nos_fichiers/nsutil.h \
+    Nos_fichiers/params.h \
+    Nos_fichiers/type.h \
