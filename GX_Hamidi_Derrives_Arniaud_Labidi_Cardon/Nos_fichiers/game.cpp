@@ -123,7 +123,7 @@ int ppal (void)
     CPosition PosPlayer1, PosPlayer2;
 
     CMyParam Param;
-    int RetVal = LoadParams(Param, "../PacMan With Doc/Nos_fichiers/config.yaml");
+    int RetVal = LoadParams(Param, "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/config.yaml");
     if (RetVal != 0)
     {
         return RetVal;
