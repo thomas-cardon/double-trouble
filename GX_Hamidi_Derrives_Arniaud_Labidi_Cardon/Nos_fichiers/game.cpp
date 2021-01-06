@@ -141,7 +141,13 @@ int ppal (void)
              << (Player1Turn ? '1' : '2') << endl << "Entrez un déplacement : ";
 
         char Move;
+
+        /*
+         * Mode non-canonique en deux lignes, peut-être à changer?
+         * */
+        system("stty raw"); // Terminal en mode raw
         cin >> Move;
+        system("stty cooked"); // Terminal en mode par défaut
 
         Move = toupper (Move);
 
