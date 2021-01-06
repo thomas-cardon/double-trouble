@@ -16,10 +16,11 @@ void ShowMap (const map<T,U> & AMap){
  * -> Vérification hors tableau (ajout de paramètres)
  * -> Possibilité de retourner des erreurs si besoin
  */
-int MoveToken (CMat & Mat, const char & Move, CPosition & Pos, unsigned nbRows, unsigned nbColumns)
+int MoveToken (CMat & Mat, const char & Move, CPosition & Pos, CMyParam & Param)
 {
     int errors = 0;
     unsigned oldX = Pos.second, oldY = Pos.first;
+    unsigned rows = Param.MapParamUnsigned["NbRow"], columns = Param.MapParamUnsigned["NbColumns"];
 
     char car = Mat [Pos.first][Pos.second];
 
@@ -43,7 +44,7 @@ int MoveToken (CMat & Mat, const char & Move, CPosition & Pos, unsigned nbRows, 
         --Pos.first;
         break;
     case 'E':
-        if (Pos.first <= 0 || Pos.second + 1 >= nbColumns) {
+        if (Pos.first <= 0 || Pos.second + 1 >= columns) {
             errors = 1;
             break;
         }
@@ -60,7 +61,7 @@ int MoveToken (CMat & Mat, const char & Move, CPosition & Pos, unsigned nbRows, 
         --Pos.second;
         break;
     case 'D':
-        if (Pos.second + 1 >= nbColumns) {
+        if (Pos.second + 1 >= columns) {
             errors = 1;
             break;
         }
@@ -68,7 +69,7 @@ int MoveToken (CMat & Mat, const char & Move, CPosition & Pos, unsigned nbRows, 
         ++Pos.second;
         break;
     case 'W':
-        if (Pos.first >= nbRows || Pos.second <= 0) {
+        if (Pos.first >= rows || Pos.second <= 0) {
             errors = 1;
             break;
         }
@@ -77,7 +78,7 @@ int MoveToken (CMat & Mat, const char & Move, CPosition & Pos, unsigned nbRows, 
         --Pos.second;
         break;
     case 'X':
-        if (Pos.first + 1 >= nbRows) {
+        if (Pos.first + 1 >= rows) {
             errors = 1;
             break;
         }
@@ -85,7 +86,7 @@ int MoveToken (CMat & Mat, const char & Move, CPosition & Pos, unsigned nbRows, 
         ++Pos.first;
         break;
     case 'C':
-        if (Pos.first + 1 >= nbRows || Pos.second + 1 >= nbColumns) {
+        if (Pos.first + 1 >= rows || Pos.second + 1 >= columns) {
             errors = 1;
             break;
         }
@@ -144,9 +145,7 @@ int ppal (void)
 
         Move = toupper (Move);
 
-        int errors = MoveToken (Mat, Move, (Player1Turn ? PosPlayer1: PosPlayer2),
-                   Param.MapParamUnsigned["NbRow"],
-                   Param.MapParamUnsigned["NbColumn"]);
+        int errors = MoveToken (Mat, Move, (Player1Turn ? PosPlayer1: PosPlayer2), Param);
 
         ClearScreen();
         DisplayGrid (Mat, Param);
