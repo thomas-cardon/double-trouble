@@ -25,6 +25,8 @@ int main()
         cerr << "ca c'est mal passe quelque part" << endl;
         return 1;
     }
+
+    return 0;
 } //main ()
 
 
