@@ -2,6 +2,10 @@ KeyUp : z
 KeyDown : s
 KeyLeft : q
 KeyRight : d
+KeyUpLeft : a
+KeyUpRight : e
+KeyUpLeft : w
+KeyUpRight : c
 NbColumn : 10
 NbRow : 10
 ColorP1 : KBlue

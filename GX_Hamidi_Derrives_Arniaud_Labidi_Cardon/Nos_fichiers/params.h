@@ -10,7 +10,7 @@
  * \date 18 décembre 2018
  */
 
-#include "Nos_fichiers/type.h"
+#include "./type.h"
 
 /**
  * @brief Initialize the set of parameters from scratch

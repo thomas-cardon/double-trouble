@@ -7,7 +7,9 @@
 using namespace std;
 
 /*
- * -> Retiré la ligne doublon d'attribution de la touche à l'action KeyRight
+ * -> Suppression ligne doublon d'attribution de la touche à l'action KeyRight*
+ * -> Ajout touches pour se déplacer en diagonale
+ * -> Ajout touche pour quitter le jeu
  */
 void InitParams (CMyParam & Param)
 {
@@ -16,6 +18,14 @@ void InitParams (CMyParam & Param)
     Param.MapParamChar["KeyDown"] = 's';
     Param.MapParamChar["KeyLeft"] = 'q';
     Param.MapParamChar["KeyRight"] = 'd';
+
+    Param.MapParamChar["KeyUpLeft"] = 'a';
+    Param.MapParamChar["KeyUpRight"] = 'e';
+    Param.MapParamChar["KeyDownLeft"] = 'w';
+    Param.MapParamChar["KeyDownRight"] = 'c';
+
+    Param.MapParamChar["KeyQuit"] = 27;
+
     Param.MapParamChar["TokenP1"] = 'O';
     Param.MapParamChar["TokenP2"] = 'X';
 
@@ -30,7 +40,6 @@ void InitParams (CMyParam & Param)
 
 int LoadParams (CMyParam & Param, const std::string & FileName)
 {
-    cout << FileName << endl;
     ifstream ifs (FileName);
     if (!ifs.is_open())
     {

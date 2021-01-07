@@ -6,6 +6,7 @@ CONFIG -= qt
 SOURCES += \
     Nos_fichiers/game.cpp \
     Nos_fichiers/gridmanagement.cpp \
+    Nos_fichiers/movements.cpp \
     Nos_fichiers/nsutil.cpp \
     Nos_fichiers/params.cpp \
     main.cpp
@@ -16,6 +17,7 @@ DISTFILES += \
 HEADERS += \
     Nos_fichiers/game.h \
     Nos_fichiers/gridmanagement.h \
+    Nos_fichiers/movements.h \
     Nos_fichiers/nsutil.h \
     Nos_fichiers/params.h \
     Nos_fichiers/type.h \

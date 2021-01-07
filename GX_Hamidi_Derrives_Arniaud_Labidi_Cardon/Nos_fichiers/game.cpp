@@ -4,6 +4,8 @@
 #include "./params.h"
 #include "./gridmanagement.h"
 
+#include "./movements.h"
+
 #include <map>
 using namespace std;
 template <class T, class U>
@@ -24,7 +26,26 @@ int MoveToken (CMat & Mat, const char & Move, CPosition & Pos, CMyParam & Param)
 
     char car = Mat [Pos.first][Pos.second];
 
-    switch (Move)
+    if (Move == Param.MapParamChar["KeyUp"]) {
+        //if (Pos.first <= 0 || Pos.second <= 0) return 1;
+        MoveUp(Pos);
+    }
+    else if (Move == Param.MapParamChar["KeyDown"]) {
+        //if (Pos.first + 1 >= rows) return 1;
+        MoveDown(Pos);
+    }
+    else if  (Move == Param.MapParamChar["KeyDownLeft"]) {
+        if (Pos.first + 1 >= rows || Pos.second + 1 >= columns) return 1;
+
+        MoveDown(Pos);
+        MoveLeft(Pos);
+    }
+    else if (Move == Param.MapParamChar["KeyQuit"]) {
+        return 9999;
+    }
+    else return 2;
+
+    /*switch (Move)
     {
     case 'A':
         if (Pos.first <= 0 || Pos.second <= 0) {
@@ -97,7 +118,7 @@ int MoveToken (CMat & Mat, const char & Move, CPosition & Pos, CMyParam & Param)
     default:
         errors = 2;
         break;
-    }
+    }*/
 
     Mat [oldY][oldX] = KEmpty;
     Mat [Pos.first][Pos.second] = car;
@@ -160,6 +181,8 @@ int ppal (void)
             cout << "Erreur de déplacement !" << endl;
         else if (errors == 2)
             cout << "Touche inconnue !" << endl << "Actions possibles: A, Z, E, Q, D, W, X, C" << endl;
+        else if (errors == 9999)
+            break;
 
         /* Victiry test -> Victory test ( :)))))))) ) */
         // Victory test
@@ -176,7 +199,7 @@ int ppal (void)
     if (!Victory)
     {
         Color (KColor.find("KMAgenta")->second);
-        cout << "Aucun vainqueur" << endl;
+        cout << "Il n'y a eu aucun vainqueur lors de cette partie!" << endl;
         return 1;
     }
 
