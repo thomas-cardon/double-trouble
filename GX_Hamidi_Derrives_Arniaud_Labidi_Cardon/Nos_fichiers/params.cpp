@@ -24,7 +24,7 @@ void InitParams (CMyParam & Param)
     Param.MapParamChar["KeyDownLeft"] = 'w';
     Param.MapParamChar["KeyDownRight"] = 'c';
 
-    Param.MapParamChar["KeyQuit"] = 27;
+    Param.MapParamUnsigned["KeyQuit"] = 27;
 
     Param.MapParamChar["TokenP1"] = 'O';
     Param.MapParamChar["TokenP2"] = 'X';

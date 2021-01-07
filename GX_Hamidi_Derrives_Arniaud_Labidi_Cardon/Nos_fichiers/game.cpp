@@ -27,11 +27,11 @@ int MoveToken (CMat & Mat, const char & Move, CPosition & Pos, CMyParam & Param)
     char car = Mat [Pos.first][Pos.second];
 
     if (Move == Param.MapParamChar["KeyUp"]) {
-        //if (Pos.first <= 0 || Pos.second <= 0) return 1;
+        if (Pos.first <= 0 || Pos.second <= 0) return 1;
         MoveUp(Pos);
     }
     else if (Move == Param.MapParamChar["KeyDown"]) {
-        //if (Pos.first + 1 >= rows) return 1;
+        if (Pos.first + 1 >= rows) return 1;
         MoveDown(Pos);
     }
     else if  (Move == Param.MapParamChar["KeyDownLeft"]) {
@@ -40,7 +40,7 @@ int MoveToken (CMat & Mat, const char & Move, CPosition & Pos, CMyParam & Param)
         MoveDown(Pos);
         MoveLeft(Pos);
     }
-    else if (Move == Param.MapParamChar["KeyQuit"]) {
+    else if (Move == Param.MapParamUnsigned["KeyQuit"]) {
         return 9999;
     }
     else return 2;
@@ -180,7 +180,7 @@ int ppal (void)
         if (errors == 1)
             cout << "Erreur de déplacement !" << endl;
         else if (errors == 2)
-            cout << "Touche inconnue !" << endl << "Actions possibles: A, Z, E, Q, D, W, X, C" << endl;
+            cout << "Touche inconnue !" << endl << "Touches possibles: A, Z, E, Q, D, W, X, C" << endl;
         else if (errors == 9999)
             break;
 

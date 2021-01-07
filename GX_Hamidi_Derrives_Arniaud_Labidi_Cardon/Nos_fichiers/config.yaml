@@ -6,6 +6,7 @@ KeyUpLeft : a
 KeyUpRight : e
 KeyUpLeft : w
 KeyUpRight : c
+KeyQuit : 27
 NbColumn : 10
 NbRow : 10
 ColorP1 : KBlue
