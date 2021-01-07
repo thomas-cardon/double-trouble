@@ -1,4 +1,5 @@
 #include "game2d.h"
+
 #define FPS_LIMIT 60
 
 #include <iostream>
@@ -6,10 +7,30 @@
 
 #include "mingl/mingl.h"
 
+#include "gameLogic.cpp"
+
 using namespace std;
+
+GameLogic logic;
+
+int update(MinGL & window) {
+    if (window.isPressed({ 27, false }))
+        return -1;
+
+    int ret = logic.update();
+    if (ret != 0) return ret;
+
+    return 0;
+}
+
+void render(MinGL & window) {
+    logic.render(window);
+}
 
 int load()
 {
+    bool userRequestedClose = false;
+
     // Initialise le système
     MinGL window("Pacman", nsGraphics::Vec2D(640, 640), nsGraphics::Vec2D(128, 128), nsGraphics::KBlack);
     window.initGlut();
@@ -18,8 +39,11 @@ int load()
     // Variable qui tient le temps de frame
     chrono::microseconds frameTime = chrono::microseconds::zero();
 
+    // Chargement des ressources
+    logic.load();
+
     // On fait tourner la boucle tant que la fenêtre est ouverte
-    while (window.isOpen())
+    while (window.isOpen() && !userRequestedClose)
     {
         // Récupère l'heure actuelle
         chrono::time_point<chrono::steady_clock> start = chrono::steady_clock::now();
@@ -30,12 +54,13 @@ int load()
         /*
          * Ici, écrivez votre logique d'affichage et de gestion des évènements
          */
+        int ret = update(window);
+        if (ret == -1) userRequestedClose = true;
+
+        render(window);
 
         // On finit la frame en cours
         window.finishFrame();
-
-        // On vide la queue d'évènements
-        window.getEventManager().clearEvents();
 
         // On attend un peu pour limiter le framerate et soulager le CPU
         this_thread::sleep_for(chrono::milliseconds(1000 / FPS_LIMIT) - chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start));
@@ -43,6 +68,8 @@ int load()
         // On récupère le temps de frame
         frameTime = chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start);
     }
+
+    cout << "Fermeture du jeu!" << endl;
 
     return 0;
 }

@@ -46,7 +46,6 @@ void DisplayGrid (const CMat & Mat, const CMyParam & Param)
 
 }// DisplayGrid ()
 
-
 void InitGrid (CMat & Mat, const CMyParam & Params, CPosition & PosPlayer1, CPosition & PosPlayer2)
 {
     Mat.resize (Params.MapParamUnsigned.find("NbColumn")->second);

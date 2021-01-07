@@ -4,10 +4,10 @@
 
 /*!
  * \file game2d.h
- * \brief Version 2D de game.h
+ * \brief 2D version of game.h
  * \author Thomas Cardon
  * \version 1.0
- * \date 7 janvier 2018
+ * \date 7 janvier 2021
  */
 
 #include "./type.h"
