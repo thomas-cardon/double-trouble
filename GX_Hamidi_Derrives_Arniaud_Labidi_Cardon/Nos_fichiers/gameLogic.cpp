@@ -11,6 +11,8 @@
 
 #include "mingl/gui/sprite.h"
 
+#include "player.cpp"
+
 class GameLogic: public Logic {
     public:
     const unsigned KSize = 10;
@@ -35,6 +37,8 @@ class GameLogic: public Logic {
     bool Player1Turn = true;
     bool Victory = false;
 
+    Player player1;
+
     CMat Mat;
     CMyParam Params;
 
@@ -46,6 +50,8 @@ class GameLogic: public Logic {
             if (RetVal != 0) return RetVal;
 
             InitGrid(Mat, Params, PosPlayer1, PosPlayer2);
+
+            player1.load();
         }
         catch(...) {
             std::cerr << "Une erreur s'est produite !" << std::endl;
@@ -56,12 +62,12 @@ class GameLogic: public Logic {
     }
 
     int update() {
+        player1.update();
+
         return 0;
     }
 
-    int render(MinGL & window) {
-        window.clearScreen();
-
+    void renderGrid(MinGL & window) {
         const unsigned nbLines = Mat.size ();
         const unsigned nbColumns = Mat[0].size ();
 
@@ -87,11 +93,26 @@ class GameLogic: public Logic {
             }
         }
 
+        /* Recoins */
         window << nsGui::Sprite(WALL_XY_1, nsGraphics::Vec2D(0, 0));
         window << nsGui::Sprite(WALL_XY_2, nsGraphics::Vec2D((nbLines - 1) * 32, 0));
         window << nsGui::Sprite(WALL_XY_3, nsGraphics::Vec2D(0, (nbLines - 1) * 32));
         window << nsGui::Sprite(WALL_XY_4, nsGraphics::Vec2D((nbLines - 1) * 32, (nbLines - 1) * 32));
+    }
+
+    int render(MinGL & window) {
+        window.clearScreen();
+
+        renderGrid(window);
+        player1.render(window);
 
         return 0;
+    }
+
+    bool inCollision(unsigned x, unsigned y) {
+        if (x <= 1 || x >= Mat[0].size() - 1) return true;
+        if (y <= 1 || y >= Mat.size() - 1) return true;
+
+        return false;
     }
 };

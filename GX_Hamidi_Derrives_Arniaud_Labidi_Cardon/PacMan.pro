@@ -14,6 +14,7 @@ SOURCES += \
     Nos_fichiers/logic.cpp \
     Nos_fichiers/nsutil.cpp \
     Nos_fichiers/params.cpp \
+    Nos_fichiers/player.cpp \
     main.cpp
 
 DISTFILES += \
