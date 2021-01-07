@@ -14,15 +14,15 @@ using namespace std;
 void InitParams (CMyParam & Param)
 {
     //Move Keys
-    Param.MapParamChar["KeyUp"]   = 'z';
-    Param.MapParamChar["KeyDown"] = 's';
-    Param.MapParamChar["KeyLeft"] = 'q';
-    Param.MapParamChar["KeyRight"] = 'd';
+    Param.MapParamUnsigned["KeyUp"]   = 90;
+    Param.MapParamUnsigned["KeyDown"] = 83;
+    Param.MapParamUnsigned["KeyLeft"] = 81;
+    Param.MapParamUnsigned["KeyRight"] = 84;
 
-    Param.MapParamChar["KeyUpLeft"] = 'a';
-    Param.MapParamChar["KeyUpRight"] = 'e';
-    Param.MapParamChar["KeyDownLeft"] = 'w';
-    Param.MapParamChar["KeyDownRight"] = 'c';
+    Param.MapParamUnsigned["KeyUpLeft"] = 65;
+    Param.MapParamUnsigned["KeyUpRight"] = 69;
+    Param.MapParamUnsigned["KeyDownLeft"] = 87;
+    Param.MapParamUnsigned["KeyDownRight"] = 67;
 
     Param.MapParamUnsigned["KeyQuit"] = 27;
 
@@ -30,7 +30,7 @@ void InitParams (CMyParam & Param)
     Param.MapParamChar["TokenP2"] = 'X';
 
     //Size of grid -- suppose to be a rectangle
-    Param.MapParamUnsigned["NbColumn"] = 10;
+    Param.MapParamUnsigned["NbColumn"] = 15;
     Param.MapParamUnsigned["NbRow"] = 15;
 
     //Display Colors
