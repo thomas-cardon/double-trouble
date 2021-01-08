@@ -17,22 +17,39 @@ namespace nsGame {
     /**
      * @class Logic
      * @brief Une classe pour différencier les divers états de jeu (dans les menu, en partie, etc.)
+     * @authors Thomas Cardon
      */
     class Player {
         public:
             CPosition pos;
             std::string texture;
 
+            Player() {
+                this->texture = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile027.i2s";
+            }
+
             Player(std::string texture) {
                 this->texture = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/" + texture;
             }
 
             void load() {
-                pos.first = 0;
-                pos.second = 0;
+                pos.first = 1;
+                pos.second = 1;
             }
 
             int update(MinGL & window) {
+                if (window.isPressed({ 'Z', false }))
+                    this->pos.first += 1;
+
+                if (window.isPressed({ 'S', false }))
+                    this->pos.first -= 1;
+
+                if (window.isPressed({ 'Q', false }))
+                    this->pos.second += 1;
+
+                if (window.isPressed({ 'D', false }))
+                    this->pos.second += 1;
+
                 return 0;
             }
 

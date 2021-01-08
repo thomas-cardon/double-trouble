@@ -17,15 +17,28 @@ namespace nsGame {
     /**
      * @class Logic
      * @brief Une classe pour différencier les divers états de jeu (dans les menu, en partie, etc.)
+     * @author Thomas Cardon
      */
     class Logic {
         public:
 
-            void load();
+        /**
+         * @brief Loads Logic resources
+         * @fn void load();
+         */
+         void load();
 
-            int update();
+         /**
+          * @brief Updates logic
+          * @fn int update();
+          */
+         int update();
 
-            void render(MinGL & window);
+         /**
+          * @brief Renders resources
+          * @fn void render(MinGL & window);
+          */
+         void render(MinGL & window);
     };
 }
 

@@ -19,6 +19,15 @@ SOURCES += \
 
 DISTFILES += \
     Nos_fichiers/config.yaml \
+    Nos_fichiers/res/gui/Bouton Option.png \
+    Nos_fichiers/res/gui/Bouton Quitter.png \
+    Nos_fichiers/res/gui/Bouton jouer curseur.png \
+    Nos_fichiers/res/gui/Bouton jouer.png \
+    Nos_fichiers/res/gui/Bouton option curseur.png \
+    Nos_fichiers/res/gui/Bouton quitter curseur.png \
+    Nos_fichiers/res/gui/Fond.png \
+    Nos_fichiers/res/gui/background.i2s \
+    Nos_fichiers/res/gui/img2si.py \
     Nos_fichiers/res/img2si.py \
     Nos_fichiers/res/tile000.png \
     Nos_fichiers/res/tile001.i2s \
