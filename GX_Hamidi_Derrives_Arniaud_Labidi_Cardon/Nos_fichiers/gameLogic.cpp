@@ -1,4 +1,4 @@
-#include "logic.cpp"
+#include "logic.h"
 
 #include "type.h"
 #include "gridmanagement.h"
@@ -12,7 +12,9 @@
 #include "mingl/gui/sprite.h"
 
 #include "player.cpp"
+//     const Player player1;
 
+using namespace nsGame;
 class GameLogic: public Logic {
     public:
     const unsigned KSize = 10;
@@ -37,33 +39,19 @@ class GameLogic: public Logic {
     bool Player1Turn = true;
     bool Victory = false;
 
-    Player player1;
-
     CMat Mat;
     CMyParam Params;
 
-    int load() {
-        try {
-            CPosition PosPlayer1, PosPlayer2;
+    void load() {
+        CPosition PosPlayer1, PosPlayer2;
 
-            int RetVal = LoadParams(Params, "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/config.yaml");
-            if (RetVal != 0) return RetVal;
+        int RetVal = LoadParams(Params, "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/config.yaml");
+        if (RetVal != 0) throw "Une erreur s'est produite lors de la lecture du fichier YAML";
 
-            InitGrid(Mat, Params, PosPlayer1, PosPlayer2);
-
-            player1.load();
-        }
-        catch(...) {
-            std::cerr << "Une erreur s'est produite !" << std::endl;
-            return 1;
-        }
-
-        return 0;
+        InitGrid(Mat, Params, PosPlayer1, PosPlayer2);
     }
 
     int update() {
-        player1.update();
-
         return 0;
     }
 
@@ -71,7 +59,7 @@ class GameLogic: public Logic {
         const unsigned nbLines = Mat.size ();
         const unsigned nbColumns = Mat[0].size ();
 
-        const unsigned COL_SIZE = window.getWindowSize().getX() / nbColumns, LINE_SIZE = window.getWindowSize().getY() / nbLines;
+        //const unsigned COL_SIZE = window.getWindowSize().getX() / nbColumns, LINE_SIZE = window.getWindowSize().getY() / nbLines;
 
         for (unsigned i (0); i < nbLines; i = i + 1) {
             for (unsigned j (0); j < Mat[i].size(); ++j) {
@@ -102,9 +90,9 @@ class GameLogic: public Logic {
 
     int render(MinGL & window) {
         window.clearScreen();
+        window.setBackgroundColor(nsGraphics::RGBAcolor(0, 0, 255, 1));
 
         renderGrid(window);
-        player1.render(window);
 
         return 0;
     }
