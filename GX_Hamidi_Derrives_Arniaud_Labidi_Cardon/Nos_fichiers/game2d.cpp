@@ -8,23 +8,33 @@
 #include "mingl/mingl.h"
 
 #include "gameLogic.cpp"
+#include "mainMenuLogic.cpp"
 
 using namespace std;
 
-GameLogic logic;
+MainMenuLogic mainMenuLogic;
+GameLogic gameLogic;
+
+/* 0 = MainMenu, 1 = Game */
+int state = 0;
 
 int update(MinGL & window) {
     if (window.isPressed({ 27, false }))
         return -1;
+    else if (window.isPressed({ 13, false })) {
+        gameLogic.load();
+        state = 1;
+    }
 
-    int ret = logic.update();
+    int ret = state == 0 ? mainMenuLogic.update() : gameLogic.update();
     if (ret != 0) return ret;
 
     return 0;
 }
 
 void render(MinGL & window) {
-    logic.render(window);
+    if (state == 0) mainMenuLogic.render(window);
+    else if (state == 1) gameLogic.render(window);
 }
 
 int load()
@@ -40,7 +50,7 @@ int load()
     chrono::microseconds frameTime = chrono::microseconds::zero();
 
     // Chargement des ressources
-    logic.load();
+    mainMenuLogic.load();
 
     // On fait tourner la boucle tant que la fenêtre est ouverte
     while (window.isOpen() && !userRequestedClose)

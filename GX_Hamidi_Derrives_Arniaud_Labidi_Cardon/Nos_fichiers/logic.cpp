@@ -1,16 +1,14 @@
-#include <mingl/mingl.h>
+#include "logic.h"
 
-class Logic {
-    public:
-    int load() {
-        return 0;
-    }
+using namespace nsGame;
 
-    int update() {
-        return 0;
-    }
+void Logic::load() {
+}
 
-    void render(MinGL & window) {
-        window.setBackgroundColor(nsGraphics::RGBAcolor(255, 0, 0));
-    }
-};
+int Logic::update() {
+    return 0;
+}
+
+void Logic::render(MinGL & window) {
+    window.setBackgroundColor(nsGraphics::RGBAcolor(255, 0, 0));
+}

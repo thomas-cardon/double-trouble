@@ -1,3 +1,6 @@
+#ifndef LOGIC_H
+#define LOGIC_H
+
 /**
  *
  * @file    player.h
@@ -9,8 +12,6 @@
  **/
 
 #include <mingl/mingl.h>
-#include <mingl/gui/sprite.h>
-
 #include "type.h"
 
 namespace nsGame {
@@ -27,17 +28,12 @@ namespace nsGame {
                 this->texture = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/" + texture;
             }
 
-            void load() {
-                pos.first = 0;
-                pos.second = 0;
-            }
+            void load();
 
-            int update(MinGL & window) {
-                return 0;
-            }
+            int update(MinGL & window);
 
-            void render(MinGL & window) {
-                window << nsGui::Sprite(texture, nsGraphics::Vec2D(this->pos.first * 32, this->pos.second * 32));
-            }
+            void render(MinGL & window);
     };
 }
+
+#endif // LOGIC_H
