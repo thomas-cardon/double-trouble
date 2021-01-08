@@ -12,6 +12,7 @@
 
 #include <string>
 
+#include "mingl/mingl.h"
 #include "Nos_fichiers/type.h"
 
 /**
@@ -29,13 +30,12 @@ void Color (const std::string & Col);
 
 
 /**
- * @brief Display the grid according to the parameters
+ * @brief Displays the grid according to the parameters
  * @param[in] Mat : Game grid
  * @param[in] Params : : List of usefull parameters
  * @fn void DisplayGrid (const CMat & Mat, const CMyParam & Params, bool ShowLineNumber = true, bool ShowColor = true);
  */
 void DisplayGrid (const CMat & Mat, const CMyParam & Params);
-
 
 /*!
  * \brief Initialization of the Matrix from scratch

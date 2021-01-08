@@ -7,18 +7,19 @@
  */
 
 #include <iostream>
-#include "Nos_fichiers/game.h"
+#include "Nos_fichiers/game2d.h"
 
 using namespace std;
+
 /**
  * @brief main
- * @return return 0 iff everything is OK, 1 if we have an exception, 2 if we can't load the params' file
+ * @return return 0 if everything is OK, 1 if we have an exception, 2 if we can't load the params' file
  */
 int main()
 {
     try
     {
-        return ppal ();
+        return load();
     }
     catch (...)
     {
