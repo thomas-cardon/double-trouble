@@ -7,7 +7,7 @@
 #include <map>
 using namespace std;
 template <class T, class U>
-void ShowMap (const map<T,U> & AMap){
+void ShowMap (const map<T,U> & AMap) {
     for (const pair <T,U> & Val : AMap)                cout << "Cle : " << Val.first << "   "             << "Valeur : " << Val.second << endl;
     cout << endl;
 }// ShowMap ()
