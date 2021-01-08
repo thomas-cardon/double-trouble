@@ -4,17 +4,12 @@
 #include "gridmanagement.h"
 #include "params.h"
 
-#include "mingl/shape/circle.h"
-#include "mingl/shape/line.h"
-#include "mingl/shape/rectangle.h"
-#include "mingl/shape/triangle.h"
-
 #include "mingl/gui/sprite.h"
 
 #include "player.cpp"
-//     const Player player1;
 
 using namespace nsGame;
+
 class GameLogic: public Logic {
     public:
     const unsigned KSize = 10;
