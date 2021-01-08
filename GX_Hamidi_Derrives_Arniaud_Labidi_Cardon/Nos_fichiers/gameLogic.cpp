@@ -42,6 +42,8 @@ class GameLogic: public Logic {
     CMat Mat;
     CMyParam Params;
 
+    Player player1;
+
     void load() {
         CPosition PosPlayer1, PosPlayer2;
 
@@ -49,6 +51,8 @@ class GameLogic: public Logic {
         if (RetVal != 0) throw "Une erreur s'est produite lors de la lecture du fichier YAML";
 
         InitGrid(Mat, Params, PosPlayer1, PosPlayer2);
+
+        player1.load();
     }
 
     int update() {
@@ -86,6 +90,8 @@ class GameLogic: public Logic {
         window << nsGui::Sprite(WALL_XY_2, nsGraphics::Vec2D((nbLines - 1) * 32, 0));
         window << nsGui::Sprite(WALL_XY_3, nsGraphics::Vec2D(0, (nbLines - 1) * 32));
         window << nsGui::Sprite(WALL_XY_4, nsGraphics::Vec2D((nbLines - 1) * 32, (nbLines - 1) * 32));
+
+        player1.update(window);
     }
 
     int render(MinGL & window) {
@@ -93,6 +99,7 @@ class GameLogic: public Logic {
         window.setBackgroundColor(nsGraphics::RGBAcolor(0, 0, 255, 1));
 
         renderGrid(window);
+        player1.render(window);
 
         return 0;
     }
