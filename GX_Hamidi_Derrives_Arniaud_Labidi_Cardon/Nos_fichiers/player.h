@@ -25,6 +25,10 @@ namespace nsGame {
             CPosition pos;
             std::string texture;
 
+            Player() {
+                this->texture = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile027.i2s";
+            }
+
             Player(std::string texture) {
                 this->texture = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/" + texture;
             }
