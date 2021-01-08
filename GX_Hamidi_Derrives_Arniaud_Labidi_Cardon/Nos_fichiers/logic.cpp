@@ -12,3 +12,7 @@ int Logic::update() {
 void Logic::render(MinGL & window) {
     window.setBackgroundColor(nsGraphics::RGBAcolor(255, 0, 0));
 }
+
+void Logic::events(nsEvent::Event_t event) {
+    std::cout << event.eventType << std::endl;
+}

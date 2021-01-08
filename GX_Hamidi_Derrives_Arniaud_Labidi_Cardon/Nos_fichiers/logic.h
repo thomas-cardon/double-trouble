@@ -39,6 +39,12 @@ namespace nsGame {
           * @fn void render(MinGL & window);
           */
          void render(MinGL & window);
+
+         /**
+          * @brief Handles events
+          * @fn void event(nsEvent::Event_t event);
+          */
+         void events(nsEvent::Event_t event);
     };
 }
 

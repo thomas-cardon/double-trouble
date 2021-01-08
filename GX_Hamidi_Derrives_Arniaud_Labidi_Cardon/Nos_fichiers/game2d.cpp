@@ -27,6 +27,13 @@ int update(MinGL & window) {
         state = 1;
     }
 
+    while(window.getEventManager().hasEvent()) {
+        if (state == 0)
+            mainMenuLogic.events(window.getEventManager().pullEvent());
+        else if (state == 1)
+            gameLogic.events(window.getEventManager().pullEvent());
+    }
+
     if (state == 0)
         return mainMenuLogic.update();
     else if (state == 1)
