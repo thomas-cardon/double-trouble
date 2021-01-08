@@ -22,7 +22,7 @@ int main()
     }
     catch (...)
     {
-        cerr << "ca c'est mal passe quelque part" << endl;
+        cerr << "Thomas à encore fait de la merde, appelez le pour régler le soucis" << endl;
         return 1;
     }
 

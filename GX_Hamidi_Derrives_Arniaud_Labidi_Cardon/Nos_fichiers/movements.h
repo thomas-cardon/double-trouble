@@ -15,10 +15,10 @@
 
 void MoveUp(CPosition & Pos);
 void MoveDown(CPosition & Pos);
-void MoveLeft(CPosition & pos);
-void MoveRight(CPosition & pos);
+void MoveLeft(CPosition & Pos);
+void MoveRight(CPosition & Pos);
 
 void MoveUpLeft(CPosition & Pos);
 void MoveUpRight(CPosition & Pos);
-void MoveDownLeft(CPosition & pos);
-void MoveDownRight(CPosition & pos);
+void MoveDownLeft(CPosition & Pos);
+void MoveDownRight(CPosition & Pos);
