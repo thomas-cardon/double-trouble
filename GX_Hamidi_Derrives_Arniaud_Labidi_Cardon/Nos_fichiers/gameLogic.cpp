@@ -90,9 +90,6 @@ class GameLogic: public Logic {
     }
 
     int render(MinGL & window) {
-        window.clearScreen();
-        window.setBackgroundColor(nsGraphics::RGBAcolor(0, 0, 255, 1));
-
         renderGrid(window);
         player1.render(window);
 

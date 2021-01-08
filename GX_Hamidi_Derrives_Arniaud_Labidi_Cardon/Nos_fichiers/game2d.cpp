@@ -15,19 +15,22 @@ using namespace std;
 MainMenuLogic mainMenuLogic;
 GameLogic gameLogic;
 
-/* 0 = MainMenu, 1 = Game */
+/* 0 = MainMenu, 1 = Game, 2 = loading */
 int state = 0;
 
 int update(MinGL & window) {
     if (window.isPressed({ 27, false }))
         return -1;
     else if (window.isPressed({ 13, false })) {
+        state = 2;
         gameLogic.load();
         state = 1;
     }
 
-    int ret = state == 0 ? mainMenuLogic.update() : gameLogic.update();
-    if (ret != 0) return ret;
+    if (state == 0)
+        return mainMenuLogic.update();
+    else if (state == 1)
+        return gameLogic.update();
 
     return 0;
 }
@@ -35,6 +38,7 @@ int update(MinGL & window) {
 void render(MinGL & window) {
     if (state == 0) mainMenuLogic.render(window);
     else if (state == 1) gameLogic.render(window);
+    else window.setBackgroundColor(nsGraphics::RGBAcolor(255, 0, 0, 0));
 }
 
 int load()
@@ -42,7 +46,7 @@ int load()
     bool userRequestedClose = false;
 
     // Initialise le système
-    MinGL window("Pacman", nsGraphics::Vec2D(640, 640), nsGraphics::Vec2D(128, 128), nsGraphics::KBlack);
+    MinGL window("Double Trouble", nsGraphics::Vec2D(640, 640), nsGraphics::Vec2D(128, 128), nsGraphics::KBlack);
     window.initGlut();
     window.initGraphic();
 
