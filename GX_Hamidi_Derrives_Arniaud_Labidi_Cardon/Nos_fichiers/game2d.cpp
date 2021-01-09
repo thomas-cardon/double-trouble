@@ -6,52 +6,52 @@
 #include <thread>
 
 #include "mingl/mingl.h"
+#include <GL/glut.h>
 
-#include "gameLogic.cpp"
-#include "mainMenuLogic.cpp"
+#include "logicManager.cpp"
 
 using namespace std;
 
-MainMenuLogic mainMenuLogic;
-GameLogic gameLogic;
-
-/* 0 = MainMenu, 1 = Game, 2 = loading */
-int state = 0;
-
+LogicManager logicManager = LogicManager();
 int update(MinGL & window) {
     if (window.isPressed({ 27, false }))
         return -1;
-    else if (window.isPressed({ 13, false })) {
-        state = 2;
-        gameLogic.load();
-        state = 1;
-    }
 
-    while(window.getEventManager().hasEvent()) {
-        if (state == 0)
-            mainMenuLogic.events(window.getEventManager().pullEvent());
-        else if (state == 1)
-            gameLogic.events(window.getEventManager().pullEvent());
-    }
-
-    if (state == 0)
-        return mainMenuLogic.update();
-    else if (state == 1)
-        return gameLogic.update();
+    logicManager.update(window);
 
     return 0;
 }
 
 void render(MinGL & window) {
-    if (state == 0) mainMenuLogic.render(window);
-    else if (state == 1) gameLogic.render(window);
-    else window.setBackgroundColor(nsGraphics::RGBAcolor(255, 0, 0, 0));
+    logicManager.render(window);
+}
+
+bool userRequestedClose = false;
+std::map< unsigned char, bool > state;
+void keyboard_down( unsigned char key, int x, int y )
+{
+    if(key == 27)
+        userRequestedClose = !userRequestedClose;
+    else logicManager.onKeyDown(key);
+
+    cout << key << endl;
+
+    state[ key ] = true;
+}
+
+void keyboard_up( unsigned char key, int x, int y )
+{
+    state[ key ] = false;
+}
+
+void timer( int extra )
+{
+    glutPostRedisplay();
+    glutTimerFunc( 64, timer, 0 );
 }
 
 int load()
 {
-    bool userRequestedClose = false;
-
     // Initialise le système
     MinGL window("Double Trouble", nsGraphics::Vec2D(640, 640), nsGraphics::Vec2D(128, 128), nsGraphics::KBlack);
     window.initGlut();
@@ -61,7 +61,12 @@ int load()
     chrono::microseconds frameTime = chrono::microseconds::zero();
 
     // Chargement des ressources
-    mainMenuLogic.load();
+    logicManager.load();
+
+    glutKeyboardFunc( keyboard_down );
+    glutKeyboardUpFunc( keyboard_up );
+    glutTimerFunc( 0, timer, 0 );
+    glutIgnoreKeyRepeat( GL_TRUE );
 
     // On fait tourner la boucle tant que la fenêtre est ouverte
     while (window.isOpen() && !userRequestedClose)

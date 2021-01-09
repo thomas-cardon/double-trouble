@@ -10,7 +10,7 @@ SOURCES += \
     Nos_fichiers/game2d.cpp \
     Nos_fichiers/gameLogic.cpp \
     Nos_fichiers/gridmanagement.cpp \
-    Nos_fichiers/logic.cpp \
+    Nos_fichiers/logicManager.cpp \
     Nos_fichiers/mainMenuLogic.cpp \
     Nos_fichiers/nsutil.cpp \
     Nos_fichiers/params.cpp \
@@ -86,6 +86,7 @@ HEADERS += \
     Nos_fichiers/game2d.h \
     Nos_fichiers/gridmanagement.h \
     Nos_fichiers/logic.h \
+    Nos_fichiers/logicManager.h \
     Nos_fichiers/nsutil.h \
     Nos_fichiers/params.h \
     Nos_fichiers/player.h \

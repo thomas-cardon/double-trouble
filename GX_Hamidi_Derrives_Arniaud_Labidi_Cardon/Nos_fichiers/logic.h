@@ -12,6 +12,7 @@
  **/
 
 #include <mingl/mingl.h>
+#include "logicManager.h"
 
 namespace nsGame {
     /**
@@ -22,29 +23,57 @@ namespace nsGame {
     class Logic {
         public:
 
-        /**
-         * @brief Loads Logic resources
-         * @fn void load();
-         */
-         void load();
+           /**
+            * @brief Loads Logic resources
+            * @fn void load();
+            */
+           void load() {}
 
-         /**
-          * @brief Updates logic
-          * @fn int update();
-          */
-         int update();
+           /**
+            * @brief Updates logic
+            * @fn int update();
+            */
+           int update(MinGL & window) { return 0; }
 
-         /**
-          * @brief Renders resources
-          * @fn void render(MinGL & window);
-          */
-         void render(MinGL & window);
+           /**
+            * @brief Renders resources
+            * @fn void render(MinGL & window);
+            */
+           virtual void render(MinGL & window) {
+               window.setBackgroundColor(nsGraphics::RGBAcolor(0, 255));
+           }
 
-         /**
-          * @brief Handles events
-          * @fn void event(nsEvent::Event_t event);
-          */
-         void events(nsEvent::Event_t event);
+           /**
+            * @brief Handles events
+            * @fn void event(nsEvent::Event_t event);
+            */
+           virtual void events(nsEvent::Event_t event) {
+
+           }
+
+           /**
+            * @brief This function is called everytime a key is pressed.
+            * @fn virtual void onKeyDown(char key);
+            */
+           virtual void onKeyDown(char key) {
+
+           }
+
+           /**
+            * @brief Changes logic
+            * @fn void setLogic(int logic);
+            */
+           void setLogic(int logic) {
+               LogicManager::current = logic;
+           }
+
+           /**
+            * @brief Gets current logic
+            * @fn int getLogic();
+            */
+           int getLogic() {
+               return LogicManager::current;
+           }
     };
 }
 

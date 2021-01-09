@@ -1,20 +1,30 @@
-#include "logic.h"
 #include "mingl/gui/sprite.h"
+#include "logic.h"
 
 using namespace nsGame;
 
 class MainMenuLogic : public Logic {
     public:
-    void load() {
+        nsGui::Sprite background = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/background.i2s", nsGraphics::Vec2D(0, 0));
 
-    }
+        void load() {
 
-    int update() {
-        return 0;
-    }
+        }
 
-    void render(MinGL & window) {
-        window << nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/background.i2s", nsGraphics::Vec2D(0, 0));
-    }
+        int update(MinGL & window) {
+            return 0;
+        }
 
+        void onKeyDown(char key) override {
+        }
+
+        void events(nsEvent::Event_t event) override {
+            if (event.eventType == nsEvent::EventType_t::MouseClick) {
+                this->setLogic(1);
+            }
+        }
+
+        void render(MinGL & window) override {
+            window << background;
+        }
 };

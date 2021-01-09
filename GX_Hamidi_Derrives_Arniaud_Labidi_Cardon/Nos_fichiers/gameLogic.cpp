@@ -50,7 +50,13 @@ class GameLogic: public Logic {
         player1.load();
     }
 
-    int update() {
+    void onKeyDown(char key) override {
+        player1.onKeyDown(key);
+    }
+
+    int update(MinGL & window) {
+        player1.update();
+
         return 0;
     }
 
@@ -85,15 +91,13 @@ class GameLogic: public Logic {
         window << nsGui::Sprite(WALL_XY_2, nsGraphics::Vec2D((nbLines - 1) * 32, 0));
         window << nsGui::Sprite(WALL_XY_3, nsGraphics::Vec2D(0, (nbLines - 1) * 32));
         window << nsGui::Sprite(WALL_XY_4, nsGraphics::Vec2D((nbLines - 1) * 32, (nbLines - 1) * 32));
-
-        player1.update(window);
     }
 
-    int render(MinGL & window) {
+    void render(MinGL & window) {
+        window.clearScreen();
+
         renderGrid(window);
         player1.render(window);
-
-        return 0;
     }
 
     bool inCollision(unsigned x, unsigned y) {

@@ -3,11 +3,11 @@
 
 /**
  *
- * @file    player.h
- * @author  Thomas Cardon
- * @date    8 janvier 2020
- * @version 1.0
- * @brief   Player
+ * \file    player.h
+ * \author  Thomas Cardon
+ * \date    8 janvier 2020
+ * \version 1.0
+ * \brief   Player
  *
  **/
 
@@ -39,11 +39,18 @@ namespace nsGame {
              */
             void load();
 
+
+            /**
+             * @brief This function is called everytime a key is pressed.
+             * @fn void onKeyDown(char key);
+             */
+            void onKeyDown(char key);
+
             /**
              * @brief Updates player
-             * @fn int update(MinGL & window);
+             * @fn int update();
              */
-            int update(MinGL & window);
+            int update();
 
             /**
              * @brief Renders resources
