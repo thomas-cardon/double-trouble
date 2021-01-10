@@ -81,7 +81,7 @@ class GameLogic: public Logic {
         InitGrid(Mat, Params, PosPlayer1, PosPlayer2);
         initSprites();
 
-        player1.load();
+        player1.load(Params);
     }
 
     int update(MinGL & window) {

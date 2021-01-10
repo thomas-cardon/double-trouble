@@ -36,13 +36,13 @@ namespace nsGame {
 
             /**
              * @brief This function is called everytime a key is pressed.
-             * @fn void onKeyDown(char key);
+             * @fn void onKeyPress(char key);
              */
-            void onKeyDown(char key);
+            void onKeyPress(char key);
 
             /**
              * @brief Updates player
-             * @fn int update();
+             * @fn int update(MinGL & window);
              */
             int update(MinGL & window);
 
@@ -54,9 +54,9 @@ namespace nsGame {
 
             /**
              * @brief Loads player
-             * @fn void load();
+             * @fn void load(CMyParam params);
              */
-            void load();
+            void load(CMyParam params);
     };
 }
 
