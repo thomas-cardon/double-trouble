@@ -22,12 +22,17 @@
 using namespace nsGame;
 
 void Player::load(CMyParam params) {
-    std::cout << "[Player] Loading" << std::endl;
+    std::cout << "[Player N=" << std::to_string(N) + "] Loading" << std::endl;
 
     this->KEY_UP = params.MapParamChar["P" + std::to_string(N) + "_KeyUp"];
     this->KEY_DOWN = params.MapParamChar["P" + std::to_string(N) + "_KeyDown"];
     this->KEY_LEFT = params.MapParamChar["P" + std::to_string(N) + "_KeyLeft"];
     this->KEY_RIGHT = params.MapParamChar["P" + std::to_string(N) + "_KeyRight"];
+
+    std::cout << "[Player N=" << std::to_string(N) + "] KEY_UP -> " << this->KEY_UP << std::endl;
+    std::cout << "[Player N=" << std::to_string(N) + "] KEY_DOWN -> " << this->KEY_DOWN << std::endl;
+    std::cout << "[Player N=" << std::to_string(N) + "] KEY_LEFT -> " << this->KEY_LEFT << std::endl;
+    std::cout << "[Player N=" << std::to_string(N) + "] KEY_RIGHT -> " << this->KEY_RIGHT << std::endl;
 }
 
 void Player::onKeyPress(char key) {
@@ -40,10 +45,9 @@ void Player::onKeyPress(char key) {
     else return;
 
     canMove = false;
-    this->sprite.setPosition(nsGraphics::Vec2D(this->pos.first * CELL_SIZE, this->pos.second * CELL_SIZE));
 }
 
-int Player::update(MinGL & window) {
+int Player::update(MinGL & window, CMat map) {
     /*
      * Movement cooldowns
      */
@@ -54,18 +58,24 @@ int Player::update(MinGL & window) {
         currentTime = 0;
     }
 
-    if (window.isPressed({ KEY_UP, false }))
+    if (window.isPressed({ KEY_UP, false }) && this->inCollision(map, this->pos.first, this->pos.second - 1))
         onKeyPress(KEY_UP);
-    else if (window.isPressed({ KEY_DOWN, false }))
+    else if (window.isPressed({ KEY_DOWN, false }) && this->inCollision(map, this->pos.first, this->pos.second + 1))
         onKeyPress(KEY_DOWN);
-    else if (window.isPressed({ KEY_LEFT, false }))
+    else if (window.isPressed({ KEY_LEFT, false }) && this->inCollision(map, this->pos.first + 1, this->pos.second))
         onKeyPress(KEY_LEFT);
-    else if (window.isPressed({ KEY_RIGHT, false }))
+    else if (window.isPressed({ KEY_RIGHT, false }) && this->inCollision(map, this->pos.first - 1, this->pos.second))
         onKeyPress(KEY_RIGHT);
 
     return 0;
 }
 
+
+bool Player::inCollision(CMat map, unsigned x, unsigned y) {
+    return true;
+}
+
 void Player::render(MinGL & window) {
+    this->sprite.setPosition(nsGraphics::Vec2D(this->pos.first * CELL_SIZE, this->pos.second * CELL_SIZE));
     window << this->sprite;
 }

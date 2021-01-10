@@ -46,9 +46,9 @@ struct CMyParam {
  */
 struct AuthorizedKey {
     /** List of authorized key for the type char in a struct CMyParam*/
-    const std::vector <std::string> VParamChar {"P1_KeyUp", "P1_KeyDown", "P1_KeyLeft", "P1_KeyRight", "P1_TokenP1", "P1_TokenP2"};
+    const std::vector <std::string> VParamChar {"P1_KeyUp", "P1_KeyDown", "P1_KeyLeft", "P1_KeyRight", "P2_KeyUp", "P2_KeyDown", "P2_KeyLeft", "P2_KeyRight", "TokenP1", "TokenP2"};
     /** List of authorized key for the type string in a struct CMyParam*/
-    const std::vector <std::string> VParamString {"ColorP1", "ColorP2"};
+    const std::vector <std::string> VParamString {};
     /** List of authorized key for the type unsigned in a struct CMyParam*/
     const std::vector <std::string> VParamUnsigned {"NbRow", "NbColumn"};
 };

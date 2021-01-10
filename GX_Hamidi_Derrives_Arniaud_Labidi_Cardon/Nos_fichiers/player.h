@@ -37,9 +37,9 @@ namespace nsGame {
 
             int N = 1;
 
-            Player() : sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile027.i2s") {}
+            Player() : sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player1/bottom-1.i2s", nsGraphics::Vec2D(32, 32)) {}
 
-            Player(int N /* = 2*/) : sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/bottom-1.i2s") {
+            Player(int N /* = 2*/) : sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/bottom-1.i2s", nsGraphics::Vec2D(640 - 64, 640 - 64)) {
                 this->N = N;
             }
 
@@ -51,9 +51,15 @@ namespace nsGame {
 
             /**
              * @brief Updates player
-             * @fn int update(MinGL & window);
+             * @fn int update(MinGL & window, CMat map);
              */
-            int update(MinGL & window);
+            int update(MinGL & window, CMat map);
+
+            /**
+             * @brief Updates player
+             * @fn bool inCollision(CMat map, unsigned x, unsigned y);
+             */
+            bool inCollision(CMat map, unsigned x, unsigned y);
 
             /**
              * @brief Renders resources

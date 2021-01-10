@@ -39,7 +39,7 @@ class GameState: public State {
     CMat Mat;
     CMyParam Params;
 
-    Player player1;
+    Player player1 = Player(1), player2 = Player(2);
 
     void initSprites() {
         const unsigned nbLines = Mat.size ();
@@ -73,19 +73,19 @@ class GameState: public State {
     }
 
     void load() {
-        CPosition PosPlayer1, PosPlayer2;
-
         int RetVal = LoadParams(Params, "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/config.yaml");
         if (RetVal != 0) throw "Une erreur s'est produite lors de la lecture du fichier YAML";
 
-        InitGrid(Mat, Params, PosPlayer1, PosPlayer2);
+        InitGrid(Mat, Params, player1.pos, player2.pos);
         initSprites();
 
         player1.load(Params);
+        player2.load(Params);
     }
 
     int update(MinGL & window) {
-        player1.update(window);
+        player1.update(window, Mat);
+        player2.update(window, Mat);
 
         return 0;
     }
@@ -99,13 +99,8 @@ class GameState: public State {
         window.clearScreen();
 
         renderGrid(window);
+
         player1.render(window);
-    }
-
-    bool inCollision(unsigned x, unsigned y) {
-        if (x <= 1 || x >= Mat[0].size() - 1) return true;
-        if (y <= 1 || y >= Mat.size() - 1) return true;
-
-        return false;
+        player2.render(window);
     }
 };

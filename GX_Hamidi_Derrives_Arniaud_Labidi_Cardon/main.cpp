@@ -17,16 +17,7 @@ using namespace std;
  */
 int main()
 {
-    try
-    {
-        return load();
-    }
-    catch (...)
-    {
-        cerr << "ca c'est mal passe quelque part" << endl;
-        return 1;
-    }
-
+    load();
     return 0;
 } //main ()
 
