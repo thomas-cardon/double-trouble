@@ -8,25 +8,37 @@ include(../MinGL2_IUT_AIX/mingl.pri)
 SOURCES += \
     Nos_fichiers/game.cpp \
     Nos_fichiers/game2d.cpp \
-    Nos_fichiers/gameLogic.cpp \
+    Nos_fichiers/gameState.cpp \
+    Nos_fichiers/gameState.cpp \
     Nos_fichiers/gridmanagement.cpp \
-    Nos_fichiers/logicManager.cpp \
-    Nos_fichiers/mainMenuLogic.cpp \
+    Nos_fichiers/mainMenuState.cpp \
     Nos_fichiers/nsutil.cpp \
     Correc_Prof/params.cpp \
     Nos_fichiers/player.cpp \
+    Nos_fichiers/stateManager.cpp \
     main.cpp
 
 DISTFILES += \
     Nos_fichiers/config.yaml \
     Nos_fichiers/res/gui/Bouton Option.png \
+    Nos_fichiers/res/gui/Bouton Option.png \
+    Nos_fichiers/res/gui/Bouton Quitter.png \
     Nos_fichiers/res/gui/Bouton Quitter.png \
     Nos_fichiers/res/gui/Bouton jouer curseur.png \
+    Nos_fichiers/res/gui/Bouton jouer curseur.png \
+    Nos_fichiers/res/gui/Bouton jouer.png \
     Nos_fichiers/res/gui/Bouton jouer.png \
     Nos_fichiers/res/gui/Bouton option curseur.png \
+    Nos_fichiers/res/gui/Bouton option curseur.png \
+    Nos_fichiers/res/gui/Bouton quitter curseur.png \
     Nos_fichiers/res/gui/Bouton quitter curseur.png \
     Nos_fichiers/res/gui/Fond.png \
     Nos_fichiers/res/gui/background.i2s \
+    Nos_fichiers/res/gui/btn_options.i2s \
+    Nos_fichiers/res/gui/btn_play.i2s \
+    Nos_fichiers/res/gui/btn_play_hover.i2s \
+    Nos_fichiers/res/gui/btn_quit.i2s \
+    Nos_fichiers/res/gui/btn_quit_hover.i2s \
     Nos_fichiers/res/gui/img2si.py \
     Nos_fichiers/res/img2si.py \
     Nos_fichiers/res/tile000.png \
@@ -85,9 +97,9 @@ HEADERS += \
     Nos_fichiers/game.h \
     Nos_fichiers/game2d.h \
     Nos_fichiers/gridmanagement.h \
-    Nos_fichiers/logic.h \
-    Nos_fichiers/logicManager.h \
     Nos_fichiers/nsutil.h \
     Nos_fichiers/params.h \
     Nos_fichiers/player.h \
+    Nos_fichiers/state.h \
+    Nos_fichiers/stateManager.h \
     Nos_fichiers/type.h \

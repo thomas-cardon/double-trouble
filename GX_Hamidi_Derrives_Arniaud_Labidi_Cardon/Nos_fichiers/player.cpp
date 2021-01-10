@@ -19,7 +19,7 @@
 
 namespace nsGame {
     /**
-     * @class Logic
+     * @class State
      * @brief Une classe pour différencier les divers états de jeu (dans les menu, en partie, etc.)
      * @authors Thomas Cardon
      */

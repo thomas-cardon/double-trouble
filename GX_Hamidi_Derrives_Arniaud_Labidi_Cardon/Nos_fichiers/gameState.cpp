@@ -10,7 +10,7 @@
 
 using namespace nsGame;
 
-class GameLogic: public Logic {
+class GameState: public State {
     public:
     const unsigned KSize = 10;
     const unsigned PartyNum = 10;

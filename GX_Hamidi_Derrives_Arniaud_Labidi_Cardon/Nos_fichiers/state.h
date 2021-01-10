@@ -7,30 +7,30 @@
  * @author  Thomas Cardon
  * @date    8 janvier 2020
  * @version 1.0
- * @brief   Logic
+ * @brief   State
  *
  **/
 
 #include <mingl/mingl.h>
-#include "logicManager.h"
+#include "stateManager.h"
 
 namespace nsGame {
     /**
-     * @class Logic
-     * @brief Une classe pour différencier les divers états de jeu (dans les menu, en partie, etc.)
+     * @class State
+     * @brief A class defining the different states of the game (In-game, Menus, Loading...)
      * @author Thomas Cardon
      */
-    class Logic {
+    class State {
         public:
 
            /**
-            * @brief Loads Logic resources
+            * @brief Loads State resources
             * @fn void load();
             */
            void load() {}
 
            /**
-            * @brief Updates logic
+            * @brief Updates state
             * @fn int update();
             */
            int update(MinGL & window) { return 0; }
@@ -44,7 +44,7 @@ namespace nsGame {
            }
 
            /**
-            * @brief Handles events
+            * @brief Handles minGL 2 mouse events
             * @fn void event(nsEvent::Event_t event);
             */
            virtual void events(nsEvent::Event_t event) {
@@ -53,18 +53,18 @@ namespace nsGame {
 
            /**
             * @brief Changes logic
-            * @fn void setLogic(int logic);
+            * @fn void setState(int logic);
             */
-           void setLogic(int logic) {
-               LogicManager::current = logic;
+           void setState(int logic) {
+               StateManager::current = logic;
            }
 
            /**
             * @brief Gets current logic
-            * @fn int getLogic();
+            * @fn int getState();
             */
-           int getLogic() {
-               return LogicManager::current;
+           int getState() {
+               return StateManager::current;
            }
     };
 }

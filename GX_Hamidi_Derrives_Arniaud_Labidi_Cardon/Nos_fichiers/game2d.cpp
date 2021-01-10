@@ -8,11 +8,11 @@
 #include "mingl/mingl.h"
 #include <GL/glut.h>
 
-#include "logicManager.cpp"
+#include "stateManager.cpp"
 
 using namespace std;
 
-LogicManager logicManager = LogicManager();
+StateManager logicManager = StateManager();
 int update(MinGL & window) {
     if (window.isPressed({ 27, true }))
         return -1;
