@@ -9,8 +9,7 @@ SOURCES += \
     Nos_fichiers/game.cpp \
     Nos_fichiers/game2d.cpp \
     Nos_fichiers/gameState.cpp \
-    Nos_fichiers/gameState.cpp \
-    Nos_fichiers/gridmanagement.cpp \
+    Correc_Prof/gridmanagement.cpp \
     Nos_fichiers/loadingState.cpp \
     Nos_fichiers/mainMenuState.cpp \
     Nos_fichiers/nsutil.cpp \
@@ -97,9 +96,9 @@ DISTFILES += \
 HEADERS += \
     Nos_fichiers/game.h \
     Nos_fichiers/game2d.h \
-    Nos_fichiers/gridmanagement.h \
+    Correc_Prof/gridmanagement.h \
     Nos_fichiers/nsutil.h \
-    Nos_fichiers/params.h \
+    Correc_Prof/params.h \
     Nos_fichiers/player.h \
     Nos_fichiers/state.h \
     Nos_fichiers/stateManager.h \

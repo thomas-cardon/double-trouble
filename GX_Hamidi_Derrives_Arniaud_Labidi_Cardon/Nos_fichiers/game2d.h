@@ -1,4 +1,3 @@
-
 #ifndef GAME_2D_H
 #define GAME_2D_H
 

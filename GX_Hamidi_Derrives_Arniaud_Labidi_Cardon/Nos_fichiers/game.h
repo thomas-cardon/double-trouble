@@ -1,6 +1,5 @@
-
-#ifndef GAME_2_H
-#define GAME_2_H
+#ifndef GAME_H
+#define GAME_H
 
 /*!
  * \file game.h
