@@ -36,8 +36,8 @@ namespace nsGame {
             CPosition pos = CPosition(1, 1);
             nsGui::Sprite texture;
 
-            Player() : texture("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile027.i2s", nsGraphics::Vec2D(32, 32)) {}
-            Player(std::string texturePath): texture("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/" + texturePath, nsGraphics::Vec2D(32, 32)) {}
+            Player() : texture("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player1/1-1.i2s", nsGraphics::Vec2D(32, 32)) {}
+            Player(std::string texturePath): texture("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/" + texturePath, nsGraphics::Vec2D(32, 32)) {}
 
             void load(CMyParam params) {
                 std::cout << "[Player] Loading" << std::endl;
