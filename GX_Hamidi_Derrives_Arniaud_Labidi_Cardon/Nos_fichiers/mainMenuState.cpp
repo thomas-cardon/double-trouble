@@ -1,5 +1,5 @@
 #include "mingl/gui/sprite.h"
-#include "logic.h"
+#include "state.h"
 
 using namespace nsGame;
 

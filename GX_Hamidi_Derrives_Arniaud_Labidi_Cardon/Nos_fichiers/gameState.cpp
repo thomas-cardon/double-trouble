@@ -1,4 +1,4 @@
-#include "logic.h"
+#include "state.h"
 
 #include "type.h"
 #include "gridmanagement.h"

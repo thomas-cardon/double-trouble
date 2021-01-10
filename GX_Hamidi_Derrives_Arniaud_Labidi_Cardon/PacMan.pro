@@ -11,6 +11,7 @@ SOURCES += \
     Nos_fichiers/gameState.cpp \
     Nos_fichiers/gameState.cpp \
     Nos_fichiers/gridmanagement.cpp \
+    Nos_fichiers/loadingState.cpp \
     Nos_fichiers/mainMenuState.cpp \
     Nos_fichiers/nsutil.cpp \
     Correc_Prof/params.cpp \
