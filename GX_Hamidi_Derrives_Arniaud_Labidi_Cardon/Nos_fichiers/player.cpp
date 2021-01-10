@@ -8,6 +8,10 @@
  *
  **/
 
+#define CELL_SIZE 32
+
+#include <time.h>
+
 #include <mingl/mingl.h>
 #include <mingl/gui/sprite.h>
 
@@ -20,27 +24,25 @@ namespace nsGame {
      * @authors Thomas Cardon
      */
     class Player {
+        private:
+            int startTime = 0;
+            int currentTime = 0;
+            int delay = 5;
+
+            bool canMove = true;
         public:
-            CPosition pos;
+            CPosition pos = CPosition(1, 1);
+            nsGui::Sprite texture;
 
-            std::string texturePath = "tile027.i2s";
-            nsGui::Sprite texture = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/" + texturePath, nsGraphics::Vec2D(32, 32));
+            Player() : texture("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile027.i2s", nsGraphics::Vec2D(32, 32)) {}
+            Player(std::string texturePath): texture("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/" + texturePath, nsGraphics::Vec2D(32, 32)) {}
 
-            Player() {}
-
-            Player(std::string texture) {
-                this->texturePath = texture;
-                this->texture = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/" + texturePath, nsGraphics::Vec2D(32, 32));
-            }
-
-            void load() {
-                pos.first = 1;
-                pos.second = 1;
-
-            }
+            void load() {}
 
             void onKeyDown(char key) {
                 std::cout << "key down" << std::endl;
+
+                if (!canMove) return;
 
                 if (key == 's') this->pos.second += 1;
                 else if (key == 'z') this->pos.second -= 1;
@@ -48,12 +50,17 @@ namespace nsGame {
                 else if (key == 'q') this->pos.first -= 1;
                 else return;
 
-                texture = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/" + texturePath, nsGraphics::Vec2D(this->pos.first * 32, this->pos.second * 32));
-
+                canMove = false;
+                texture.setPosition(nsGraphics::Vec2D(this->pos.first * CELL_SIZE, this->pos.second * CELL_SIZE));
             }
 
             int update() {
-                std::cout << this->pos.first << " : " << this->pos.second << std::endl;
+                currentTime++;
+
+                if (!canMove && currentTime - startTime > delay) {
+                    canMove = true;
+                    currentTime = 0;
+                }
 
                 return 0;
             }

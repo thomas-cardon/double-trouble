@@ -19,7 +19,7 @@ GameLogic game;
  */
 
 void LogicManager::load() {
-    LogicManager::current = 0;
+    LogicManager::current = 1;
     std::cout << "[LogicManager] Loading" << std::endl;
 
     menu.load();

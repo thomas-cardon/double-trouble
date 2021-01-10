@@ -14,8 +14,17 @@ using namespace std;
 
 LogicManager logicManager = LogicManager();
 int update(MinGL & window) {
-    if (window.isPressed({ 27, false }))
+    if (window.isPressed({ 27, true }))
         return -1;
+
+    if (window.isPressed({ 'z', false }))
+        logicManager.onKeyDown('z');
+    else if (window.isPressed({ 's', false }))
+        logicManager.onKeyDown('s');
+    else if (window.isPressed({ 'q', false }))
+        logicManager.onKeyDown('q');
+    else if (window.isPressed({ 'd', false }))
+        logicManager.onKeyDown('d');
 
     logicManager.update(window);
 
@@ -27,28 +36,6 @@ void render(MinGL & window) {
 }
 
 bool userRequestedClose = false;
-std::map< unsigned char, bool > state;
-void keyboard_down( unsigned char key, int x, int y )
-{
-    if(key == 27)
-        userRequestedClose = !userRequestedClose;
-    else logicManager.onKeyDown(key);
-
-    cout << key << endl;
-
-    state[ key ] = true;
-}
-
-void keyboard_up( unsigned char key, int x, int y )
-{
-    state[ key ] = false;
-}
-
-void timer( int extra )
-{
-    glutPostRedisplay();
-    glutTimerFunc( 64, timer, 0 );
-}
 
 int load()
 {
@@ -63,11 +50,6 @@ int load()
     // Chargement des ressources
     logicManager.load();
 
-    glutKeyboardFunc( keyboard_down );
-    glutKeyboardUpFunc( keyboard_up );
-    glutTimerFunc( 0, timer, 0 );
-    glutIgnoreKeyRepeat( GL_TRUE );
-
     // On fait tourner la boucle tant que la fenêtre est ouverte
     while (window.isOpen() && !userRequestedClose)
     {
@@ -77,9 +59,7 @@ int load()
         // On efface la fenêtre
         window.clearScreen();
 
-        /*
-         * Ici, écrivez votre logique d'affichage et de gestion des évènements
-         */
+        // On fait tourner les procédures
         int ret = update(window);
         if (ret == -1) userRequestedClose = true;
 
@@ -87,6 +67,9 @@ int load()
 
         // On finit la frame en cours
         window.finishFrame();
+
+        // On vide la queue d'évènements
+        window.getEventManager().clearEvents();
 
         // On attend un peu pour limiter le framerate et soulager le CPU
         this_thread::sleep_for(chrono::milliseconds(1000 / FPS_LIMIT) - chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start));
