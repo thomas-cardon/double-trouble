@@ -22,13 +22,12 @@ namespace nsGame {
      */
     class LogicManager {
         public:
+            /* ID de Logic actuel */
             static int current;
 
             void load();
 
             void events(MinGL & window);
-
-            void onKeyDown(char key);
 
             int update(MinGL & window);
             void render(MinGL & window);

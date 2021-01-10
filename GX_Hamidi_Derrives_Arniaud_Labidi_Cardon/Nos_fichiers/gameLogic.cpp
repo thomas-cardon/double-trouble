@@ -84,12 +84,8 @@ class GameLogic: public Logic {
         player1.load();
     }
 
-    void onKeyDown(char key) override {
-        player1.onKeyDown(key);
-    }
-
     int update(MinGL & window) {
-        player1.update();
+        player1.update(window);
 
         return 0;
     }

@@ -46,8 +46,3 @@ void LogicManager::render(MinGL & window) {
     if (current == 0) menu.render(window);
     else if (current == 1) game.render(window);
 }
-
-void LogicManager::onKeyDown(char key) {
-    if (current == 0) menu.onKeyDown(key);
-    else if (current == 1) game.onKeyDown(key);
-}

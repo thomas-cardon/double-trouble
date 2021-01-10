@@ -1,5 +1,5 @@
-#ifndef LOGIC_H
-#define LOGIC_H
+#ifndef PLAYER_H
+#define PLAYER_H
 
 /**
  *
@@ -16,8 +16,8 @@
 
 namespace nsGame {
     /**
-     * @class Logic
-     * @brief Une classe pour différencier les divers états de jeu (dans les menu, en partie, etc.)
+     * @class Player
+     * @brief Defines the player's class
      * @author  Thomas Cardon
      */
     class Player {
@@ -33,12 +33,6 @@ namespace nsGame {
                 this->texture = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/" + texture;
             }
 
-            /**
-             * @brief Loads player
-             * @fn void load();
-             */
-            void load();
-
 
             /**
              * @brief This function is called everytime a key is pressed.
@@ -50,14 +44,20 @@ namespace nsGame {
              * @brief Updates player
              * @fn int update();
              */
-            int update();
+            int update(MinGL & window);
 
             /**
              * @brief Renders resources
              * @fn void render(MinGL & window);
              */
             void render(MinGL & window);
+
+            /**
+             * @brief Loads player
+             * @fn void load();
+             */
+            void load();
     };
 }
 
-#endif // LOGIC_H
+#endif // PLAYER_H

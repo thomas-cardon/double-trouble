@@ -15,9 +15,6 @@ class MainMenuLogic : public Logic {
             return 0;
         }
 
-        void onKeyDown(char key) override {
-        }
-
         void events(nsEvent::Event_t event) override {
             if (event.eventType == nsEvent::EventType_t::MouseClick) {
                 this->setLogic(1);

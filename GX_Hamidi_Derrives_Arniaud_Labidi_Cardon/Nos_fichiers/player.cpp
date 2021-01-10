@@ -54,13 +54,25 @@ namespace nsGame {
                 texture.setPosition(nsGraphics::Vec2D(this->pos.first * CELL_SIZE, this->pos.second * CELL_SIZE));
             }
 
-            int update() {
+            int update(MinGL & window) {
+                /*
+                 * Movement cooldowns
+                 */
                 currentTime++;
 
                 if (!canMove && currentTime - startTime > delay) {
                     canMove = true;
                     currentTime = 0;
                 }
+
+                if (window.isPressed({ 'z', false }))
+                    onKeyDown('z');
+                else if (window.isPressed({ 's', false }))
+                    onKeyDown('s');
+                else if (window.isPressed({ 'q', false }))
+                    onKeyDown('q');
+                else if (window.isPressed({ 'd', false }))
+                    onKeyDown('d');
 
                 return 0;
             }

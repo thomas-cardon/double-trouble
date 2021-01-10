@@ -52,14 +52,6 @@ namespace nsGame {
            }
 
            /**
-            * @brief This function is called everytime a key is pressed.
-            * @fn virtual void onKeyDown(char key);
-            */
-           virtual void onKeyDown(char key) {
-
-           }
-
-           /**
             * @brief Changes logic
             * @fn void setLogic(int logic);
             */

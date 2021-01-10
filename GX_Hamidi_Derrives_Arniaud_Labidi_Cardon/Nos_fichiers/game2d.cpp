@@ -17,15 +17,6 @@ int update(MinGL & window) {
     if (window.isPressed({ 27, true }))
         return -1;
 
-    if (window.isPressed({ 'z', false }))
-        logicManager.onKeyDown('z');
-    else if (window.isPressed({ 's', false }))
-        logicManager.onKeyDown('s');
-    else if (window.isPressed({ 'q', false }))
-        logicManager.onKeyDown('q');
-    else if (window.isPressed({ 'd', false }))
-        logicManager.onKeyDown('d');
-
     logicManager.update(window);
 
     return 0;

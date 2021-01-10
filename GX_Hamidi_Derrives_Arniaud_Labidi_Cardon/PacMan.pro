@@ -13,7 +13,7 @@ SOURCES += \
     Nos_fichiers/logicManager.cpp \
     Nos_fichiers/mainMenuLogic.cpp \
     Nos_fichiers/nsutil.cpp \
-    Nos_fichiers/params.cpp \
+    Correc_Prof/params.cpp \
     Nos_fichiers/player.cpp \
     main.cpp
 
