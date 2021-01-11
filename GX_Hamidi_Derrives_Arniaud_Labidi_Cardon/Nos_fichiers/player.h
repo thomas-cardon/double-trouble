@@ -26,6 +26,7 @@ namespace nsGame {
             int startTime = 0;
             int currentTime = 0;
 
+            char IS_FACING;
             char KEY_DOWN, KEY_UP, KEY_LEFT, KEY_RIGHT, KEY_ACTION_1;
 
             bool canMove = true;
@@ -34,7 +35,7 @@ namespace nsGame {
 
         public:
             CPosition pos;
-            nsGui::Sprite sprite;
+            nsGui::Sprite bottomSprite, topSprite, leftSprite, rightSprite;
 
             int hearts = 3;
             double movementSpeed = 1.0;
@@ -45,9 +46,15 @@ namespace nsGame {
         public:
             int N = 1;
 
-            Player() : sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player1/bottom-1.i2s") {}
+            Player() : bottomSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player1/bottom-1.i2s"),
+                                     topSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player1/top-1.i2s"),
+                                     leftSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player1/left-1.i2s"),
+                                     rightSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player1/right-1.i2s") {}
 
-            Player(int N /* = 2*/) : sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/bottom-1.i2s") {
+            Player(int N /* = 2*/) : bottomSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/bottom-1.i2s"),
+                                     topSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/top-1.i2s"),
+                                     leftSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/left-1.i2s"),
+                                     rightSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/right-1.i2s") {
                 this->N = N;
             }
 

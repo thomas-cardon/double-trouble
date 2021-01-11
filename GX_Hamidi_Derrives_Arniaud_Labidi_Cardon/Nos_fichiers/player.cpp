@@ -56,6 +56,7 @@ void Player::onKeyPress(char key) {
     else if (key == KEY_ACTION_1) this->powerball();
     else return;
 
+    IS_FACING = key;
     canMove = false;
 }
 
@@ -96,6 +97,20 @@ bool Player::inCollision(CMat map, unsigned x, unsigned y) {
 }
 
 void Player::render(MinGL & window) {
-    this->sprite.setPosition(nsGraphics::Vec2D(this->pos.first * CELL_SIZE, this->pos.second * CELL_SIZE));
-    window << this->sprite;
+    if (this->IS_FACING == KEY_UP) {
+        this->topSprite.setPosition(nsGraphics::Vec2D(this->pos.first * CELL_SIZE, this->pos.second * CELL_SIZE));
+        window << this->topSprite;
+    }
+    else if (this->IS_FACING == KEY_DOWN) {
+        this->bottomSprite.setPosition(nsGraphics::Vec2D(this->pos.first * CELL_SIZE, this->pos.second * CELL_SIZE));
+        window << this->bottomSprite;
+    }
+    else if (this->IS_FACING == KEY_RIGHT) {
+        this->rightSprite.setPosition(nsGraphics::Vec2D(this->pos.first * CELL_SIZE, this->pos.second * CELL_SIZE));
+        window << this->rightSprite;
+    }
+    else {
+        this->leftSprite.setPosition(nsGraphics::Vec2D(this->pos.first * CELL_SIZE, this->pos.second * CELL_SIZE));
+        window << this->leftSprite;
+    }
 }
