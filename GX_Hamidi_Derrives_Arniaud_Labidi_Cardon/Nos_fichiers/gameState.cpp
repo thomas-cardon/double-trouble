@@ -72,7 +72,7 @@ class GameState: public State {
         sprites.push_back(nsGui::Sprite(WALL_XY_4, nsGraphics::Vec2D((nbLines - 1) * 32, (nbLines - 1) * 32)));
     }
 
-    void load() {
+    void load() override {
         int RetVal = LoadParams(Params, "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/config.yaml");
         if (RetVal != 0) throw "Une erreur s'est produite lors de la lecture du fichier YAML";
 
@@ -83,9 +83,9 @@ class GameState: public State {
         player2.load(Params);
     }
 
-    int update(MinGL & window) {
-        player1.update(window, Mat);
-        player2.update(window, Mat);
+    int update(MinGL & window, int delta) override {
+        player1.update(window, delta, Mat);
+        player2.update(window, delta , Mat);
 
         return 0;
     }
@@ -95,7 +95,7 @@ class GameState: public State {
             window << sprite;
     }
 
-    void render(MinGL & window) {
+    void render(MinGL & window) override {
         window.clearScreen();
 
         renderGrid(window);

@@ -24,6 +24,15 @@ using namespace nsGame;
 void Player::load(CMyParam params) {
     std::cout << "[Player N=" << std::to_string(N) + "] Loading" << std::endl;
 
+    if (this->N == 1) {
+        this->pos.first = 1;
+        this->pos.second = 1;
+    }
+    else {
+        this->pos.first = params.MapParamUnsigned["NbColumn"] - 2;
+        this->pos.second = params.MapParamUnsigned["NbRow"] - 2;
+    }
+
     this->KEY_UP = params.MapParamChar["P" + std::to_string(N) + "_KeyUp"];
     this->KEY_DOWN = params.MapParamChar["P" + std::to_string(N) + "_KeyDown"];
     this->KEY_LEFT = params.MapParamChar["P" + std::to_string(N) + "_KeyLeft"];
@@ -47,31 +56,37 @@ void Player::onKeyPress(char key) {
     canMove = false;
 }
 
-int Player::update(MinGL & window, CMat map) {
+int Player::update(MinGL & window, int delta, CMat map) {
     /*
      * Movement cooldowns
      */
-    currentTime++;
+    currentTime += delta;
 
     if (!canMove && currentTime - startTime > delay) {
         canMove = true;
         currentTime = 0;
     }
 
-    if (window.isPressed({ KEY_UP, false }) && this->inCollision(map, this->pos.first, this->pos.second - 1))
+    if (window.isPressed({ KEY_UP, false }) && !this->inCollision(map, this->pos.first, this->pos.second - 1))
         onKeyPress(KEY_UP);
-    else if (window.isPressed({ KEY_DOWN, false }) && this->inCollision(map, this->pos.first, this->pos.second + 1))
+    else if (window.isPressed({ KEY_DOWN, false }) && !this->inCollision(map, this->pos.first, this->pos.second + 1))
         onKeyPress(KEY_DOWN);
-    else if (window.isPressed({ KEY_LEFT, false }) && this->inCollision(map, this->pos.first + 1, this->pos.second))
+    else if (window.isPressed({ KEY_LEFT, false }) && !this->inCollision(map, this->pos.first + 1, this->pos.second))
         onKeyPress(KEY_LEFT);
-    else if (window.isPressed({ KEY_RIGHT, false }) && this->inCollision(map, this->pos.first - 1, this->pos.second))
+    else if (window.isPressed({ KEY_RIGHT, false }) && !this->inCollision(map, this->pos.first - 1, this->pos.second))
         onKeyPress(KEY_RIGHT);
 
     return 0;
 }
 
 
+/*
+ * Empêcher le joueur de passer en dehors des murs!
+ */
 bool Player::inCollision(CMat map, unsigned x, unsigned y) {
+    std::cout << map.size() << " | " << y << std::endl;
+    std::cout << map[0].size() << " | " << x << std::endl;
+
     return true;
 }
 

@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <thread>
+#include <sys/time.h>
 
 #include "mingl/mingl.h"
 #include <GL/glut.h>
@@ -12,18 +13,19 @@
 
 using namespace std;
 
-StateManager logicManager = StateManager();
-int update(MinGL & window) {
+StateManager stateManager = StateManager();
+
+int update(MinGL & window, int delta) {
     if (window.isPressed({ 27, true }))
         return -1;
 
-    logicManager.update(window);
+    stateManager.update(window, delta);
 
     return 0;
 }
 
 void render(MinGL & window) {
-    logicManager.render(window);
+    stateManager.render(window);
 }
 
 bool userRequestedClose = false;
@@ -39,7 +41,7 @@ int load()
     chrono::microseconds frameTime = chrono::microseconds::zero();
 
     // Chargement des ressources
-    logicManager.load();
+    stateManager.load();
 
     // On fait tourner la boucle tant que la fenêtre est ouverte
     while (window.isOpen() && !userRequestedClose)
@@ -51,7 +53,7 @@ int load()
         window.clearScreen();
 
         // On fait tourner les procédures
-        int ret = update(window);
+        int ret = update(window, frameTime.count() / 1000 /* delta */);
         if (ret == -1) userRequestedClose = true;
 
         render(window);

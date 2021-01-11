@@ -6,9 +6,9 @@ using namespace nsGame;
 class LoadingState : public State {
     public:
 
-        void load() {}
+        void load() override {}
 
-        int update(MinGL & window) {
+        int update(MinGL & window, int delta) override {
             return 0;
         }
 

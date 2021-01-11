@@ -25,19 +25,19 @@ namespace nsGame {
 
            /**
             * @brief Loads State resources
-            * @fn void load();
+            * @fn virtual void load();
             */
-           void load() {}
+           virtual void load() {}
 
            /**
             * @brief Updates state
-            * @fn int update();
+            * @fn virtual int update(MinGL & window, int delta);
             */
-           int update(MinGL & window) { return 0; }
+           virtual int update(MinGL & window, int delta) { return 0; }
 
            /**
             * @brief Renders resources
-            * @fn void render(MinGL & window);
+            * @fn virtual void render(MinGL & window);
             */
            virtual void render(MinGL & window) {
                window.setBackgroundColor(nsGraphics::RGBAcolor(0, 255));
@@ -45,11 +45,9 @@ namespace nsGame {
 
            /**
             * @brief Handles minGL 2 mouse events
-            * @fn void event(nsEvent::Event_t event);
+            * @fn virtual void events(nsEvent::Event_t event);
             */
-           virtual void events(nsEvent::Event_t event) {
-
-           }
+           virtual void events(nsEvent::Event_t event) {}
 
            /**
             * @brief Changes logic
