@@ -76,6 +76,8 @@ int Player::update(MinGL & window, int delta, CMat map) {
     else if (window.isPressed({ KEY_RIGHT, false }) && !this->inCollision(map, this->pos.first - 1, this->pos.second))
         onKeyPress(KEY_RIGHT);
 
+    if (canTakeDamage(delta)) std::cout << "[Player N=" << std::to_string(N) + "] can take damage !" << std::endl;
+    else std::cout << "[Player N=" << std::to_string(N) + "] can't take damage !" << std::endl;
     return 0;
 }
 

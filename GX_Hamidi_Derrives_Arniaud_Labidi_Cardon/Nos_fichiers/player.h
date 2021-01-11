@@ -31,9 +31,14 @@ namespace nsGame {
 
             bool canMove = true;
 
+            int _startTimeForDamage, _currentTimeForDamage;
+
         public:
             CPosition pos;
             nsGui::Sprite sprite;
+
+            int hearts = 3;
+            double movementSpeed = 1.0;
 
             int N = 1;
 
@@ -72,6 +77,36 @@ namespace nsGame {
              * @fn void load(CMyParam params);
              */
             void load(CMyParam params);
+
+            /**
+             * @brief Prevents player from being attacked for X milliseconds
+             * @fn void noDamage(int ms);
+             */
+            void noDamage(int ms) {
+
+            }
+
+            /**
+             * @brief Prevents player from being attacked for X milliseconds
+             * @fn bool canTakeDamage(int delta);
+             */
+            bool canTakeDamage(int delta) {
+                _currentTimeForDamage += delta;
+
+                if (_currentTimeForDamage >= 5000) return true;
+                return false;
+            }
+
+            /**
+             * @brief Decrements 1 to hearts, and disable damage for 5 seconds + adds movement speed;
+             * @fn void damage();
+             */
+            void damage() {
+                _startTimeForDamage = 0;
+
+                --hearts;
+                noDamage(5000);
+            }
     };
 }
 
