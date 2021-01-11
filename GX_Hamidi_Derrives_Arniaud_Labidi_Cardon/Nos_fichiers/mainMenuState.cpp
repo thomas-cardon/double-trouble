@@ -1,4 +1,6 @@
 #include "mingl/gui/sprite.h"
+#include "mingl/audio/audioengine.h"
+
 #include "state.h"
 
 #include <chrono>
@@ -8,11 +10,14 @@ using namespace nsGame;
 
 class MainMenuState : public State {
     public:
+        nsAudio::AudioEngine audioEngine;
+
         nsGui::Sprite background = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/background.i2s", nsGraphics::Vec2D(0, 0));
 
         nsGui::Sprite btn_play = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/btn_play.i2s", nsGraphics::Vec2D(278, 432));
         nsGui::Sprite btn_quit = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/btn_quit.i2s", nsGraphics::Vec2D(262, 530));
         nsGui::Sprite btn_options = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/btn_options.i2s", nsGraphics::Vec2D(264, 482));
+
         nsGui::Sprite btn_play_hover = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/btn_play_hover.i2s", nsGraphics::Vec2D(271, 429));
         nsGui::Sprite btn_quit_hover = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/btn_quit_hover.i2s", nsGraphics::Vec2D(252, 529));
         nsGui::Sprite btn_options_hover = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/btn_options_hover.i2s", nsGraphics::Vec2D(254, 478));
@@ -27,6 +32,13 @@ class MainMenuState : public State {
 
         void load() override {
 
+            audioEngine.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-click.wav");
+
+        }
+
+        void buttonHover(int h) {
+            hovering = h;
+            audioEngine.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-click.wav");
         }
 
         int update(MinGL & window, int delta) override {
@@ -52,14 +64,14 @@ class MainMenuState : public State {
             if (!canMove) return 0;
 
             if (window.isPressed({ 'z', false })) { // UP
-                if (hovering == 2) hovering = 0;
-                else hovering += 1;
+                if (hovering == 2) buttonHover(0);
+                else buttonHover(hovering + 1);
 
                 canMove = false;
             }
             else if (window.isPressed({ 's', false })) { // DOWN
-                if (hovering == 0) hovering = 2;
-                else hovering -= 1;
+                if (hovering == 0) buttonHover(2);
+                else buttonHover(hovering - 1);
 
                 canMove = false;
             }

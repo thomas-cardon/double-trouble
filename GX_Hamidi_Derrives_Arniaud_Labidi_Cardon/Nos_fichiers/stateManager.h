@@ -27,13 +27,13 @@ namespace nsGame {
 
             /**
              * @brief Loads all states
-             * @fn void event(nsEvent::Event_t event);
+             * @fn void load();
              */
             void load();
 
             /**
              * @brief Handles minGL 2 mouse events for the current state
-             * @fn void event(nsEvent::Event_t event);
+             * @fn void event(MinGL & window);
              */
             void events(MinGL & window);
 

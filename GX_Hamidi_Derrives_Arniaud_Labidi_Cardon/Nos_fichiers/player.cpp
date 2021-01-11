@@ -87,7 +87,7 @@ bool Player::inCollision(CMat map, unsigned x, unsigned y) {
     std::cout << map.size() << " | " << y << std::endl;
     std::cout << map[0].size() << " | " << x << std::endl;
 
-    return true;
+    return false;
 }
 
 void Player::render(MinGL & window) {

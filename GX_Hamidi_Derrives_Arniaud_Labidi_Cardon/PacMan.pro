@@ -20,6 +20,8 @@ SOURCES += \
 
 DISTFILES += \
     Nos_fichiers/config.yaml \
+    Nos_fichiers/res/audio/3-2-1-go.wav \
+    Nos_fichiers/res/audio/button-click.wav \
     Nos_fichiers/res/gui/Bouton Option.png \
     Nos_fichiers/res/gui/Bouton Option.png \
     Nos_fichiers/res/gui/Bouton Quitter.png \

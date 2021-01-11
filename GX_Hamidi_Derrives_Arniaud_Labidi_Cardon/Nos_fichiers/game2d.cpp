@@ -4,10 +4,9 @@
 
 #include <iostream>
 #include <thread>
-#include <sys/time.h>
 
-#include "mingl/mingl.h"
-#include <GL/glut.h>
+#include <mingl/mingl.h>
+#include "mingl/audio/audioengine.h"
 
 #include "stateManager.cpp"
 
