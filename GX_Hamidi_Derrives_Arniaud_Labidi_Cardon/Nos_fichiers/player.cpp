@@ -38,6 +38,8 @@ void Player::load(CMyParam params) {
     this->KEY_LEFT = params.MapParamChar["P" + std::to_string(N) + "_KeyLeft"];
     this->KEY_RIGHT = params.MapParamChar["P" + std::to_string(N) + "_KeyRight"];
 
+    this->KEY_ACTION_1 = params.MapParamChar["P" + std::to_string(N) + "_KeyAction1"];
+
     std::cout << "[Player N=" << std::to_string(N) + "] KEY_UP -> " << this->KEY_UP << std::endl;
     std::cout << "[Player N=" << std::to_string(N) + "] KEY_DOWN -> " << this->KEY_DOWN << std::endl;
     std::cout << "[Player N=" << std::to_string(N) + "] KEY_LEFT -> " << this->KEY_LEFT << std::endl;
@@ -51,6 +53,7 @@ void Player::onKeyPress(char key) {
     else if (key == KEY_DOWN) this->pos.second += 1;
     else if (key == KEY_RIGHT) this->pos.first += 1;
     else if (key == KEY_LEFT) this->pos.first -= 1;
+    else if (key == KEY_ACTION_1) this->powerball();
     else return;
 
     canMove = false;

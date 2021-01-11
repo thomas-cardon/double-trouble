@@ -25,9 +25,8 @@ namespace nsGame {
         private:
             int startTime = 0;
             int currentTime = 0;
-            int delay = 5;
 
-            char KEY_DOWN, KEY_UP, KEY_LEFT, KEY_RIGHT;
+            char KEY_DOWN, KEY_UP, KEY_LEFT, KEY_RIGHT, KEY_ACTION_1;
 
             bool canMove = true;
 
@@ -40,6 +39,10 @@ namespace nsGame {
             int hearts = 3;
             double movementSpeed = 1.0;
 
+        private:
+            int delay = 125 * movementSpeed;
+
+        public:
             int N = 1;
 
             Player() : sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player1/bottom-1.i2s") {}
@@ -106,6 +109,14 @@ namespace nsGame {
 
                 --hearts;
                 noDamage(5000);
+            }
+
+            /**
+             * @brief Sends powerball
+             * @fn void powerball();
+             */
+            void powerball() {
+                //powerball.setPosition(nsGraphics::Vec2D((this->pos.first + 1) * 32, (this->pos.second) * 32));
             }
     };
 }

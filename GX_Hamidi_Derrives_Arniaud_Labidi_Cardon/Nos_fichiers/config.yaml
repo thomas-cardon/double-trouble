@@ -2,9 +2,11 @@ P1_KeyUp : z
 P1_KeyDown : s
 P1_KeyLeft : q
 P1_KeyRight : d
+P1_KeyAction1 : a
 P2_KeyUp : i
 P2_KeyDown : k
 P2_KeyLeft : j
 P2_KeyRight : l
+P2_KeyAction1 : *
 NbColumn : 20
 NbRow : 20
