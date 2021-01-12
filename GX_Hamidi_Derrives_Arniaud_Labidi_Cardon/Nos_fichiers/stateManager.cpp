@@ -27,18 +27,16 @@ void StateManager::events(MinGL & window) {
     while(window.getEventManager().hasEvent()) {
         const nsEvent::Event_t actualEvent = window.getEventManager().pullEvent();
 
-        std::cout << "pulling event" << std::endl;
         if (current == 0) menu.events(actualEvent);
         else if (current == 1) game.events(actualEvent);
     }
 }
 
 int StateManager::update(MinGL & window, int delta) {
-    events(window);
+    //events(window);
 
     if (current == 0) return menu.update(window, delta);
     else if (current == 1) return game.update(window, delta);
-
 
     return 0;
 }
