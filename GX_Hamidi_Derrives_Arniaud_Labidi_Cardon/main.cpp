@@ -17,9 +17,9 @@ using namespace std;
  */
 int main()
 {
-    load();
-    return 0;
+    try {
+        return load();
+    }  catch (...) {
+        cout << "Thomas a encore cassé un truc" << endl;
+    }
 } //main ()
-
-
-
