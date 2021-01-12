@@ -25,7 +25,7 @@ namespace nsGame {
      * @brief Defines the player's class
      * @author Thomas Cardon
      */
-    class Player : Entity {
+    class Player : public Entity {
         private:
             int startTime = 0;
             int currentTime = 0;
@@ -37,16 +37,12 @@ namespace nsGame {
 
             int _startTimeForDamage, _currentTimeForDamage;
 
+            int delay = 125 * movementSpeed;
         public:
             Animation bottom = Animation(642, true), top = Animation(642, true), left = Animation(642, true), right = Animation(642, true);
 
-            unsigned hearts = 3;
-            double movementSpeed = 1.0;
+            int score = 0;
 
-        private:
-            int delay = 125 * movementSpeed;
-
-        public:
             unsigned N = 1;
 
             Player(Map map, unsigned N /* = 2 */);
@@ -65,7 +61,7 @@ namespace nsGame {
             int update(MinGL & window, int delta, CMat map);
 
             /**
-             * @brief Updates player
+             * @brief Checks if player would be in collision with a structure (walls...)
              * @fn bool inCollision(CMat map, unsigned x, unsigned y);
              */
             bool inCollision(CMat map, unsigned x, unsigned y);
@@ -101,11 +97,9 @@ namespace nsGame {
             void damage();
 
             /**
-             * @brief Sends powerball
-             * @fn void powerball();
+             * @brief Teleports the entity at its spawn
              */
-            void powerball();
-            //powerball.setPosition(nsGraphics::Vec2D((this->pos.first + 1) * 32, (this->pos.second) * 32));
+            void spawn(CMyParam params) override;
     };
 }
 

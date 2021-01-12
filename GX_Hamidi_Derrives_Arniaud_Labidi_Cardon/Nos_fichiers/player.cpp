@@ -21,11 +21,17 @@ Player::Player(unsigned N) : Entity() {
     this->N = N;
 }
 
-void Player::load(CMyParam params) {
-    std::cout << "[Player N=" << std::to_string(N) + "] Loading" << std::endl;
+void Player::spawn(CMyParam params) {
+    this->pos = nsGraphics::Vec2D(0, 0);
 
     this->pos.setX(N == 1 ? 1 : params.MapParamUnsigned["NbColumn"] - 2);
     this->pos.setY(N == 1 ? 1 : params.MapParamUnsigned["NbRow"] - 2);
+}
+
+void Player::load(CMyParam params) {
+    std::cout << "[Player N=" << std::to_string(N) + "] Loading" << std::endl;
+
+    this->spawn(params);
 
     for (int i = 1; i <= 6; i++) {
         this->top.sprites.push_back(nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/top-" + std::to_string(i) + ".i2s"));
@@ -91,7 +97,6 @@ int Player::update(MinGL & window, int delta, CMat map) {
 
     return 0;
 }
-
 
 /*
  * TODO: Empêcher le joueur de passer en dehors des murs!
