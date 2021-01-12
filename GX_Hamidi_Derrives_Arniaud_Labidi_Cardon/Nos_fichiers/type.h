@@ -14,18 +14,26 @@
 #include <map>
 
 /**
+ * @brief Cooldown : alias to the cooldowns and timings for the game
+ * @typedef std::pair<unsigned, unsigned> Cooldown
+ */
+typedef std::pair<unsigned, unsigned> Cooldown;
+
+/**
  * @brief CVLine : alias to a line of the matrix
+ * @typedef typedef std::vector <char> CVLine
  */
 typedef std::vector <char> CVLine;
 
 /**
  * @brief CMat : alias to a game grid type
- * @typedef std::vector <CVLine> CMat;
+ * @typedef std::vector <CVLine> CMat
  */
 typedef std::vector <CVLine> CMat;
 
 /**
  * @brief CPosition : a pair gathering the coordinates in the grid
+ * @typedef std::pair <unsigned, unsigned> CPosition;
  */
 typedef std::pair <unsigned, unsigned> CPosition;
 
