@@ -9,6 +9,8 @@
 
 #include "mingl/transition/transition_engine.h"
 
+#include "map.h"
+#include "cooldowns.h"
 #include "player.cpp"
 
 using namespace nsGame;
@@ -48,6 +50,8 @@ class GameState: public State {
         }
 
         int update(MinGL & window, int delta) override {
+            updateCooldowns(delta);
+
             player1.update(window, delta, map.getMat());
             player2.update(window, delta, map.getMat());
 

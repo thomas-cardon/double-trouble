@@ -7,6 +7,7 @@ include(../MinGL2_IUT_AIX/mingl.pri)
 
 SOURCES += \
     Nos_fichiers/animation.cpp \
+    Nos_fichiers/cooldowns.cpp \
     Nos_fichiers/entity.cpp \
     Nos_fichiers/game2d.cpp \
     Nos_fichiers/gameState.cpp \
@@ -99,6 +100,7 @@ DISTFILES += \
 
 HEADERS += \
     Nos_fichiers/animation.h \
+    Nos_fichiers/cooldowns.h \
     Nos_fichiers/entity.h \
     Nos_fichiers/game2d.h \
     Correc_Prof/gridmanagement.h \
