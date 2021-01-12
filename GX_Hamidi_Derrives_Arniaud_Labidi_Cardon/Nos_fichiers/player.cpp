@@ -115,6 +115,20 @@ bool Player::inCollision(CMat map, unsigned x, unsigned y) {
     return false;
 }
 
+bool Player::canTakeDamage(int delta) {
+    _currentTimeForDamage += delta;
+
+    if (_currentTimeForDamage >= 5000) return true;
+    return false;
+}
+
+void Player::damage() {
+    _startTimeForDamage = 0;
+
+    --hearts;
+    noDamage(5000);
+}
+
 void Player::render(MinGL & window) {
     if (this->IS_FACING == KEY_UP) {
         this->top.setPosition(this->pos.first, this->pos.second);

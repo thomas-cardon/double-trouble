@@ -85,39 +85,26 @@ namespace nsGame {
              * @brief Prevents player from being attacked for X milliseconds
              * @fn void noDamage(int ms);
              */
-            void noDamage(int ms) {
-
-            }
+            void noDamage(int ms);
 
             /**
              * @brief Prevents player from being attacked for X milliseconds
              * @fn bool canTakeDamage(int delta);
              */
-            bool canTakeDamage(int delta) {
-                _currentTimeForDamage += delta;
-
-                if (_currentTimeForDamage >= 5000) return true;
-                return false;
-            }
+            bool canTakeDamage(int delta);
 
             /**
              * @brief Decrements 1 to hearts, and disable damage for 5 seconds + adds movement speed;
              * @fn void damage();
              */
-            void damage() {
-                _startTimeForDamage = 0;
-
-                --hearts;
-                noDamage(5000);
-            }
+            void damage();
 
             /**
              * @brief Sends powerball
              * @fn void powerball();
              */
-            void powerball() {
-                //powerball.setPosition(nsGraphics::Vec2D((this->pos.first + 1) * 32, (this->pos.second) * 32));
-            }
+            //powerball.setPosition(nsGraphics::Vec2D((this->pos.first + 1) * 32, (this->pos.second) * 32));
+            void powerball();
     };
 }
 
