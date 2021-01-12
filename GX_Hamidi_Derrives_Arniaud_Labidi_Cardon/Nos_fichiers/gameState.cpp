@@ -23,12 +23,12 @@ class GameState: public State {
         CMyParam Params;
 
         Player player1 = Player(1), player2 = Player(2);
-        nsGui::Sprite victoryScreen1, victoryScreen2;
+        nsGui::Sprite victoryScreen1, victoryScreen2, equalScreen;
 
 nsAudio::AudioEngine audioEngine;
 
 
-        GameState() : victoryScreen1("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/victory_screen/player1.i2s", nsGraphics::Vec2D(0, 0)), victoryScreen2("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/victory_screen/player2.i2s", nsGraphics::Vec2D(0, 0)) {}
+        GameState() : victoryScreen1("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/victory_screen/player1.i2s", nsGraphics::Vec2D(0, 0)), victoryScreen2("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/victory_screen/player2.i2s", nsGraphics::Vec2D(0, 0)), equalScreen("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/victory_screen/equal.i2s", nsGraphics::Vec2D(0, 0)) {}
 
         void load() override {
             int RetVal = LoadParams(Params, "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/config.yaml");
@@ -43,7 +43,9 @@ nsAudio::AudioEngine audioEngine;
         }
 
         void checkForWin(Player player1, Player player2) {
-            if (player1.hearts == 0) win = 2;
+            if (player1.hearts == 0 && player2.hearts == 0)
+                win = 3;
+            else if (player1.hearts == 0) win = 2;
             else if (player2.hearts == 0) win = 1;
             else {
                 win = -1;
@@ -100,6 +102,9 @@ nsAudio::AudioEngine audioEngine;
             }
             else if (win == 2) {
                 victoryScreen2.draw(window);
+            }
+            else if (win == 3) {
+                equalScreen.draw(window);
             }
         }
 };
