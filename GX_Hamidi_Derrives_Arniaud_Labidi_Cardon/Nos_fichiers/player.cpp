@@ -64,10 +64,8 @@ void Player::onKeyPress(char key) {
     else if (key == KEY_DOWN) this->pos.second += 1;
     else if (key == KEY_RIGHT) this->pos.first += 1;
     else if (key == KEY_LEFT) this->pos.first -= 1;
-    else if (key == KEY_ACTION_1) this->powerball();
+    //else if (key == KEY_ACTION_1) this->powerball();
     else return;
-
-    std::cout << "x: " << this->pos.first << ", y:" << this->pos.second << std::endl;
 
     IS_FACING = key;
     canMove = false;
@@ -98,8 +96,8 @@ int Player::update(MinGL & window, int delta, CMat map) {
 
     this->top.update(delta);
     this->bottom.update(delta);
-    this->left.update(delta);
     this->right.update(delta);
+    this->left.update(delta);
 
     return 0;
 }
@@ -109,9 +107,6 @@ int Player::update(MinGL & window, int delta, CMat map) {
  * TODO: Empêcher le joueur de passer en dehors des murs!
  */
 bool Player::inCollision(CMat map, unsigned x, unsigned y) {
-    std::cout << map.size() << " | " << y << std::endl;
-    std::cout << map[0].size() << " | " << x << std::endl;
-
     return false;
 }
 
@@ -128,6 +123,8 @@ void Player::damage() {
     --hearts;
     noDamage(5000);
 }
+
+void Player::noDamage(int ms) {}
 
 void Player::render(MinGL & window) {
     if (this->IS_FACING == KEY_UP) {

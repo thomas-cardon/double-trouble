@@ -103,8 +103,8 @@ namespace nsGame {
              * @brief Sends powerball
              * @fn void powerball();
              */
-            //powerball.setPosition(nsGraphics::Vec2D((this->pos.first + 1) * 32, (this->pos.second) * 32));
             void powerball();
+            //powerball.setPosition(nsGraphics::Vec2D((this->pos.first + 1) * 32, (this->pos.second) * 32));
     };
 }
 
