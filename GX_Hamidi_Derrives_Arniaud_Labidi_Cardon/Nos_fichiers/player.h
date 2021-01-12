@@ -45,7 +45,6 @@ namespace nsGame {
 
             unsigned N = 1;
 
-            Player(Map map, unsigned N /* = 2 */);
             Player(unsigned N /* = 2 */);
 
             /**
@@ -100,6 +99,12 @@ namespace nsGame {
              * @brief Teleports the entity at its spawn
              */
             void spawn(CMyParam params) override;
+
+            /**
+             * @brief Sets the movement speed
+             * @fn void setMovementSpeed(double speed);
+             */
+            void setMovementSpeed(double speed) override;
     };
 }
 

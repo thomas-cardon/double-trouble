@@ -24,3 +24,11 @@ void Entity::spawn(CMyParam params) {
     this->pos.setX(0);
     this->pos.setY(0);
 }
+
+double Entity::getMovementSpeed() {
+    return this->movementSpeed;
+}
+
+void Entity::setMovementSpeed(double speed) {
+    this->movementSpeed = speed;
+}

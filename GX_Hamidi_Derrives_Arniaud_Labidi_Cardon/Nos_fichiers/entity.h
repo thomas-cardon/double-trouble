@@ -4,8 +4,7 @@
 #define CELL_SIZE 32
 
 #include <mingl/graphics/vec2d.h>
-
-#include "map.cpp"
+#include "cooldowns.cpp"
 
 namespace nsGame
 {
@@ -16,9 +15,10 @@ namespace nsGame
      */
     class Entity
     {
+        protected:
+            double movementSpeed = 1.0;
         public:
             unsigned hearts = 3;
-            double movementSpeed = 1.0;
 
             nsGraphics::Vec2D pos;
 
@@ -42,8 +42,21 @@ namespace nsGame
 
             /**
              * @brief Teleports the entity at its spawn
+             * @fn virtual void spawn(CMyParam params);
              */
             virtual void spawn(CMyParam params);
+
+            /**
+             * @brief Gets the movement speed
+             * @fn bool getMovementSpeed();
+             */
+            virtual double getMovementSpeed();
+
+            /**
+             * @brief Sets the movement speed
+             * @fn void setMovementSpeed(double speed);
+             */
+            virtual void setMovementSpeed(double speed);
     };
 }
 

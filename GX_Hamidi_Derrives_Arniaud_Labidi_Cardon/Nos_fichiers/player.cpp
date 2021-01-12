@@ -15,6 +15,8 @@
 #include "player.h"
 #include "entity.h"
 
+#include "cooldowns.h"
+
 using namespace nsGame;
 
 Player::Player(unsigned N) : Entity() {
@@ -31,6 +33,7 @@ void Player::spawn(CMyParam params) {
 void Player::load(CMyParam params) {
     std::cout << "[Player N=" << std::to_string(N) + "] Loading" << std::endl;
 
+    createCooldown("player" + std::to_string(N) + "_move", 200 / movementSpeed);
     this->spawn(params);
 
     for (int i = 1; i <= 6; i++) {
@@ -71,12 +74,7 @@ int Player::update(MinGL & window, int delta, CMat map) {
     /*
      * Movement cooldowns
      */
-    currentTime += delta;
-
-    if (!canMove && currentTime - startTime > delay) {
-        canMove = true;
-        currentTime = 0;
-    }
+    canMove = isCooldownOver("player" + std::to_string(N) + "_move");
 
     if (window.isPressed({ KEY_UP, false }) && !this->inCollision(map, this->pos.getX(), this->pos.getY() - 1))
         onKeyPress(KEY_UP);
@@ -138,4 +136,9 @@ void Player::render(MinGL & window) {
         this->left.setPosition(this->getCoordinates());
         this->left.render(window);
     }
+}
+
+void Player::setMovementSpeed(double speed) {
+    this->movementSpeed = speed;
+    setCooldownDelay("player" + std::to_string(N) + "_move", 200 / getMovementSpeed());
 }
