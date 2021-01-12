@@ -33,8 +33,6 @@ void Animation::update(unsigned delta) {
             if (inReverse) currentSprite--; // -1 IF REVERSE
             else currentSprite++; // +1 IF REVERSE
         }
-
-        std::cout << currentSprite << std::endl;
     }
 }
 
