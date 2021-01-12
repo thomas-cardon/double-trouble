@@ -31,20 +31,49 @@ namespace nsGame {
             std::vector<nsGui::Sprite> sprites;
             std::vector<nsGraphics::Vec2D> walls;
         public:
+            /**
+             * @brief load
+             * @param params
+             */
             void load(CMyParam & params);
 
+            /**
+             * @brief update
+             * @param delta
+             * @return
+             */
             int update(int delta);
 
+            /**
+             * @brief render
+             * @param window
+             */
             void render(MinGL & window);
 
+            /**
+             * @brief getMinX
+             */
             unsigned getMinX();
 
+            /**
+             * @brief getMinY
+             */
             unsigned getMinY();
 
+            /**
+             * @brief getWidth
+             */
             unsigned getWidth();
 
+            /**
+             * @brief getHeight
+             */
             unsigned getHeight();
 
+            /**
+             * @brief getMat
+             * @return
+             */
             CMat getMat() {
                 return Mat;
             }
