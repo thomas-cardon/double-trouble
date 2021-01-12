@@ -18,7 +18,6 @@
 
 #include "animation.h"
 #include "type.h"
-#include "map.h"
 
 namespace nsGame {
     /**
@@ -56,15 +55,15 @@ namespace nsGame {
 
             /**
              * @brief Updates player
-             * @fn int update(MinGL & window, int delta, Map map);
+             * @fn int update(MinGL & window, int delta, CMat map);
              */
-            int update(MinGL & window, Map map, int delta);
+            int update(MinGL & window, int delta, CMat map);
 
             /**
              * @brief Checks if player would be in collision with a structure (walls...)
-             * @fn bool inCollision(Map map, unsigned x, unsigned y);
+             * @fn bool inCollision(CMat map, unsigned x, unsigned y);
              */
-            bool inCollision(Map map, unsigned x, unsigned y);
+            bool inCollision(CMat map, unsigned x, unsigned y);
 
             /**
              * @brief Renders resources

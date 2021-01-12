@@ -10,6 +10,8 @@
 #include <mingl/mingl.h>
 #include <mingl/gui/sprite.h>
 
+#include "type.h"
+
 #include "player.h"
 #include "entity.h"
 
@@ -69,7 +71,7 @@ void Player::onKeyPress(char key) {
     canMove = false;
 }
 
-int Player::update(MinGL & window, Map map, int delta) {
+int Player::update(MinGL & window, int delta, CMat map) {
     /*
      * Movement cooldowns
      */
@@ -98,7 +100,7 @@ int Player::update(MinGL & window, Map map, int delta) {
 /*
  * TODO: Empêcher le joueur de passer en dehors des murs!
  */
-bool Player::inCollision(Map map, unsigned x, unsigned y) {
+bool Player::inCollision(CMat map, unsigned x, unsigned y) {
     return false;
 }
 

@@ -5,6 +5,7 @@
 #include <mingl/gui/sprite.h>
 
 #include "params.h"
+
 #include "type.h"
 
 namespace nsGame {
@@ -40,7 +41,7 @@ namespace nsGame {
             /**
              * @brief update
              * @param delta
-             * @return
+             * @return 0
              */
             int update(int delta);
 
