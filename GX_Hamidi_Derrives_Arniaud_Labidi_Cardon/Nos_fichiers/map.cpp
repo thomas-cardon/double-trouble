@@ -12,7 +12,7 @@
 using namespace nsGame;
 
 void Map::load(CMyParam & params) {
-    Mat.resize (params.MapParamUnsigned.find("NbColumn")->second);
+    Mat.resize(params.MapParamUnsigned.find("NbColumn")->second);
     const CVLine KLine (params.MapParamUnsigned.find("NbRow")->second, KEmpty);
     for (CVLine &ALine : Mat)
         ALine = KLine;
@@ -46,7 +46,9 @@ void Map::load(CMyParam & params) {
     sprites.push_back(nsGui::Sprite(WALL_XY_4, nsGraphics::Vec2D((lines - 1) * 32, (lines - 1) * 32)));
 }
 
-void Map::update(int delta) {}
+int Map::update(int delta) {
+    return 0;
+}
 
 void Map::render(MinGL & window) {
     for (auto &sprite : sprites)

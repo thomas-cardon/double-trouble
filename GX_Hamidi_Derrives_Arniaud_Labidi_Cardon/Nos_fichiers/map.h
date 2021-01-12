@@ -4,7 +4,6 @@
 #include <mingl/mingl.h>
 #include <mingl/gui/sprite.h>
 
-#include "entity.h"
 #include "params.h"
 #include "type.h"
 
@@ -30,13 +29,11 @@ namespace nsGame {
             const std::string WALL_XY_4 = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile025.i2s";
 
             std::vector<nsGui::Sprite> sprites;
-            std::pair <CPosition, CPosition> walls;
-
-
+            std::vector<nsGraphics::Vec2D> walls;
         public:
             void load(CMyParam & params);
 
-            void update(int delta);
+            int update(int delta);
 
             void render(MinGL & window);
 
