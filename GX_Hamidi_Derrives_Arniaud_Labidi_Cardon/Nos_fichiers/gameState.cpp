@@ -60,6 +60,9 @@ class GameState: public State {
 
                 player1.spawn(Params);
                 player2.spawn(Params);
+
+                player1.score += 1000;
+                player2.score += 1000;
             }
 
             return 0;
@@ -73,8 +76,11 @@ class GameState: public State {
             player1.render(window);
             player2.render(window);
 
-            window << nsGui::Text(nsGraphics::Vec2D(0, 16), "Score: " + std::to_string(player1.score), nsGraphics::KWhite, nsGui::GlutFont::BITMAP_HELVETICA_18);
-            window << nsGui::Text(nsGraphics::Vec2D(0, 48), "Score: " + std::to_string(player1.score), nsGraphics::KWhite, nsGui::GlutFont::BITMAP_HELVETICA_18);
+            window << nsGui::Text(nsGraphics::Vec2D(800, 16), "Score: " + std::to_string(player1.score), nsGraphics::KWhite, nsGui::GlutFont::BITMAP_HELVETICA_18);
+            window << nsGui::Text(nsGraphics::Vec2D(800, 48), "Score: " + std::to_string(player2.score), nsGraphics::KWhite, nsGui::GlutFont::BITMAP_HELVETICA_18);
+
+            window << nsGui::Text(nsGraphics::Vec2D(700, 16), "P1 | HP: " + std::to_string(player1.hearts), nsGraphics::KRed, nsGui::GlutFont::BITMAP_HELVETICA_18);
+            window << nsGui::Text(nsGraphics::Vec2D(700, 48), "P2 | HP: " + std::to_string(player2.hearts), nsGraphics::KRed, nsGui::GlutFont::BITMAP_HELVETICA_18);
 
             if (win == 1) {
                 victoryScreen1.draw(window);
