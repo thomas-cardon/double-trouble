@@ -105,17 +105,11 @@ bool Player::inCollision(CMat map, unsigned x, unsigned y) {
 }
 
 bool Player::canTakeDamage(int delta) {
-    _currentTimeForDamage += delta;
-
-    if (_currentTimeForDamage >= 5000) return true;
-    return false;
+    return true;
 }
 
 void Player::damage() {
-    _startTimeForDamage = 0;
-
     --hearts;
-    noDamage(5000);
 }
 
 void Player::noDamage(int ms) {}

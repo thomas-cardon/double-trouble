@@ -77,18 +77,6 @@ class MainMenuState : public State {
             return 0;
         }
 
-        void events(nsEvent::Event_t event) override {
-            std::cout << "event" << std::endl;
-            if (event.eventType == nsEvent::EventType_t::MouseMove) {
-                std::cout << event.eventData.moveData.x << std::endl;
-                std::cout << event.eventData.moveData.y << std::endl;
-
-                if (event.eventData.moveData.x > btn_play.getPosition().getX() && event.eventData.moveData.x < btn_play.getPosition().getX() + 85 && event.eventData.moveData.y > btn_play.getPosition().getY() && event.eventData.moveData.y < btn_play.getPosition().getY() + 18) {
-                    hovering = 1;
-                }
-            }
-        }
-
         void render(MinGL & window) override {
             window << background;
 

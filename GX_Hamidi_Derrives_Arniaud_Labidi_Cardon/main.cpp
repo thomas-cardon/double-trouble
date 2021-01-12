@@ -7,7 +7,7 @@
  */
 
 #include <iostream>
-#include "Nos_fichiers/game2d.h"
+#include "Nos_fichiers/game2d.cpp"
 
 using namespace std;
 

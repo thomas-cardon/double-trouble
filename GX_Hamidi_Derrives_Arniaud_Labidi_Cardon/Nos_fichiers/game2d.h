@@ -10,7 +10,7 @@
  * @param delta
  * @return
  */
-int update(MinGL & window, int delta);
+void update(MinGL & window, int delta);
 
 /**
  * @brief render
