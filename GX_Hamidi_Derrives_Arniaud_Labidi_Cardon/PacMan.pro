@@ -7,11 +7,13 @@ include(../MinGL2_IUT_AIX/mingl.pri)
 
 SOURCES += \
     Nos_fichiers/animation.cpp \
+    Nos_fichiers/entity.cpp \
     Nos_fichiers/game2d.cpp \
     Nos_fichiers/gameState.cpp \
     Correc_Prof/gridmanagement.cpp \
     Nos_fichiers/loadingState.cpp \
     Nos_fichiers/mainMenuState.cpp \
+    Nos_fichiers/map.cpp \
     Nos_fichiers/nsutil.cpp \
     Correc_Prof/params.cpp \
     Nos_fichiers/player.cpp \
@@ -97,8 +99,10 @@ DISTFILES += \
 
 HEADERS += \
     Nos_fichiers/animation.h \
+    Nos_fichiers/entity.h \
     Nos_fichiers/game2d.h \
     Correc_Prof/gridmanagement.h \
+    Nos_fichiers/map.h \
     Nos_fichiers/nsutil.h \
     Correc_Prof/params.h \
     Nos_fichiers/player.h \
