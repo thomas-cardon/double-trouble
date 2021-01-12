@@ -56,6 +56,12 @@ namespace nsGame {
             void setPosition(int x, int y);
 
             /**
+             * @brief Sets position on the map
+             * @fn setPosition(nsGraphics::Vec2D pos);
+             */
+            void setPosition(nsGraphics::Vec2D pos);
+
+            /**
              * @brief Renders resources
              * @fn void render(MinGL & window);
              */

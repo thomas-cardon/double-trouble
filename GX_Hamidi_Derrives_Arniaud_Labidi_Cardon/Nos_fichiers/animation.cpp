@@ -41,6 +41,10 @@ void Animation::setCoordinates(int x, int y) {
     this->_pos.setY(y);
 }
 
+void Animation::setPosition(nsGraphics::Vec2D pos) {
+    this->_pos = pos;
+}
+
 void Animation::setPosition(int x, int y) {
     this->_pos.setX(x * 32); // CELL_SIZE
     this->_pos.setY(y * 32); // CELL_SIZE
