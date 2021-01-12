@@ -33,10 +33,12 @@ void Player::load(CMyParam params) {
         this->pos.second = params.MapParamUnsigned["NbRow"] - 2;
     }
 
-    this->top.sprites.push_back(nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/top-1.i2s"));
-    this->bottom.sprites.push_back(nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/bottom-1.i2s"));
-    this->left.sprites.push_back(nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/left-1.i2s"));
-    this->right.sprites.push_back(nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/right-1.i2s"));
+    for (int i = 1; i <= 6; i++) {
+        this->top.sprites.push_back(nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/top-" + std::to_string(i) + ".i2s"));
+        this->bottom.sprites.push_back(nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/bottom-" + std::to_string(i) + ".i2s"));
+        this->left.sprites.push_back(nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/left-" + std::to_string(i) + ".i2s"));
+        this->right.sprites.push_back(nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/right-" + std::to_string(i) + ".i2s"));
+    }
 
     this->KEY_UP = params.MapParamChar["P" + std::to_string(N) + "_KeyUp"];
     this->KEY_DOWN = params.MapParamChar["P" + std::to_string(N) + "_KeyDown"];

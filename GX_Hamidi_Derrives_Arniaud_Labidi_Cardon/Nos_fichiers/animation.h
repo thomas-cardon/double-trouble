@@ -22,9 +22,12 @@ namespace nsGame {
     {
         private:
             unsigned _currentTime;
+            bool isReversing = false;
+
             nsGraphics::Vec2D _pos;
         public:
-            unsigned delay = 200, currentSprite = 0;
+            unsigned delay = 642, currentSprite = 0;
+            bool reverseAtEnd = true;
 
             std::vector<nsGui::Sprite> sprites;
 
@@ -42,9 +45,21 @@ namespace nsGame {
                 _currentTime += delta;
 
                 if (_currentTime >= delay) {
-                    if (currentSprite == sprites.size()) {
-                        currentSprite = 0;
+                    if (currentSprite == sprites.size() - 1) { // LAST SPRITE
+                        if (reverseAtEnd && !isReversing) {
+                            isReversing = true;
+                            std::cout << "is reversing" << std::endl;
+                        }
+                        else {
+                            currentSprite = 0;
+                            isReversing = false;
+                            std::cout << "is NOT reversing" << std::endl;
+                        }
                     }
+                    else if (isReversing) currentSprite--;
+                    else currentSprite++;
+
+                    std::cout << currentSprite << std::endl;
                 }
             }
 
@@ -72,11 +87,8 @@ namespace nsGame {
              */
             void render(MinGL & window) {
                 nsGui::Sprite sprite = sprites.at(currentSprite);
-                std::cout << "[Animations] Getting pos at x: " << sprite.getPosition().getX() << ", y:" << sprite.getPosition().getY() << std::endl;
 
                 sprite.setPosition(this->_pos);
-                std::cout << "[Animations] Getting pos at x: " << sprite.getPosition().getX() << ", y:" << sprite.getPosition().getY() << std::endl;
-
                 sprite.draw(window);
             }
     };
