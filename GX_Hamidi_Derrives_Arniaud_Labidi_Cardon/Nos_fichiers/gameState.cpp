@@ -56,8 +56,8 @@ nsAudio::AudioEngine audioEngine;
         int update(MinGL & window, int delta) override {
             updateCooldowns(delta);
 
-            player1.update(window, delta, map.getMat());
-            player2.update(window, delta, map.getMat());
+            player1.update(window, map, delta);
+            player2.update(window, map, delta);
 
             checkForWin(player1, player2);
 
