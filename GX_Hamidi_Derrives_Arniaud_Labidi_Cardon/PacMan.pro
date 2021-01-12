@@ -96,6 +96,7 @@ DISTFILES += \
     Nos_fichiers/res/tile029.png
 
 HEADERS += \
+    Nos_fichiers/animation.h \
     Nos_fichiers/game.h \
     Nos_fichiers/game2d.h \
     Correc_Prof/gridmanagement.h \

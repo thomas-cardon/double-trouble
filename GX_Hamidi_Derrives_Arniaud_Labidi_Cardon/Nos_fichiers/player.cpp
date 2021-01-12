@@ -33,6 +33,11 @@ void Player::load(CMyParam params) {
         this->pos.second = params.MapParamUnsigned["NbRow"] - 2;
     }
 
+    this->top.sprites.push_back(nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/top-1.i2s"));
+    this->bottom.sprites.push_back(nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/bottom-1.i2s"));
+    this->left.sprites.push_back(nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/left-1.i2s"));
+    this->right.sprites.push_back(nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/right-1.i2s"));
+
     this->KEY_UP = params.MapParamChar["P" + std::to_string(N) + "_KeyUp"];
     this->KEY_DOWN = params.MapParamChar["P" + std::to_string(N) + "_KeyDown"];
     this->KEY_LEFT = params.MapParamChar["P" + std::to_string(N) + "_KeyLeft"];
@@ -55,6 +60,8 @@ void Player::onKeyPress(char key) {
     else if (key == KEY_LEFT) this->pos.first -= 1;
     else if (key == KEY_ACTION_1) this->powerball();
     else return;
+
+    std::cout << "x: " << this->pos.first << ", y:" << this->pos.second << std::endl;
 
     IS_FACING = key;
     canMove = false;
@@ -80,14 +87,20 @@ int Player::update(MinGL & window, int delta, CMat map) {
     else if (window.isPressed({ KEY_RIGHT, false }) && !this->inCollision(map, this->pos.first - 1, this->pos.second))
         onKeyPress(KEY_RIGHT);
 
-    if (canTakeDamage(delta)) std::cout << "[Player N=" << std::to_string(N) + "] can take damage !" << std::endl;
-    else std::cout << "[Player N=" << std::to_string(N) + "] can't take damage !" << std::endl;
+    //if (canTakeDamage(delta)) std::cout << "[Player N=" << std::to_string(N) + "] can take damage !" << std::endl;
+    //else std::cout << "[Player N=" << std::to_string(N) + "] can't take damage !" << std::endl;
+
+    this->top.update(delta);
+    this->bottom.update(delta);
+    this->left.update(delta);
+    this->right.update(delta);
+
     return 0;
 }
 
 
 /*
- * Empêcher le joueur de passer en dehors des murs!
+ * TODO: Empêcher le joueur de passer en dehors des murs!
  */
 bool Player::inCollision(CMat map, unsigned x, unsigned y) {
     std::cout << map.size() << " | " << y << std::endl;
@@ -98,19 +111,19 @@ bool Player::inCollision(CMat map, unsigned x, unsigned y) {
 
 void Player::render(MinGL & window) {
     if (this->IS_FACING == KEY_UP) {
-        this->topSprite.setPosition(nsGraphics::Vec2D(this->pos.first * CELL_SIZE, this->pos.second * CELL_SIZE));
-        window << this->topSprite;
+        this->top.setPosition(this->pos.first, this->pos.second);
+        this->top.render(window);
     }
     else if (this->IS_FACING == KEY_DOWN) {
-        this->bottomSprite.setPosition(nsGraphics::Vec2D(this->pos.first * CELL_SIZE, this->pos.second * CELL_SIZE));
-        window << this->bottomSprite;
+        this->bottom.setPosition(this->pos.first, this->pos.second);
+        this->bottom.render(window);
     }
     else if (this->IS_FACING == KEY_RIGHT) {
-        this->rightSprite.setPosition(nsGraphics::Vec2D(this->pos.first * CELL_SIZE, this->pos.second * CELL_SIZE));
-        window << this->rightSprite;
+        this->right.setPosition(this->pos.first, this->pos.second);
+        this->right.render(window);
     }
     else {
-        this->leftSprite.setPosition(nsGraphics::Vec2D(this->pos.first * CELL_SIZE, this->pos.second * CELL_SIZE));
-        window << this->leftSprite;
+        this->left.setPosition(this->pos.first, this->pos.second);
+        this->left.render(window);
     }
 }

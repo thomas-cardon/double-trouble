@@ -13,6 +13,8 @@
 
 #include <mingl/mingl.h>
 #include <mingl/gui/sprite.h>
+
+#include "animation.h"
 #include "type.h"
 
 namespace nsGame {
@@ -35,9 +37,10 @@ namespace nsGame {
 
         public:
             CPosition pos;
-            nsGui::Sprite bottomSprite, topSprite, leftSprite, rightSprite;
+            //nsGui::Sprite bottomSprite, topSprite, leftSprite, rightSprite;
+            Animation bottom, top, left, right;
 
-            int hearts = 3;
+            unsigned hearts = 3;
             double movementSpeed = 1.0;
 
         private:
@@ -46,17 +49,25 @@ namespace nsGame {
         public:
             int N = 1;
 
+            Player();
+
+            Player(int N /* = 2 */) {
+                this->N = N;
+            }
+
+            /*
             Player() : bottomSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player1/bottom-1.i2s"),
                                      topSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player1/top-1.i2s"),
                                      leftSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player1/left-1.i2s"),
                                      rightSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player1/right-1.i2s") {}
 
-            Player(int N /* = 2*/) : bottomSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/bottom-1.i2s"),
+            Player(int N /* = 2*) : bottomSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/bottom-1.i2s"),
                                      topSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/top-1.i2s"),
                                      leftSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/left-1.i2s"),
                                      rightSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/right-1.i2s") {
                 this->N = N;
-            }
+            }*/
+
 
             /**
              * @brief This function is called everytime a key is pressed.
