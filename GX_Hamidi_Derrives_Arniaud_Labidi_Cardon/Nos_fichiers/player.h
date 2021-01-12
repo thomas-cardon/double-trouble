@@ -14,6 +14,8 @@
 #include <mingl/mingl.h>
 #include <mingl/gui/sprite.h>
 
+#include "entity.cpp"
+
 #include "animation.h"
 #include "type.h"
 
@@ -23,7 +25,7 @@ namespace nsGame {
      * @brief Defines the player's class
      * @author Thomas Cardon
      */
-    class Player {
+    class Player : Entity {
         private:
             int startTime = 0;
             int currentTime = 0;
@@ -36,7 +38,6 @@ namespace nsGame {
             int _startTimeForDamage, _currentTimeForDamage;
 
         public:
-            CPosition pos;
             Animation bottom = Animation(642, true), top = Animation(642, true), left = Animation(642, true), right = Animation(642, true);
 
             unsigned hearts = 3;
@@ -48,7 +49,7 @@ namespace nsGame {
         public:
             unsigned N = 1;
 
-            Player();
+            Player(Map map, unsigned N /* = 2 */);
             Player(unsigned N /* = 2 */);
 
             /**

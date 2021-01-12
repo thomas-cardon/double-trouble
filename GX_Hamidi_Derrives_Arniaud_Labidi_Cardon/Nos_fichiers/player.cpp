@@ -1,41 +1,31 @@
 /**
  *
- * @file    player.h
+ * @file    player.cpp
  * @author  Thomas Cardon
  * @date    8 janvier 2020
  * @version 1.0
  * @brief   Définition des méthodes de la classe Player
  *
  **/
-
-#define CELL_SIZE 32
-
-#include <time.h>
-
-#include "player.h"
-
 #include <mingl/mingl.h>
 #include <mingl/gui/sprite.h>
 
 #include "type.h"
 
+#include "player.h"
+#include "entity.h"
+
 using namespace nsGame;
 
-Player::Player(unsigned N) {
+Player::Player(unsigned N) : Entity() {
     this->N = N;
 }
 
 void Player::load(CMyParam params) {
     std::cout << "[Player N=" << std::to_string(N) + "] Loading" << std::endl;
 
-    if (this->N == 1) {
-        this->pos.first = 1;
-        this->pos.second = 1;
-    }
-    else {
-        this->pos.first = params.MapParamUnsigned["NbColumn"] - 2;
-        this->pos.second = params.MapParamUnsigned["NbRow"] - 2;
-    }
+    this->pos.setX(N == 1 ? 1 : params.MapParamUnsigned["NbColumn"] - 2);
+    this->pos.setY(N == 1 ? 1 : params.MapParamUnsigned["NbRow"] - 2);
 
     for (int i = 1; i <= 6; i++) {
         this->top.sprites.push_back(nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/top-" + std::to_string(i) + ".i2s"));
@@ -60,10 +50,10 @@ void Player::load(CMyParam params) {
 void Player::onKeyPress(char key) {
     if (!canMove) return;
 
-    if (key == KEY_UP) this->pos.second -= 1;
-    else if (key == KEY_DOWN) this->pos.second += 1;
-    else if (key == KEY_RIGHT) this->pos.first += 1;
-    else if (key == KEY_LEFT) this->pos.first -= 1;
+    if (key == KEY_UP) this->pos.setY(this->pos.getY() - 1);
+    else if (key == KEY_DOWN) this->pos.setY(this->pos.getY() + 1);
+    else if (key == KEY_RIGHT) this->pos.setX(this->pos.getX() + 1);
+    else if (key == KEY_LEFT) this->pos.setX(this->pos.getX() - 1);
     //else if (key == KEY_ACTION_1) this->powerball();
     else return;
 
@@ -82,13 +72,13 @@ int Player::update(MinGL & window, int delta, CMat map) {
         currentTime = 0;
     }
 
-    if (window.isPressed({ KEY_UP, false }) && !this->inCollision(map, this->pos.first, this->pos.second - 1))
+    if (window.isPressed({ KEY_UP, false }) && !this->inCollision(map, this->pos.getX(), this->pos.getY() - 1))
         onKeyPress(KEY_UP);
-    else if (window.isPressed({ KEY_DOWN, false }) && !this->inCollision(map, this->pos.first, this->pos.second + 1))
+    else if (window.isPressed({ KEY_DOWN, false }) && !this->inCollision(map, this->pos.getX(), this->pos.getY() + 1))
         onKeyPress(KEY_DOWN);
-    else if (window.isPressed({ KEY_LEFT, false }) && !this->inCollision(map, this->pos.first + 1, this->pos.second))
+    else if (window.isPressed({ KEY_LEFT, false }) && !this->inCollision(map, this->pos.getX() + 1, this->pos.getY()))
         onKeyPress(KEY_LEFT);
-    else if (window.isPressed({ KEY_RIGHT, false }) && !this->inCollision(map, this->pos.first - 1, this->pos.second))
+    else if (window.isPressed({ KEY_RIGHT, false }) && !this->inCollision(map, this->pos.getX() - 1, this->pos.getY()))
         onKeyPress(KEY_RIGHT);
 
     //if (canTakeDamage(delta)) std::cout << "[Player N=" << std::to_string(N) + "] can take damage !" << std::endl;
@@ -128,19 +118,19 @@ void Player::noDamage(int ms) {}
 
 void Player::render(MinGL & window) {
     if (this->IS_FACING == KEY_UP) {
-        this->top.setPosition(this->pos.first, this->pos.second);
+        this->top.setPosition(this->getCoordinates());
         this->top.render(window);
     }
     else if (this->IS_FACING == KEY_DOWN) {
-        this->bottom.setPosition(this->pos.first, this->pos.second);
+        this->bottom.setPosition(this->getCoordinates());
         this->bottom.render(window);
     }
     else if (this->IS_FACING == KEY_RIGHT) {
-        this->right.setPosition(this->pos.first, this->pos.second);
+        this->right.setPosition(this->getCoordinates());
         this->right.render(window);
     }
     else {
-        this->left.setPosition(this->pos.first, this->pos.second);
+        this->left.setPosition(this->getCoordinates());
         this->left.render(window);
     }
 }
