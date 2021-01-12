@@ -1,12 +1,7 @@
 #include "game2d.h"
 
-#define FPS_LIMIT 60
-
 #include <iostream>
 #include <thread>
-
-#include <mingl/mingl.h>
-#include "mingl/audio/audioengine.h"
 
 #include "stateManager.cpp"
 
