@@ -13,6 +13,8 @@
 
 #include <mingl/mingl.h>
 #include <mingl/gui/sprite.h>
+
+#include "animation.h"
 #include "type.h"
 
 namespace nsGame {
@@ -35,28 +37,19 @@ namespace nsGame {
 
         public:
             CPosition pos;
-            nsGui::Sprite bottomSprite, topSprite, leftSprite, rightSprite;
+            Animation bottom = Animation(642, true), top = Animation(642, true), left = Animation(642, true), right = Animation(642, true);
 
-            int hearts = 3;
+            unsigned hearts = 3;
             double movementSpeed = 1.0;
 
         private:
             int delay = 125 * movementSpeed;
 
         public:
-            int N = 1;
+            unsigned N = 1;
 
-            Player() : bottomSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player1/bottom-1.i2s"),
-                                     topSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player1/top-1.i2s"),
-                                     leftSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player1/left-1.i2s"),
-                                     rightSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player1/right-1.i2s") {}
-
-            Player(int N /* = 2*/) : bottomSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/bottom-1.i2s"),
-                                     topSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/top-1.i2s"),
-                                     leftSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/left-1.i2s"),
-                                     rightSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/right-1.i2s") {
-                this->N = N;
-            }
+            Player();
+            Player(unsigned N /* = 2 */);
 
             /**
              * @brief This function is called everytime a key is pressed.
@@ -92,39 +85,26 @@ namespace nsGame {
              * @brief Prevents player from being attacked for X milliseconds
              * @fn void noDamage(int ms);
              */
-            void noDamage(int ms) {
-
-            }
+            void noDamage(int ms);
 
             /**
              * @brief Prevents player from being attacked for X milliseconds
              * @fn bool canTakeDamage(int delta);
              */
-            bool canTakeDamage(int delta) {
-                _currentTimeForDamage += delta;
-
-                if (_currentTimeForDamage >= 5000) return true;
-                return false;
-            }
+            bool canTakeDamage(int delta);
 
             /**
              * @brief Decrements 1 to hearts, and disable damage for 5 seconds + adds movement speed;
              * @fn void damage();
              */
-            void damage() {
-                _startTimeForDamage = 0;
-
-                --hearts;
-                noDamage(5000);
-            }
+            void damage();
 
             /**
              * @brief Sends powerball
              * @fn void powerball();
              */
-            void powerball() {
-                //powerball.setPosition(nsGraphics::Vec2D((this->pos.first + 1) * 32, (this->pos.second) * 32));
-            }
+            //powerball.setPosition(nsGraphics::Vec2D((this->pos.first + 1) * 32, (this->pos.second) * 32));
+            void powerball();
     };
 }
 

@@ -32,6 +32,7 @@ class GameState: public State {
     const std::string WALL_XY_4 = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile025.i2s";
 
     std::vector<nsGui::Sprite> sprites;
+    std::pair <CPosition, CPosition> walls;
 
     bool Player1Turn = true;
     bool Victory = false;

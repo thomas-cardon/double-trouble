@@ -6,7 +6,7 @@ CONFIG -= qt
 include(../MinGL2_IUT_AIX/mingl.pri)
 
 SOURCES += \
-    Nos_fichiers/game.cpp \
+    Nos_fichiers/animation.cpp \
     Nos_fichiers/game2d.cpp \
     Nos_fichiers/gameState.cpp \
     Correc_Prof/gridmanagement.cpp \
@@ -96,7 +96,7 @@ DISTFILES += \
     Nos_fichiers/res/tile029.png
 
 HEADERS += \
-    Nos_fichiers/game.h \
+    Nos_fichiers/animation.h \
     Nos_fichiers/game2d.h \
     Correc_Prof/gridmanagement.h \
     Nos_fichiers/nsutil.h \
