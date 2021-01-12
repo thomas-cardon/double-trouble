@@ -12,3 +12,15 @@ nsGraphics::Vec2D Entity::getCoordinates() {
 nsGraphics::Vec2D Entity::getPosition() {
     return pos;
 }
+
+bool Entity::canBeHitBy(Entity entity) {
+    if (this->getPosition().getX() == entity.getPosition().getX() && this->getPosition().getY() == entity.getPosition().getY())
+        return true;
+
+    return false;
+}
+
+void Entity::spawn(CMyParam params) {
+    this->pos.setX(0);
+    this->pos.setY(0);
+}
