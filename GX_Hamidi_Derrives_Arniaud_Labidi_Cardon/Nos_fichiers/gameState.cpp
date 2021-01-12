@@ -4,10 +4,9 @@
 #include "gridmanagement.h"
 #include "params.h"
 
-#include "mingl/gui/sprite.h"
-#include "mingl/gui/text.h"
-
-#include "mingl/transition/transition_engine.h"
+#include <mingl/audio/audioengine.h>
+#include <mingl/gui/sprite.h>
+#include <mingl/gui/text.h>
 
 #include "map.h"
 #include "cooldowns.h"
@@ -26,6 +25,9 @@ class GameState: public State {
         Player player1 = Player(1), player2 = Player(2);
         nsGui::Sprite victoryScreen1, victoryScreen2;
 
+nsAudio::AudioEngine audioEngine;
+
+
         GameState() : victoryScreen1("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/victory_screen/player1.i2s", nsGraphics::Vec2D(0, 0)), victoryScreen2("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/victory_screen/player2.i2s", nsGraphics::Vec2D(0, 0)) {}
 
         void load() override {
@@ -33,6 +35,8 @@ class GameState: public State {
             if (RetVal != 0) throw "Une erreur s'est produite lors de la lecture du fichier YAML";
 
             map.load(Params);
+
+            audioEngine.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/player-hit-1.wav");
 
             player1.load(Params);
             player2.load(Params);
@@ -59,6 +63,9 @@ class GameState: public State {
 
             if (player1.canBeHitBy(player2)) {
                 std::cout << "Hit ! P1 HP: " << player1.hearts << " | P2 HP: " << player2.hearts << std::endl;
+
+                audioEngine.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/player-hit-1.wav");
+
                 player1.damage();
                 player2.damage();
 
