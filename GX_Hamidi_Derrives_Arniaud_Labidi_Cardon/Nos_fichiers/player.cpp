@@ -21,6 +21,10 @@
 
 using namespace nsGame;
 
+Player::Player(unsigned N) {
+    this->N = N;
+}
+
 void Player::load(CMyParam params) {
     std::cout << "[Player N=" << std::to_string(N) + "] Loading" << std::endl;
 

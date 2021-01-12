@@ -37,8 +37,7 @@ namespace nsGame {
 
         public:
             CPosition pos;
-            //nsGui::Sprite bottomSprite, topSprite, leftSprite, rightSprite;
-            Animation bottom, top, left, right;
+            Animation bottom = Animation(642, true), top = Animation(642, true), left = Animation(642, true), right = Animation(642, true);
 
             unsigned hearts = 3;
             double movementSpeed = 1.0;
@@ -47,27 +46,10 @@ namespace nsGame {
             int delay = 125 * movementSpeed;
 
         public:
-            int N = 1;
+            unsigned N = 1;
 
             Player();
-
-            Player(int N /* = 2 */) {
-                this->N = N;
-            }
-
-            /*
-            Player() : bottomSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player1/bottom-1.i2s"),
-                                     topSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player1/top-1.i2s"),
-                                     leftSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player1/left-1.i2s"),
-                                     rightSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player1/right-1.i2s") {}
-
-            Player(int N /* = 2*) : bottomSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/bottom-1.i2s"),
-                                     topSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/top-1.i2s"),
-                                     leftSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/left-1.i2s"),
-                                     rightSprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/right-1.i2s") {
-                this->N = N;
-            }*/
-
+            Player(unsigned N /* = 2 */);
 
             /**
              * @brief This function is called everytime a key is pressed.
