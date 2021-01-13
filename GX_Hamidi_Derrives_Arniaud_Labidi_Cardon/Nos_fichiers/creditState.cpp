@@ -6,8 +6,12 @@
 using namespace nsGame;
 
 class CreditState : public State {
+    /**
+     * @class CreditState
+     * @brief Defines the credits
+     * @authors Thomas Cardon, Alexandre Arniaud
+     */
     public:
-
         nsGui::Sprite sprite = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/credits.i2s", nsGraphics::Vec2D(0, 0));
         nsTransition::TransitionEngine transitionEngine;
 

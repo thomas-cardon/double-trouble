@@ -9,6 +9,11 @@
 #include "type.h"
 
 namespace nsGame {
+    /**
+     * @class Map
+     * @brief Defines the game grid, its textures, file loading, coordinates, positions
+     * @author Thomas Cardon
+     */
     class Map
     {
         private:

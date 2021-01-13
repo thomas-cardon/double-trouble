@@ -5,22 +5,20 @@
 #include <mingl/mingl.h>
 
 /**
- * @brief update
- * @param window
- * @param delta
- * @return
+ * @brief Updates all sub components every tick
+ * @fn void update(MinGL & window, unsigned delta);
  */
 void update(MinGL & window, unsigned delta);
 
 /**
- * @brief render
- * @param window
+ * @brief Renders every component
+ * @fn void render(MinGL & window);
  */
 void render(MinGL & window);
 
 /**
- * @brief load
- * @return
+ * @brief Loads the game
+ * @return 0 if game has closed correctly
  */
 int load();
 

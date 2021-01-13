@@ -4,6 +4,11 @@
 using namespace nsGame;
 
 class LoadingState : public State {
+    /**
+     * @class LoadingState
+     * @brief Defines the loading state
+     * @author Thomas Cardon
+     */
     public:
 
         void load() override {}

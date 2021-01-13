@@ -7,6 +7,11 @@
 using namespace nsGame;
 
 class MainMenuState : public State {
+    /**
+     * @class MainMenuState
+     * @brief Defines the main menu
+     * @authors Thomas Cardon, Alexandre Arniaud
+     */
     public:
         nsAudio::AudioEngine audioEngine;
 

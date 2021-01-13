@@ -2,6 +2,15 @@
 
 using namespace nsGame;
 
+/**
+ *
+ * \file    animation.cpp
+ * \author  Thomas Cardon
+ * \date    12 janvier 2020
+ * \version 1.0
+ * \brief   Method definitions for Animation.h
+ */
+
 Animation::Animation(nsGraphics::Vec2D vec) {
     this->_pos = vec;
 }

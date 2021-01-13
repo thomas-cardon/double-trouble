@@ -7,6 +7,15 @@
 #include "gameState.cpp"
 #include "creditState.cpp"
 
+/**
+ *
+ * \file    stateManager.cpp
+ * \author  Thomas Cardon
+ * \date    9 janvier 2020
+ * \version 1.0
+ * \brief   Method definitions for stateManager.h
+ */
+
 using namespace nsGame;
 
 int StateManager::current = -1;

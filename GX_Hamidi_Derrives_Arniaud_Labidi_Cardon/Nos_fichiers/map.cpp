@@ -16,6 +16,15 @@
 #include <mingl/shape/rectangle.h>
 #include <mingl/shape/shape.h>
 
+/**
+ *
+ * \file    map.cpp
+ * \author  Thomas Cardon
+ * \date    13 janvier 2020
+ * \version 1.0
+ * \brief   Method definitions for Map.h
+ */
+
 using namespace nsGame;
 
 void Map::load() {
@@ -67,13 +76,14 @@ void Map::load() {
 void Map::update(unsigned delta) { }
 
 void Map::render(MinGL & window) {
+    window << nsShape::Rectangle(nsGraphics::Vec2D(0, 0), this->Mat[0].size() * 64, this->Mat.size() * 64, nsGraphics::RGBAcolor(4, 4, 100));
+
     for (unsigned y = 0; y < this->Mat.size(); y++) {
         for (unsigned x = 0; x < this->Mat[y].size(); x++) {
             char & c = this->Mat[y][x];
 
             switch(c) {
                 case '0': // CELL
-                    window << nsShape::Rectangle(nsGraphics::Vec2D(x * 32, y * 32), 32, 32, nsGraphics::RGBAcolor(4, 4, 100));
                     break;
                 case '/': // TOP LEFT
                     sprites["CORNER_1"]->setPosition(nsGraphics::Vec2D(x * 32, y * 32));

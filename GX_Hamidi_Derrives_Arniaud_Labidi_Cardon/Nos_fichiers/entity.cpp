@@ -1,5 +1,14 @@
 #include "entity.h"
 
+/**
+ *
+ * \file    entity.cpp
+ * \author  Thomas Cardon
+ * \date    9 janvier 2020
+ * \version 1.0
+ * \brief   Method definitions for Entity.h
+ */
+
 using namespace nsGame;
 
 nsGraphics::Vec2D Entity::getCoordinates() {
