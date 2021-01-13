@@ -34,7 +34,7 @@ nsAudio::AudioEngine audioEngine;
             int RetVal = LoadParams(Params, "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/config.yaml");
             if (RetVal != 0) throw "Une erreur s'est produite lors de la lecture du fichier YAML";
 
-            map.load(Params);
+            map.load();
 
             audioEngine.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/player-hit-1.wav");
 

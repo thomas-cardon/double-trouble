@@ -11,7 +11,7 @@ StateManager stateManager = StateManager();
 
 int update(MinGL & window, int delta) {
     if (window.isPressed({ 27, true }))
-        return -1;
+        window.stopGaphic();
 
     stateManager.update(window, delta);
 
@@ -21,8 +21,6 @@ int update(MinGL & window, int delta) {
 void render(MinGL & window) {
     stateManager.render(window);
 }
-
-bool userRequestedClose = false;
 
 int load()
 {
@@ -38,7 +36,7 @@ int load()
     stateManager.load();
 
     // On fait tourner la boucle tant que la fenêtre est ouverte
-    while (window.isOpen() && !userRequestedClose)
+    while (window.isOpen())
     {
         // Récupère l'heure actuelle
         chrono::time_point<chrono::steady_clock> start = chrono::steady_clock::now();
@@ -47,9 +45,7 @@ int load()
         window.clearScreen();
 
         // On fait tourner les procédures
-        int ret = update(window, frameTime.count() / 1000 /* delta */);
-        if (ret == -1) userRequestedClose = true;
-
+        update(window, frameTime.count() / 1000 /* delta */);
         render(window);
 
         // On finit la frame en cours

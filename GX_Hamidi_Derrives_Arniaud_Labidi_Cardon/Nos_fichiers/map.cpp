@@ -9,41 +9,59 @@
  **/
 #include "map.h"
 
+#include <iostream>
+#include <fstream>
+
+#include <mingl/graphics/vec2d.h>
+#include <mingl/shape/rectangle.h>
+#include <mingl/shape/shape.h>
+
 using namespace nsGame;
 
-void Map::load(CMyParam & params) {
-    Mat.resize(params.MapParamUnsigned.find("NbColumn")->second);
-    const CVLine KLine (params.MapParamUnsigned.find("NbRow")->second, KEmpty);
-    for (CVLine &ALine : Mat)
-        ALine = KLine;
+void Map::load() {
+    std::ifstream input;
 
-    unsigned lines = this->getHeight(), columns = this->getWidth();
-
-    for (unsigned i (0); i < lines; i = i + 1) {
-        for (unsigned j (0); j < Mat[i].size(); ++j) {
-            sprites.push_back(nsGui::Sprite(BLOCK, nsGraphics::Vec2D(i * 32, j * 32)));
-
-            if (j > 0 && j < columns - 1) {
-                /* Murs verticaux d'à gauche */
-                sprites.push_back(nsGui::Sprite(WALL_Y_2, nsGraphics::Vec2D(0, j * 32)));
-                /* Murs verticaux d'à droite */
-                sprites.push_back(nsGui::Sprite(WALL_Y_2, nsGraphics::Vec2D((columns - 1) * 32, j * 32)));
-            }
-        }
-
-        if (i > 0 && i < lines - 1) {
-            /* Murs horizontaux du haut */
-            sprites.push_back(nsGui::Sprite(i == 0 ? WALL_X_1 : (i != lines - 1 ? WALL_X_2 : WALL_X_3), nsGraphics::Vec2D(i * 32, 0)));
-            /* Murs horizontaux du bas */
-            sprites.push_back(nsGui::Sprite(i == 0 ? WALL_X_1 : (i != lines - 1 ? WALL_X_2 : WALL_X_3), nsGraphics::Vec2D(i * 32, (lines - 1) * 32)));
-        }
+    input.open("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/level_1.map");
+    if (!input) {
+        std::cout << "Unable to open file";
+        exit(1); // terminate with error
     }
 
-    /* Recoins */
-    sprites.push_back(nsGui::Sprite(WALL_XY_1, nsGraphics::Vec2D(0, 0)));
-    sprites.push_back(nsGui::Sprite(WALL_XY_2, nsGraphics::Vec2D((lines - 1) * 32, 0)));
-    sprites.push_back(nsGui::Sprite(WALL_XY_3, nsGraphics::Vec2D(0, (lines - 1) * 32)));
-    sprites.push_back(nsGui::Sprite(WALL_XY_4, nsGraphics::Vec2D((lines - 1) * 32, (lines - 1) * 32)));
+    std::vector<std::string> lineList;
+    for( std::string line; getline(input, line ); ) {
+        lineList.push_back(line);
+    }
+
+    int lineIndex = 0;
+    this->Mat.resize(lineList.size());
+
+    for(auto string : lineList) {
+        for(char& c : string) {
+            this->Mat[lineIndex].push_back(c);
+        }
+
+        lineIndex++;
+    }
+
+    input.close();
+
+    /*
+     * On précharge les sprites des murs
+     */
+    /* Murs */
+    sprites.insert(std::pair<std::string, nsGui::Sprite*>("X_1", new nsGui::Sprite(WALL_X_1, nsGraphics::Vec2D(0, 0))));
+    sprites.insert(std::pair<std::string, nsGui::Sprite*>("X_2", new nsGui::Sprite(WALL_X_2, nsGraphics::Vec2D(0, 0))));
+    sprites.insert(std::pair<std::string, nsGui::Sprite*>("X_3", new nsGui::Sprite(WALL_X_3, nsGraphics::Vec2D(0, 0))));
+    sprites.insert(std::pair<std::string, nsGui::Sprite*>("Y_1", new nsGui::Sprite(WALL_Y_1, nsGraphics::Vec2D(0, 0))));
+    sprites.insert(std::pair<std::string, nsGui::Sprite*>("Y_2", new nsGui::Sprite(WALL_Y_2, nsGraphics::Vec2D(0, 0))));
+    sprites.insert(std::pair<std::string, nsGui::Sprite*>("Y_3", new nsGui::Sprite(WALL_Y_3, nsGraphics::Vec2D(0, 0))));
+
+
+    /* Coins */
+    sprites.insert(std::pair<std::string, nsGui::Sprite*>("CORNER_1", new nsGui::Sprite(WALL_XY_1, nsGraphics::Vec2D(0, 0))));
+    sprites.insert(std::pair<std::string, nsGui::Sprite*>("CORNER_2", new nsGui::Sprite(WALL_XY_2, nsGraphics::Vec2D(0, 0))));
+    sprites.insert(std::pair<std::string, nsGui::Sprite*>("CORNER_3", new nsGui::Sprite(WALL_XY_3, nsGraphics::Vec2D(0, 0))));
+    sprites.insert(std::pair<std::string, nsGui::Sprite*>("CORNER_4", new nsGui::Sprite(WALL_XY_4, nsGraphics::Vec2D(0, 0))));
 }
 
 int Map::update(int delta) {
@@ -51,8 +69,41 @@ int Map::update(int delta) {
 }
 
 void Map::render(MinGL & window) {
-    for (auto &sprite : sprites)
-        window << sprite;
+    for (unsigned y = 0; y < this->Mat.size(); y++) {
+        for (unsigned x = 0; x < this->Mat[y].size(); x++) {
+            char & c = this->Mat[y][x];
+
+            switch(c) {
+                case '0': // CELL
+                    window << nsShape::Rectangle(nsGraphics::Vec2D(x * 32, y * 32), 32, 32, nsGraphics::RGBAcolor(4, 4, 100));
+                    break;
+                case '/': // TOP LEFT
+                    sprites["CORNER_1"]->setPosition(nsGraphics::Vec2D(x * 32, y * 32));
+                    sprites["CORNER_1"]->draw(window);
+                    break;
+                case '\\': // TOP RIGHT
+                    sprites["CORNER_2"]->setPosition(nsGraphics::Vec2D(x * 32, y * 32));
+                    sprites["CORNER_2"]->draw(window);
+                    break;
+                case '(': // BOTTOM LEFT
+                    sprites["CORNER_3"]->setPosition(nsGraphics::Vec2D(x * 32, y * 32));
+                    sprites["CORNER_3"]->draw(window);
+                    break;
+                case ')': // BOTTOM RIGHT
+                    sprites["CORNER_4"]->setPosition(nsGraphics::Vec2D(x * 32, y * 32));
+                    sprites["CORNER_4"]->draw(window);
+                    break;
+                case '|': // VERTICAL WALL
+                    sprites["Y_2"]->setPosition(nsGraphics::Vec2D(x * 32, y * 32));
+                    sprites["Y_2"]->draw(window);
+                    break;
+                case '=': // HORIZONTAL WALL
+                    sprites["X_2"]->setPosition(nsGraphics::Vec2D(x * 32, y * 32));
+                    sprites["X_2"]->draw(window);
+                    break;
+            }
+        }
+    }
 }
 
 unsigned Map::getMinX() {

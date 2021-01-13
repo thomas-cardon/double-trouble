@@ -26,7 +26,7 @@ Player::Player(unsigned N) : Entity() {
 void Player::spawn(CMyParam params) {
     this->pos = nsGraphics::Vec2D(0, 0);
 
-    this->pos.setX(N == 1 ? 1 : params.MapParamUnsigned["NbColumn"] - 2);
+    this->pos.setX(N == 1 ? 1 : params.MapParamUnsigned["NbColumn"] - 1);
     this->pos.setY(N == 1 ? 1 : params.MapParamUnsigned["NbRow"] - 2);
 }
 
@@ -34,6 +34,7 @@ void Player::load(CMyParam params) {
     std::cout << "[Player N=" << std::to_string(N) + "] Loading" << std::endl;
 
     createCooldown("player" + std::to_string(N) + "_move", 200 / movementSpeed);
+    createCooldown("player" + std::to_string(N) + "_canTakeDamage", 5000);
 
     this->spawn(params);
 
@@ -81,9 +82,9 @@ int Player::update(MinGL & window, int delta, CMat map) {
         onKeyPress(KEY_UP);
     else if (window.isPressed({ KEY_DOWN, false }) && !this->inCollision(map, this->pos.getX(), this->pos.getY() + 1))
         onKeyPress(KEY_DOWN);
-    else if (window.isPressed({ KEY_LEFT, false }) && !this->inCollision(map, this->pos.getX() + 1, this->pos.getY()))
+    else if (window.isPressed({ KEY_LEFT, false }) && !this->inCollision(map, this->pos.getX() - 1, this->pos.getY()))
         onKeyPress(KEY_LEFT);
-    else if (window.isPressed({ KEY_RIGHT, false }) && !this->inCollision(map, this->pos.getX() - 1, this->pos.getY()))
+    else if (window.isPressed({ KEY_RIGHT, false }) && !this->inCollision(map, this->pos.getX() + 1, this->pos.getY()))
         onKeyPress(KEY_RIGHT);
 
     //if (canTakeDamage(delta)) std::cout << "[Player N=" << std::to_string(N) + "] can take damage !" << std::endl;
@@ -101,14 +102,17 @@ int Player::update(MinGL & window, int delta, CMat map) {
  * TODO: Empêcher le joueur de passer en dehors des murs!
  */
 bool Player::inCollision(CMat map, unsigned x, unsigned y) {
+    if (map.size() < y + 1) return true;
+    if (map[y].size() < x + 1) return true;
+
+    if (map[y][x] != '0') return true;
+
+    std::cout << map[y][x] << std::endl;
     return false;
 }
 
-bool Player::canTakeDamage(int delta) {
-    _currentTimeForDamage += delta;
-
-    if (_currentTimeForDamage >= 5000) return true;
-    return false;
+bool Player::canTakeDamage() {
+    return isCooldownOver("player" + std::to_string(N) + "_canTakeDamage");
 }
 
 void Player::damage() {

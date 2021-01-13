@@ -85,9 +85,9 @@ namespace nsGame {
 
             /**
              * @brief Prevents player from being attacked for X milliseconds
-             * @fn bool canTakeDamage(int delta);
+             * @fn bool canTakeDamage();
              */
-            bool canTakeDamage(int delta);
+            bool canTakeDamage();
 
             /**
              * @brief Decrements 1 to hearts, and disable damage for 5 seconds + adds movement speed;

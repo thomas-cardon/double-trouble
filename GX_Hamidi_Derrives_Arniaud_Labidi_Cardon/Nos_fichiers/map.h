@@ -29,14 +29,12 @@ namespace nsGame {
             const std::string WALL_XY_3 = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile023.i2s";
             const std::string WALL_XY_4 = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile025.i2s";
 
-            std::vector<nsGui::Sprite> sprites;
-            std::vector<nsGraphics::Vec2D> walls;
+            std::map<std::string, nsGui::Sprite*> sprites;
         public:
             /**
              * @brief load
-             * @param params
              */
-            void load(CMyParam & params);
+            void load();
 
             /**
              * @brief update

@@ -17,9 +17,12 @@ using namespace std;
  */
 int main()
 {
+    load();
+    /*
     try {
         return load();
     }  catch (...) {
         cout << "Thomas a encore cassé un truc" << endl;
     }
+    */
 } //main ()
