@@ -8,6 +8,7 @@ include(../MinGL2_IUT_AIX/mingl.pri)
 SOURCES += \
     Nos_fichiers/animation.cpp \
     Nos_fichiers/cooldowns.cpp \
+    Nos_fichiers/creditState.cpp \
     Nos_fichiers/entity.cpp \
     Nos_fichiers/game2d.cpp \
     Nos_fichiers/gameState.cpp \
