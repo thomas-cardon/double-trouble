@@ -1,31 +1,25 @@
-
 #ifndef GAME_2D_H
 #define GAME_2D_H
 
-/*!
- * \file game2d.h
- * \brief 2D version of game.h
- * \author Thomas Cardon
- * \version 1.0
- * \date 7 janvier 2021
- */
-
-#include "./type.h"
-
-
-/*!
- * \brief Moves the current token according to the character in the 2nd parameter
- * \param[in, out] Mat the matrix before and after the move
- * \param[in] Move the key pressed by the user
- * \param[in, out] Pos the player's position before and after the move
- */
-
-void MoveToken (CMat & Mat, const char & Move, CPosition & Pos);
+#define FPS_LIMIT 60
+#include <mingl/mingl.h>
 
 /**
- * @brief Loads the engine and the game
- * @return 0 if everything is OK
- * @fn int ppal ();
+ * @brief Updates all sub components every tick
+ * @fn void update(MinGL & window, unsigned delta);
  */
-int load ();
-#endif // GAME_H
+void update(MinGL & window, unsigned delta);
+
+/**
+ * @brief Renders every component
+ * @fn void render(MinGL & window);
+ */
+void render(MinGL & window);
+
+/**
+ * @brief Loads the game
+ * @return 0 if game has closed correctly
+ */
+int load();
+
+#endif

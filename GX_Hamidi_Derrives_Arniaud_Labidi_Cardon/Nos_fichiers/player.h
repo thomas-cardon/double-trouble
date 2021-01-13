@@ -1,39 +1,105 @@
-#ifndef LOGIC_H
-#define LOGIC_H
+#ifndef PLAYER_H
+#define PLAYER_H
 
 /**
  *
- * @file    player.h
- * @author  Thomas Cardon
- * @date    8 janvier 2020
- * @version 1.0
- * @brief   Player
+ * \file    player.h
+ * \author  Thomas Cardon
+ * \date    8 janvier 2020
+ * \version 1.0
+ * \brief   Player
  *
  **/
 
 #include <mingl/mingl.h>
+#include <mingl/gui/sprite.h>
+
+#include "entity.cpp"
+
+#include "animation.h"
 #include "type.h"
 
 namespace nsGame {
     /**
-     * @class Logic
-     * @brief Une classe pour différencier les divers états de jeu (dans les menu, en partie, etc.)
+     * @class Player
+     * @brief Defines the player's class
+     * @author Thomas Cardon
      */
-    class Player {
+    class Player : public Entity {
+        private:
+            char IS_FACING;
+            char KEY_DOWN, KEY_UP, KEY_LEFT, KEY_RIGHT, KEY_ACTION_1;
+
+            int delay = 125 * movementSpeed;
         public:
-            CPosition pos;
-            std::string texture;
+            /** \brief Animations for every direction */
+            Animation bottom = Animation(642, true), top = Animation(642, true), left = Animation(642, true), right = Animation(642, true);
 
-            Player(std::string texture) {
-                this->texture = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/" + texture;
-            }
+            /** \brief Player score */
+            int score = 0;
 
-            void load();
+            /** \brief Allows player to move or not */
+            bool isAllowedToMove = true, canMove = true;
 
-            int update(MinGL & window);
+            /** \brief Player number */
+            unsigned N = 1;
 
+            Player(unsigned N /* = 2 */);
+
+            /**
+             * @brief This function is called everytime a key is pressed.
+             * @fn void onKeyPress(char key);
+             */
+            void onKeyPress(char key);
+
+            /**
+             * @brief Updates player
+             * @fn void update(MinGL & window, unsigned delta, CMat map);
+             */
+            void update(MinGL & window, unsigned delta, CMat map);
+
+            /**
+             * @brief Renders resources
+             * @fn void render(MinGL & window);
+             */
             void render(MinGL & window);
+
+            /**
+             * @brief Loads player
+             * @fn void load(CMyParam params);
+             */
+            void load(CMyParam params);
+
+            /**
+             * @brief Prevents player from being attacked for X milliseconds
+             * @fn void noDamage(int ms);
+             */
+            void noDamage(int ms);
+
+            /**
+             * @brief Prevents player from being attacked for X milliseconds
+             * @fn bool canTakeDamage();
+             */
+            bool canTakeDamage();
+
+            /**
+             * @brief Decrements 1 to hearts, and disable damage for 5 seconds + adds movement speed;
+             * @fn void damage();
+             */
+            void damage();
+
+            /**
+             * @brief Teleports the entity at its spawn
+             * @fn void spawn();
+             */
+            void spawn() override;
+
+            /**
+             * @brief Sets the movement speed
+             * @fn void setMovementSpeed(double speed);
+             */
+            void setMovementSpeed(double speed) override;
     };
 }
 
-#endif // LOGIC_H
+#endif // PLAYER_H

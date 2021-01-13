@@ -1,48 +1,30 @@
 #include "game2d.h"
 
-#define FPS_LIMIT 60
-
 #include <iostream>
 #include <thread>
 
-#include "mingl/mingl.h"
-
-#include "gameLogic.cpp"
-#include "mainMenuLogic.cpp"
+#include "stateManager.cpp"
+#include "cooldowns.h"
 
 using namespace std;
 
-MainMenuLogic mainMenuLogic;
-GameLogic gameLogic;
+StateManager stateManager = StateManager();
 
-/* 0 = MainMenu, 1 = Game */
-int state = 0;
+void update(MinGL & window, unsigned delta) {
+    if (window.isPressed({ 27, true }))
+        window.stopGaphic();
 
-int update(MinGL & window) {
-    if (window.isPressed({ 27, false }))
-        return -1;
-    else if (window.isPressed({ 13, false })) {
-        gameLogic.load();
-        state = 1;
-    }
-
-    int ret = state == 0 ? mainMenuLogic.update() : gameLogic.update();
-    if (ret != 0) return ret;
-
-    return 0;
+    stateManager.update(window, delta);
 }
 
 void render(MinGL & window) {
-    if (state == 0) mainMenuLogic.render(window);
-    else if (state == 1) gameLogic.render(window);
+    stateManager.render(window);
 }
 
 int load()
 {
-    bool userRequestedClose = false;
-
     // Initialise le système
-    MinGL window("Pacman", nsGraphics::Vec2D(640, 640), nsGraphics::Vec2D(128, 128), nsGraphics::KBlack);
+    MinGL window("Double Trouble", nsGraphics::Vec2D(900, 640), nsGraphics::Vec2D(128, 128), nsGraphics::KBlack);
     window.initGlut();
     window.initGraphic();
 
@@ -50,10 +32,10 @@ int load()
     chrono::microseconds frameTime = chrono::microseconds::zero();
 
     // Chargement des ressources
-    mainMenuLogic.load();
+    stateManager.load();
 
     // On fait tourner la boucle tant que la fenêtre est ouverte
-    while (window.isOpen() && !userRequestedClose)
+    while (window.isOpen())
     {
         // Récupère l'heure actuelle
         chrono::time_point<chrono::steady_clock> start = chrono::steady_clock::now();
@@ -61,16 +43,16 @@ int load()
         // On efface la fenêtre
         window.clearScreen();
 
-        /*
-         * Ici, écrivez votre logique d'affichage et de gestion des évènements
-         */
-        int ret = update(window);
-        if (ret == -1) userRequestedClose = true;
-
+        // On fait tourner les procédures
+        updateCooldowns(frameTime.count() / 1000 /* delta */);
+        update(window, frameTime.count() / 1000 /* delta */);
         render(window);
 
         // On finit la frame en cours
         window.finishFrame();
+
+        // On vide la queue d'évènements
+        window.getEventManager().clearEvents();
 
         // On attend un peu pour limiter le framerate et soulager le CPU
         this_thread::sleep_for(chrono::milliseconds(1000 / FPS_LIMIT) - chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start));

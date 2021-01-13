@@ -17,18 +17,12 @@ using namespace std;
  */
 int main()
 {
-    try
-    {
+    load();
+    /*
+    try {
         return load();
+    }  catch (...) {
+        cout << "Thomas a encore cassé un truc" << endl;
     }
-    catch (...)
-    {
-        cerr << "ca c'est mal passe quelque part" << endl;
-        return 1;
-    }
-
-    return 0;
+    */
 } //main ()
-
-
-
