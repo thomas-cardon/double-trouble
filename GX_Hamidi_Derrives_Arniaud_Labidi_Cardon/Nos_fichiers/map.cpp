@@ -64,7 +64,7 @@ void Map::load() {
     sprites.insert(std::pair<std::string, nsGui::Sprite*>("CORNER_4", new nsGui::Sprite(WALL_XY_4, nsGraphics::Vec2D(0, 0))));
 }
 
-void Map::update(unsigned delta) {}
+void Map::update(unsigned delta) { }
 
 void Map::render(MinGL & window) {
     for (unsigned y = 0; y < this->Mat.size(); y++) {
@@ -91,7 +91,7 @@ void Map::render(MinGL & window) {
                     sprites["CORNER_4"]->setPosition(nsGraphics::Vec2D(x * 32, y * 32));
                     sprites["CORNER_4"]->draw(window);
                     break;
-                case '^':
+                case '^': // VERTICAL WALL 1
                     sprites["Y_1"]->setPosition(nsGraphics::Vec2D(x * 32, y * 32));
                     sprites["Y_1"]->draw(window);
                     break;
@@ -100,6 +100,9 @@ void Map::render(MinGL & window) {
                     sprites["Y_2"]->draw(window);
                     break;
                 case '-': // VERTICALL WALL 3
+                    sprites["Y_3"]->setPosition(nsGraphics::Vec2D(x * 32, y * 32));
+                    sprites["Y_3"]->draw(window);
+                    break;
                 case '#': // HORIZONTAL WALL 1
                     sprites["X_1"]->setPosition(nsGraphics::Vec2D(x * 32, y * 32));
                     sprites["X_1"]->draw(window);
