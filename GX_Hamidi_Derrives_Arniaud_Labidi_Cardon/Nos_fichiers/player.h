@@ -30,13 +30,18 @@ namespace nsGame {
             char IS_FACING;
             char KEY_DOWN, KEY_UP, KEY_LEFT, KEY_RIGHT, KEY_ACTION_1;
 
-            bool canMove = true;
             int delay = 125 * movementSpeed;
         public:
+            /** \brief Animations for every direction */
             Animation bottom = Animation(642, true), top = Animation(642, true), left = Animation(642, true), right = Animation(642, true);
 
+            /** \brief Player score */
             int score = 0;
 
+            /** \brief Allows player to move or not */
+            bool isAllowedToMove = true, canMove = true;
+
+            /** \brief Player number */
             unsigned N = 1;
 
             Player(unsigned N /* = 2 */);
