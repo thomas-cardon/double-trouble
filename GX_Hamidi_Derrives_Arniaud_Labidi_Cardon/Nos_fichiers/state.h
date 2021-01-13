@@ -33,7 +33,7 @@ namespace nsGame {
             * @brief Updates state
             * @fn virtual int update(MinGL & window, unsigned delta);
             */
-           virtual void update(MinGL & window, unsigned delta);
+           virtual void update(MinGL & window, unsigned delta) {}
 
            /**
             * @brief Renders resources
