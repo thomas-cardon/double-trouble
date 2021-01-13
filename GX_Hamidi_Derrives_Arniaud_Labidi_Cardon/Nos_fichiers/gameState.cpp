@@ -22,12 +22,19 @@ class GameState: public State {
         CMyParam Params;
 
         Player player1 = Player(1), player2 = Player(2);
+
+        nsGui::Sprite sidebar,
+        h0 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/game_score/hearts_0.i2s"),
+        h1 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/game_score/hearts_1.i2s"),
+        h2 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/game_score/hearts_2.i2s"),
+        h3 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/game_score/hearts_3.i2s");
+
         nsGui::Sprite victoryScreen1, victoryScreen2, equalScreen;
 
 nsAudio::AudioEngine audioEngine;
 
 
-        GameState() : victoryScreen1("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/victory_screen/player1.i2s", nsGraphics::Vec2D(0, 0)), victoryScreen2("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/victory_screen/player2.i2s", nsGraphics::Vec2D(0, 0)), equalScreen("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/victory_screen/equal.i2s", nsGraphics::Vec2D(0, 0)) {}
+        GameState() : sidebar("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/game_score/gamescore.i2s"), victoryScreen1("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/victory_screen/player1.i2s", nsGraphics::Vec2D(0, 0)), victoryScreen2("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/victory_screen/player2.i2s", nsGraphics::Vec2D(0, 0)), equalScreen("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/victory_screen/equal.i2s", nsGraphics::Vec2D(0, 0)) {}
 
         void load() override {
             int RetVal = LoadParams(Params, "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/config.yaml");
@@ -79,7 +86,7 @@ nsAudio::AudioEngine audioEngine;
         }
 
         void render(MinGL & window) override {
-            window.clearScreen();
+            window << sidebar;
 
             map.render(window);
 
