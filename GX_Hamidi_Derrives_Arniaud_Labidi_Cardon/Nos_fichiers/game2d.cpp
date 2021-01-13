@@ -9,15 +9,20 @@ using namespace std;
 
 StateManager stateManager = StateManager();
 
-void update(MinGL & window, int delta) {
-    if (window.isPressed({ 27, true })) return window.stopGaphic();
+int update(MinGL & window, int delta) {
+    if (window.isPressed({ 27, true }))
+        return -1;
 
     stateManager.update(window, delta);
+
+    return 0;
 }
 
 void render(MinGL & window) {
     stateManager.render(window);
 }
+
+bool userRequestedClose = false;
 
 int load()
 {
@@ -33,7 +38,7 @@ int load()
     stateManager.load();
 
     // On fait tourner la boucle tant que la fenêtre est ouverte
-    while (window.isOpen())
+    while (window.isOpen() && !userRequestedClose)
     {
         // Récupère l'heure actuelle
         chrono::time_point<chrono::steady_clock> start = chrono::steady_clock::now();
@@ -42,7 +47,9 @@ int load()
         window.clearScreen();
 
         // On fait tourner les procédures
-        update(window, frameTime.count() / 1000 /* delta */);
+        int ret = update(window, frameTime.count() / 1000 /* delta */);
+        if (ret == -1) userRequestedClose = true;
+
         render(window);
 
         // On finit la frame en cours
