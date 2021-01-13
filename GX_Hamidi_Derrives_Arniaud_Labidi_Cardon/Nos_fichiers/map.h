@@ -41,7 +41,7 @@ namespace nsGame {
              * @param delta
              * @return 0
              */
-            int update(int delta);
+            void update(int delta);
 
             /**
              * @brief render
