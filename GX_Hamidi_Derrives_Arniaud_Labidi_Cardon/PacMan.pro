@@ -29,26 +29,76 @@ DISTFILES += \
     Nos_fichiers/res/audio/button-click.wav \
     Nos_fichiers/res/audio/player-hit-1.wav \
     Nos_fichiers/res/audio/player-moving-1.wav \
+    Nos_fichiers/res/gui/APPUYER_A.png \
+    Nos_fichiers/res/gui/Bouton Option.png \
     Nos_fichiers/res/gui/Bouton Option.png \
     Nos_fichiers/res/gui/Bouton Option.png \
     Nos_fichiers/res/gui/Bouton Quitter.png \
     Nos_fichiers/res/gui/Bouton Quitter.png \
+    Nos_fichiers/res/gui/Bouton Quitter.png \
+    Nos_fichiers/res/gui/Bouton jouer curseur.png \
     Nos_fichiers/res/gui/Bouton jouer curseur.png \
     Nos_fichiers/res/gui/Bouton jouer curseur.png \
     Nos_fichiers/res/gui/Bouton jouer.png \
     Nos_fichiers/res/gui/Bouton jouer.png \
+    Nos_fichiers/res/gui/Bouton jouer.png \
+    Nos_fichiers/res/gui/Bouton option curseur.png \
     Nos_fichiers/res/gui/Bouton option curseur.png \
     Nos_fichiers/res/gui/Bouton option curseur.png \
     Nos_fichiers/res/gui/Bouton quitter curseur.png \
     Nos_fichiers/res/gui/Bouton quitter curseur.png \
+    Nos_fichiers/res/gui/Bouton quitter curseur.png \
+    Nos_fichiers/res/gui/CREDITS.png \
     Nos_fichiers/res/gui/Fond.png \
+    Nos_fichiers/res/gui/appuyer_a.i2s \
     Nos_fichiers/res/gui/background.i2s \
+    Nos_fichiers/res/gui/btn_credits.i2s \
+    Nos_fichiers/res/gui/btn_credits_hover.i2s \
     Nos_fichiers/res/gui/btn_options.i2s \
     Nos_fichiers/res/gui/btn_play.i2s \
     Nos_fichiers/res/gui/btn_play_hover.i2s \
     Nos_fichiers/res/gui/btn_quit.i2s \
     Nos_fichiers/res/gui/btn_quit_hover.i2s \
+    Nos_fichiers/res/gui/credits.i2s \
+    Nos_fichiers/res/gui/curseur.png \
+    Nos_fichiers/res/gui/cursor.i2s \
     Nos_fichiers/res/gui/img2si.py \
+    Nos_fichiers/res/gui/numbers/0.i2s \
+    Nos_fichiers/res/gui/numbers/0.png \
+    Nos_fichiers/res/gui/numbers/1.i2s \
+    Nos_fichiers/res/gui/numbers/1.png \
+    Nos_fichiers/res/gui/numbers/2.i2s \
+    Nos_fichiers/res/gui/numbers/2.png \
+    Nos_fichiers/res/gui/numbers/3.i2s \
+    Nos_fichiers/res/gui/numbers/3.png \
+    Nos_fichiers/res/gui/numbers/4.i2s \
+    Nos_fichiers/res/gui/numbers/4.png \
+    Nos_fichiers/res/gui/numbers/5.i2s \
+    Nos_fichiers/res/gui/numbers/5.png \
+    Nos_fichiers/res/gui/numbers/6.i2s \
+    Nos_fichiers/res/gui/numbers/6.png \
+    Nos_fichiers/res/gui/numbers/7.i2s \
+    Nos_fichiers/res/gui/numbers/7.png \
+    Nos_fichiers/res/gui/numbers/8.i2s \
+    Nos_fichiers/res/gui/numbers/8.png \
+    Nos_fichiers/res/gui/numbers/Sans titre.png \
+    Nos_fichiers/res/gui/numbers/img2si.py \
+    Nos_fichiers/res/gui/sidebar/gamescore.png \
+    Nos_fichiers/res/gui/sidebar/hearts_0.i2s \
+    Nos_fichiers/res/gui/sidebar/hearts_0.png \
+    Nos_fichiers/res/gui/sidebar/hearts_1.i2s \
+    Nos_fichiers/res/gui/sidebar/hearts_1.png \
+    Nos_fichiers/res/gui/sidebar/hearts_2.i2s \
+    Nos_fichiers/res/gui/sidebar/hearts_2.png \
+    Nos_fichiers/res/gui/sidebar/hearts_3.i2s \
+    Nos_fichiers/res/gui/sidebar/hearts_3.png \
+    Nos_fichiers/res/gui/sidebar/panel.i2s \
+    Nos_fichiers/res/gui/victory_screen/equal.i2s \
+    Nos_fichiers/res/gui/victory_screen/equality.png \
+    Nos_fichiers/res/gui/victory_screen/player1.i2s \
+    Nos_fichiers/res/gui/victory_screen/player1.png \
+    Nos_fichiers/res/gui/victory_screen/player2.i2s \
+    Nos_fichiers/res/gui/victory_screen/player2.png \
     Nos_fichiers/res/img2si.py \
     Nos_fichiers/res/tile000.png \
     Nos_fichiers/res/tile001.i2s \
@@ -108,6 +158,7 @@ HEADERS += \
     Nos_fichiers/entity.h \
     Nos_fichiers/game2d.h \
     Correc_Prof/gridmanagement.h \
+    Nos_fichiers/gameState.h \
     Nos_fichiers/map.h \
     Nos_fichiers/nsutil.h \
     Correc_Prof/params.h \
