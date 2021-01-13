@@ -8,6 +8,7 @@
  *
  **/
 #include <mingl/mingl.h>
+#include <mingl/audio/audioengine.h>
 #include <mingl/gui/sprite.h>
 
 #include "type.h"
@@ -16,8 +17,9 @@
 #include "entity.h"
 
 #include "cooldowns.h"
-
 using namespace nsGame;
+
+nsAudio::AudioEngine audio;
 
 Player::Player(unsigned N) : Entity() {
     this->N = N;
@@ -36,6 +38,8 @@ void Player::load(CMyParam params) {
     createCooldown("player" + std::to_string(N) + "_move", 200 / movementSpeed);
 
     this->spawn(params);
+
+    audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/player-hit-1.wav");
 
     for (int i = 1; i <= 6; i++) {
         this->top.sprites.push_back(nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/top-" + std::to_string(i) + ".i2s"));
@@ -77,14 +81,26 @@ int Player::update(MinGL & window, int delta, CMat map) {
      */
     canMove = isCooldownOver("player" + std::to_string(N) + "_move");
 
-    if (window.isPressed({ KEY_UP, false }) && !this->inCollision(map, this->pos.getX(), this->pos.getY() - 1))
-        onKeyPress(KEY_UP);
-    else if (window.isPressed({ KEY_DOWN, false }) && !this->inCollision(map, this->pos.getX(), this->pos.getY() + 1))
-        onKeyPress(KEY_DOWN);
-    else if (window.isPressed({ KEY_LEFT, false }) && !this->inCollision(map, this->pos.getX() - 1, this->pos.getY()))
-        onKeyPress(KEY_LEFT);
-    else if (window.isPressed({ KEY_RIGHT, false }) && !this->inCollision(map, this->pos.getX() + 1, this->pos.getY()))
-        onKeyPress(KEY_RIGHT);
+    if (window.isPressed({ KEY_UP, false })) {
+        if (this->inCollision(map, this->pos.getX(), this->pos.getY() - 1))
+            audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/player-hit-1.wav");
+        else onKeyPress(KEY_UP);
+    }
+    else if (window.isPressed({ KEY_DOWN, false })) {
+        if (this->inCollision(map, this->pos.getX(), this->pos.getY() + 1))
+            audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/player-hit-1.wav");
+        else onKeyPress(KEY_DOWN);
+    }
+    else if (window.isPressed({ KEY_LEFT, false })) {
+        if (this->inCollision(map, this->pos.getX() - 1, this->pos.getY()))
+            audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/player-hit-1.wav");
+        else onKeyPress(KEY_LEFT);
+    }
+    else if (window.isPressed({ KEY_RIGHT, false })) {
+        if (this->inCollision(map, this->pos.getX() + 1, this->pos.getY()))
+            audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/player-hit-1.wav");
+        else onKeyPress(KEY_RIGHT);
+    }
 
     //if (canTakeDamage(delta)) std::cout << "[Player N=" << std::to_string(N) + "] can take damage !" << std::endl;
     //else std::cout << "[Player N=" << std::to_string(N) + "] can't take damage !" << std::endl;
