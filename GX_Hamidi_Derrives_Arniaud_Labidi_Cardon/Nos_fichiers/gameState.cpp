@@ -9,7 +9,6 @@
 #include <mingl/gui/text.h>
 
 #include "map.h"
-#include "cooldowns.h"
 #include "player.cpp"
 
 using namespace nsGame;
@@ -56,8 +55,6 @@ nsAudio::AudioEngine audioEngine;
         }
 
         void update(MinGL & window, unsigned delta) override {
-            updateCooldowns(delta);
-
             map.update(delta);
 
             player1.update(window, delta, map.getMat());

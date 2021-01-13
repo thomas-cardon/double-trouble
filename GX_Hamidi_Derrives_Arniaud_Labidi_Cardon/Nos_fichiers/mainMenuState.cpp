@@ -2,9 +2,7 @@
 #include "mingl/audio/audioengine.h"
 
 #include "state.h"
-
-#include <chrono>
-#include <thread>
+#include "cooldowns.h"
 
 using namespace nsGame;
 
@@ -22,54 +20,44 @@ class MainMenuState : public State {
         nsGui::Sprite btn_quit_hover = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/btn_quit_hover.i2s", nsGraphics::Vec2D(399, 529));
         nsGui::Sprite btn_credits_hover = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/btn_credits_hover.i2s", nsGraphics::Vec2D(401, 478));
 
-        int startTime = 0;
-        int currentTime = 0;
-        int delay = 500;
+        nsGui::Sprite appuyer_a = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/appuyer_a.i2s", nsGraphics::Vec2D(0, 0));
 
         bool canMove = true;
-
         int hovering = 0;
 
         void load() override {
+            createCooldown("mainMenu_move", 500);
             audioEngine.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-click.wav");
         }
 
-        void buttonHover(int h) {
-            hovering = h;
-            audioEngine.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-click.wav");
+        void events(nsEvent::Event_t event) override {
+            std::cout << event.eventType << std::endl;
         }
 
         void update(MinGL & window, unsigned delta) override {
-            currentTime += delta;
+            if (isCooldownOver("mainMenu_move")) canMove = true;
+            if (!canMove) return;
 
             if (window.isPressed({ 'a', false })) {
                 if (hovering == 0) this->setState(1);
-                else if (hovering == 1) {
-                    window.stopGaphic();
-                    return;
-                }
+                else if (hovering == 1) this->setState(99);
+                else if (hovering == 2) window.stopGaphic();
             }
+            else if (window.isPressed({ 's', false })) { // UP
+                audioEngine.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-click.wav");
 
-            /*
-             * Cooldowns de déplacement des boutons
-             */
-
-            if (!canMove && currentTime - startTime > delay) {
-                canMove = true;
-                currentTime = 0;
-            }
-
-            if (!canMove) return;
-
-            if (window.isPressed({ 'z', false })) { // UP
-                if (hovering == 2) buttonHover(0);
-                else buttonHover(hovering + 1);
+                if (hovering == 0) hovering = 2;
+                else if (hovering == 0) ++hovering;
+                else hovering = 0;
 
                 canMove = false;
             }
-            else if (window.isPressed({ 's', false })) { // DOWN
-                if (hovering == 0) buttonHover(2);
-                else buttonHover(hovering - 1);
+            else if (window.isPressed({ 'z', false })) { // DOWN
+                audioEngine.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-click.wav");
+
+                if (hovering == 2) --hovering;
+                else if (hovering == 0) hovering = 2;
+                else hovering = 0;
 
                 canMove = false;
             }
@@ -77,9 +65,10 @@ class MainMenuState : public State {
 
         void render(MinGL & window) override {
             window << background;
+            window << appuyer_a;
 
             window << (hovering == 0 ? btn_play_hover : btn_play);
-            window << (hovering == 1 ? btn_quit_hover : btn_quit);
-            window << (hovering == 2 ? btn_credits_hover : btn_credits);
+            window << (hovering == 1 ? btn_credits_hover : btn_credits);
+            window << (hovering == 2 ? btn_quit_hover : btn_quit);
         }
 };

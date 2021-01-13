@@ -4,6 +4,7 @@
 #include <thread>
 
 #include "stateManager.cpp"
+#include "cooldowns.h"
 
 using namespace std;
 
@@ -43,6 +44,7 @@ int load()
         window.clearScreen();
 
         // On fait tourner les procédures
+        updateCooldowns(frameTime.count() / 1000 /* delta */);
         update(window, frameTime.count() / 1000 /* delta */);
         render(window);
 
