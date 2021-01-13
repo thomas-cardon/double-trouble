@@ -28,7 +28,7 @@ Player::Player(unsigned N) : Entity() {
 void Player::spawn(CMyParam params) {
     this->pos = nsGraphics::Vec2D(0, 0);
 
-    this->pos.setX(N == 1 ? 1 : params.MapParamUnsigned["NbColumn"] - 1);
+    this->pos.setX(N == 1 ? 1 : params.MapParamUnsigned["NbColumn"] - 2);
     this->pos.setY(N == 1 ? 1 : params.MapParamUnsigned["NbRow"] - 2);
 }
 
