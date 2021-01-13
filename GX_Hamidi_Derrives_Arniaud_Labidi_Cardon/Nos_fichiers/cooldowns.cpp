@@ -1,10 +1,10 @@
 #include "cooldowns.h"
 
-void createCooldown(std::string id, int delay) {
+void createCooldown(std::string id, unsigned delay) {
     cooldowns[id] = std::make_pair(0, delay);
 }
 
-void updateCooldowns(int delta) {
+void updateCooldowns(unsigned delta) {
     for (auto &cd : cooldowns)
         cd.second.first += delta;
 }
@@ -28,7 +28,7 @@ bool isCooldownOver(std::string id, bool hasToDelete) {
 }
 
 
-void setCooldownDelay(std::string id, int delay) {
+void setCooldownDelay(std::string id, unsigned delay) {
     cooldowns[id].second = delay;
 }
 
