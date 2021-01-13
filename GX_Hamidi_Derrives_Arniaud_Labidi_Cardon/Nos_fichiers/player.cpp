@@ -75,7 +75,7 @@ void Player::onKeyPress(char key) {
     canMove = false;
 }
 
-int Player::update(MinGL & window, int delta, CMat map) {
+void Player::update(MinGL & window, int delta, CMat map) {
     /*
      * Movement cooldowns
      */
@@ -109,8 +109,6 @@ int Player::update(MinGL & window, int delta, CMat map) {
     this->bottom.update(delta);
     this->right.update(delta);
     this->left.update(delta);
-
-    return 0;
 }
 
 bool Player::canTakeDamage() {

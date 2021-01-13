@@ -51,7 +51,7 @@ namespace nsGame {
              * @brief Updates player
              * @fn int update(MinGL & window, int delta, CMat map);
              */
-            int update(MinGL & window, int delta, CMat map);
+            void update(MinGL & window, int delta, CMat map);
 
             /**
              * @brief Renders resources
