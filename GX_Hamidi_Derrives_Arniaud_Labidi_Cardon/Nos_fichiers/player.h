@@ -27,16 +27,10 @@ namespace nsGame {
      */
     class Player : public Entity {
         private:
-            int startTime = 0;
-            int currentTime = 0;
-
             char IS_FACING;
             char KEY_DOWN, KEY_UP, KEY_LEFT, KEY_RIGHT, KEY_ACTION_1;
 
             bool canMove = true;
-
-            int _startTimeForDamage, _currentTimeForDamage;
-
             int delay = 125 * movementSpeed;
         public:
             Animation bottom = Animation(642, true), top = Animation(642, true), left = Animation(642, true), right = Animation(642, true);
@@ -58,12 +52,6 @@ namespace nsGame {
              * @fn int update(MinGL & window, int delta, CMat map);
              */
             int update(MinGL & window, int delta, CMat map);
-
-            /**
-             * @brief Checks if player would be in collision with a structure (walls...)
-             * @fn bool inCollision(CMat map, unsigned x, unsigned y);
-             */
-            bool inCollision(CMat map, unsigned x, unsigned y);
 
             /**
              * @brief Renders resources
