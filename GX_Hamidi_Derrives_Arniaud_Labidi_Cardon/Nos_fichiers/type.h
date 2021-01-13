@@ -58,7 +58,7 @@ struct AuthorizedKey {
     /** List of authorized key for the type string in a struct CMyParam*/
     const std::vector <std::string> VParamString {};
     /** List of authorized key for the type unsigned in a struct CMyParam*/
-    const std::vector <std::string> VParamUnsigned {"NbRow", "NbColumn"};
+    const std::vector <std::string> VParamUnsigned {};
 };
 
 /**

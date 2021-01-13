@@ -8,5 +8,3 @@ P2_KeyDown : k
 P2_KeyLeft : j
 P2_KeyRight : l
 P2_KeyAction1 : *
-NbColumn : 20
-NbRow : 20
