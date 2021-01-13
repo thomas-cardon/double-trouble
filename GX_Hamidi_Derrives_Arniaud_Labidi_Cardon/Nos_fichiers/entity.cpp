@@ -13,6 +13,16 @@ nsGraphics::Vec2D Entity::getPosition() {
     return pos;
 }
 
+bool Entity::inCollision(CMat map, unsigned x, unsigned y) {
+    if (map.size() < y + 1) return true;
+    if (map[y].size() < x + 1) return true;
+
+    if (map[y][x] != '0') return true;
+
+    return false;
+}
+
+
 bool Entity::canBeHitBy(Entity entity) {
     if (this->getPosition().getX() == entity.getPosition().getX() && this->getPosition().getY() == entity.getPosition().getY())
         return true;

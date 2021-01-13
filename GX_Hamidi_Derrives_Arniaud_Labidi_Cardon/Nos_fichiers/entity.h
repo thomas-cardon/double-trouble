@@ -57,6 +57,12 @@ namespace nsGame
              * @fn void setMovementSpeed(double speed);
              */
             virtual void setMovementSpeed(double speed);
+
+            /**
+             * @brief Checks if entity would be in collision with a structure (walls...) | OVERRIDE IF NEEDED (Flying monsters?)
+             * @fn bool inCollision(CMat map, unsigned x, unsigned y);
+             */
+            bool inCollision(CMat map, unsigned x, unsigned y);
     };
 }
 
