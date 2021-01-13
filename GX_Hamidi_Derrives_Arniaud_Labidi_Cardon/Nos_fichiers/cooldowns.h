@@ -27,6 +27,14 @@ void updateCooldowns(int delta);
 bool isCooldownOver(std::string id);
 
 /**
+ * @brief isCooldownOver
+ * @param id
+ * @param hasToDelete
+ * @return
+ */
+bool isCooldownOver(std::string id, bool hasToDelete);
+
+/**
  * @brief setCooldownDelay
  * @param id
  * @param delay
