@@ -34,7 +34,6 @@ void Player::load(CMyParam params) {
     std::cout << "[Player N=" << std::to_string(N) + "] Loading" << std::endl;
 
     createCooldown("player" + std::to_string(N) + "_move", 200 / movementSpeed);
-    createCooldown("player" + std::to_string(N) + "_canTakeDamage", 5000);
 
     this->spawn(params);
 
@@ -98,31 +97,18 @@ int Player::update(MinGL & window, int delta, CMat map) {
     return 0;
 }
 
-/*
- * TODO: Empêcher le joueur de passer en dehors des murs!
- */
-bool Player::inCollision(CMat map, unsigned x, unsigned y) {
-    if (map.size() < y + 1) return true;
-    if (map[y].size() < x + 1) return true;
-
-    if (map[y][x] != '0') return true;
-
-    std::cout << map[y][x] << std::endl;
-    return false;
-}
-
 bool Player::canTakeDamage() {
-    return isCooldownOver("player" + std::to_string(N) + "_canTakeDamage");
+    return isCooldownOver("player" + std::to_string(N) + "_canTakeDamage", true);
 }
 
 void Player::damage() {
-    _startTimeForDamage = 0;
-
     --hearts;
     noDamage(5000);
 }
 
-void Player::noDamage(int ms) {}
+void Player::noDamage(int ms) {
+    createCooldown("player" + std::to_string(N) + "_canTakeDamage", ms);
+}
 
 void Player::render(MinGL & window) {
     if (this->IS_FACING == KEY_UP) {
