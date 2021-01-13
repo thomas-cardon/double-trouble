@@ -25,11 +25,13 @@ Player::Player(unsigned N) : Entity() {
     this->N = N;
 }
 
-void Player::spawn(CMyParam params) {
+void Player::spawn() {
     this->pos = nsGraphics::Vec2D(0, 0);
 
-    this->pos.setX(N == 1 ? 1 : params.MapParamUnsigned["NbColumn"] - 2);
-    this->pos.setY(N == 1 ? 1 : params.MapParamUnsigned["NbRow"] - 2);
+    this->pos.setX(N == 1 ? 1 : 18);
+    this->pos.setY(N == 1 ? 1 : 18);
+
+    this->IS_FACING = N == 1 ? this->KEY_RIGHT : this->KEY_LEFT;
 }
 
 void Player::load(CMyParam params) {
@@ -37,7 +39,7 @@ void Player::load(CMyParam params) {
 
     createCooldown("player" + std::to_string(N) + "_move", 200 / movementSpeed);
 
-    this->spawn(params);
+    this->spawn();
 
     audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/player-hit-1.wav");
 

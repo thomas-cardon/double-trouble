@@ -85,8 +85,9 @@ namespace nsGame {
 
             /**
              * @brief Teleports the entity at its spawn
+             * @fn void spawn();
              */
-            void spawn(CMyParam params) override;
+            void spawn() override;
 
             /**
              * @brief Sets the movement speed

@@ -77,8 +77,8 @@ nsAudio::AudioEngine audioEngine;
                 player1.damage();
                 player2.damage();
 
-                player1.spawn(Params);
-                player2.spawn(Params);
+                player1.spawn();
+                player2.spawn();
 
                 player1.score += 1000;
                 player2.score += 1000;

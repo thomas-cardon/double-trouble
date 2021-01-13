@@ -42,9 +42,9 @@ namespace nsGame
 
             /**
              * @brief Teleports the entity at its spawn
-             * @fn virtual void spawn(CMyParam params);
+             * @fn virtual void spawn();
              */
-            virtual void spawn(CMyParam params);
+            virtual void spawn();
 
             /**
              * @brief Gets the movement speed

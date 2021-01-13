@@ -30,7 +30,7 @@ bool Entity::canBeHitBy(Entity entity) {
     return false;
 }
 
-void Entity::spawn(CMyParam params) {
+void Entity::spawn() {
     this->pos.setX(0);
     this->pos.setY(0);
 }
