@@ -39,14 +39,14 @@ class MainMenuState : public State {
             audioEngine.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-click.wav");
         }
 
-        int update(MinGL & window, int delta) override {
+        void update(MinGL & window, unsigned delta) override {
             currentTime += delta;
 
             if (window.isPressed({ 'a', false })) {
                 if (hovering == 0) this->setState(1);
                 else if (hovering == 1) {
                     window.stopGaphic();
-                    return 0;
+                    return;
                 }
             }
 
@@ -59,7 +59,7 @@ class MainMenuState : public State {
                 currentTime = 0;
             }
 
-            if (!canMove) return 0;
+            if (!canMove) return;
 
             if (window.isPressed({ 'z', false })) { // UP
                 if (hovering == 2) buttonHover(0);
@@ -73,8 +73,6 @@ class MainMenuState : public State {
 
                 canMove = false;
             }
-
-            return 0;
         }
 
         void render(MinGL & window) override {

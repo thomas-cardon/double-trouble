@@ -31,9 +31,9 @@ namespace nsGame {
 
            /**
             * @brief Updates state
-            * @fn virtual int update(MinGL & window, int delta);
+            * @fn virtual int update(MinGL & window, unsigned delta);
             */
-           virtual int update(MinGL & window, int delta) { return 0; }
+           virtual void update(MinGL & window, unsigned delta);
 
            /**
             * @brief Renders resources

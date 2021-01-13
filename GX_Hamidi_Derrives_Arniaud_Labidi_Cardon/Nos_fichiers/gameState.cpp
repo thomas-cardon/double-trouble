@@ -55,7 +55,7 @@ nsAudio::AudioEngine audioEngine;
             canMove = false;
         }
 
-        int update(MinGL & window, int delta) override {
+        void update(MinGL & window, unsigned delta) override {
             updateCooldowns(delta);
 
             map.update(delta);
@@ -65,7 +65,7 @@ nsAudio::AudioEngine audioEngine;
 
             checkForWin(player1, player2);
 
-            if (player1.canBeHitBy(player2)) {
+            if (player1.canBeHitBy(player2)) { // KILL !
                 std::cout << "Hit ! P1 HP: " << player1.hearts << " | P2 HP: " << player2.hearts << std::endl;
 
                 audioEngine.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/player-hit-1.wav");
@@ -79,8 +79,6 @@ nsAudio::AudioEngine audioEngine;
                 player1.score += 1000;
                 player2.score += 1000;
             }
-
-            return 0;
         }
 
         void render(MinGL & window) override {

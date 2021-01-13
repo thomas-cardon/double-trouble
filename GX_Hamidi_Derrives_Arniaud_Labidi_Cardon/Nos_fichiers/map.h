@@ -39,7 +39,7 @@ namespace nsGame {
             /**
              * @brief update
              * @param delta
-             * @return 0
+             * @fn void update(int delta);
              */
             void update(int delta);
 

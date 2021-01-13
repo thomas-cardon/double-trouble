@@ -49,7 +49,7 @@ namespace nsGame {
 
             /**
              * @brief Updates player
-             * @fn int update(MinGL & window, int delta, CMat map);
+             * @fn void update(MinGL & window, int delta, CMat map);
              */
             void update(MinGL & window, int delta, CMat map);
 

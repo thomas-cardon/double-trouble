@@ -8,6 +8,10 @@ class LoadingState : public State {
 
         void load() override {}
 
+        void update(MinGL & window, unsigned delta) override {
+
+        }
+
         void render(MinGL & window) override {
             window.setBackgroundColor(nsGraphics::KCyan);
         }

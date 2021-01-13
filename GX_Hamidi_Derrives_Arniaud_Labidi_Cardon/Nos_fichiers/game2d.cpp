@@ -9,13 +9,11 @@ using namespace std;
 
 StateManager stateManager = StateManager();
 
-int update(MinGL & window, int delta) {
+void update(MinGL & window, int delta) {
     if (window.isPressed({ 27, true }))
         window.stopGaphic();
 
     stateManager.update(window, delta);
-
-    return 0;
 }
 
 void render(MinGL & window) {

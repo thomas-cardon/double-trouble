@@ -32,13 +32,11 @@ void StateManager::events(MinGL & window) {
     }
 }
 
-int StateManager::update(MinGL & window, int delta) {
+void StateManager::update(MinGL & window, int delta) {
     //events(window);
 
-    if (current == 0) return menu.update(window, delta);
-    else if (current == 1) return game.update(window, delta);
-
-    return 0;
+    if (current == 0) menu.update(window, delta);
+    else if (current == 1) game.update(window, delta);
 }
 
 void StateManager::render(MinGL & window) {
