@@ -24,7 +24,7 @@ class GameState: public State {
         Player player1 = Player(1), player2 = Player(2);
 
         nsGui::Sprite sidebar,
-        h0 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/sidebar/hearts_0.i2s", nsGraphics::Vec2D()),
+        h0 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/sidebar/hearts_0.i2s"),
         h1 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/sidebar/hearts_1.i2s"),
         h2 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/sidebar/hearts_2.i2s"),
         h3 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/sidebar/hearts_3.i2s");
@@ -88,16 +88,53 @@ nsAudio::AudioEngine audioEngine;
         void render(MinGL & window) override {
             window << sidebar;
 
+            /*
+             * Affichage coeurs (joueur 1)
+             */
+            if (player1.hearts == 3) {
+                h3.setPosition(nsGraphics::Vec2D(677, 291));
+                window << h3;
+            }
+            else if (player1.hearts == 2) {
+                h2.setPosition(nsGraphics::Vec2D(677, 291));
+                window << h2;
+            }
+            else if (player1.hearts == 1) {
+                h1.setPosition(nsGraphics::Vec2D(677, 291));
+                window << h1;
+            }
+            else {
+                h0.setPosition(nsGraphics::Vec2D(677, 291));
+                window << h0;
+            }
+
+            /*
+             * Affichage coeurs (joueur 2)
+             */
+            if (player2.hearts == 3) {
+                h3.setPosition(nsGraphics::Vec2D(677, 491));
+                window << h3;
+            }
+            else if (player2.hearts == 2) {
+                h2.setPosition(nsGraphics::Vec2D(677, 491));
+                window << h2;
+            }
+            else if (player2.hearts == 1) {
+                h1.setPosition(nsGraphics::Vec2D(677, 491));
+                window << h1;
+            }
+            else {
+                h0.setPosition(nsGraphics::Vec2D(677, 491));
+                window << h0;
+            }
+
             map.render(window);
 
             player1.render(window);
             player2.render(window);
 
-            window << nsGui::Text(nsGraphics::Vec2D(800, 16), "Score: " + std::to_string(player1.score), nsGraphics::KWhite, nsGui::GlutFont::BITMAP_HELVETICA_18);
-            window << nsGui::Text(nsGraphics::Vec2D(800, 48), "Score: " + std::to_string(player2.score), nsGraphics::KWhite, nsGui::GlutFont::BITMAP_HELVETICA_18);
-
-            window << nsGui::Text(nsGraphics::Vec2D(700, 16), "P1 | HP: " + std::to_string(player1.hearts), nsGraphics::KRed, nsGui::GlutFont::BITMAP_HELVETICA_18);
-            window << nsGui::Text(nsGraphics::Vec2D(700, 48), "P2 | HP: " + std::to_string(player2.hearts), nsGraphics::KRed, nsGui::GlutFont::BITMAP_HELVETICA_18);
+            window << nsGui::Text(nsGraphics::Vec2D(740, 96), std::to_string(player1.score), nsGraphics::KWhite, nsGui::GlutFont::BITMAP_HELVETICA_18);
+            window << nsGui::Text(nsGraphics::Vec2D(740, 112), std::to_string(player2.score), nsGraphics::KWhite, nsGui::GlutFont::BITMAP_9_BY_15);
 
             if (win == 1) {
                 victoryScreen1.draw(window);
