@@ -9,7 +9,7 @@ using namespace std;
 
 StateManager stateManager = StateManager();
 
-void update(MinGL & window, int delta) {
+void update(MinGL & window, unsigned delta) {
     if (window.isPressed({ 27, true }))
         window.stopGaphic();
 

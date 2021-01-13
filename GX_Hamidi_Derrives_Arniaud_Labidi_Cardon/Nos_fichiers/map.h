@@ -39,9 +39,9 @@ namespace nsGame {
             /**
              * @brief update
              * @param delta
-             * @fn void update(int delta);
+             * @fn void update(unsigned delta);
              */
-            void update(int delta);
+            void update(unsigned delta);
 
             /**
              * @brief render

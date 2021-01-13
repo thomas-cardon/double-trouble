@@ -64,7 +64,7 @@ void Map::load() {
     sprites.insert(std::pair<std::string, nsGui::Sprite*>("CORNER_4", new nsGui::Sprite(WALL_XY_4, nsGraphics::Vec2D(0, 0))));
 }
 
-void Map::update(int delta) {}
+void Map::update(unsigned delta) {}
 
 void Map::render(MinGL & window) {
     for (unsigned y = 0; y < this->Mat.size(); y++) {

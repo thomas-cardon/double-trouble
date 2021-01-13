@@ -75,7 +75,7 @@ void Player::onKeyPress(char key) {
     canMove = false;
 }
 
-void Player::update(MinGL & window, int delta, CMat map) {
+void Player::update(MinGL & window, unsigned delta, CMat map) {
     /*
      * Movement cooldowns
      */

@@ -39,9 +39,9 @@ namespace nsGame {
 
             /**
              * @brief Updates the current state
-             * @fn void update(MinGL & window, int delta);
+             * @fn void update(MinGL & window, unsigned delta);
              */
-            void update(MinGL & window, int delta);
+            void update(MinGL & window, unsigned delta);
 
             /**
              * @brief Renders current state resources

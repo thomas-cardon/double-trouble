@@ -32,7 +32,7 @@ void StateManager::events(MinGL & window) {
     }
 }
 
-void StateManager::update(MinGL & window, int delta) {
+void StateManager::update(MinGL & window, unsigned delta) {
     //events(window);
 
     if (current == 0) menu.update(window, delta);
