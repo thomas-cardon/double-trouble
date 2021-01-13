@@ -93,13 +93,26 @@ void Map::render(MinGL & window) {
                     sprites["CORNER_4"]->setPosition(nsGraphics::Vec2D(x * 32, y * 32));
                     sprites["CORNER_4"]->draw(window);
                     break;
-                case '|': // VERTICAL WALL
+                case '^':
+                    sprites["Y_1"]->setPosition(nsGraphics::Vec2D(x * 32, y * 32));
+                    sprites["Y_1"]->draw(window);
+                    break;
+                case '|': // VERTICAL WALL 2
                     sprites["Y_2"]->setPosition(nsGraphics::Vec2D(x * 32, y * 32));
                     sprites["Y_2"]->draw(window);
                     break;
-                case '=': // HORIZONTAL WALL
+                case '-': // VERTICALL WALL 3
+                case '#': // HORIZONTAL WALL 1
+                    sprites["X_1"]->setPosition(nsGraphics::Vec2D(x * 32, y * 32));
+                    sprites["X_1"]->draw(window);
+                    break;
+                case '=': // HORIZONTAL WALL 2
                     sprites["X_2"]->setPosition(nsGraphics::Vec2D(x * 32, y * 32));
                     sprites["X_2"]->draw(window);
+                    break;
+                case '~': // HORIZONTAL WALL 3
+                    sprites["X_3"]->setPosition(nsGraphics::Vec2D(x * 32, y * 32));
+                    sprites["X_3"]->draw(window);
                     break;
             }
         }
