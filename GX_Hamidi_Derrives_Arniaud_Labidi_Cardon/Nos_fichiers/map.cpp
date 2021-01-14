@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <dirent.h>
 
 #include <mingl/graphics/vec2d.h>
 #include <mingl/shape/rectangle.h>
@@ -27,10 +28,28 @@
 
 using namespace nsGame;
 
-void Map::load() {
-    std::ifstream input;
+std::string getRandomLevel() {
+    DIR *dir;
+    struct dirent *ent;
 
-    input.open("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/level_1.map");
+    std::vector<std::string> maps;
+
+    if ((dir = opendir ("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/maps")) != NULL) {
+      while ((ent = readdir (dir)) != NULL) {
+          std::string str = ent->d_name;
+          if (str.substr(str.find_last_of(".") + 1) == "map")
+              maps.push_back(str);
+      }
+      closedir (dir);
+    } else throw("Impossible d'ouvrir le dossier de cartes du jeu");
+
+    return "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/maps/" + maps[rand() % maps.size()];
+}
+
+void Map::load() {
+    /** \brief Input FileStream for the different levels */
+    std::ifstream input;
+    input.open(getRandomLevel());
     if (!input) {
         std::cout << "Unable to open file";
         exit(1); // terminate with error
@@ -45,9 +64,8 @@ void Map::load() {
     this->Mat.resize(lineList.size());
 
     for(auto string : lineList) {
-        for(char& c : string) {
+        for(char& c : string)
             this->Mat[lineIndex].push_back(c);
-        }
 
         lineIndex++;
     }

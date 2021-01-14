@@ -17,6 +17,7 @@ namespace nsGame {
     class Map
     {
         private:
+            /** \brief Game grid */
             CMat Mat;
 
             const std::string BLOCK = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile011.i2s";
@@ -34,6 +35,7 @@ namespace nsGame {
             const std::string WALL_XY_3 = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile023.i2s";
             const std::string WALL_XY_4 = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile025.i2s";
 
+            /** \brief Preloaded resources */
             std::map<std::string, nsGui::Sprite*> sprites;
         public:
             /**
