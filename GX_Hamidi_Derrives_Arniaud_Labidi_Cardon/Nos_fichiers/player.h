@@ -13,6 +13,7 @@
 
 #include <mingl/mingl.h>
 #include <mingl/gui/sprite.h>
+#include <mingl/audio/audioengine.h>
 
 #include "entity.cpp"
 

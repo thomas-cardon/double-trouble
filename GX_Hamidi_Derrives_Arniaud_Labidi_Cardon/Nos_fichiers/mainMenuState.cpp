@@ -1,5 +1,5 @@
-#include "mingl/gui/sprite.h"
-#include "mingl/audio/audioengine.h"
+#include <mingl/gui/sprite.h>
+#include <mingl/audio/audioengine.h>
 
 #include "state.h"
 #include "cooldowns.h"
@@ -13,7 +13,7 @@ class MainMenuState : public State {
      * @authors Thomas Cardon, Alexandre Arniaud
      */
     public:
-        nsAudio::AudioEngine audioEngine;
+        nsAudio::AudioEngine audio;
 
         nsGui::Sprite background = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/background.i2s", nsGraphics::Vec2D(0, 0));
 
@@ -32,7 +32,9 @@ class MainMenuState : public State {
 
         void load() override {
             createCooldown("mainMenu_move", 500);
-            audioEngine.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-click.wav");
+
+            audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-select.wav");
+            audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-click.wav");
         }
 
         void events(nsEvent::Event_t event) override {
@@ -47,25 +49,23 @@ class MainMenuState : public State {
                 if (hovering == 0) this->setState(1);
                 else if (hovering == 1) this->setState(99);
                 else if (hovering == 2) window.stopGaphic();
+
+                audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-click.wav");
+                return;
             }
-            else if (window.isPressed({ 's', false })) { // UP
-                audioEngine.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-click.wav");
 
-                if (hovering == 0) hovering = 2;
-                else if (hovering == 0) ++hovering;
-                else hovering = 0;
-
-                canMove = false;
+            if (window.isPressed({ 's', false })) { // UP
+                if (hovering == 2) hovering = 0;
+                else hovering++;
             }
             else if (window.isPressed({ 'z', false })) { // DOWN
-                audioEngine.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-click.wav");
-
-                if (hovering == 2) --hovering;
-                else if (hovering == 0) hovering = 2;
-                else hovering = 0;
-
-                canMove = false;
+                if (hovering == 0) hovering = 2;
+                else --hovering;
             }
+            else return;
+
+            canMove = false;
+            audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-select.wav");
         }
 
         void render(MinGL & window) override {

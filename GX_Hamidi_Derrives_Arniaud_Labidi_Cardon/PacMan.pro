@@ -26,9 +26,15 @@ DISTFILES += \
     Nos_fichiers/config.yaml \
     Nos_fichiers/level_1.map \
     Nos_fichiers/res/audio/3-2-1-go.wav \
+    Nos_fichiers/res/audio/boom-1.wav \
     Nos_fichiers/res/audio/button-click.wav \
+    Nos_fichiers/res/audio/button-select.wav \
+    Nos_fichiers/res/audio/coin-1.wav \
+    Nos_fichiers/res/audio/game-over.wav \
     Nos_fichiers/res/audio/player-hit-1.wav \
     Nos_fichiers/res/audio/player-moving-1.wav \
+    Nos_fichiers/res/audio/powerup-1.wav \
+    Nos_fichiers/res/audio/shoot-1.wav \
     Nos_fichiers/res/gui/APPUYER_A.png \
     Nos_fichiers/res/gui/Bouton Option.png \
     Nos_fichiers/res/gui/Bouton Option.png \
