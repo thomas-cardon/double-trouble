@@ -106,6 +106,8 @@ DISTFILES += \
     Nos_fichiers/res/gui/victory_screen/player2.i2s \
     Nos_fichiers/res/gui/victory_screen/player2.png \
     Nos_fichiers/res/img2si.py \
+    Nos_fichiers/res/maps/level_1.map \
+    Nos_fichiers/res/maps/level_2.map \
     Nos_fichiers/res/tile000.png \
     Nos_fichiers/res/tile001.i2s \
     Nos_fichiers/res/tile001.png \

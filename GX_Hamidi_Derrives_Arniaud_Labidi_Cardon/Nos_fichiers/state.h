@@ -20,7 +20,7 @@ namespace nsGame {
      * @brief A class defining the different states of the game (In-game, Menus, Loading...)
      * @author Thomas Cardon
      */
-    class State {
+    struct State {
         public:
 
            /**
