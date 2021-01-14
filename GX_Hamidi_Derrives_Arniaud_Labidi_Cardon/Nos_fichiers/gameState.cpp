@@ -16,8 +16,8 @@ void GameState::load() {
     if (RetVal != 0) throw "Une erreur s'est produite lors de la lecture du fichier YAML";
 
     map.load();
+    audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/game-over.wav");
 
-    audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/player-hit-1.wav");
     numbers.resize(10);
 
     int i = 9;
@@ -41,6 +41,8 @@ void GameState::checkForWin(Player player1, Player player2) {
         win = -1;
         return;
     }
+
+    audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/game-over.wav");
 }
 
 void GameState::update(MinGL & window, unsigned delta) {
@@ -58,7 +60,6 @@ void GameState::update(MinGL & window, unsigned delta) {
 
     if (player1.canBeHitBy(player2)) { // KILL !
         std::cout << "Hit ! P1 HP: " << player1.hearts << " | P2 HP: " << player2.hearts << std::endl;
-        audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/player-hit-1.wav");
 
         player1.damage();
         player2.damage();
@@ -81,6 +82,12 @@ void GameState::renderScore(MinGL & window, Player p) {
 
         i++;
     }
+}
+
+void GameState::renderVictoryScreen(MinGL & window) {
+    if (win == 1) victoryScreen1.draw(window);
+    else if (win == 2) victoryScreen2.draw(window);
+    else if (win == 3) equalScreen.draw(window);
 }
 
 void GameState::render(MinGL & window) {
@@ -134,13 +141,5 @@ void GameState::render(MinGL & window) {
     renderScore(window, player1);
     renderScore(window, player2);
 
-    if (win == 1) {
-        victoryScreen1.draw(window);
-    }
-    else if (win == 2) {
-        victoryScreen2.draw(window);
-    }
-    else if (win == 3) {
-        equalScreen.draw(window);
-    }
+    if (win > -1) renderVictoryScreen(window);
 }

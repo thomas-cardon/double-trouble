@@ -58,12 +58,6 @@ namespace nsGame {
             virtual void update(MinGL & window, unsigned delta) override;
 
             /**
-             * @brief Renders resources
-             * @fn virtual void render(MinGL & window);
-             */
-            virtual void render(MinGL & window) override;
-
-            /**
              * @brief Checks every tick (State#update()) if one of the players have won (or not).
              * @param Player player1 - Le joueur 1
              * @param Player player2 - Le joueur 2
@@ -72,12 +66,25 @@ namespace nsGame {
             void checkForWin(Player player1, Player player2);
 
             /**
+             * @brief Renders resources
+             * @fn virtual void render(MinGL & window);
+             */
+            virtual void render(MinGL & window) override;
+
+            /**
              * @brief Renders the score on the sidebar for a given player
              * @param MinGL & window
              * @param Player p
              * @fn void renderScore(MinGL & window, Player p);
              */
             void renderScore(MinGL & window, Player p);
+
+            /**
+             * @brief Renders the victory screen
+             * @param MinGL & window
+             * @fn void renderVictoryScreen(MinGL & window);
+             */
+            void renderVictoryScreen(MinGL & window);
     };
 };
 
