@@ -155,6 +155,7 @@ DISTFILES += \
 HEADERS += \
     Nos_fichiers/animation.h \
     Nos_fichiers/cooldowns.h \
+    Nos_fichiers/ennemy.h \
     Nos_fichiers/entity.h \
     Nos_fichiers/game2d.h \
     Correc_Prof/gridmanagement.h \
