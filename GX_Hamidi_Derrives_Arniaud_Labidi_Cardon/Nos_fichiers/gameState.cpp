@@ -12,12 +12,18 @@
 using namespace nsGame;
 
 void GameState::load() {
+    // Parameters loading
     int RetVal = LoadParams(this->Params, "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/config.yaml");
     if (RetVal != 0) throw "Une erreur s'est produite lors de la lecture du fichier YAML";
 
+    // Map loading
     map.load();
-    audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/game-over.wav");
 
+    // Sounds loading
+    audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/game-over.wav");
+    audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-select.wav");
+
+    // Scoreboard numbers loading
     numbers.resize(10);
 
     int i = 9;
@@ -28,8 +34,21 @@ void GameState::load() {
         i -= 1;
     }
 
+    // Players loading
     player1.load(Params);
     player2.load(Params);
+}
+
+void GameState::destroy() {
+    player1.score = player2.score = 0;
+    player1.hearts = player2.hearts = 3;
+
+    player1.spawn();
+    player2.spawn();
+
+    map.load();
+
+    win = -1;
 }
 
 void GameState::checkForWin(Player player1, Player player2) {
@@ -57,7 +76,16 @@ void GameState::update(MinGL & window, unsigned delta) {
 
         player1.isAllowedToMove = player2.isAllowedToMove = true;
     }
-    else player1.isAllowedToMove = player2.isAllowedToMove = false;
+    else {
+        player1.isAllowedToMove = player2.isAllowedToMove = false;
+
+        if (window.isPressed({ 'a', false })) {
+            audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-select.wav");
+
+            this->destroy();
+            this->setState(0);
+        }
+    }
 
     if (player1.canBeHitBy(player2)) { // KILL !
         std::cout << "Hit ! P1 HP: " << player1.hearts << " | P2 HP: " << player2.hearts << std::endl;

@@ -30,6 +30,12 @@ namespace nsGame {
            virtual void load() {}
 
            /**
+            * @brief Destroys state (and resets it)
+            * @fn virtual void destroy();
+            */
+           virtual void destroy() {}
+
+           /**
             * @brief Updates state
             * @fn virtual int update(MinGL & window, unsigned delta);
             */
