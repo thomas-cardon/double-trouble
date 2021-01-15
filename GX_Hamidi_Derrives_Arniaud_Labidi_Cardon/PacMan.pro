@@ -170,9 +170,9 @@ HEADERS += \
     Nos_fichiers/item.h \
     Nos_fichiers/map.h \
     Correc_Prof/params.h \
+    Nos_fichiers/monster.h \
     Nos_fichiers/player.h \
     Nos_fichiers/state.h \
     Nos_fichiers/stateManager.h \
     Nos_fichiers/type.h \
-    Nos_fichiers/cooldowns.h \
-    Nos_fichiers/ennemy.h
+    Nos_fichiers/cooldowns.h

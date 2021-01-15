@@ -1,13 +1,13 @@
-#ifndef ENNEMY_H
-#define ENNEMY_H
+#ifndef MONSTER_H
+#define MONSTER_H
 
 /**
  *
- * \file    ennemy.h
+ * \file    monster.h
  * \author  Ines HAMIDI
  * \date    11 janvier 2020
  * \version 1.0
- * \brief   Ennemy
+ * \brief   Monster
  *
  **/
 
@@ -21,11 +21,11 @@
 
 namespace nsGame {
     /**
-     * @class Ennemy
-     * @brief Defines the ennemy's class
+     * @class Monster
+     * @brief Defines the monsters class
      * @author Ines Hamidi
      */
-    class Ennemy : public Entity {
+    class Monster : public Entity {
         private:
             char IS_FACING;
 
@@ -34,7 +34,7 @@ namespace nsGame {
             /** \brief Animations for every direction */
             Animation bottom = Animation(642, true), top = Animation(642, true), left = Animation(642, true), right = Animation(642, true);
 
-            Ennemy(unsigned N /* = 2 */);
+            Monster(unsigned N /* = 2 */);
 
             /**
              * @brief Updates the ennemy
