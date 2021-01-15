@@ -19,7 +19,6 @@
 #include <mingl/shape/shape.h>
 
 #include "food.cpp"
-
 /**
  *
  * \file    map.cpp
@@ -118,36 +117,37 @@ void Map::load() {
     std::vector<nsGraphics::Vec2D> empty = getEmptyPositions();
 
     for (unsigned i = 0; i < empty.size(); i++) {
-        food.insert(std::make_pair(std::make_pair(empty[i].getX(), empty[i].getY()), Food(empty[i])));
+        Food* f = new Food(empty[i]);
+        items.insert(std::make_pair(std::make_pair(empty[i].getX(), empty[i].getY()), f));
     }
 
-    for (auto & f : food)
-        f.second.load();
+    for (auto & f : items)
+        f.second->load();
 }
 
 void Map::update(unsigned delta, Player & player1, Player & player2) {
-    std::map<std::pair<int, int>, Food>::iterator it;
-    it = food.find(std::make_pair(player1.getPosition().getX(), player1.getPosition().getY()));
+    std::map<std::pair<int, int>, Item*>::iterator it;
+    it = items.find(std::make_pair(player1.getPosition().getX(), player1.getPosition().getY()));
 
-    if (it != food.end()) {
-        food.erase(it);
+    if (it != items.end()) {
+        items.erase(it);
         player1.score += 50;
     }
 
-    it = food.find(std::make_pair(player2.getPosition().getX(), player2.getPosition().getY()));
+    it = items.find(std::make_pair(player2.getPosition().getX(), player2.getPosition().getY()));
 
-    if (it != food.end()) {
-        food.erase(it);
+    if (it != items.end()) {
+        items.erase(it);
         player2.score += 50;
     }
 
     /*
-    auto f = std::begin(food);
-    while (f != std::end(food)) {
+    auto f = std::begin(items);
+    while (f != std::end(items)) {
         f->update(delta);
 
         if (player1.getPosition() == f->getPosition()) {
-            food.erase(f);
+            items.erase(f);
             player1.score += 50;
 
             return;
@@ -209,8 +209,8 @@ void Map::render(MinGL & window) {
         }
     }
 
-    for (auto & f : food)
-        f.second.render(window);
+    for (auto & f : items)
+        f.second->render(window);
 }
 
 unsigned Map::getMinX() {

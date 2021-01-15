@@ -21,8 +21,13 @@ namespace nsGame {
      * @author Thomas Cardon
      */
     struct Item {
-        public:
+        protected:
             nsGraphics::Vec2D pos;
+
+        public:
+            Item(nsGraphics::Vec2D pos) {
+                this->pos = pos;
+            }
 
             /**
             * @brief This function is used to get the position on the screen/canvas/window, whatever you want to call it

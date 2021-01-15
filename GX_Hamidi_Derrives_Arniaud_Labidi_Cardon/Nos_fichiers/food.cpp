@@ -12,8 +12,9 @@
 using namespace nsGame;
 
 void Food::load() {}
+
 void Food::update(unsigned delta) {}
 
 void Food::render(MinGL &window) {
-    window << nsShape::Circle(this->getCoordinates(), 1, nsGraphics::KWhite);
+    window << nsShape::Circle(this->getCoordinates(), 2, nsGraphics::KWhite);
 }

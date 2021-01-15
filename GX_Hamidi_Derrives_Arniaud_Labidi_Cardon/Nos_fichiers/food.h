@@ -4,15 +4,13 @@
 #include <mingl/mingl.h>
 #include <mingl/graphics/vec2d.h>
 
+#include "item.h"
+
 namespace nsGame {
-    class Food // : Item
+    class Food : public Item
     {
         public:
-            nsGraphics::Vec2D pos;
-
-            Food(nsGraphics::Vec2D pos) {
-                this->pos = pos;
-            }
+            Food(nsGraphics::Vec2D pos) : Item(pos) {}
 
             /**
             * @brief This function is used to get the position on the screen/canvas/window, whatever you want to call it
@@ -23,30 +21,22 @@ namespace nsGame {
             }
 
             /**
-             * @brief Gets the coordinates compared to the map.
-             * @fn virtual nsGraphics::Vec2D getPosition();
-             */
-            nsGraphics::Vec2D getPosition() {
-                return pos;
-            }
-
-            /**
-             * @brief Loads food
+             * @brief Loads item
              * @fn void load();
              */
-            void load();
+            void load() override; // On dirait que sans = 0 à la fin, Qt ne veut pas compiler parce qu'il considère que la fonction n'est pas définie (source: stackoverflow)
 
             /**
-             * @brief Updates food
-             * @fn int update(MinGL & window, unsigned delta);
+             * @brief Updates item
+             * @fn void update(unsigned delta);
              */
-            void update(unsigned delta);
+            void update(unsigned delta) override;
 
             /**
              * @brief Renders resources
              * @fn void render(MinGL & window);
              */
-            void render(MinGL & window);
+            void render(MinGL & window) override;
     };
 }
 

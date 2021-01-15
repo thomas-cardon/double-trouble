@@ -41,11 +41,8 @@ namespace nsGame {
             /** \brief Preloaded resources */
             std::map<std::string, nsGui::Sprite*> sprites;
         public:
-            /** \brief Food */
-            std::map<std::pair<int, int> /* x/y coordinates */, Food> food;
-
-            /** \brief Items */
-            std::vector<Item> items;
+            /** \brief Items ( + food) */
+            std::map<std::pair<int, int> /* x/y coordinates */, Item*> items;
 
             /**
              * @brief load
