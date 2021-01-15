@@ -24,7 +24,7 @@ class CreditState : public State {
         nsGui::Sprite sprite = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/credits.i2s", nsGraphics::Vec2D(0, 0));
         nsTransition::TransitionEngine transitionEngine;
 
-        void load() override {
+        void load() {
             nsTransition::TransitionContract spriteContract(sprite, sprite.TRANSITION_POSITION, std::chrono::seconds(10), { 0, -640 });
 
             spriteContract.setDestinationCallback([&] {
@@ -34,11 +34,11 @@ class CreditState : public State {
             transitionEngine.startContract(spriteContract);
         }
 
-        void update(MinGL & window, unsigned delta) override {
+        void update(MinGL & window, unsigned delta) {
             transitionEngine.update(std::chrono::microseconds(delta * 1000));
         }
 
-        void render(MinGL & window) override {
+        void render(MinGL & window) {
             window << sprite;
         }
 };

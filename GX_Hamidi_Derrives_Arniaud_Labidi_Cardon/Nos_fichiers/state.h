@@ -1,18 +1,15 @@
-#ifndef LOGIC_H
-#define LOGIC_H
+#ifndef STATE_H
+#define STATE_H
 
 /**
- *
  * @file    state.h
  * @author  Thomas Cardon
  * @date    8 janvier 2020
  * @version 1.0
  * @brief   State
- *
  **/
 
 #include <mingl/mingl.h>
-#include "stateManager.h"
 
 namespace nsGame {
     /**
@@ -25,46 +22,42 @@ namespace nsGame {
 
            /**
             * @brief Loads State resources
-            * @fn virtual void load();
+            * @fn void load();
             */
-           virtual void load() {}
+           void load() {}
 
            /**
             * @brief Updates state
-            * @fn virtual int update(MinGL & window, unsigned delta);
+            * @fn int update(MinGL & window, unsigned delta);
             */
-           virtual void update(MinGL & window, unsigned delta) {}
+           void update(MinGL & window, unsigned delta);
 
            /**
             * @brief Renders resources
-            * @fn virtual void render(MinGL & window);
+            * @fn void render(MinGL & window);
             */
-           virtual void render(MinGL & window) {
+            void render(MinGL & window) {
                window.setBackgroundColor(nsGraphics::RGBAcolor(0, 255));
            }
 
            /**
             * @brief Handles minGL 2 mouse events
-            * @fn virtual void events(nsEvent::Event_t event);
+            * @fn void events(nsEvent::Event_t event);
             */
-           virtual void events(nsEvent::Event_t event) {}
+           void events(nsEvent::Event_t event);
 
            /**
             * @brief Changes logic
             * @fn void setState(int logic);
             */
-           void setState(int logic) {
-               StateManager::current = logic;
-           }
+           void setState(int logic);
 
            /**
             * @brief Gets current logic
             * @fn int getState();
             */
-           int getState() {
-               return StateManager::current;
-           }
+           int getState();
     };
 }
 
-#endif // LOGIC_H
+#endif // STATE_H

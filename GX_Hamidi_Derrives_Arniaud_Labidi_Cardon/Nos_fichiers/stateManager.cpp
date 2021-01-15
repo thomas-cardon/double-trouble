@@ -18,43 +18,34 @@
 
 using namespace nsGame;
 
-int StateManager::current = -1;
-
-LoadingState loader;
-MainMenuState menu;
-GameState game;
-
-CreditState credit;
+int StateManager::current = 0;
 
 void StateManager::load() {
     std::cout << "[StateManager] Loading" << std::endl;
 
-    menu.load();
-    game.load();
-    credit.load();
+    //this->states.insert(std::make_pair(-1, new LoadingState()));
+    this->states.insert(std::make_pair(0, new MainMenuState()));
+    this->states.insert(std::make_pair(1, new GameState()));
+    this->states.insert(std::make_pair(99, new CreditState()));
 
-    StateManager::current = 0;
+    for (auto & state : states)
+        state.second->load();
 }
 
 void StateManager::events(MinGL & window) {
     while(window.getEventManager().hasEvent()) {
         const nsEvent::Event_t actualEvent = window.getEventManager().pullEvent();
-
-        if (current == 0) menu.events(actualEvent);
+        states.at(current)->events(actualEvent);
     }
 }
 
 void StateManager::update(MinGL & window, unsigned delta) {
     events(window);
+    State* state = states.at(current);
 
-    if (current == 0) menu.update(window, delta);
-    else if (current == 1) game.update(window, delta);
-    else if (current == 99) credit.update(window, delta);
+    state->update(window, delta);
 }
 
 void StateManager::render(MinGL & window) {
-    if (current == 0) menu.render(window);
-    else if (current == 1) game.render(window);
-    else if (current == 99) credit.render(window);
-    else loader.render(window);
+    if (states.size() > 0) states.at(current)->render(window);
 }

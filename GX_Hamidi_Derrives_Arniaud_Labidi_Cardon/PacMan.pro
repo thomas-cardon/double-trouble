@@ -19,6 +19,7 @@ SOURCES += \
     Nos_fichiers/map.cpp \
     Correc_Prof/params.cpp \
     Nos_fichiers/player.cpp \
+    Nos_fichiers/state.cpp \
     Nos_fichiers/stateManager.cpp \
     main.cpp
 

@@ -19,14 +19,13 @@ class LoadingState : public State {
      * @author Thomas Cardon
      */
     public:
+        void load() {}
 
-        void load() override {}
-
-        void update(MinGL & window, unsigned delta) override {
+        void update(MinGL & window, unsigned delta) {
 
         }
 
-        void render(MinGL & window) override {
+        void render(MinGL & window) {
             window.setBackgroundColor(nsGraphics::KCyan);
         }
 };

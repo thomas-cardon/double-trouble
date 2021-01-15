@@ -39,18 +39,18 @@ class MainMenuState : public State {
         bool canMove = true;
         int hovering = 0;
 
-        void load() override {
+        void load() {
             Cooldowns::createCooldown("mainMenu_move", 500);
 
             audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-select.wav");
             audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-click.wav");
         }
 
-        void events(nsEvent::Event_t event) override {
+        void events(nsEvent::Event_t event) {
             std::cout << event.eventType << std::endl;
         }
 
-        void update(MinGL & window, unsigned delta) override {
+        void update(MinGL & window, unsigned delta) {
             if (Cooldowns::isCooldownOver("mainMenu_move")) canMove = true;
             if (!canMove) return;
 
@@ -77,7 +77,7 @@ class MainMenuState : public State {
             audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-select.wav");
         }
 
-        void render(MinGL & window) override {
+        void render(MinGL & window) {
             window << background;
             window << appuyer_a;
 

@@ -48,13 +48,13 @@ namespace nsGame {
              * @brief Loads State resources
              * @fn virtual void load();
              */
-            virtual void load() override;
+            void load();
 
             /**
              * @brief Updates state
              * @fn virtual int update(MinGL & window, unsigned delta);
              */
-            virtual void update(MinGL & window, unsigned delta) override;
+            void update(MinGL & window, unsigned delta);
 
             /**
              * @brief Checks every tick (State#update()) if one of the players have won (or not).
@@ -68,7 +68,7 @@ namespace nsGame {
              * @brief Renders resources
              * @fn virtual void render(MinGL & window);
              */
-            virtual void render(MinGL & window) override;
+            void render(MinGL & window);
 
             /**
              * @brief Renders the score on the sidebar for a given player

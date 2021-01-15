@@ -2,14 +2,15 @@
 #define STATEMANAGER_H
 
 #include <mingl/mingl.h>
+#include "state.h"
 
 /**
  *
- * \file    logicManager.h
+ * \file    stateManager.h
  * \author  Thomas Cardon
  * \date    9 janvier 2020
  * \version 1.0
- * \brief   StateManager
+ * \brief   StateManager handles the different game states (Menu, Credits, Game...)
  *
  **/
 
@@ -22,6 +23,9 @@ namespace nsGame {
      */
     class StateManager {
         public:
+            /** \brief States */
+            std::map<int, State*> states;
+
             /* ID de State actuel */
             static int current;
 

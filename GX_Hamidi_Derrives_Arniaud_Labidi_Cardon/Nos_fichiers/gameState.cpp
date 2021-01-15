@@ -16,6 +16,8 @@ void GameState::load() {
     if (RetVal != 0) throw "Une erreur s'est produite lors de la lecture du fichier YAML";
 
     map.load();
+
+    audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-select.wav");
     audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/game-over.wav");
 
     numbers.resize(10);
@@ -57,7 +59,13 @@ void GameState::update(MinGL & window, unsigned delta) {
 
         player1.isAllowedToMove = player2.isAllowedToMove = true;
     }
-    else player1.isAllowedToMove = player2.isAllowedToMove = false;
+    else {
+        player1.isAllowedToMove = player2.isAllowedToMove = false;
+        if (window.isPressed({ 'a', false })) {
+            audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-select.wav");
+            this->setState(0);
+        }
+    }
 
     if (player1.canBeHitBy(player2)) { // KILL !
         std::cout << "Hit ! P1 HP: " << player1.hearts << " | P2 HP: " << player2.hearts << std::endl;
