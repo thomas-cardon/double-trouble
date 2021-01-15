@@ -16,7 +16,7 @@
 #include "player.h"
 #include "entity.h"
 
-#include "cooldowns.h"
+#include "cooldowns.cpp"
 
 /**
  *
@@ -26,7 +26,6 @@
  * \version 1.0
  * \brief   Method definitions for Player.h
  */
-
 
 using namespace nsGame;
 
@@ -48,7 +47,7 @@ void Player::spawn() {
 void Player::load(CMyParam params) {
     std::cout << "[Player N=" << std::to_string(N) + "] Loading" << std::endl;
 
-    createCooldown("player" + std::to_string(N) + "_move", 200 / movementSpeed);
+    Cooldowns::createCooldown("player" + std::to_string(N) + "_move", 200 / movementSpeed);
 
     this->spawn();
 
@@ -85,6 +84,14 @@ void Player::onKeyPress(char key) {
     //else if (key == KEY_ACTION_1) this->powerball();
     else return;
 
+    /*
+    int item = map.getItem(this->getPosition());
+    if (item != -1) {
+        this->score += 50;
+        map.food.erase(map.food.begin() + item);
+    }
+    */
+
     IS_FACING = key;
     canMove = false;
 }
@@ -93,7 +100,7 @@ void Player::update(MinGL & window, unsigned delta, CMat map) {
     /*
      * Movement cooldowns
      */
-    canMove = isCooldownOver("player" + std::to_string(N) + "_move");
+    canMove = Cooldowns::isCooldownOver("player" + std::to_string(N) + "_move");
 
     if (isAllowedToMove) {
         if (window.isPressed({ KEY_UP, false })) {
@@ -125,7 +132,7 @@ void Player::update(MinGL & window, unsigned delta, CMat map) {
 }
 
 bool Player::canTakeDamage() {
-    return isCooldownOver("player" + std::to_string(N) + "_canTakeDamage", true);
+    return Cooldowns::isCooldownOver("player" + std::to_string(N) + "_canTakeDamage", true);
 }
 
 void Player::damage() {
@@ -136,7 +143,7 @@ void Player::damage() {
 }
 
 void Player::noDamage(int ms) {
-    createCooldown("player" + std::to_string(N) + "_canTakeDamage", ms);
+    Cooldowns::createCooldown("player" + std::to_string(N) + "_canTakeDamage", ms);
 }
 
 void Player::render(MinGL & window) {
@@ -160,5 +167,5 @@ void Player::render(MinGL & window) {
 
 void Player::setMovementSpeed(double speed) {
     this->movementSpeed = speed;
-    setCooldownDelay("player" + std::to_string(N) + "_move", 200 / getMovementSpeed());
+    Cooldowns::setCooldownDelay("player" + std::to_string(N) + "_move", 200 / getMovementSpeed());
 }

@@ -48,7 +48,7 @@ void GameState::checkForWin(Player player1, Player player2) {
 
 void GameState::update(MinGL & window, unsigned delta) {
     if (win == -1) {
-        map.update(delta);
+        map.update(delta, player1, player2);
 
         player1.update(window, delta, map.getMat());
         player2.update(window, delta, map.getMat());

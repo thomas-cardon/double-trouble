@@ -3,7 +3,7 @@
 
 /**
  *
- * @file    logic.h
+ * @file    state.h
  * @author  Thomas Cardon
  * @date    8 janvier 2020
  * @version 1.0

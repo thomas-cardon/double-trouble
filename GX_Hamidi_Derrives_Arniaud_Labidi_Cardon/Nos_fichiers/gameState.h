@@ -7,10 +7,9 @@
 #include "type.h"
 #include "params.h"
 
-
 #include "map.h"
 #include "state.h"
-#include "player.cpp"
+#include "player.h"
 
 namespace nsGame {
     /**

@@ -5,8 +5,11 @@
 #include <mingl/gui/sprite.h>
 
 #include "params.h"
-
 #include "type.h"
+
+#include "player.h"
+#include "item.h"
+#include "food.h"
 
 namespace nsGame {
     /**
@@ -18,7 +21,7 @@ namespace nsGame {
     {
         private:
             /** \brief Game grid */
-            CMat Mat;
+            CMat grid;
 
             const std::string BLOCK = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile011.i2s";
 
@@ -38,6 +41,12 @@ namespace nsGame {
             /** \brief Preloaded resources */
             std::map<std::string, nsGui::Sprite*> sprites;
         public:
+            /** \brief Food */
+            std::map<std::pair<int, int> /* x/y coordinates */, Food> food;
+
+            /** \brief Items */
+            std::vector<Item> items;
+
             /**
              * @brief load
              */
@@ -46,43 +55,55 @@ namespace nsGame {
             /**
              * @brief update
              * @param delta
-             * @fn void update(unsigned delta);
+             * @fn void update(unsigned delta, Player & player1, Player & player2);
              */
-            void update(unsigned delta);
+            void update(unsigned delta, Player & player1, Player & player2);
 
             /**
-             * @brief render
+             * @brief Renders the layer of the map, with its cells (walls, etc.)
              * @param window
              */
             void render(MinGL & window);
 
             /**
-             * @brief getMinX
+             * @brief Gets the minimal X coordinates (it should be 0 but who knows)
              */
             unsigned getMinX();
 
             /**
-             * @brief getMinY
+             * @brief Gets the minimal Y coordinates (it should be 0 but who knows)
              */
             unsigned getMinY();
 
             /**
-             * @brief getWidth
+             * @brief Gets the map width
              */
             unsigned getWidth();
 
             /**
-             * @brief getHeight
+             * @brief Gets the map height
              */
             unsigned getHeight();
 
             /**
              * @brief getMat
-             * @return
+             * @return CMat grid
              */
             CMat getMat() {
-                return Mat;
+                return grid;
             }
+
+            /**
+             * @brief Gets a place where there's nothing but a cell
+             * @return nsGraphics::Vec2D
+             */
+            nsGraphics::Vec2D getEmptyPosition();
+
+            /**
+             * @brief Gets a list of positions where there's nothing but a cell
+             * @return std::vector<nsGraphics::Vec2D>
+             */
+            std::vector<nsGraphics::Vec2D> getEmptyPositions();
     };
 }
 

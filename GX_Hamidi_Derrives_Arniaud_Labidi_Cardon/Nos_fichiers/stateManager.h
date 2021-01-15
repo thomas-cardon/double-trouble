@@ -1,5 +1,5 @@
-#ifndef LOGICMANAGER_H
-#define LOGICMANAGER_H
+#ifndef STATEMANAGER_H
+#define STATEMANAGER_H
 
 #include <mingl/mingl.h>
 
@@ -51,4 +51,4 @@ namespace nsGame {
     };
 }
 
-#endif // LOGICMANAGER_H
+#endif // STATEMANAGER_H

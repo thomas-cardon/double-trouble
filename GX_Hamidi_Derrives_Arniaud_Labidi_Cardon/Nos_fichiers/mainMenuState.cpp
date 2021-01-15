@@ -4,6 +4,15 @@
 #include "state.h"
 #include "cooldowns.h"
 
+/**
+ *
+ * \file    mainMenuState.cpp
+ * \author  Thomas Cardon
+ * \date    9 janvier 2020
+ * \version 1.0
+ * \brief   Main menu state
+ */
+
 using namespace nsGame;
 
 class MainMenuState : public State {
@@ -31,7 +40,7 @@ class MainMenuState : public State {
         int hovering = 0;
 
         void load() override {
-            createCooldown("mainMenu_move", 500);
+            Cooldowns::createCooldown("mainMenu_move", 500);
 
             audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-select.wav");
             audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-click.wav");
@@ -42,7 +51,7 @@ class MainMenuState : public State {
         }
 
         void update(MinGL & window, unsigned delta) override {
-            if (isCooldownOver("mainMenu_move")) canMove = true;
+            if (Cooldowns::isCooldownOver("mainMenu_move")) canMove = true;
             if (!canMove) return;
 
             if (window.isPressed({ 'a', false })) {
