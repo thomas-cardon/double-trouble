@@ -10,13 +10,13 @@ SOURCES += \
     Nos_fichiers/cooldowns.cpp \
     Nos_fichiers/creditState.cpp \
     Nos_fichiers/entity.cpp \
+    Nos_fichiers/food.cpp \
     Nos_fichiers/game2d.cpp \
     Nos_fichiers/gameState.cpp \
     Correc_Prof/gridmanagement.cpp \
     Nos_fichiers/loadingState.cpp \
     Nos_fichiers/mainMenuState.cpp \
     Nos_fichiers/map.cpp \
-    Nos_fichiers/nsutil.cpp \
     Correc_Prof/params.cpp \
     Nos_fichiers/player.cpp \
     Nos_fichiers/stateManager.cpp \
@@ -26,9 +26,15 @@ DISTFILES += \
     Nos_fichiers/config.yaml \
     Nos_fichiers/level_1.map \
     Nos_fichiers/res/audio/3-2-1-go.wav \
+    Nos_fichiers/res/audio/boom-1.wav \
     Nos_fichiers/res/audio/button-click.wav \
+    Nos_fichiers/res/audio/button-select.wav \
+    Nos_fichiers/res/audio/coin-1.wav \
+    Nos_fichiers/res/audio/game-over.wav \
     Nos_fichiers/res/audio/player-hit-1.wav \
     Nos_fichiers/res/audio/player-moving-1.wav \
+    Nos_fichiers/res/audio/powerup-1.wav \
+    Nos_fichiers/res/audio/shoot-1.wav \
     Nos_fichiers/res/gui/APPUYER_A.png \
     Nos_fichiers/res/gui/Bouton Option.png \
     Nos_fichiers/res/gui/Bouton Option.png \
@@ -100,6 +106,8 @@ DISTFILES += \
     Nos_fichiers/res/gui/victory_screen/player2.i2s \
     Nos_fichiers/res/gui/victory_screen/player2.png \
     Nos_fichiers/res/img2si.py \
+    Nos_fichiers/res/maps/level_1.map \
+    Nos_fichiers/res/maps/level_2.map \
     Nos_fichiers/res/tile000.png \
     Nos_fichiers/res/tile001.i2s \
     Nos_fichiers/res/tile001.png \
@@ -154,16 +162,16 @@ DISTFILES += \
 
 HEADERS += \
     Nos_fichiers/animation.h \
-    Nos_fichiers/cooldowns.h \
-    Nos_fichiers/ennemy.h \
     Nos_fichiers/entity.h \
+    Nos_fichiers/food.h \
     Nos_fichiers/game2d.h \
     Correc_Prof/gridmanagement.h \
     Nos_fichiers/gameState.h \
+    Nos_fichiers/item.h \
     Nos_fichiers/map.h \
-    Nos_fichiers/nsutil.h \
     Correc_Prof/params.h \
     Nos_fichiers/player.h \
     Nos_fichiers/state.h \
     Nos_fichiers/stateManager.h \
     Nos_fichiers/type.h \
+    Nos_fichiers/cooldowns.h \

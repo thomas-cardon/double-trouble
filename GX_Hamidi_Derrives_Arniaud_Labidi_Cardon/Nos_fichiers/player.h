@@ -13,8 +13,9 @@
 
 #include <mingl/mingl.h>
 #include <mingl/gui/sprite.h>
+#include <mingl/audio/audioengine.h>
 
-#include "entity.cpp"
+#include "entity.h"
 
 #include "animation.h"
 #include "type.h"
@@ -92,13 +93,13 @@ namespace nsGame {
              * @brief Teleports the entity at its spawn
              * @fn void spawn();
              */
-            void spawn() override;
+            void spawn();
 
             /**
              * @brief Sets the movement speed
              * @fn void setMovementSpeed(double speed);
              */
-            void setMovementSpeed(double speed) override;
+            void setMovementSpeed(double speed);
     };
 }
 

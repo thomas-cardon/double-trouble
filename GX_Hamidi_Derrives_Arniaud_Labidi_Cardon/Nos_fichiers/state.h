@@ -3,7 +3,7 @@
 
 /**
  *
- * @file    logic.h
+ * @file    state.h
  * @author  Thomas Cardon
  * @date    8 janvier 2020
  * @version 1.0
@@ -20,7 +20,7 @@ namespace nsGame {
      * @brief A class defining the different states of the game (In-game, Menus, Loading...)
      * @author Thomas Cardon
      */
-    class State {
+    struct State {
         public:
 
            /**
@@ -28,6 +28,12 @@ namespace nsGame {
             * @fn virtual void load();
             */
            virtual void load() {}
+
+           /**
+            * @brief Destroys state (and resets it)
+            * @fn virtual void destroy();
+            */
+           virtual void destroy() {}
 
            /**
             * @brief Updates state

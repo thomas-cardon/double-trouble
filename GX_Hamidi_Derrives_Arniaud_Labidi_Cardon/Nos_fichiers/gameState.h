@@ -7,10 +7,9 @@
 #include "type.h"
 #include "params.h"
 
-
 #include "map.h"
 #include "state.h"
-#include "player.cpp"
+#include "player.h"
 
 namespace nsGame {
     /**
@@ -20,6 +19,7 @@ namespace nsGame {
      */
     class GameState: public State {
         public:
+            /** \brief Victory status: -1 = not yet, 0 = equal, 1 = player 1, 2 = player 2 */
             int win = -1;
 
             /** \brief La grille du jeu */
@@ -27,17 +27,20 @@ namespace nsGame {
             /** \brief Le fichier de configuration du jeu */
             CMyParam Params;
 
+            /** \brief Players */
             Player player1 = Player(1), player2 = Player(2);
 
             /** \brief minGL 2 audio engine */
             nsAudio::AudioEngine audio;
 
+            /** \brief Sidebar resources */
             nsGui::Sprite sidebar = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/sidebar/panel.i2s"),
             h0 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/sidebar/hearts_0.i2s"),
             h1 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/sidebar/hearts_1.i2s"),
             h2 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/sidebar/hearts_2.i2s"),
             h3 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/sidebar/hearts_3.i2s");
 
+            /** \brief Victory screens */
             nsGui::Sprite victoryScreen1 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/victory_screen/player1.i2s"),
             victoryScreen2 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/victory_screen/player2.i2s"),
             equalScreen = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/victory_screen/equal.i2s");
@@ -52,16 +55,16 @@ namespace nsGame {
             virtual void load() override;
 
             /**
+             * @brief Destroys state (and resets it)
+             * @fn virtual void destroy();
+             */
+            virtual void destroy() override;
+
+            /**
              * @brief Updates state
              * @fn virtual int update(MinGL & window, unsigned delta);
              */
             virtual void update(MinGL & window, unsigned delta) override;
-
-            /**
-             * @brief Renders resources
-             * @fn virtual void render(MinGL & window);
-             */
-            virtual void render(MinGL & window) override;
 
             /**
              * @brief Checks every tick (State#update()) if one of the players have won (or not).
@@ -72,12 +75,25 @@ namespace nsGame {
             void checkForWin(Player player1, Player player2);
 
             /**
+             * @brief Renders resources
+             * @fn virtual void render(MinGL & window);
+             */
+            virtual void render(MinGL & window) override;
+
+            /**
              * @brief Renders the score on the sidebar for a given player
              * @param MinGL & window
              * @param Player p
              * @fn void renderScore(MinGL & window, Player p);
              */
             void renderScore(MinGL & window, Player p);
+
+            /**
+             * @brief Renders the victory screen
+             * @param MinGL & window
+             * @fn void renderVictoryScreen(MinGL & window);
+             */
+            void renderVictoryScreen(MinGL & window);
     };
 };
 
