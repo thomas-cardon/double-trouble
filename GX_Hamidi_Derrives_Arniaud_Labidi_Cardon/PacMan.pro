@@ -175,3 +175,4 @@ HEADERS += \
     Nos_fichiers/stateManager.h \
     Nos_fichiers/type.h \
     Nos_fichiers/cooldowns.h \
+    Nos_fichiers/ennemy.h
