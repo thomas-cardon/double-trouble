@@ -163,7 +163,8 @@ void Player::setMovementSpeed(double speed) {
 }
 
 bool Player::canBeHitBy(Player p2) {
+    if (this->IS_FACING == this->KEY_UP && p2.IS_FACING != p2.KEY_DOWN)
+      return true;
+
     return false;
-    //if (p2.IS_FACING != p2.KEY_UP && this->IS_FACING == this->KEY_UP)
-      //  return false;
 }
