@@ -161,3 +161,9 @@ void Player::setMovementSpeed(double speed) {
     this->movementSpeed = speed;
     Cooldowns::setCooldownDelay("player" + std::to_string(N) + "_move", 200 / getMovementSpeed());
 }
+
+bool Player::canBeHitBy(Player p2) {
+    return false;
+    //if (p2.IS_FACING != p2.KEY_UP && this->IS_FACING == this->KEY_UP)
+      //  return false;
+}
