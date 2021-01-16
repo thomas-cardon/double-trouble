@@ -6,6 +6,15 @@
 
 static std::map<std::string, Cooldown> cooldowns;
 
+/**
+ *
+ * \file    cooldowns.h
+ * \author  Thomas Cardon
+ * \date    10 janvier 2020
+ * \version 1.0
+ * \brief   Method definitions for Player.h
+ */
+
 namespace nsGame {
     class Cooldowns {
         public:
