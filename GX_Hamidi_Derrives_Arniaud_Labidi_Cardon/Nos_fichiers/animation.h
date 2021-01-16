@@ -1,16 +1,15 @@
 #ifndef ANIMATION_H
 #define ANIMATION_H
 
+#include <mingl/gui/sprite.h>
+
 /**
- *
  * \file    animation.h
  * \author  Thomas Cardon
  * \date    12 janvier 2020
  * \version 1.0
  * \brief   Animation
- *
- **/
-#include <mingl/gui/sprite.h>
+ */
 
 namespace nsGame {
     /**
@@ -21,7 +20,10 @@ namespace nsGame {
     class Animation
     {
         private:
+            /** \brief */
             unsigned _currentTime;
+
+            /** \brief */
             bool inReverse = false;
 
             nsGraphics::Vec2D _pos;

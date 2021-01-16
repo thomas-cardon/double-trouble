@@ -2,11 +2,11 @@
 
 /**
  *
- * \file    animation.cpp
+ * \file    cooldowns.cpp
  * \author  Thomas Cardon
- * \date    12 janvier 2020
+ * \date    10 janvier 2020
  * \version 1.0
- * \brief   Method definitions for Animation.h
+ * \brief   Method definitions for cooldowns.h
  */
 
 using namespace nsGame;
