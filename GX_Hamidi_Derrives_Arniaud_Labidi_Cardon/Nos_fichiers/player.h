@@ -1,16 +1,6 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-/**
- *
- * \file    player.h
- * \author  Thomas Cardon
- * \date    8 janvier 2020
- * \version 1.0
- * \brief   Player
- *
- **/
-
 #include <mingl/mingl.h>
 #include <mingl/gui/sprite.h>
 #include <mingl/audio/audioengine.h>
@@ -19,6 +9,16 @@
 
 #include "animation.h"
 #include "type.h"
+
+/**
+ *
+ * \file    player.h
+ * \author  Thomas Cardon, Alexandre Arniaud
+ * \date    8 janvier 2020
+ * \version 1.0
+ * \brief   Player
+ *
+ **/
 
 namespace nsGame {
     /**

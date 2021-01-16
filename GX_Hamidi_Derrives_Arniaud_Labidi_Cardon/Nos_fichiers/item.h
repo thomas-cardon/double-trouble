@@ -9,14 +9,14 @@
  * @author  Thomas Cardon, Alexandre Arniaud
  * @date    8 janvier 2020
  * @version 1.0
- * @brief   State
+ * @brief   Item
  **/
 
 namespace nsGame {
     /**
      * @class Item
-     * @brief A class defining the different states of the game (In-game, Menus, Loading...)
-     * @author Thomas Cardon
+     * @brief Defines the Item
+     * @author Thomas Cardon, Alexandre Arniaud
      */
     struct Item {
         protected:

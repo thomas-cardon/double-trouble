@@ -1,6 +1,9 @@
 #ifndef LOGIC_H
 #define LOGIC_H
 
+#include <mingl/mingl.h>
+#include "stateManager.h"
+
 /**
  *
  * @file    state.h
@@ -10,9 +13,6 @@
  * @brief   State
  *
  **/
-
-#include <mingl/mingl.h>
-#include "stateManager.h"
 
 namespace nsGame {
     /**

@@ -5,6 +5,14 @@
 #include <mingl/mingl.h>
 
 /**
+ * \file    game2d.h
+ * \author  Thomas Cardon
+ * \date    10 janvier 2020
+ * \version 1.0
+ * \brief   Main rendering functions
+ */
+
+/**
  * @brief Updates all sub components every tick
  * @fn void update(MinGL & window, unsigned delta);
  */
