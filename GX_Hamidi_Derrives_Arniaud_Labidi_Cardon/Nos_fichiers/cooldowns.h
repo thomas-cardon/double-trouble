@@ -3,8 +3,8 @@
 
 #include <string>
 #include "type.h"
-
 static std::map<std::string, Cooldown> cooldowns;
+
 
 /**
  * \file    cooldowns.h
