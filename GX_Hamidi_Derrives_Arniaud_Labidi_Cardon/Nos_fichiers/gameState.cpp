@@ -3,7 +3,7 @@
 /**
  *
  * \file    gameState.cpp
- * \author  Thomas Cardon
+ * \author  Thomas Cardon, Alexandre Arniaud, Angèle Derrives, Mohamed Labidi, Ines Hamidi
  * \date    12 janvier 2020
  * \version 1.0
  * \brief   Method definitions for gameState.h
@@ -12,12 +12,18 @@
 using namespace nsGame;
 
 void GameState::load() {
+    // Parameters loading
     int RetVal = LoadParams(this->Params, "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/config.yaml");
     if (RetVal != 0) throw "Une erreur s'est produite lors de la lecture du fichier YAML";
 
+    // Map loading
     map.load();
-    audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/game-over.wav");
 
+    // Sounds loading
+    audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/game-over.wav");
+    audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-select.wav");
+
+    // Scoreboard numbers loading
     numbers.resize(10);
 
     int i = 9;
@@ -28,15 +34,29 @@ void GameState::load() {
         i -= 1;
     }
 
+    // Players loading
     player1.load(Params);
     player2.load(Params);
 }
 
+void GameState::destroy() {
+    player1.score = player2.score = 0;
+    player1.hearts = player2.hearts = 3;
+
+    player1.spawn();
+    player2.spawn();
+
+    map.load();
+
+    win = -1;
+}
+
 void GameState::checkForWin(Player player1, Player player2) {
-    if (player1.hearts == 0 && player2.hearts == 0)
-        win = 3;
-    else if (player1.hearts == 0 || player2.score >= 9000) win = 2;
+    if (player1.hearts == 0 && player2.hearts == 0 && player1.score == player2.score) win = 3;
+    else if (player1.hearts == 0 && player2.hearts == 0 && player1.score > player2.score) win = 1;
+    else if (player1.hearts == 0 && player2.hearts == 0 && player1.score < player2.score) win = 2;
     else if (player2.hearts == 0 || player1.score >= 9000) win = 1;
+    else if (player1.hearts == 0 || player2.score >= 9000) win = 2;
     else {
         win = -1;
         return;
@@ -47,7 +67,7 @@ void GameState::checkForWin(Player player1, Player player2) {
 
 void GameState::update(MinGL & window, unsigned delta) {
     if (win == -1) {
-        map.update(delta);
+        map.update(delta, player1, player2);
 
         player1.update(window, delta, map.getMat());
         player2.update(window, delta, map.getMat());
@@ -56,7 +76,16 @@ void GameState::update(MinGL & window, unsigned delta) {
 
         player1.isAllowedToMove = player2.isAllowedToMove = true;
     }
-    else player1.isAllowedToMove = player2.isAllowedToMove = false;
+    else {
+        player1.isAllowedToMove = player2.isAllowedToMove = false;
+
+        if (window.isPressed({ 'a', false })) {
+            audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-select.wav");
+
+            this->destroy();
+            this->setState(0);
+        }
+    }
 
     if (player1.canBeHitBy(player2)) { // KILL !
         std::cout << "Hit ! P1 HP: " << player1.hearts << " | P2 HP: " << player2.hearts << std::endl;

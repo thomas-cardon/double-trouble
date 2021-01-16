@@ -9,6 +9,7 @@
  **/
 #include "map.h"
 
+#include <utility>
 #include <iostream>
 #include <fstream>
 #include <dirent.h>
@@ -17,6 +18,7 @@
 #include <mingl/shape/rectangle.h>
 #include <mingl/shape/shape.h>
 
+#include "food.cpp"
 /**
  *
  * \file    map.cpp
@@ -46,6 +48,28 @@ std::string getRandomLevel() {
     return "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/maps/" + maps[rand() % maps.size()];
 }
 
+nsGraphics::Vec2D Map::getEmptyPosition() {
+    for (unsigned y = 0; y < getHeight(); y++) {
+        for (unsigned x = 0; x < getWidth(); x++) {
+            if (this->grid[y][x] == '0') return nsGraphics::Vec2D(x, y);
+        }
+    }
+
+    return nsGraphics::Vec2D(-1, -1);
+}
+
+std::vector<nsGraphics::Vec2D> Map::getEmptyPositions() {
+    std::vector<nsGraphics::Vec2D> vec;
+
+    for (unsigned y = 0; y < getHeight(); y++) {
+        for (unsigned x = 0; x < getWidth(); x++) {
+            if (this->grid[y][x] == '0') vec.push_back(nsGraphics::Vec2D(x, y));
+        }
+    }
+
+    return vec;
+}
+
 void Map::load() {
     /** \brief Input FileStream for the different levels */
     std::ifstream input;
@@ -61,11 +85,11 @@ void Map::load() {
     }
 
     int lineIndex = 0;
-    this->Mat.resize(lineList.size());
+    this->grid.resize(lineList.size());
 
     for(auto string : lineList) {
         for(char& c : string)
-            this->Mat[lineIndex].push_back(c);
+            this->grid[lineIndex].push_back(c);
 
         lineIndex++;
     }
@@ -76,29 +100,54 @@ void Map::load() {
      * On précharge les sprites des murs
      */
     /* Murs */
-    sprites.insert(std::pair<std::string, nsGui::Sprite*>("X_1", new nsGui::Sprite(WALL_X_1, nsGraphics::Vec2D(0, 0))));
-    sprites.insert(std::pair<std::string, nsGui::Sprite*>("X_2", new nsGui::Sprite(WALL_X_2, nsGraphics::Vec2D(0, 0))));
-    sprites.insert(std::pair<std::string, nsGui::Sprite*>("X_3", new nsGui::Sprite(WALL_X_3, nsGraphics::Vec2D(0, 0))));
-    sprites.insert(std::pair<std::string, nsGui::Sprite*>("Y_1", new nsGui::Sprite(WALL_Y_1, nsGraphics::Vec2D(0, 0))));
-    sprites.insert(std::pair<std::string, nsGui::Sprite*>("Y_2", new nsGui::Sprite(WALL_Y_2, nsGraphics::Vec2D(0, 0))));
-    sprites.insert(std::pair<std::string, nsGui::Sprite*>("Y_3", new nsGui::Sprite(WALL_Y_3, nsGraphics::Vec2D(0, 0))));
+    sprites.insert(std::pair<std::string, nsGui::Sprite*>("X_1", new nsGui::Sprite(WALL_X_1)));
+    sprites.insert(std::pair<std::string, nsGui::Sprite*>("X_2", new nsGui::Sprite(WALL_X_2)));
+    sprites.insert(std::pair<std::string, nsGui::Sprite*>("X_3", new nsGui::Sprite(WALL_X_3)));
+    sprites.insert(std::pair<std::string, nsGui::Sprite*>("Y_1", new nsGui::Sprite(WALL_Y_1)));
+    sprites.insert(std::pair<std::string, nsGui::Sprite*>("Y_2", new nsGui::Sprite(WALL_Y_2)));
+    sprites.insert(std::pair<std::string, nsGui::Sprite*>("Y_3", new nsGui::Sprite(WALL_Y_3)));
 
 
-    /* Coins */
-    sprites.insert(std::pair<std::string, nsGui::Sprite*>("CORNER_1", new nsGui::Sprite(WALL_XY_1, nsGraphics::Vec2D(0, 0))));
-    sprites.insert(std::pair<std::string, nsGui::Sprite*>("CORNER_2", new nsGui::Sprite(WALL_XY_2, nsGraphics::Vec2D(0, 0))));
-    sprites.insert(std::pair<std::string, nsGui::Sprite*>("CORNER_3", new nsGui::Sprite(WALL_XY_3, nsGraphics::Vec2D(0, 0))));
-    sprites.insert(std::pair<std::string, nsGui::Sprite*>("CORNER_4", new nsGui::Sprite(WALL_XY_4, nsGraphics::Vec2D(0, 0))));
+    /* Corners */
+    sprites.insert(std::pair<std::string, nsGui::Sprite*>("CORNER_1", new nsGui::Sprite(WALL_XY_1)));
+    sprites.insert(std::pair<std::string, nsGui::Sprite*>("CORNER_2", new nsGui::Sprite(WALL_XY_2)));
+    sprites.insert(std::pair<std::string, nsGui::Sprite*>("CORNER_3", new nsGui::Sprite(WALL_XY_3)));
+    sprites.insert(std::pair<std::string, nsGui::Sprite*>("CORNER_4", new nsGui::Sprite(WALL_XY_4)));
+
+    std::vector<nsGraphics::Vec2D> empty = getEmptyPositions();
+
+    for (unsigned i = 0; i < empty.size(); i++) {
+        Food* f = new Food(empty[i]);
+        items.insert(std::make_pair(std::make_pair(empty[i].getX(), empty[i].getY()), f));
+    }
+
+    for (auto & f : items)
+        f.second->load();
 }
 
-void Map::update(unsigned delta) { }
+void Map::update(unsigned delta, Player & player1, Player & player2) {
+    std::map<std::pair<int, int>, Item*>::iterator it;
+    it = items.find(std::make_pair(player1.getPosition().getX(), player1.getPosition().getY()));
+
+    if (it != items.end()) {
+        items.erase(it);
+        player1.score += 50;
+    }
+
+    it = items.find(std::make_pair(player2.getPosition().getX(), player2.getPosition().getY()));
+
+    if (it != items.end()) {
+        items.erase(it);
+        player2.score += 50;
+    }
+}
 
 void Map::render(MinGL & window) {
-    window << nsShape::Rectangle(nsGraphics::Vec2D(0, 0), this->Mat[0].size() * 64, this->Mat.size() * 64, nsGraphics::RGBAcolor(4, 4, 100));
+    window << nsShape::Rectangle(nsGraphics::Vec2D(0, 0), this->grid[0].size() * 64, this->grid.size() * 64, nsGraphics::RGBAcolor(4, 4, 100));
 
-    for (unsigned y = 0; y < this->Mat.size(); y++) {
-        for (unsigned x = 0; x < this->Mat[y].size(); x++) {
-            char & c = this->Mat[y][x];
+    for (unsigned y = 0; y < this->grid.size(); y++) {
+        for (unsigned x = 0; x < this->grid[y].size(); x++) {
+            char & c = this->grid[y][x];
 
             switch(c) {
                 case '0': // CELL
@@ -146,6 +195,9 @@ void Map::render(MinGL & window) {
             }
         }
     }
+
+    for (auto & f : items)
+        f.second->render(window);
 }
 
 unsigned Map::getMinX() {
@@ -157,9 +209,9 @@ unsigned Map::getMinY() {
 }
 
 unsigned Map::getWidth() {
-    return Mat[0].size();
+    return grid[0].size();
 }
 
 unsigned Map::getHeight() {
-    return Mat.size();
+    return grid.size();
 }

@@ -10,13 +10,13 @@ SOURCES += \
     Nos_fichiers/cooldowns.cpp \
     Nos_fichiers/creditState.cpp \
     Nos_fichiers/entity.cpp \
+    Nos_fichiers/food.cpp \
     Nos_fichiers/game2d.cpp \
     Nos_fichiers/gameState.cpp \
     Correc_Prof/gridmanagement.cpp \
     Nos_fichiers/loadingState.cpp \
     Nos_fichiers/mainMenuState.cpp \
     Nos_fichiers/map.cpp \
-    Nos_fichiers/nsutil.cpp \
     Correc_Prof/params.cpp \
     Nos_fichiers/player.cpp \
     Nos_fichiers/stateManager.cpp \
@@ -106,6 +106,8 @@ DISTFILES += \
     Nos_fichiers/res/gui/victory_screen/player2.i2s \
     Nos_fichiers/res/gui/victory_screen/player2.png \
     Nos_fichiers/res/img2si.py \
+    Nos_fichiers/res/maps/level_1.map \
+    Nos_fichiers/res/maps/level_2.map \
     Nos_fichiers/res/tile000.png \
     Nos_fichiers/res/tile001.i2s \
     Nos_fichiers/res/tile001.png \
@@ -160,15 +162,17 @@ DISTFILES += \
 
 HEADERS += \
     Nos_fichiers/animation.h \
-    Nos_fichiers/cooldowns.h \
     Nos_fichiers/entity.h \
+    Nos_fichiers/food.h \
     Nos_fichiers/game2d.h \
     Correc_Prof/gridmanagement.h \
     Nos_fichiers/gameState.h \
+    Nos_fichiers/item.h \
     Nos_fichiers/map.h \
-    Nos_fichiers/nsutil.h \
     Correc_Prof/params.h \
+    Nos_fichiers/monster.h \
     Nos_fichiers/player.h \
     Nos_fichiers/state.h \
     Nos_fichiers/stateManager.h \
     Nos_fichiers/type.h \
+    Nos_fichiers/cooldowns.h

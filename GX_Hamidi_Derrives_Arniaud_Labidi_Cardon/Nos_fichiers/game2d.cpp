@@ -4,11 +4,18 @@
 #include <thread>
 
 #include "stateManager.cpp"
-#include "cooldowns.h"
+
+/**
+ *
+ * \file    game2d.cpp
+ * \author  Thomas Cardon
+ * \date    12 janvier 2020
+ * \version 1.0
+ * \brief   Defines the game basic functions
+ */
 
 using namespace std;
-
-StateManager stateManager = StateManager();
+StateManager stateManager;
 
 void update(MinGL & window, unsigned delta) {
     if (window.isPressed({ 27, true }))
@@ -44,7 +51,7 @@ int load()
         window.clearScreen();
 
         // On fait tourner les procédures
-        updateCooldowns(frameTime.count() / 1000 /* delta */);
+        Cooldowns::updateCooldowns(frameTime.count() / 1000 /* delta */);
         update(window, frameTime.count() / 1000 /* delta */);
         render(window);
 
