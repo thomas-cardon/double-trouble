@@ -19,6 +19,10 @@ void InitParams (CMyParam & Param)
     Param.MapParamChar["TokenP1"] = 'O';
     Param.MapParamChar["TokenP2"] = 'X';
 
+    //Size of grid -- suppose to be a rectangle
+    Param.MapParamUnsigned["NbColumn"] = 10;
+    Param.MapParamUnsigned["NbRow"] = 15;
+
     //Display Colors
     Param.MapParamString["ColorP1"] = KColor.find("KRed")->second ;
     Param.MapParamString["ColorP2"] = KColor.find("KGreen")->second ;
@@ -26,7 +30,6 @@ void InitParams (CMyParam & Param)
 
 int LoadParams (CMyParam & Param, const std::string & FileName)
 {
-    cout << FileName << endl;
     ifstream ifs (FileName);
     if (!ifs.is_open())
     {
@@ -37,7 +40,7 @@ int LoadParams (CMyParam & Param, const std::string & FileName)
     while (ifs >> Key)
     {
         char tmp;
-        ifs >> tmp;
+        ifs >> tmp;        
         if (find (KAuthorizedKey.VParamChar.begin(), KAuthorizedKey.VParamChar.end(), Key) != KAuthorizedKey.VParamChar.end())
             ifs >> Param.MapParamChar[Key];
         else if (find (KAuthorizedKey.VParamUnsigned.begin(), KAuthorizedKey.VParamUnsigned.end(), Key) != KAuthorizedKey.VParamUnsigned.end())
