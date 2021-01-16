@@ -6,6 +6,14 @@
 #include <mingl/graphics/vec2d.h>
 #include "type.h"
 
+/**
+ * \file    entity.h
+ * \author  Thomas Cardon
+ * \date    10 janvier 2020
+ * \version 1.0
+ * \brief   Definitions for the Entity class
+ */
+
 namespace nsGame
 {
     /**

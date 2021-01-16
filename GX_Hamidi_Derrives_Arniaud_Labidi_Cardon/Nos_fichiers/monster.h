@@ -1,6 +1,14 @@
 #ifndef MONSTER_H
 #define MONSTER_H
 
+#include <mingl/mingl.h>
+#include <mingl/gui/sprite.h>
+
+#include "entity.cpp"
+
+#include "animation.h"
+#include "type.h"
+
 /**
  *
  * \file    monster.h
@@ -10,14 +18,6 @@
  * \brief   Monster
  *
  **/
-
-#include <mingl/mingl.h>
-#include <mingl/gui/sprite.h>
-
-#include "entity.cpp"
-
-#include "animation.h"
-#include "type.h"
 
 namespace nsGame {
     /**

@@ -11,6 +11,14 @@
 #include "state.h"
 #include "player.h"
 
+/**
+ * \file    gameState.h
+ * \author  Thomas Cardon, Alexandre Arniaud, Angèle Derrives, Mohamed Labidi, Ines Hamidi
+ * \date    12 janvier 2020
+ * \version 1.0
+ * \brief   gameState
+ */
+
 namespace nsGame {
     /**
      * @class GameState
@@ -22,9 +30,9 @@ namespace nsGame {
             /** \brief Victory status: -1 = not yet, 0 = equal, 1 = player 1, 2 = player 2 */
             int win = -1;
 
-            /** \brief La grille du jeu */
+            /** \brief The game grid */
             Map map;
-            /** \brief Le fichier de configuration du jeu */
+            /** \brief The game configuration file */
             CMyParam Params;
 
             /** \brief Players */

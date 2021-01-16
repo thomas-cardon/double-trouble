@@ -6,11 +6,19 @@
 
 #include "item.h"
 
+/**
+ * \file    food.h
+ * \author  Thomas Cardon
+ * \date    10 janvier 2020
+ * \version 1.0
+ * \brief   Food
+ */
+
 namespace nsGame {
     /**
      * @class Item
-     * @brief A class defining the different states of the game (In-game, Menus, Loading...)
-     * @authors Thomas Cardon, Alexandre Arniaud
+     * @brief Define Food
+     * @authors Thomas Cardon
      */
     class Food : public Item
     {
@@ -26,13 +34,13 @@ namespace nsGame {
             }
 
             /**
-             * @brief Loads item
+             * @brief Loads food
              * @fn void load();
              */
             void load() override; // On dirait que sans = 0 à la fin, Qt ne veut pas compiler parce qu'il considère que la fonction n'est pas définie (source: stackoverflow)
 
             /**
-             * @brief Updates item
+             * @brief Updates food
              * @fn void update(unsigned delta);
              */
             void update(unsigned delta) override;

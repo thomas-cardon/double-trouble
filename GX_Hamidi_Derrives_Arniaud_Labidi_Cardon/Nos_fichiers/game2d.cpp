@@ -11,7 +11,7 @@
  * \author  Thomas Cardon
  * \date    12 janvier 2020
  * \version 1.0
- * \brief   Defines the game basic functions
+ * \brief   Method definitions for game2d.h
  */
 
 using namespace std;
