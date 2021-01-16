@@ -106,6 +106,7 @@ void GameState::renderScore(MinGL & window, Player p) {
 
     int i = 0;
     for (char & c : str) {
+        // We're getting the ASCII version of the numbers
         numbers.at(c - '0')->setPosition(nsGraphics::Vec2D(692 + (i * 35), p.N == 1 ? 225 : 427));
         numbers.at(c - '0')->draw(window);
 
