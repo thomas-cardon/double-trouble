@@ -88,12 +88,6 @@ namespace nsGame {
             bool canTakeDamage();
 
             /**
-             * @brief Checks if entity can be hit by another player.
-             * @fn virtual bool canBeHitBy(Player player);
-             */
-            bool canBeHitBy(Player player);
-
-            /**
              * @brief Decrements 1 to hearts, and disable damage for 5 seconds + adds movement speed;
              * @fn void damage();
              */
