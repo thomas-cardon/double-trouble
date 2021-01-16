@@ -2,13 +2,11 @@
 #define ITEM_H
 
 /**
- *
  * @file    item.h
  * @author  Thomas Cardon, Alexandre Arniaud
  * @date    8 janvier 2020
  * @version 1.0
  * @brief   State
- *
  **/
 
 #include <mingl/mingl.h>

@@ -15,7 +15,7 @@ namespace nsGame {
     /**
      * @class GameState
      * @brief Defines the game logic
-     * @author Thomas Cardon
+     * @author Thomas Cardon, Alexandre Arniaud, Angèle Derrives, Mohamed Labidi, Ines Hamidi
      */
     class GameState: public State {
         public:

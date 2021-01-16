@@ -28,10 +28,10 @@ namespace nsGame
              */
             nsGraphics::Vec2D getCoordinates();
 
-             /**
-              * @brief Gets the coordinates compared to the map.
-              * @fn virtual nsGraphics::Vec2D getPosition();
-              */
+           /**
+            * @brief Gets the coordinates compared to the map.
+            * @fn virtual nsGraphics::Vec2D getPosition();
+            */
             nsGraphics::Vec2D getPosition();
 
             /**

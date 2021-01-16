@@ -84,14 +84,6 @@ void Player::onKeyPress(char key) {
     //else if (key == KEY_ACTION_1) this->powerball();
     else return;
 
-    /*
-    int item = map.getItem(this->getPosition());
-    if (item != -1) {
-        this->score += 50;
-        map.food.erase(map.food.begin() + item);
-    }
-    */
-
     IS_FACING = key;
     canMove = false;
 }

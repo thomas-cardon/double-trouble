@@ -24,13 +24,17 @@ namespace nsGame {
     /**
      * @class Player
      * @brief Defines the player's class
-     * @author Thomas Cardon
+     * @author Thomas Cardon, Alexandre Arniaud
      */
     class Player : public Entity {
         private:
+            /** \brief Direction the player is facing */
             char IS_FACING;
+
+            /** \brief Keystrokes */
             char KEY_DOWN, KEY_UP, KEY_LEFT, KEY_RIGHT, KEY_ACTION_1;
 
+            /** \brief Prevents player to move for X milliseconds */
             int delay = 125 * movementSpeed;
         public:
             /** \brief Animations for every direction */
