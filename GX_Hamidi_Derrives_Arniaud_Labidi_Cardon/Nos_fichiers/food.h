@@ -7,6 +7,11 @@
 #include "item.h"
 
 namespace nsGame {
+    /**
+     * @class Item
+     * @brief A class defining the different states of the game (In-game, Menus, Loading...)
+     * @authors Thomas Cardon, Alexandre Arniaud
+     */
     class Food : public Item
     {
         public:

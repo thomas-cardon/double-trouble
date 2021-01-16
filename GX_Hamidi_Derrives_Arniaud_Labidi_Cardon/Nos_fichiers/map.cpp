@@ -140,19 +140,6 @@ void Map::update(unsigned delta, Player & player1, Player & player2) {
         items.erase(it);
         player2.score += 50;
     }
-
-    /*
-    auto f = std::begin(items);
-    while (f != std::end(items)) {
-        f->update(delta);
-
-        if (player1.getPosition() == f->getPosition()) {
-            items.erase(f);
-            player1.score += 50;
-
-            return;
-        }
-    }*/
 }
 
 void Map::render(MinGL & window) {
