@@ -57,6 +57,8 @@ void GameState::checkForWin(Player player1, Player player2) {
     else if (player1.hearts == 0 && player2.hearts == 0 && player1.score < player2.score) win = 2;
     else if (player2.hearts == 0 || player1.score >= 9000) win = 1;
     else if (player1.hearts == 0 || player2.score >= 9000) win = 2;
+    else if (player1.score > player2.score && map.items.size() == 0) win = 1;
+    else if (player1.score < player2.score && map.items.size() == 0) win = 2;
     else {
         win = -1;
         return;
