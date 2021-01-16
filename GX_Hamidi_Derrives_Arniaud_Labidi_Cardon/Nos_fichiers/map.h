@@ -11,6 +11,14 @@
 #include "item.h"
 #include "food.h"
 
+/**
+ * @file    map.h
+ * @author  Thomas Cardon
+ * @date    8 janvier 2020
+ * @version 1.0
+ * @brief   Map
+ **/
+
 namespace nsGame {
     /**
      * @class Map

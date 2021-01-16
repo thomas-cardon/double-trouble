@@ -1,6 +1,9 @@
 #ifndef ITEM_H
 #define ITEM_H
 
+#include <mingl/mingl.h>
+#include "stateManager.h"
+
 /**
  * @file    item.h
  * @author  Thomas Cardon, Alexandre Arniaud
@@ -8,9 +11,6 @@
  * @version 1.0
  * @brief   State
  **/
-
-#include <mingl/mingl.h>
-#include "stateManager.h"
 
 namespace nsGame {
     /**
@@ -20,10 +20,11 @@ namespace nsGame {
      */
     struct Item {
         protected:
-            /** /brief Item coordinates */
+            /** \brief Item coordinates */
             nsGraphics::Vec2D pos;
 
         public:
+            /** \brief Generate an item with his position */
             Item(nsGraphics::Vec2D pos) {
                 this->pos = pos;
             }
