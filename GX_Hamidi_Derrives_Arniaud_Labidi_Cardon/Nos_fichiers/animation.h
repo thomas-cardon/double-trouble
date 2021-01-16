@@ -9,7 +9,12 @@
  * \date    12 janvier 2020
  * \version 1.0
  * \brief   Animation
+<<<<<<< HEAD
+ *
+ **/
+=======
  */
+>>>>>>> 637e215bdf2af770fb2935d9446fc1ca3c1e3554
 
 namespace nsGame {
     /**
@@ -25,7 +30,10 @@ namespace nsGame {
 
             /** \brief */
             bool inReverse = false;
-
+           /**
+            * @brief
+            *
+            */
             nsGraphics::Vec2D _pos;
 
         public:
