@@ -1,6 +1,8 @@
 #ifndef ANIMATION_H
 #define ANIMATION_H
 
+#include <mingl/gui/sprite.h>
+
 /**
  *
  * \file    animation.h
@@ -10,7 +12,6 @@
  * \brief   Animation
  *
  **/
-#include <mingl/gui/sprite.h>
 
 namespace nsGame {
     /**
@@ -23,7 +24,10 @@ namespace nsGame {
         private:
             unsigned _currentTime;
             bool inReverse = false;
-
+           /**
+            * @brief
+            *
+            */
             nsGraphics::Vec2D _pos;
 
         public:
