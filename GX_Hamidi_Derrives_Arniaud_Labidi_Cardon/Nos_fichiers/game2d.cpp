@@ -28,6 +28,7 @@ void render(MinGL & window) {
     stateManager.render(window);
 }
 
+int timeElapsed = 0, frames = 0;
 int load()
 {
     // Initialise le système
@@ -49,6 +50,15 @@ int load()
 
         // On efface la fenêtre
         window.clearScreen();
+
+        timeElapsed += frameTime.count() / 1000;
+        ++frames;
+
+        if (timeElapsed >= 1000) {
+            cout << "FPS: " << frames << endl;
+            timeElapsed = 0;
+            frames = 0;
+        }
 
         // On fait tourner les procédures
         Cooldowns::updateCooldowns(frameTime.count() / 1000 /* delta */);

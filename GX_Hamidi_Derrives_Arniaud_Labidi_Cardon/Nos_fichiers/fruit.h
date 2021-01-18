@@ -1,37 +1,33 @@
-#ifndef FOOD_H
-#define FOOD_H
+#ifndef FRUIT_H
+#define FRUIT_H
 
 #include <mingl/mingl.h>
+#include <mingl/gui/sprite.h>
 #include <mingl/graphics/vec2d.h>
 
 #include "item.h"
 
 /**
- * \file    food.h
+ * \file    fruit.h
  * \author  Thomas Cardon
- * \date    10 janvier 2020
+ * \date    17 janvier 2020
  * \version 1.0
- * \brief   Food
+ * \brief   Fruit
  */
 
 namespace nsGame {
     /**
-     * @class Food
-     * @brief Defines Food
+     * @class Fruit
+     * @brief Defines Fruit
      * @authors Thomas Cardon
      */
-    class Food : public Item
+    class Fruit : public Item
     {
-        public:
-            Food(nsGraphics::Vec2D pos) : Item(pos) {}
+        private:
+            nsGui::Sprite sprite;
 
-            /**
-            * @brief This function is used to get the position on the screen/canvas/window, whatever you want to call it
-            * @fn virtual nsGraphics::Vec2D getCoordinates();
-            */
-            nsGraphics::Vec2D getCoordinates() {
-                return nsGraphics::Vec2D((this->pos.getX() * 32) + 16, (this->pos.getY() * 32) + 16);
-            }
+        public:
+            Fruit(nsGraphics::Vec2D pos) : Item(pos), sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/items/fruit_" + std::to_string(rand() % 4) + ".i2s") {}
 
             /**
              * @brief Loads food
@@ -53,12 +49,12 @@ namespace nsGame {
 
             /**
              * @brief Gets item type
-             * @return ItemType.FOOD
+             * @return ItemType.ITEM
              */
             ItemType getType() override {
-                return nsGame::ItemType::FOOD;
+                return nsGame::ItemType::FRUIT;
             };
     };
 }
 
-#endif // FOOD_H
+#endif // FRUIT_H

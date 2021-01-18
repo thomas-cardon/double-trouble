@@ -11,6 +11,7 @@ SOURCES += \
     Nos_fichiers/creditState.cpp \
     Nos_fichiers/entity.cpp \
     Nos_fichiers/food.cpp \
+    Nos_fichiers/fruit.cpp \
     Nos_fichiers/game2d.cpp \
     Nos_fichiers/gameState.cpp \
     Correc_Prof/gridmanagement.cpp \
@@ -164,6 +165,7 @@ HEADERS += \
     Nos_fichiers/animation.h \
     Nos_fichiers/entity.h \
     Nos_fichiers/food.h \
+    Nos_fichiers/fruit.h \
     Nos_fichiers/game2d.h \
     Correc_Prof/gridmanagement.h \
     Nos_fichiers/gameState.h \

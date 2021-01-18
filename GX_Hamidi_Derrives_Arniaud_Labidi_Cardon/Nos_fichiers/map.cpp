@@ -1,11 +1,9 @@
 /**
- *
  * @file    map.cpp
  * @author  Thomas Cardon
  * @date    12 janvier 2020
  * @version 1.0
- * @brief   Définition des méthodes de la classe Map
- *
+ * @brief   Définition des méthodes de la classe map.h
  **/
 #include "map.h"
 
@@ -18,7 +16,11 @@
 #include <mingl/shape/rectangle.h>
 #include <mingl/shape/shape.h>
 
-#include "food.cpp"
+#include "cooldowns.h"
+#include "food.h"
+
+#include "fruit.cpp"
+
 /**
  *
  * \file    map.cpp
@@ -49,13 +51,8 @@ std::string getRandomLevel() {
 }
 
 nsGraphics::Vec2D Map::getEmptyPosition() {
-    for (unsigned y = 0; y < getHeight(); y++) {
-        for (unsigned x = 0; x < getWidth(); x++) {
-            if (this->grid[y][x] == '0') return nsGraphics::Vec2D(x, y);
-        }
-    }
-
-    return nsGraphics::Vec2D(-1, -1);
+    std::vector<nsGraphics::Vec2D> empty = this->getEmptyPositions();
+    return empty.at(rand() % empty.size());
 }
 
 std::vector<nsGraphics::Vec2D> Map::getEmptyPositions() {
@@ -70,10 +67,21 @@ std::vector<nsGraphics::Vec2D> Map::getEmptyPositions() {
     return vec;
 }
 
+void Map::spawnItem(Item* item) {
+    std::cout << "[Map] Spawns item at coordinates: x=" << item->getPosition().getX() << " y=" << item->getPosition().getY() << " " << item->getType() << std::endl;
+    try {
+        item->load();
+        items.insert(std::make_pair(std::make_pair(item->getPosition().getX(), item->getPosition().getY()), item));
+    }  catch (...) {
+        std::cout << "[Map] Can't spawn item!";
+    }
+}
+
 void Map::load() {
     /** \brief Input FileStream for the different levels */
     std::ifstream input;
     input.open(getRandomLevel());
+
     if (!input) {
         std::cout << "Unable to open file";
         exit(1); // terminate with error
@@ -114,31 +122,48 @@ void Map::load() {
     sprites.insert(std::pair<std::string, nsGui::Sprite*>("CORNER_3", new nsGui::Sprite(WALL_XY_3)));
     sprites.insert(std::pair<std::string, nsGui::Sprite*>("CORNER_4", new nsGui::Sprite(WALL_XY_4)));
 
+    /* Item spawn every 6 seconds */
+    Cooldowns::createCooldown("item_spawn", 6*1000);
+
+    /* We're getting all empty positions */
     std::vector<nsGraphics::Vec2D> empty = getEmptyPositions();
 
-    for (unsigned i = 0; i < empty.size(); i++) {
-        Food* f = new Food(empty[i]);
-        items.insert(std::make_pair(std::make_pair(empty[i].getX(), empty[i].getY()), f));
-    }
-
-    for (auto & f : items)
-        f.second->load();
+    /* Added food */
+    for (unsigned i = 0; i < empty.size(); i++)
+        this->spawnItem(new Food(empty[i]));
 }
 
 void Map::update(unsigned delta, Player & player1, Player & player2) {
-    std::map<std::pair<int, int>, Item*>::iterator it;
-    it = items.find(std::make_pair(player1.getPosition().getX(), player1.getPosition().getY()));
+    /* Every 6 seconds, a new fruit spawns, while the other fruits despawn */
+    bool spawnNewItem = Cooldowns::isCooldownOver("item_spawn");
 
-    if (it != items.end()) {
-        items.erase(it);
-        player1.score += 50;
+    for (auto & item : items)
+        item.second->update(delta);
+
+    /* Using a iterator to delete items when there's a player on it */
+
+    auto it = this->items.begin();
+    while (it != this->items.end()) {
+        if (player1.getPosition().getX() == it->first.first && player1.getPosition().getY() == it->first.second)
+            player1.score += it->second->getType() == ItemType::FRUIT ? 200 : 35;
+        else if (player2.getPosition().getX() == it->first.first && player2.getPosition().getY() == it->first.second)
+            player2.score += it->second->getType() == ItemType::FRUIT ? 200 : 35;
+        else if (spawnNewItem && it->second->getType() == ItemType::FRUIT) {
+            items.erase(it++);
+            continue;
+        }
+        else {
+            ++it;
+            continue;
+        }
+
+        items.erase(it++);
+        return;
     }
 
-    it = items.find(std::make_pair(player2.getPosition().getX(), player2.getPosition().getY()));
-
-    if (it != items.end()) {
-        items.erase(it);
-        player2.score += 50;
+    if (spawnNewItem && itemsLeft != 0) {
+        this->spawnItem(new Fruit(getEmptyPosition()));
+        --itemsLeft;
     }
 }
 
@@ -196,8 +221,8 @@ void Map::render(MinGL & window) {
         }
     }
 
-    for (auto & f : items)
-        f.second->render(window);
+    for (auto & item : items)
+        item.second->render(window);
 }
 
 unsigned Map::getMinX() {
