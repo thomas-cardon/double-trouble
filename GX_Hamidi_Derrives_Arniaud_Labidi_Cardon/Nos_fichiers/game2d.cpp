@@ -51,15 +51,6 @@ int load()
         // On efface la fenêtre
         window.clearScreen();
 
-        timeElapsed += frameTime.count() / 1000;
-        ++frames;
-
-        if (timeElapsed >= 1000) {
-            cout << "FPS: " << frames << endl;
-            timeElapsed = 0;
-            frames = 0;
-        }
-
         // On fait tourner les procédures
         Cooldowns::updateCooldowns(frameTime.count() / 1000 /* delta */);
         update(window, frameTime.count() / 1000 /* delta */);
@@ -76,6 +67,15 @@ int load()
 
         // On récupère le temps de frame
         frameTime = chrono::duration_cast<chrono::microseconds>(chrono::steady_clock::now() - start);
+
+        timeElapsed += frameTime.count() / 1000;
+        ++frames;
+
+        if (timeElapsed >= 1000) {
+            cout << "FPS: " << frames << " / LIMIT : " << FPS_LIMIT << endl;
+            timeElapsed = 0;
+            frames = 0;
+        }
     }
 
     cout << "Fermeture du jeu!" << endl;
