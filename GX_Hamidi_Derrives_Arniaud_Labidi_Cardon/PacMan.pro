@@ -163,6 +163,7 @@ DISTFILES += \
 
 HEADERS += \
     Nos_fichiers/animation.h \
+    Nos_fichiers/definitions.h \
     Nos_fichiers/entity.h \
     Nos_fichiers/food.h \
     Nos_fichiers/fruit.h \

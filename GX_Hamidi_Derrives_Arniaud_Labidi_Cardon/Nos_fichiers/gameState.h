@@ -11,6 +11,8 @@
 #include "state.h"
 #include "player.h"
 
+#include "definitions.h"
+
 /**
  * \file    gameState.h
  * \author  Thomas Cardon, Alexandre Arniaud, Angèle Derrives, Mohamed Labidi, Ines Hamidi
@@ -42,16 +44,16 @@ namespace nsGame {
             nsAudio::AudioEngine audio;
 
             /** \brief Sidebar resources */
-            nsGui::Sprite sidebar = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/sidebar/panel.i2s"),
-            h0 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/sidebar/hearts_0.i2s"),
-            h1 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/sidebar/hearts_1.i2s"),
-            h2 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/sidebar/hearts_2.i2s"),
-            h3 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/sidebar/hearts_3.i2s");
+            nsGui::Sprite sidebar = nsGui::Sprite(RES_PATH + "/gui/sidebar/panel.i2s"),
+            h0 = nsGui::Sprite(RES_PATH + "/gui/sidebar/hearts_0.i2s"),
+            h1 = nsGui::Sprite(RES_PATH + "/gui/sidebar/hearts_1.i2s"),
+            h2 = nsGui::Sprite(RES_PATH + "/gui/sidebar/hearts_2.i2s"),
+            h3 = nsGui::Sprite(RES_PATH + "/gui/sidebar/hearts_3.i2s");
 
             /** \brief Victory screens */
-            nsGui::Sprite victoryScreen1 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/victory_screen/player1.i2s"),
-            victoryScreen2 = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/victory_screen/player2.i2s"),
-            equalScreen = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/victory_screen/equal.i2s");
+            nsGui::Sprite victoryScreen1 = nsGui::Sprite(RES_PATH + "/gui/victory_screen/player1.i2s"),
+            victoryScreen2 = nsGui::Sprite(RES_PATH + "/gui/victory_screen/player2.i2s"),
+            equalScreen = nsGui::Sprite(RES_PATH + "/gui/victory_screen/equal.i2s");
 
             /** \brief Set of numbers from 0 to 9, used for the scoreboard, since minGL 2 doesn't allow custom fonts... */
             std::vector<nsGui::Sprite*> numbers;

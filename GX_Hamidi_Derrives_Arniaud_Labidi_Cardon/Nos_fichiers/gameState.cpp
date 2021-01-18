@@ -26,8 +26,8 @@ void GameState::load() {
     // Scoreboard numbers loading
     numbers.resize(10);
 
-    int i = 9;
-    while (i >= 0) // 160 x 31
+    int i = 9; // 160 x 31
+    while (i >= 0)
     {
         std::cout << i << std::endl;
         numbers[i] = new nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/numbers/" + std::to_string(i) + ".i2s");

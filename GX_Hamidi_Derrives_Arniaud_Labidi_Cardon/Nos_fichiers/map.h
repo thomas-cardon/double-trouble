@@ -1,6 +1,8 @@
 #ifndef MAP_H
 #define MAP_H
 
+#include "definitions.h"
+
 #include <mingl/mingl.h>
 #include <mingl/gui/sprite.h>
 
@@ -30,20 +32,18 @@ namespace nsGame {
             /** \brief Game grid */
             CMat grid;
 
-            const std::string BLOCK = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile011.i2s";
+            const std::string WALL_X_1 = RES_PATH + "/tiles/wall-x-1.i2s";
+            const std::string WALL_X_2 = RES_PATH + "/tiles/wall-x-2.i2s";
+            const std::string WALL_X_3 = RES_PATH + "/tiles/wall-x-3.i2s";
 
-            const std::string WALL_X_1 = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile007.i2s";
-            const std::string WALL_X_2 = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile008.i2s";
-            const std::string WALL_X_3 = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile009.i2s";
+            const std::string WALL_Y_1 = RES_PATH + "/tiles/wall-y-1.i2s";
+            const std::string WALL_Y_2 = RES_PATH + "/tiles/wall-y-2.i2s";
+            const std::string WALL_Y_3 = RES_PATH + "/tiles/wall-y-3.i2s";
 
-            const std::string WALL_Y_1 = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile006.i2s";
-            const std::string WALL_Y_2 = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile016.i2s";
-            const std::string WALL_Y_3 = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile026.i2s";
-
-            const std::string WALL_XY_1 = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile003.i2s";
-            const std::string WALL_XY_2 = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile005.i2s";
-            const std::string WALL_XY_3 = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile023.i2s";
-            const std::string WALL_XY_4 = "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/tile025.i2s";
+            const std::string CORNER_1 = RES_PATH + "/tiles/corner-1.i2s";
+            const std::string CORNER_2 = RES_PATH + "/tiles/corner-2.i2s";
+            const std::string CORNER_3 = RES_PATH + "/tiles/corner-3.i2s";
+            const std::string CORNER_4 = RES_PATH + "/tiles/corner-4.i2s";
 
             /** \brief Preloaded resources */
             std::map<std::string, nsGui::Sprite*> sprites;
