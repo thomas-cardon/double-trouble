@@ -16,6 +16,7 @@
 #include <mingl/shape/rectangle.h>
 #include <mingl/shape/shape.h>
 
+#include "definitions.h"
 #include "cooldowns.h"
 #include "food.h"
 
@@ -38,7 +39,7 @@ std::string getRandomLevel() {
 
     std::vector<std::string> maps;
 
-    if ((dir = opendir ("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/maps")) != NULL) {
+    if ((dir = opendir (RES_PATH + "/res/maps")) != NULL) {
       while ((ent = readdir (dir)) != NULL) {
           std::string str = ent->d_name;
           if (str.substr(str.find_last_of(".") + 1) == "map")
@@ -47,7 +48,7 @@ std::string getRandomLevel() {
       closedir (dir);
     } else throw("Impossible d'ouvrir le dossier de cartes du jeu");
 
-    return "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/maps/" + maps[rand() % maps.size()];
+    return RES_PATH + "/maps/" + maps[rand() % maps.size()];
 }
 
 nsGraphics::Vec2D Map::getEmptyPosition() {
