@@ -51,8 +51,8 @@ namespace nsGame {
             /** \brief Items ( + food) */
             std::map<std::pair<int, int> /* x/y coordinates */, Item*> items;
 
-            /** \brief Counts the number of items spawned */
-            unsigned itemsSpawned = 0;
+            /** \brief Items to spawn */
+            unsigned itemsLeft = 8;
 
             /**
              * @brief load

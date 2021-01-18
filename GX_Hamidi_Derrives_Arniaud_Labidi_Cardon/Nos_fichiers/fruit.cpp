@@ -13,16 +13,12 @@
 
 using namespace nsGame;
 
-void Fruit::load() {
-
-}
+void Fruit::load() {}
 
 void Fruit::update(unsigned delta) {
     sprite.setPosition(this->getCoordinates());
 }
 
 void Fruit::render(MinGL &window) {
-    std::cout << "render sprite" << std::endl;
-    window << nsShape::Circle(this->getCoordinates(), 2, nsGraphics::KCyan);
     window << sprite;
 }
