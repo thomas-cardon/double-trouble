@@ -14,6 +14,15 @@
 
 namespace nsGame {
     /**
+     * @brief The ItemType enum
+     */
+    enum ItemType {
+        ITEM,
+        FOOD,
+        FRUIT
+    };
+
+    /**
      * @class Item
      * @brief Defines the Item
      * @author Thomas Cardon, Alexandre Arniaud
@@ -62,6 +71,14 @@ namespace nsGame {
             * @fn virtual void render(MinGL & window);
             */
            virtual void render(MinGL & window) = 0;
+
+           /**
+            * @brief Gets item type
+            * @return ItemType.ITEM
+            */
+           virtual ItemType getType() {
+               return nsGame::ItemType::ITEM;
+           };
     };
 }
 

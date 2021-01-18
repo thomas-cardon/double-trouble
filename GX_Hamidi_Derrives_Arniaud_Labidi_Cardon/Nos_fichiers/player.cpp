@@ -47,7 +47,7 @@ void Player::spawn() {
 void Player::load(CMyParam params) {
     std::cout << "[Player N=" << std::to_string(N) + "] Loading" << std::endl;
 
-    Cooldowns::createCooldown("player" + std::to_string(N) + "_move", 200 / movementSpeed);
+    Cooldowns::createCooldown("player" + std::to_string(N) + "_move", 140 / movementSpeed);
 
     this->spawn();
 

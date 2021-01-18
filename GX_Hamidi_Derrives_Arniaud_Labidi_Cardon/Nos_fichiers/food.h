@@ -16,8 +16,8 @@
 
 namespace nsGame {
     /**
-     * @class Item
-     * @brief Define Food
+     * @class Food
+     * @brief Defines Food
      * @authors Thomas Cardon
      */
     class Food : public Item
@@ -50,6 +50,14 @@ namespace nsGame {
              * @fn void render(MinGL & window);
              */
             void render(MinGL & window) override;
+
+            /**
+             * @brief Gets item type
+             * @return ItemType.FOOD
+             */
+            ItemType getType() override {
+                return nsGame::ItemType::FOOD;
+            };
     };
 }
 

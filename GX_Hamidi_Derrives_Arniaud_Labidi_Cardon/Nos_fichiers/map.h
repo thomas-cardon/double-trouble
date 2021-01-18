@@ -9,7 +9,6 @@
 
 #include "player.h"
 #include "item.h"
-#include "food.h"
 
 /**
  * @file    map.h
@@ -51,6 +50,9 @@ namespace nsGame {
         public:
             /** \brief Items ( + food) */
             std::map<std::pair<int, int> /* x/y coordinates */, Item*> items;
+
+            /** \brief Counts the number of items spawned */
+            unsigned itemsSpawned = 0;
 
             /**
              * @brief load
@@ -97,6 +99,12 @@ namespace nsGame {
             CMat getMat() {
                 return grid;
             }
+
+            /**
+             * @brief Adds an item to the item list with given coordinates
+             * @return Item*
+             */
+            void spawnItem(Item* item);
 
             /**
              * @brief Gets a place where there's nothing but a cell
