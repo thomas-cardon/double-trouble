@@ -110,6 +110,9 @@ void Map::load() {
     sprites.insert(std::pair<char, nsGui::Sprite*>('(', new nsGui::Sprite(CORNER_3)));
     sprites.insert(std::pair<char, nsGui::Sprite*>(')', new nsGui::Sprite(CORNER_4)));
 
+    sprites.insert(std::pair<char, nsGui::Sprite*>('$', new nsGui::Sprite(T_WALL_1)));
+    sprites.insert(std::pair<char, nsGui::Sprite*>('%', new nsGui::Sprite(T_WALL_2)));
+
     /* Item spawn every 6 seconds */
     Cooldowns::createCooldown("item_spawn", COOLDOWNS_ITEM_SPAWN);
 
