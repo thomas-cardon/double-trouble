@@ -34,8 +34,11 @@ namespace nsGame {
         public:
             /** \brief Delay between frames */
             unsigned delay = 500, currentSprite = 0;
+
+            /** \brief Allows animation to go from start to end, then end to start, and vice versa */
             bool alternate = true;
 
+            /** \brief Sprites list */
             std::vector<nsGui::Sprite> sprites;
 
             Animation();
