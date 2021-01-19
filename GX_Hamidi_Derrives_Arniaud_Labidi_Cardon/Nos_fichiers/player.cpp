@@ -12,6 +12,7 @@
 #include <mingl/gui/sprite.h>
 
 #include "type.h"
+#include "definitions.h"
 
 #include "player.h"
 #include "entity.h"
@@ -51,14 +52,14 @@ void Player::load(CMyParam params) {
 
     this->spawn();
 
-    audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/player-hit-1.wav");
-    audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/player-moving-1.wav");
+    audio.loadSound(RES_PATH + "/audio/player-hit-1.wav");
+    audio.loadSound(RES_PATH + "/audio/player-moving-1.wav");
 
     for (int i = 1; i <= 6; i++) {
-        this->top.sprites.push_back(nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/top-" + std::to_string(i) + ".i2s"));
-        this->bottom.sprites.push_back(nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/bottom-" + std::to_string(i) + ".i2s"));
-        this->left.sprites.push_back(nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/left-" + std::to_string(i) + ".i2s"));
-        this->right.sprites.push_back(nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/entities/player" + std::to_string(N) + "/right-" + std::to_string(i) + ".i2s"));
+        this->top.sprites.push_back(nsGui::Sprite(RES_PATH + "/entities/player" + std::to_string(N) + "/top-" + std::to_string(i) + ".i2s"));
+        this->bottom.sprites.push_back(nsGui::Sprite(RES_PATH + "/entities/player" + std::to_string(N) + "/bottom-" + std::to_string(i) + ".i2s"));
+        this->left.sprites.push_back(nsGui::Sprite(RES_PATH + "/entities/player" + std::to_string(N) + "/left-" + std::to_string(i) + ".i2s"));
+        this->right.sprites.push_back(nsGui::Sprite(RES_PATH + "/entities/player" + std::to_string(N) + "/right-" + std::to_string(i) + ".i2s"));
     }
 
     this->KEY_UP = params.MapParamChar["P" + std::to_string(N) + "_KeyUp"];
@@ -97,22 +98,22 @@ void Player::update(MinGL & window, unsigned delta, CMat map) {
     if (isAllowedToMove) {
         if (window.isPressed({ KEY_UP, false })) {
             if (this->inCollision(map, this->pos.getX(), this->pos.getY() - 1))
-                audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/player-hit-1.wav");
+                audio.playSoundFromBuffer(RES_PATH + "/audio/player-hit-1.wav");
             else onKeyPress(KEY_UP);
         }
         else if (window.isPressed({ KEY_DOWN, false })) {
             if (this->inCollision(map, this->pos.getX(), this->pos.getY() + 1))
-                audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/player-hit-1.wav");
+                audio.playSoundFromBuffer(RES_PATH + "/audio/player-hit-1.wav");
             else onKeyPress(KEY_DOWN);
         }
         else if (window.isPressed({ KEY_LEFT, false })) {
             if (this->inCollision(map, this->pos.getX() - 1, this->pos.getY()))
-                audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/player-hit-1.wav");
+                audio.playSoundFromBuffer(RES_PATH + "/audio/player-hit-1.wav");
             else onKeyPress(KEY_LEFT);
         }
         else if (window.isPressed({ KEY_RIGHT, false })) {
             if (this->inCollision(map, this->pos.getX() + 1, this->pos.getY()))
-                audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/player-hit-1.wav");
+                audio.playSoundFromBuffer(RES_PATH + "/audio/player-hit-1.wav");
             else onKeyPress(KEY_RIGHT);
         }
     }
@@ -128,7 +129,7 @@ bool Player::canTakeDamage() {
 }
 
 void Player::damage() {
-    audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/player-hit-1.wav");
+    audio.playSoundFromBuffer(RES_PATH + "/audio/player-hit-1.wav");
 
     --hearts;
     noDamage(5000);
