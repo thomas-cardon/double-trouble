@@ -20,6 +20,7 @@ SOURCES += \
     Nos_fichiers/map.cpp \
     Correc_Prof/params.cpp \
     Nos_fichiers/player.cpp \
+    Nos_fichiers/powerup.cpp \
     Nos_fichiers/stateManager.cpp \
     main.cpp
 
@@ -175,6 +176,7 @@ HEADERS += \
     Correc_Prof/params.h \
     Nos_fichiers/monster.h \
     Nos_fichiers/player.h \
+    Nos_fichiers/powerup.h \
     Nos_fichiers/state.h \
     Nos_fichiers/stateManager.h \
     Nos_fichiers/type.h \

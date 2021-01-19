@@ -8,26 +8,24 @@
 #include "item.h"
 
 /**
- * \file    fruit.h
+ * \file    powerup.h
  * \author  Thomas Cardon
- * \date    17 janvier 2020
+ * \date    19 janvier 2020
  * \version 1.0
- * \brief   Fruit
+ * \brief   Powerup
  */
 
 namespace nsGame {
     /**
-     * @class Fruit
-     * @brief Defines Fruit
+     * @class Powerup
+     * @brief Defines Powerup - allows Pacman to eat monsters and players without getting killed
      * @authors Thomas Cardon
      */
-    class Fruit : public Item
+    class Powerup : public Item
     {
-        private:
-            nsGui::Sprite sprite;
 
         public:
-            Fruit(nsGraphics::Vec2D pos) : Item(pos), sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/items/fruit_" + std::to_string(rand() % 4) + ".i2s") {}
+            Powerup(nsGraphics::Vec2D pos) : Item(pos) {}
 
             /**
              * @brief Loads food
@@ -58,7 +56,7 @@ namespace nsGame {
              * @return ItemType.ITEM
              */
             ItemType getType() override {
-                return nsGame::ItemType::FRUIT;
+                return nsGame::ItemType::POWERUP;
             };
     };
 }

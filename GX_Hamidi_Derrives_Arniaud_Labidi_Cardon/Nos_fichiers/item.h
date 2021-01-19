@@ -19,7 +19,8 @@ namespace nsGame {
     enum ItemType {
         ITEM,
         FOOD,
-        FRUIT
+        FRUIT,
+        POWERUP
     };
 
     /**
