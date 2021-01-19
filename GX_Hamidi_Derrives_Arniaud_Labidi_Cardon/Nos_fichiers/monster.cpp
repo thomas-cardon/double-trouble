@@ -22,7 +22,7 @@ using namespace nsGame;
 
 void Monster::update(unsigned delta, CMat & mat, Player player1, Player player2)
 {
-    MonsterMoves(mat, player1, player2);
+    //MonsterMoves(mat, player1, player2);
 };
 
 void Monster::render(MinGL &window) {
