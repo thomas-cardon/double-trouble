@@ -85,19 +85,12 @@ void Map::load() {
         exit(1); // Terminate with error
     }
 
-    std::vector<std::string> lineList;
+    /* For each line, we resize the grid to add one more entry and pushes the characters for each row in the grid */
     for( std::string line; getline(input, line ); ) {
-        lineList.push_back(line);
-    }
+        this->grid.resize(this->grid.size() + 1);
 
-    int lineIndex = 0;
-    this->grid.resize(lineList.size());
-
-    for(auto string : lineList) {
-        for(char& c : string)
-            this->grid[lineIndex].push_back(c);
-
-        lineIndex++;
+        for(char& c : line)
+            this->grid[this->grid.size() - 1].push_back(c);
     }
 
     input.close();
@@ -118,7 +111,7 @@ void Map::load() {
     sprites.insert(std::pair<char, nsGui::Sprite*>(')', new nsGui::Sprite(CORNER_4)));
 
     /* Item spawn every 6 seconds */
-    Cooldowns::createCooldown("item_spawn", 6*1000);
+    Cooldowns::createCooldown("item_spawn", COOLDOWNS_ITEM_SPAWN);
 
     /* We're getting all empty positions */
     std::vector<nsGraphics::Vec2D> empty = getEmptyPositions();
