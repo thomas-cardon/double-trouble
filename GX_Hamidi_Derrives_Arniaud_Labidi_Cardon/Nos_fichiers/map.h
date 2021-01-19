@@ -65,9 +65,9 @@ namespace nsGame {
             /**
              * @brief update
              * @param delta
-             * @fn void update(unsigned delta, Player & player1, Player & player2);
+             * @fn void update(unsigned delta, Player *p1, Player *p2);
              */
-            void update(unsigned delta, Player & player1, Player & player2);
+            void update(unsigned delta, Player *p1, Player *p2);
 
             /**
              * @brief Renders the layer of the map, with its cells (walls, etc.)

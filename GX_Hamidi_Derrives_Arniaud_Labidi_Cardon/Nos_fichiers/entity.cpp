@@ -32,8 +32,8 @@ bool Entity::inCollision(CMat map, unsigned x, unsigned y) {
 }
 
 
-bool Entity::canBeHitBy(Entity entity) {
-    if (this->getPosition().getX() == entity.getPosition().getX() && this->getPosition().getY() == entity.getPosition().getY())
+bool Entity::canBeHitBy(Entity *entity) {
+    if (this->getPosition().getX() == entity->getPosition().getX() && this->getPosition().getY() == entity->getPosition().getY())
         return true;
 
     return false;

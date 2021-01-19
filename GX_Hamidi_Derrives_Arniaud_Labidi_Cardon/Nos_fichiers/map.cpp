@@ -128,7 +128,7 @@ void Map::load() {
         this->spawnItem(new Cookie(empty[i]));
 }
 
-void Map::update(unsigned delta, Player & player1, Player & player2) {
+void Map::update(unsigned delta, Player *p1, Player *p2) {
     /** \brief Every 6 seconds, a new fruit spawns, while the other ones despawn */
     bool spawnNewItem = Cooldowns::isCooldownOver("item_spawn");
 
@@ -139,10 +139,10 @@ void Map::update(unsigned delta, Player & player1, Player & player2) {
     /* Using a iterator to delete items when there's a player on it */
     auto it = this->items.begin();
     while (it != this->items.end()) {
-        if (player1.getPosition().getX() == it->first.first && player1.getPosition().getY() == it->first.second)
-            it->second->action(player1);
-        else if (player2.getPosition().getX() == it->first.first && player2.getPosition().getY() == it->first.second)
-            it->second->action(player2);
+        if (p1->getPosition().getX() == it->first.first && p1->getPosition().getY() == it->first.second)
+            it->second->action(p1);
+        else if (p2->getPosition().getX() == it->first.first && p2->getPosition().getY() == it->first.second)
+            it->second->action(p2);
         else if (spawnNewItem && it->second->getType() == ItemType::FRUIT) { // if a new item needs to be spawned, it removes the other fruits
             items.erase(it++);
             continue;
@@ -160,7 +160,7 @@ void Map::update(unsigned delta, Player & player1, Player & player2) {
     if (spawnNewItem && itemsLeft > 0) {
         nsGraphics::Vec2D pos = getEmptyPosition();
 
-        if (pos == player1.pos || pos == player2.pos) {
+        if (pos == p1->pos || pos == p2->pos) {
             std::cout << "[Map] Item can't spawn because there's a player !" << std::endl;
             return;
         }

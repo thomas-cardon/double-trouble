@@ -32,13 +32,15 @@ namespace nsGame {
             /** \brief Victory status: -1 = not yet, 0 = equal, 1 = player 1, 2 = player 2 */
             int win = -1;
 
-            /** \brief The game grid */
-            Map map;
+            /** \brief The game map, and its grid */
+            Map* map;
+
             /** \brief The game configuration file */
             CMyParam Params;
 
             /** \brief Players */
-            Player player1 = Player(1), player2 = Player(2);
+            Player* player1;
+            Player* player2;
 
             /** \brief minGL 2 audio engine */
             nsAudio::AudioEngine audio;
@@ -80,9 +82,9 @@ namespace nsGame {
              * @brief Checks every tick (State#update()) if one of the players have won (or not).
              * @param Player player1 - Le joueur 1
              * @param Player player2 - Le joueur 2
-             * @fn void checkForWin(Player player1, Player player2);
+             * @fn void checkForWin(Player *p1, Player *p2);
              */
-            void checkForWin(Player player1, Player player2);
+            void checkForWin(Player *p1, Player *p2);
 
             /**
              * @brief Renders resources

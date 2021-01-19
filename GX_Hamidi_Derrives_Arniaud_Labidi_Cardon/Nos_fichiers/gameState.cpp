@@ -12,12 +12,15 @@
 using namespace nsGame;
 
 void GameState::load() {
+    this->hasLoaded = true;
+
     // Parameters loading
     int RetVal = LoadParams(this->Params, "../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/config.yaml");
     if (RetVal != 0) throw "Une erreur s'est produite lors de la lecture du fichier YAML";
 
     // Map loading
-    map.load();
+    map = new Map();
+    map->load();
 
     // Sounds loading
     audio.loadSound(RES_PATH + "/audio/game-over.wav");
@@ -34,30 +37,32 @@ void GameState::load() {
     }
 
     // Players loading
-    player1.load(Params);
-    player2.load(Params);
+    player1 = new Player(1);
+    player2 = new Player(2);
+
+    player1->load(Params);
+    player2->load(Params);
 }
 
 void GameState::destroy() {
-    player1.score = player2.score = 0;
-    player1.hearts = player2.hearts = 3;
+    delete map;
 
-    player1.spawn();
-    player2.spawn();
-
-    map.load();
+    delete player1;
+    delete player2;
 
     win = -1;
+
+    this->hasLoaded = false;
 }
 
-void GameState::checkForWin(Player player1, Player player2) {
-    if (player1.hearts == 0 && player2.hearts == 0 && player1.score == player2.score) win = 3;
-    else if (player1.hearts == 0 && player2.hearts == 0 && player1.score > player2.score) win = 1;
-    else if (player1.hearts == 0 && player2.hearts == 0 && player1.score < player2.score) win = 2;
-    else if (player2.hearts == 0 || player1.score >= 9000) win = 1;
-    else if (player1.hearts == 0 || player2.score >= 9000) win = 2;
-    else if (player1.score > player2.score && map.items.size() == 0) win = 1;
-    else if (player1.score < player2.score && map.items.size() == 0) win = 2;
+void GameState::checkForWin(Player *p1, Player *p2) {
+    if (player1->hearts == 0 && player2->hearts == 0 && player1->score == player2->score) win = 3;
+    else if (player1->hearts == 0 && player2->hearts == 0 && player1->score > player2->score) win = 1;
+    else if (player1->hearts == 0 && player2->hearts == 0 && player1->score < player2->score) win = 2;
+    else if (player2->hearts == 0 || player1->score >= 9000) win = 1;
+    else if (player1->hearts == 0 || player2->score >= 9000) win = 2;
+    else if (player1->score > player2->score && map->items.size() == 0) win = 1;
+    else if (player1->score < player2->score && map->items.size() == 0) win = 2;
     else {
         win = -1;
         return;
@@ -67,18 +72,20 @@ void GameState::checkForWin(Player player1, Player player2) {
 }
 
 void GameState::update(MinGL & window, unsigned delta) {
-    if (win == -1) {
-        map.update(delta, player1, player2);
+    if (!hasLoaded) this->load();
 
-        player1.update(window, delta, map.getMat());
-        player2.update(window, delta, map.getMat());
+    if (win == -1) {
+        map->update(delta, player1, player2);
+
+        player1->update(window, delta, map->getMat());
+        player2->update(window, delta, map->getMat());
 
         checkForWin(player1, player2);
 
-        player1.isAllowedToMove = player2.isAllowedToMove = true;
+        player1->isAllowedToMove = player2->isAllowedToMove = true;
     }
     else {
-        player1.isAllowedToMove = player2.isAllowedToMove = false;
+        player1->isAllowedToMove = player2->isAllowedToMove = false;
 
         if (window.isPressed({ MENU_KEY, false })) {
             audio.playSoundFromBuffer(RES_PATH + "/audio/button-select.wav");
@@ -88,17 +95,17 @@ void GameState::update(MinGL & window, unsigned delta) {
         }
     }
 
-    if (player1.canBeHitBy(player2)) { // KILL !
-        std::cout << "Hit ! P1 HP: " << player1.hearts << " | P2 HP: " << player2.hearts << std::endl;
+    if (player1->canBeHitBy(player2)) { // KILL !
+        std::cout << "Hit ! P1 HP: " << player1->hearts << " | P2 HP: " << player2->hearts << std::endl;
 
-        player1.damage();
-        player2.damage();
+        player1->damage();
+        player2->damage();
 
-        player1.spawn();
-        player2.spawn();
+        player1->spawn();
+        player2->spawn();
 
-        player1.score += 1000;
-        player2.score += 1000;
+        player1->score += 1000;
+        player2->score += 1000;
     }
 }
 
@@ -122,22 +129,24 @@ void GameState::renderVictoryScreen(MinGL & window) {
 }
 
 void GameState::render(MinGL & window) {
-    map.render(window);
+    if (!this->hasLoaded) return;
+
+    map->render(window);
 
     window << sidebar;
 
     /*
      * Affichage coeurs (joueur 1)
      */
-    if (player1.hearts == 3) {
+    if (player1->hearts == 3) {
         h3.setPosition(nsGraphics::Vec2D(677, 291));
         window << h3;
     }
-    else if (player1.hearts == 2) {
+    else if (player1->hearts == 2) {
         h2.setPosition(nsGraphics::Vec2D(677, 291));
         window << h2;
     }
-    else if (player1.hearts == 1) {
+    else if (player1->hearts == 1) {
         h1.setPosition(nsGraphics::Vec2D(677, 291));
         window << h1;
     }
@@ -149,15 +158,15 @@ void GameState::render(MinGL & window) {
     /*
      * Affichage coeurs (joueur 2)
      */
-    if (player2.hearts == 3) {
+    if (player2->hearts == 3) {
         h3.setPosition(nsGraphics::Vec2D(677, 491));
         window << h3;
     }
-    else if (player2.hearts == 2) {
+    else if (player2->hearts == 2) {
         h2.setPosition(nsGraphics::Vec2D(677, 491));
         window << h2;
     }
-    else if (player2.hearts == 1) {
+    else if (player2->hearts == 1) {
         h1.setPosition(nsGraphics::Vec2D(677, 491));
         window << h1;
     }
@@ -166,11 +175,11 @@ void GameState::render(MinGL & window) {
         window << h0;
     }
 
-    player1.render(window);
-    player2.render(window);
+    player1->render(window);
+    player2->render(window);
 
-    renderScore(window, player1);
-    renderScore(window, player2);
+    renderScore(window, *player1);
+    renderScore(window, *player2);
 
     if (win > -1) renderVictoryScreen(window);
 }

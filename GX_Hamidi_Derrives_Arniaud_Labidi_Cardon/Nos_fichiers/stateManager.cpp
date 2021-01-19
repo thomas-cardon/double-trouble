@@ -30,7 +30,6 @@ void StateManager::load() {
     std::cout << "[StateManager] Loading" << std::endl;
 
     menu.load();
-    game.load();
     credit.load();
 
     StateManager::current = 0;

@@ -48,9 +48,9 @@ namespace nsGame
 
             /**
              * @brief Checks if entity can be hit by another entity.
-             * @fn virtual bool canBeHitBy(Entity entity);
+             * @fn virtual bool canBeHitBy(Entity *entity);
              */
-            bool canBeHitBy(Entity entity);
+            bool canBeHitBy(Entity *entity);
 
             /**
              * @brief Teleports the entity at its spawn

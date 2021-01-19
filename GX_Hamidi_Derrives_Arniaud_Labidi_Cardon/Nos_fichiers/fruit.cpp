@@ -19,9 +19,8 @@ void Fruit::load() {
 
 void Fruit::update(unsigned delta) {}
 
-
-void Fruit::action(Player & player) {
-    player.score += 200;
+void Fruit::action(Player *player) {
+    player->score += 200;
     audio.playSoundFromBuffer(RES_PATH + "/audio/fruit-eaten.wav");
 }
 

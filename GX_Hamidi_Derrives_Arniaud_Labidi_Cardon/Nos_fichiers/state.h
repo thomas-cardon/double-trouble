@@ -22,12 +22,16 @@ namespace nsGame {
      */
     struct State {
         public:
+            /** \brief */
+            bool hasLoaded = false;
 
            /**
             * @brief Loads State resources
             * @fn virtual void load();
             */
-           virtual void load() {}
+           virtual void load() {
+                hasLoaded = true;
+            }
 
            /**
             * @brief Destroys state (and resets it)
