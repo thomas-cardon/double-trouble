@@ -7,10 +7,10 @@ include(../MinGL2_IUT_AIX/mingl.pri)
 
 SOURCES += \
     Nos_fichiers/animation.cpp \
+    Nos_fichiers/cookie.cpp \
     Nos_fichiers/cooldowns.cpp \
     Nos_fichiers/creditState.cpp \
     Nos_fichiers/entity.cpp \
-    Nos_fichiers/food.cpp \
     Nos_fichiers/fruit.cpp \
     Nos_fichiers/game2d.cpp \
     Nos_fichiers/gameState.cpp \
@@ -163,8 +163,9 @@ DISTFILES += \
 
 HEADERS += \
     Nos_fichiers/animation.h \
+    Nos_fichiers/cookie.h \
+    Nos_fichiers/definitions.h \
     Nos_fichiers/entity.h \
-    Nos_fichiers/food.h \
     Nos_fichiers/fruit.h \
     Nos_fichiers/game2d.h \
     Correc_Prof/gridmanagement.h \

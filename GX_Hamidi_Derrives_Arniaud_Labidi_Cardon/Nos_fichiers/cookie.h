@@ -1,5 +1,5 @@
-#ifndef FOOD_H
-#define FOOD_H
+#ifndef COOKIE_H
+#define COOKIE_H
 
 #include <mingl/mingl.h>
 #include <mingl/graphics/vec2d.h>
@@ -7,23 +7,23 @@
 #include "item.h"
 
 /**
- * \file    food.h
+ * \file    cookie.h
  * \author  Thomas Cardon
  * \date    10 janvier 2020
  * \version 1.0
- * \brief   Food
+ * \brief   Cookie
  */
 
 namespace nsGame {
     /**
-     * @class Food
+     * @class Cookie
      * @brief Defines Food
      * @authors Thomas Cardon
      */
-    class Food : public Item
+    class Cookie : public Item
     {
         public:
-            Food(nsGraphics::Vec2D pos) : Item(pos) {}
+            Cookie(nsGraphics::Vec2D pos) : Item(pos) {}
 
             /**
             * @brief This function is used to get the position on the screen/canvas/window, whatever you want to call it
@@ -61,4 +61,4 @@ namespace nsGame {
     };
 }
 
-#endif // FOOD_H
+#endif // COOKIE_H

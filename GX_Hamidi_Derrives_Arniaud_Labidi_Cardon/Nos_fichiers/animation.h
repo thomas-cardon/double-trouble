@@ -32,14 +32,18 @@ namespace nsGame {
             nsGraphics::Vec2D _pos;
 
         public:
+            /** \brief Delay between frames */
             unsigned delay = 500, currentSprite = 0;
+
+            /** \brief Allows animation to go from start to end, then end to start, and vice versa */
             bool alternate = true;
 
+            /** \brief Sprites list */
             std::vector<nsGui::Sprite> sprites;
 
             Animation();
             Animation(nsGraphics::Vec2D pos);
-            Animation(unsigned delay, bool alternate); // 642
+            Animation(unsigned delay, bool alternate);
             Animation(unsigned delay, bool alternate, nsGraphics::Vec2D pos);
 
             /**
