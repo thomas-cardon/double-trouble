@@ -37,7 +37,7 @@ class MainMenuState : public State {
         nsGui::Sprite appuyer_a = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/appuyer_a.i2s", nsGraphics::Vec2D(0, 0));
 
         bool canMove = true;
-        int hovering = 0;
+        int hovering = -1;
 
         void load() override {
             Cooldowns::createCooldown("mainMenu_move", 500);
@@ -64,11 +64,11 @@ class MainMenuState : public State {
             }
 
             if (window.isPressed({ 's', false })) { // UP
-                if (hovering == 2) hovering = 0;
+                if (hovering == -1 || hovering == 2) hovering = 0;
                 else hovering++;
             }
             else if (window.isPressed({ 'z', false })) { // DOWN
-                if (hovering == 0) hovering = 2;
+                if (hovering == -1 || hovering == 0) hovering = 2;
                 else --hovering;
             }
             else return;

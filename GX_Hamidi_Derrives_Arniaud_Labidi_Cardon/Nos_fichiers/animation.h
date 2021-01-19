@@ -32,6 +32,7 @@ namespace nsGame {
             nsGraphics::Vec2D _pos;
 
         public:
+            /** \brief Delay between frames */
             unsigned delay = 500, currentSprite = 0;
             bool alternate = true;
 
@@ -39,7 +40,7 @@ namespace nsGame {
 
             Animation();
             Animation(nsGraphics::Vec2D pos);
-            Animation(unsigned delay, bool alternate); // 642
+            Animation(unsigned delay, bool alternate);
             Animation(unsigned delay, bool alternate, nsGraphics::Vec2D pos);
 
             /**
