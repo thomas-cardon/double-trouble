@@ -59,7 +59,7 @@ namespace nsGame {
              * @param player1
              * @param player2
              */
-            void MonsterMoves(CMat & mat, Player player1, Player player2);
+            void MonsterMoves(CMat & mat);
     };
 }
 
