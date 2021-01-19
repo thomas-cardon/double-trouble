@@ -29,7 +29,6 @@ void GameState::load() {
     int i = 9; // 160 x 31
     while (i >= 0)
     {
-        std::cout << i << std::endl;
         numbers[i] = new nsGui::Sprite(RES_PATH + "/gui/numbers/" + std::to_string(i) + ".i2s");
         i -= 1;
     }
