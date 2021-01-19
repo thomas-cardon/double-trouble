@@ -32,6 +32,7 @@ DISTFILES += \
     Nos_fichiers/res/audio/button-click.wav \
     Nos_fichiers/res/audio/button-select.wav \
     Nos_fichiers/res/audio/coin-1.wav \
+    Nos_fichiers/res/audio/fruit-eaten.wav \
     Nos_fichiers/res/audio/game-over.wav \
     Nos_fichiers/res/audio/player-hit-1.wav \
     Nos_fichiers/res/audio/player-moving-1.wav \

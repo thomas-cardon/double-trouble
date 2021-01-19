@@ -5,6 +5,7 @@
 #include <mingl/gui/sprite.h>
 #include <mingl/graphics/vec2d.h>
 
+#include "definitions.h"
 #include "item.h"
 
 /**
@@ -25,6 +26,7 @@ namespace nsGame {
     {
         private:
             nsGui::Sprite sprite;
+            nsAudio::AudioEngine audio;
 
         public:
             Fruit(nsGraphics::Vec2D pos) : Item(pos), sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/items/fruit_" + std::to_string(rand() % 4) + ".i2s") {}
