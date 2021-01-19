@@ -126,8 +126,12 @@ namespace nsGame {
              * @param player1
              * @param player2
              */
+<<<<<<< main
             void MonsterMoves(CMat & mat, Player player1, Player player2);
 >>>>>>> Refonte des classes
+=======
+            void MonsterMoves(CMat & mat);
+>>>>>>> random moves
     };
 }
 

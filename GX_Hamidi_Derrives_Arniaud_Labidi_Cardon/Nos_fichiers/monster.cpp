@@ -217,14 +217,17 @@ void Monster::render(MinGL &window) {
 #include "monster.h"
 #include "entity.h"
 #include "map.h"
+#include "cooldowns.h"
 
 #include <math.h>
+#include <vector>
+#include <random>
 
 using namespace nsGame;
 
 void Monster::update(unsigned delta, CMat & mat, Player player1, Player player2)
 {
-    //MonsterMoves(mat, player1, player2);
+    MonsterMoves(mat, player1, player2);
 };
 
 void Monster::render(MinGL &window) {
@@ -233,13 +236,15 @@ void Monster::render(MinGL &window) {
 }
 
 
-void Monster::MonsterMoves(CMat & mat, Player player1, Player player2)
+void Monster::MonsterMoves(CMat & mat)
 {
     unsigned a = 4;
     unsigned b = 2;
 
     if (this->behaviourId == 1 || this->behaviourId == 2) //Behaviour 1 : follow outer walls || Behaviour 2 : follow a little wall
     {
+        std::string Cd1;
+        Cooldowns::createCooldown(Cd1, 100);
         if (mat[this->getPosition().getY()][this->getPosition().getX() - 1] != '0') // MurGauche->bas
         {
             this->getPosition().setY(this->getPosition().getY() - 1);
@@ -263,25 +268,18 @@ void Monster::MonsterMoves(CMat & mat, Player player1, Player player2)
 
     else if (this->behaviourId == 3) // Behaviour : flee the player
     {
-        //wants to maintain a distance of a between the monster and the player
-
-        while(sqrt(pow((player1.getPosition().getX() - this->getPosition().getX()),2) + pow((player1.getPosition().getY() - this->getPosition().getY()),2)) != a) //formule de calcul de la distance entre monster et player
-        {
-            this->getPosition().setX(a + player1.getPosition().getX() - this->getPosition().getY() - player1.getPosition().getX());
-            this->getPosition().setY(a - this->getPosition().getX() + player1.getPosition().getX() + player1.getPosition().getY());
-        }
-
+        //randomly moves
+        std::string Cd2;
+        Cooldowns::createCooldown(Cd2, 110);
+        vector<mat> DeplacementPossiblesX = [(this->getPosition().getX() + 1), (this->getPosition().getX() - 1)];
+        vector<mat> DeplacementPossiblesY = [(this->getPosition().getX() - 1),), (this->getPosition().getY() - 1), (this->getPosition().getY() + 1)];
+        this->getPosition().setX(rand(DeplacementPossiblesX));
+        this->getPosition().setY(rand(DeplacementPossiblesY));
     }
 
-
-    else if (this->behaviourId == 4) // Behaviour : follow player
-    {
-        while(sqrt(pow((player2.getPosition().getX() - this->getPosition().getX()),2) + pow((player2.getPosition().getY() - this->getPosition().getY()),2)) != b) //formule de calcul de la distance entre monster et player
-        {
-            this->getPosition().setX(b + player2.getPosition().getX() - this->getPosition().getY() + player2.getPosition().getY());
-            this->getPosition().setY(b - this->getPosition().getX() + player2.getPosition().getX() + player2.getPosition().getY());
-        }
-
-    }
 };
+<<<<<<< main
 >>>>>>> Refonte des classes
+=======
+
+>>>>>>> random moves
