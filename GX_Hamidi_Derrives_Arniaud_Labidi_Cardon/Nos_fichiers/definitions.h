@@ -8,6 +8,6 @@
 
 #define MENU_KEY 'a'
 
-#define COOLDOWNS_ITEM_SPAWN 6*1000
+#define COOLDOWNS_ITEM_SPAWN 10*1000
 
 #endif // DEFINITIONS_H
