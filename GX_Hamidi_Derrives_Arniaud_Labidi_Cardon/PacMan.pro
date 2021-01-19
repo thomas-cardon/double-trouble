@@ -19,6 +19,7 @@ SOURCES += \
     Nos_fichiers/mainMenuState.cpp \
     Nos_fichiers/map.cpp \
     Correc_Prof/params.cpp \
+    Nos_fichiers/monster.cpp \
     Nos_fichiers/player.cpp \
     Nos_fichiers/powerup.cpp \
     Nos_fichiers/stateManager.cpp \

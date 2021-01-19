@@ -4,20 +4,11 @@
 #include <mingl/mingl.h>
 #include <mingl/gui/sprite.h>
 
-#include "entity.cpp"
+#include "entity.h"
+#include "player.h"
 
 #include "animation.h"
 #include "type.h"
-
-/**
- *
- * \file    monster.h
- * \author  Ines HAMIDI
- * \date    11 janvier 2020
- * \version 1.0
- * \brief   Monster
- *
- **/
 
 namespace nsGame {
     /**
@@ -27,20 +18,16 @@ namespace nsGame {
      */
     class Monster : public Entity {
         private:
-            char IS_FACING;
-
             int delay = 130 * movementSpeed;
+            int behaviourId = 1;
         public:
-            /** \brief Animations for every direction */
-            Animation bottom = Animation(642, true), top = Animation(642, true), left = Animation(642, true), right = Animation(642, true);
-
-            Monster(unsigned N /* = 2 */);
+            Monster(int behaviour) : behaviourId(behaviour) {}
 
             /**
-             * @brief Updates the ennemy
-             * @fn void update(MinGL & window, unsigned delta, CMat map);
+             * @brief Updates the monster
+             * @fn void update(CMat & mat, unsigned delta, Player player1, Player player2);
              */
-            void update(MinGL & window, unsigned delta, CMat map);
+            void update(unsigned delta, CMat & mat, Player player1, Player player2);
 
             /**
              * @brief Renders resources
@@ -50,10 +37,9 @@ namespace nsGame {
 
             /**
              * @brief Loads the ennemy
-             * @fn void load(CMyParam params);
+             * @fn void load(CMyParam & params);
              */
-            void load(CMyParam params);
-
+            void load(CMyParam & params);
 
             /**
              * @brief Teleports the entity at its spawn
@@ -66,6 +52,14 @@ namespace nsGame {
              * @fn void setMovementSpeed(double speed);
              */
             void setMovementSpeed(double speed);
+
+            /**
+             * @brief MonsterMoves
+             * @param mat
+             * @param player1
+             * @param player2
+             */
+            void MonsterMoves(CMat & mat, Player player1, Player player2);
     };
 }
 
