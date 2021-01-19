@@ -18,7 +18,7 @@
 
 #include "definitions.h"
 #include "cooldowns.h"
-#include "food.h"
+#include "cookie.h"
 
 #include "fruit.cpp"
 
@@ -81,7 +81,10 @@ void Map::spawnItem(Item* item) {
 void Map::load() {
     /** \brief Input FileStream for the different levels */
     std::ifstream input;
-    input.open(getRandomLevel());
+    std::string map = getRandomLevel();
+
+    std::cout << "[Map] Loading map: " << map << std::endl;
+    input.open(map);
 
     if (!input) {
         std::cout << "Unable to open file";
@@ -131,7 +134,7 @@ void Map::load() {
 
     /* Added food */
     for (unsigned i = 0; i < empty.size(); i++)
-        this->spawnItem(new Food(empty[i]));
+        this->spawnItem(new Cookie(empty[i]));
 }
 
 void Map::update(unsigned delta, Player & player1, Player & player2) {
