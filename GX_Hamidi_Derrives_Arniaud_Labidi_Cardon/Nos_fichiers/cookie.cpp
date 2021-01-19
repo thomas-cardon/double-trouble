@@ -1,20 +1,20 @@
-#include "food.h"
+#include "cookie.h"
 #include <mingl/shape/circle.h>
 /**
  *
- * \file    food.cpp
+ * \file    cookie.cpp
  * \author  Thomas Cardon
  * \date    12 janvier 2020
  * \version 1.0
- * \brief   Method definitions for food.h
+ * \brief   Method definitions for cookie.h
  */
 
 using namespace nsGame;
 
-void Food::load() {}
+void Cookie::load() {}
 
-void Food::update(unsigned delta) {}
+void Cookie::update(unsigned delta) {}
 
-void Food::render(MinGL &window) {
+void Cookie::render(MinGL &window) {
     window << nsShape::Circle(this->getCoordinates(), 2, nsGraphics::KWhite);
 }

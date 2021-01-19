@@ -11,14 +11,12 @@
 #include "type.h"
 
 /**
- *
  * \file    player.h
  * \author  Thomas Cardon, Alexandre Arniaud
  * \date    8 janvier 2020
  * \version 1.0
  * \brief   Player
- *
- **/
+ */
 
 namespace nsGame {
     /**
@@ -38,16 +36,19 @@ namespace nsGame {
             int delay = 125 * movementSpeed;
         public:
             /** \brief Animations for every direction */
-            Animation bottom = Animation(642, true), top = Animation(642, true), left = Animation(642, true), right = Animation(642, true);
+            Animation bottom = Animation(600, true), top = Animation(600, true), left = Animation(600, true), right = Animation(600, true);
+
+            /** \brief Player hearts */
+            unsigned hearts = 3;
 
             /** \brief Player score */
             int score = 0;
 
-            /** \brief Allows player to move or not */
-            bool isAllowedToMove = true, canMove = true;
-
             /** \brief Player number */
             unsigned N = 1;
+
+            /** \brief Allows player to move or not */
+            bool canMove = true;
 
             Player(unsigned N /* = 2 */);
 

@@ -2,6 +2,7 @@
 #include <mingl/transition/transition_engine.h>
 
 #include "state.h"
+#include "definitions.h"
 
 /**
  *
@@ -21,7 +22,7 @@ class CreditState : public State {
      * @authors Thomas Cardon, Alexandre Arniaud
      */
     public:
-        nsGui::Sprite sprite = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/credits.i2s", nsGraphics::Vec2D(0, 0));
+        nsGui::Sprite sprite = nsGui::Sprite(RES_PATH + "/gui/credits.i2s", nsGraphics::Vec2D(0, 0));
         nsTransition::TransitionEngine transitionEngine;
 
         void load() override {

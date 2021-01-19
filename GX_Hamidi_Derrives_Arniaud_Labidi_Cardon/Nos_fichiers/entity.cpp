@@ -51,3 +51,7 @@ double Entity::getMovementSpeed() {
 void Entity::setMovementSpeed(double speed) {
     this->movementSpeed = speed;
 }
+
+bool Entity::canTakeDamage() {
+    return false;
+}
