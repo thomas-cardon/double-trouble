@@ -36,6 +36,13 @@ void GameState::load() {
         i -= 1;
     }
 
+    monsters.resize(4);
+
+    monsters[0] = new Monster(1);
+    monsters[1] = new Monster(2);
+    monsters[2] = new Monster(3);
+    monsters[3] = new Monster(4);
+
     // Players loading
     player1 = new Player(1);
     player2 = new Player(2);
@@ -79,6 +86,9 @@ void GameState::update(MinGL & window, unsigned delta) {
 
         player1->update(window, delta, map->getMat());
         player2->update(window, delta, map->getMat());
+
+        for (auto & monster : monsters)
+            monster->update(delta, map.getMat(), player1, player2);
 
         checkForWin(player1, player2);
 

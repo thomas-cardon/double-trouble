@@ -34,7 +34,7 @@ namespace nsGame {
             nsGraphics::Vec2D pos;
 
         public:
-            /** \brief Generate an item with his position */
+            /** \brief Generate an item with its position */
             Item(nsGraphics::Vec2D pos) {
                 this->pos = pos;
             }

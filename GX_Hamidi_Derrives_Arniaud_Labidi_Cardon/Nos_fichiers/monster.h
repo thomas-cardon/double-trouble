@@ -5,6 +5,7 @@
 #include <mingl/gui/sprite.h>
 #include <mingl/audio/audioengine.h>
 
+<<<<<<< main
 #include "type.h"
 
 #include "definitions.h"
@@ -20,6 +21,14 @@
  *
  **/
 
+=======
+#include "entity.h"
+#include "player.h"
+
+#include "animation.h"
+#include "type.h"
+
+>>>>>>> Refonte des classes
 namespace nsGame {
     /**
      * @class Monster
@@ -28,6 +37,7 @@ namespace nsGame {
      */
     class Monster : public Entity {
         private:
+<<<<<<< main
             /** \brief Audio Engine */
             nsAudio::AudioEngine audio;
 
@@ -58,6 +68,18 @@ namespace nsGame {
              * @fn void update(unsigned delta, CMat & mat);
              */
             void update(unsigned delta, CMat & mat);
+=======
+            int delay = 130 * movementSpeed;
+            int behaviourId = 1;
+        public:
+            Monster(int behaviour) : behaviourId(behaviour) {}
+
+            /**
+             * @brief Updates the monster
+             * @fn void update(CMat & mat, unsigned delta, Player player1, Player player2);
+             */
+            void update(unsigned delta, CMat & mat, Player player1, Player player2);
+>>>>>>> Refonte des classes
 
             /**
              * @brief Renders resources
@@ -67,9 +89,15 @@ namespace nsGame {
 
             /**
              * @brief Loads the ennemy
+<<<<<<< main
              * @fn void load();
              */
             void load();
+=======
+             * @fn void load(CMyParam & params);
+             */
+            void load(CMyParam & params);
+>>>>>>> Refonte des classes
 
             /**
              * @brief Teleports the entity at its spawn
@@ -87,7 +115,19 @@ namespace nsGame {
              * @brief Checks if entity can be hit by another entity.
              * @fn virtual bool canBeHitBy(Entity *entity);
              */
+<<<<<<< main
             bool canBeHitBy(Entity *entity);
+=======
+            void setMovementSpeed(double speed);
+
+            /**
+             * @brief MonsterMoves
+             * @param mat
+             * @param player1
+             * @param player2
+             */
+            void MonsterMoves(CMat & mat, Player player1, Player player2);
+>>>>>>> Refonte des classes
     };
 }
 

@@ -105,7 +105,7 @@ namespace nsGame {
 
             /**
              * @brief getMat
-             * @return CMat grid
+             * @return CMat& grid
              */
             CMat & getMat() {
                 return grid;

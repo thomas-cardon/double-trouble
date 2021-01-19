@@ -10,6 +10,7 @@
 #include "map.h"
 #include "state.h"
 #include "player.h"
+#include "monster.h"
 
 #include "definitions.h"
 
@@ -59,6 +60,9 @@ namespace nsGame {
 
             /** \brief Set of numbers from 0 to 9, used for the scoreboard, since minGL 2 doesn't allow custom fonts... */
             std::vector<nsGui::Sprite*> numbers;
+
+            /** \brief Monsters */
+            std::vector<Monster*> monsters;
 
             /**
              * @brief Loads State resources
