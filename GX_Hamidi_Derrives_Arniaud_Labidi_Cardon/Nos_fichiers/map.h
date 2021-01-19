@@ -110,7 +110,7 @@ namespace nsGame {
             void spawnItem(Item* item);
 
             /**
-             * @brief Gets a place where there's nothing but a cell
+             * @brief Gets a place where there's just a cell (there may be a player)
              * @return nsGraphics::Vec2D
              */
             nsGraphics::Vec2D getEmptyPosition();

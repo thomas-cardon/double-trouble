@@ -7,6 +7,7 @@
 
 #include <mingl/graphics/vec2d.h>
 #include <mingl/shape/rectangle.h>
+#include <mingl/gui/text.h>
 
 #include "definitions.h"
 #include "cooldowns.h"
@@ -45,7 +46,9 @@ std::string getRandomLevel() {
 
 nsGraphics::Vec2D Map::getEmptyPosition() {
     std::vector<nsGraphics::Vec2D> empty = this->getEmptyPositions();
-    return empty.at(rand() % empty.size());
+
+    if (empty.size() > 0) return empty.at(rand() % empty.size());
+    return nsGraphics::Vec2D(-1, -1);
 }
 
 std::vector<nsGraphics::Vec2D> Map::getEmptyPositions() {
@@ -53,7 +56,7 @@ std::vector<nsGraphics::Vec2D> Map::getEmptyPositions() {
 
     for (unsigned y = 0; y < getHeight(); y++) {
         for (unsigned x = 0; x < getWidth(); x++) {
-            if (this->grid[y][x] == '0') vec.push_back(nsGraphics::Vec2D(x, y));
+            if (this->grid[y][x] == '0' && this->items.count(std::make_pair(x, y)) == 0) vec.push_back(nsGraphics::Vec2D(x, y));
         }
     }
 
@@ -64,7 +67,7 @@ void Map::spawnItem(Item* item) {
     std::cout << "[Map] Spawns item at coordinates: x=" << item->getPosition().getX() << " y=" << item->getPosition().getY() << " " << item->getType() << std::endl;
     try {
         item->load();
-        items.insert(std::make_pair(std::make_pair(item->getPosition().getX(), item->getPosition().getY()), item));
+        items[std::make_pair(item->getPosition().getX(), item->getPosition().getY())] = item;
     }  catch (...) {
         std::cout << "[Map] Can't spawn item!";
     }
@@ -149,13 +152,25 @@ void Map::update(unsigned delta, Player & player1, Player & player2) {
             continue;
         }
 
+        --itemsLeft;
         items.erase(it++);
         return;
     }
 
-    if (spawnNewItem && itemsLeft != 0) {
-        this->spawnItem(new Fruit(getEmptyPosition()));
-        --itemsLeft;
+    if (spawnNewItem && itemsLeft > 0) {
+        nsGraphics::Vec2D pos = getEmptyPosition();
+
+        if (pos == player1.pos || pos == player2.pos) {
+            std::cout << "[Map] Item can't spawn because there's a player !" << std::endl;
+            return;
+        }
+
+        if (pos.getX() == -1 && pos.getY() == -1) {
+            std::cout << "[Map] Item can't spawn because there's no space left !" << std::endl;
+            return;
+        }
+
+        this->spawnItem(new Fruit(pos));
     }
 }
 
