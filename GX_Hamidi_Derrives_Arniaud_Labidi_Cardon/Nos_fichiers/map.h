@@ -46,7 +46,7 @@ namespace nsGame {
             const std::string CORNER_4 = RES_PATH + "/tiles/corner-4.i2s";
 
             /** \brief Preloaded resources */
-            std::map<std::string, nsGui::Sprite*> sprites;
+            std::map<char, nsGui::Sprite*> sprites;
         public:
             /** \brief Items ( + food) */
             std::map<std::pair<int, int> /* x/y coordinates */, Item*> items;
