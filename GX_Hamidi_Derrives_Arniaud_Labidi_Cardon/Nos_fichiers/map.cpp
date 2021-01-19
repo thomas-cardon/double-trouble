@@ -137,9 +137,9 @@ void Map::update(unsigned delta, Player & player1, Player & player2) {
     auto it = this->items.begin();
     while (it != this->items.end()) {
         if (player1.getPosition().getX() == it->first.first && player1.getPosition().getY() == it->first.second)
-            player1.score += it->second->getType() == ItemType::FRUIT ? 200 : 35; // +200 if it's a FRUIT, +35 if it's not
+            it->second->action(player1);
         else if (player2.getPosition().getX() == it->first.first && player2.getPosition().getY() == it->first.second)
-            player2.score += it->second->getType() == ItemType::FRUIT ? 200 : 35;
+            it->second->action(player2);
         else if (spawnNewItem && it->second->getType() == ItemType::FRUIT) { // if a new item needs to be spawned, it removes the other fruits
             items.erase(it++);
             continue;

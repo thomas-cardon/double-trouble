@@ -2,7 +2,7 @@
 #define ITEM_H
 
 #include <mingl/mingl.h>
-#include "stateManager.h"
+#include "player.h"
 
 /**
  * @file    item.h
@@ -71,6 +71,12 @@ namespace nsGame {
             * @fn virtual void render(MinGL & window);
             */
            virtual void render(MinGL & window) = 0;
+
+            /**
+            * @brief Makes an action for the player
+            * @param Player - The player that steps on an item
+            */
+           virtual void action(Player & player) = 0;
 
            /**
             * @brief Gets item type

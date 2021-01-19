@@ -19,6 +19,11 @@ void Fruit::update(unsigned delta) {
     sprite.setPosition(this->getCoordinates());
 }
 
+
+void Fruit::action(Player & player) {
+    player.score += 200;
+}
+
 void Fruit::render(MinGL &window) {
     window << sprite;
 }

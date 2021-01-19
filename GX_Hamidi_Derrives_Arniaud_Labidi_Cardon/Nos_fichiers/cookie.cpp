@@ -1,5 +1,6 @@
 #include "cookie.h"
 #include <mingl/shape/circle.h>
+
 /**
  *
  * \file    cookie.cpp
@@ -14,6 +15,10 @@ using namespace nsGame;
 void Cookie::load() {}
 
 void Cookie::update(unsigned delta) {}
+
+void Cookie::action(Player & player) {
+    player.score += 35;
+}
 
 void Cookie::render(MinGL &window) {
     window << nsShape::Circle(this->getCoordinates(), 2, nsGraphics::KWhite);
