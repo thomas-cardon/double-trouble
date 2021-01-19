@@ -31,6 +31,7 @@ namespace nsGame
             /** \brief Prevents entity to move */
             bool isAllowedToMove = true;
 
+            /** \brief Entity position */
             nsGraphics::Vec2D pos;
 
             /**
