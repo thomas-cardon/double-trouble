@@ -1,10 +1,3 @@
-/**
- * @file    map.cpp
- * @author  Thomas Cardon
- * @date    12 janvier 2020
- * @version 1.0
- * @brief   Définition des méthodes de la classe map.h
- **/
 #include "map.h"
 
 #include <utility>
@@ -14,7 +7,6 @@
 
 #include <mingl/graphics/vec2d.h>
 #include <mingl/shape/rectangle.h>
-#include <mingl/shape/shape.h>
 
 #include "definitions.h"
 #include "cooldowns.h"
@@ -81,14 +73,16 @@ void Map::spawnItem(Item* item) {
 void Map::load() {
     /** \brief Input FileStream for the different levels */
     std::ifstream input;
+
+    /** \brief A random level taken from its folder */
     std::string map = getRandomLevel();
 
     std::cout << "[Map] Loading map: " << map << std::endl;
     input.open(map);
 
     if (!input) {
-        std::cout << "Unable to open file";
-        exit(1); // terminate with error
+        std::cerr << "Unable to open file" << std::endl;
+        exit(1); // Terminate with error
     }
 
     std::vector<std::string> lineList;
@@ -108,17 +102,14 @@ void Map::load() {
 
     input.close();
 
-    /*
-     * On précharge les sprites des murs
-     */
-    /* Murs */
+    /* Each character has its own sprite for the map */
+    /* Walls */
     sprites.insert(std::pair<char, nsGui::Sprite*>('#', new nsGui::Sprite(WALL_X_1)));
     sprites.insert(std::pair<char, nsGui::Sprite*>('=', new nsGui::Sprite(WALL_X_2)));
     sprites.insert(std::pair<char, nsGui::Sprite*>('~', new nsGui::Sprite(WALL_X_3)));
     sprites.insert(std::pair<char, nsGui::Sprite*>('^', new nsGui::Sprite(WALL_Y_1)));
     sprites.insert(std::pair<char, nsGui::Sprite*>('|', new nsGui::Sprite(WALL_Y_2)));
     sprites.insert(std::pair<char, nsGui::Sprite*>('-', new nsGui::Sprite(WALL_Y_3)));
-
 
     /* Corners */
     sprites.insert(std::pair<char, nsGui::Sprite*>('/', new nsGui::Sprite(CORNER_1)));
@@ -138,9 +129,10 @@ void Map::load() {
 }
 
 void Map::update(unsigned delta, Player & player1, Player & player2) {
-    /* Every 6 seconds, a new fruit spawns, while the other fruits despawn */
+    /** \brief Every 6 seconds, a new fruit spawns, while the other ones despawn */
     bool spawnNewItem = Cooldowns::isCooldownOver("item_spawn");
 
+    /* Updating items */
     for (auto & item : items)
         item.second->update(delta);
 
@@ -171,17 +163,17 @@ void Map::update(unsigned delta, Player & player1, Player & player2) {
 }
 
 void Map::render(MinGL & window) {
-    window << nsShape::Rectangle(nsGraphics::Vec2D(0, 0), this->grid[0].size() * 64, this->grid.size() * 64, nsGraphics::RGBAcolor(4, 4, 100));
+    window << nsShape::Rectangle(nsGraphics::Vec2D(0, 0), this->grid[0].size() * CELL_SIZE, this->grid.size() * CELL_SIZE, nsGraphics::RGBAcolor(4, 4, 100));
 
     for (unsigned y = 0; y < this->grid.size(); y++) {
         for (unsigned x = 0; x < this->grid[y].size(); x++) {
             char & c = this->grid[y][x];
 
             switch(c) {
-                case '0': // CELL
+                case '0': /* If it's a cell, we don't show anything since we've put a rectangle all over the map */
                     break;
                 default:
-                    sprites[c]->setPosition(nsGraphics::Vec2D(x * 32, y * 32));
+                    sprites[c]->setPosition(nsGraphics::Vec2D(x * CELL_SIZE, y * CELL_SIZE));
                     sprites[c]->draw(window);
             }
         }
