@@ -38,14 +38,17 @@ namespace nsGame {
             /** \brief Animations for every direction */
             Animation bottom = Animation(600, true), top = Animation(600, true), left = Animation(600, true), right = Animation(600, true);
 
+            /** \brief Player hearts */
+            unsigned hearts = 3;
+
             /** \brief Player score */
             int score = 0;
 
-            /** \brief Allows player to move or not */
-            bool isAllowedToMove = true, canMove = true;
-
             /** \brief Player number */
             unsigned N = 1;
+
+            /** \brief Allows player to move or not */
+            bool canMove = true;
 
             Player(unsigned N /* = 2 */);
 

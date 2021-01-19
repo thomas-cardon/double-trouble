@@ -24,9 +24,12 @@ namespace nsGame
     struct Entity
     {
         protected:
+            /** \brief Movement Speed */
             double movementSpeed = 1.0;
+
         public:
-            unsigned hearts = 3;
+            /** \brief Prevents entity to move */
+            bool isAllowedToMove = true;
 
             nsGraphics::Vec2D pos;
 
@@ -71,6 +74,12 @@ namespace nsGame
              * @fn bool inCollision(CMat map, unsigned x, unsigned y);
              */
             bool inCollision(CMat map, unsigned x, unsigned y);
+
+            /**
+             * @brief Tells if entity can be attacked
+             * @fn bool canTakeDamage();
+             */
+            bool canTakeDamage();
     };
 }
 
