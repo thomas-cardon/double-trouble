@@ -28,7 +28,7 @@
  * \author  Thomas Cardon
  * \date    13 janvier 2020
  * \version 1.0
- * \brief   Method definitions for Map.h
+ * \brief   Method definitions for map.h
  */
 
 using namespace nsGame;
@@ -39,7 +39,7 @@ std::string getRandomLevel() {
 
     std::vector<std::string> maps;
 
-    if ((dir = opendir (RES_PATH + "/res/maps")) != NULL) {
+    if ((dir = opendir ("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/maps")) != NULL) {
       while ((ent = readdir (dir)) != NULL) {
           std::string str = ent->d_name;
           if (str.substr(str.find_last_of(".") + 1) == "map")

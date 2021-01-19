@@ -20,8 +20,8 @@ void GameState::load() {
     map.load();
 
     // Sounds loading
-    audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/game-over.wav");
-    audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-select.wav");
+    audio.loadSound(RES_PATH + "/audio/game-over.wav");
+    audio.loadSound(RES_PATH + "/audio/button-select.wav");
 
     // Scoreboard numbers loading
     numbers.resize(10);
@@ -30,7 +30,7 @@ void GameState::load() {
     while (i >= 0)
     {
         std::cout << i << std::endl;
-        numbers[i] = new nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/numbers/" + std::to_string(i) + ".i2s");
+        numbers[i] = new nsGui::Sprite(RES_PATH + "/gui/numbers/" + std::to_string(i) + ".i2s");
         i -= 1;
     }
 
@@ -64,7 +64,7 @@ void GameState::checkForWin(Player player1, Player player2) {
         return;
     }
 
-    audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/game-over.wav");
+    audio.playSoundFromBuffer(RES_PATH + "/audio/game-over.wav");
 }
 
 void GameState::update(MinGL & window, unsigned delta) {
@@ -81,8 +81,8 @@ void GameState::update(MinGL & window, unsigned delta) {
     else {
         player1.isAllowedToMove = player2.isAllowedToMove = false;
 
-        if (window.isPressed({ 'a', false })) {
-            audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-select.wav");
+        if (window.isPressed({ MENU_KEY, false })) {
+            audio.playSoundFromBuffer(RES_PATH + "/audio/button-select.wav");
 
             this->destroy();
             this->setState(0);
