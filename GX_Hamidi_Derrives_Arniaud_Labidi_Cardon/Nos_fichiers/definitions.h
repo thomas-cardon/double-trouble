@@ -6,6 +6,6 @@
 #define SCORE_FOOD 35
 #define SCORE_FRUIT 200
 
-#define MENU_KEY A
+#define MENU_KEY 'a'
 
 #endif // DEFINITIONS_H
