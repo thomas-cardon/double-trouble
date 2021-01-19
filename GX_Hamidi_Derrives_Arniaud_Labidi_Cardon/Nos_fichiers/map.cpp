@@ -110,6 +110,7 @@ void Map::load() {
     sprites.insert(std::pair<char, nsGui::Sprite*>('(', new nsGui::Sprite(CORNER_3)));
     sprites.insert(std::pair<char, nsGui::Sprite*>(')', new nsGui::Sprite(CORNER_4)));
 
+    /* T_Walls */
     sprites.insert(std::pair<char, nsGui::Sprite*>('$', new nsGui::Sprite(T_WALL_1)));
     sprites.insert(std::pair<char, nsGui::Sprite*>('%', new nsGui::Sprite(T_WALL_2)));
 
