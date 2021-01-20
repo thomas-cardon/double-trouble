@@ -225,7 +225,7 @@ using namespace nsGame;
 void Monster::update(unsigned delta, CMat & mat)
 {
     Cooldowns::updateCooldowns(delta);
-    MonsterMoves(mat) * CELL_SIZE;
+    MonsterMoves(mat);
 };
 
 void Monster::render(MinGL &window) {
