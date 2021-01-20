@@ -27,7 +27,7 @@ namespace nsGame {
              * @brief Updates the monster
              * @fn void update(CMat & mat, unsigned delta, Player player1, Player player2);
              */
-            void update(unsigned delta, CMat & mat, Player player1, Player player2);
+            void update(unsigned delta, CMat & mat);
 
             /**
              * @brief Renders resources
@@ -56,8 +56,6 @@ namespace nsGame {
             /**
              * @brief MonsterMoves
              * @param mat
-             * @param player1
-             * @param player2
              */
             void MonsterMoves(CMat & mat);
     };
