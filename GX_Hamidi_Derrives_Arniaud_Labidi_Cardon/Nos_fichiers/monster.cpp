@@ -34,6 +34,8 @@ void goTo(nsGraphics::Vec2D newPos) {
 
 void Monster::load() {
     std::cout << "[Monster#" << getEntityId() + "] Loading" << std::endl;
+
+    this->movementSpeed = 0.35;
     Cooldowns::createCooldown(getEntityId() + "_move", this->_getDelay());
 
     for (int i = 1; i <= 6; i++) {
@@ -52,12 +54,26 @@ void BreadthFirstSearch(CMat & mat, nsGraphics::Vec2D A) {
 void Monster::update(unsigned delta, CMat & mat)
 {
     canMove = Cooldowns::isCooldownOver(getEntityId() + "_move");
+    if (!canMove) return;
 
     std::cout << "[Monster#" << getEntityId() + "] Position: x= " << this->getPosition().getY() << ", y= " << this->getPosition().getY() << std::endl;
 
     if (this->behaviourId == 1) //Behaviour 1 : follow outer walls || Behaviour 2 : follow a little wall
     {
-        this->inCollision(mat, this->pos.getX(), this->pos.getY() + 1)
+        unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
+
+        if ((x + 1 <= mat[y].size() - 1) && !this->inCollision(mat, x + 1, y)) {
+            this->pos.setX(x + 1);
+        }
+        else if ((x - 1 >= 0) && !this->inCollision(mat, x - 1, y)) {
+            this->pos.setX(x - 1);
+        }
+        else if ((y + 1 <= mat.size() - 1) && !this->inCollision(mat, x, y + 1)) {
+            this->pos.setY(y + 1);
+        }
+        else if ((y - 1 >= 0) && !this->inCollision(mat, x, y - 1)) {
+            this->pos.setY(y - 1);
+        }
     }
     else if (this->behaviourId == 2) {
 
@@ -66,14 +82,22 @@ void Monster::update(unsigned delta, CMat & mat)
     {
 
     }
-    else if (this->behaviourId == 4) { // Behaviour 4 => Random
+    else if (false) { // this->behaviourId == 4) { // Behaviour 4 => Random
         int move = rand() % 4 + 1;
+        unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
         std::cout << move << std::endl;
-        if (move == 0) {
-            this->pos.setX(this->pos.getX() + 1);
-        }
-        else {
 
+        if (move == 0 && (x + 1 <= mat[y].size() - 1) && !this->inCollision(mat, x + 1, y)) {
+            this->pos.setX(x + 1);
+        }
+        else if (move == 1 && (x - 1 >= 0) && !this->inCollision(mat, x - 1, y)) {
+            this->pos.setX(x - 1);
+        }
+        else if (move == 2 && (y + 1 <= mat.size() - 1) && !this->inCollision(mat, x, y + 1)) {
+            this->pos.setY(y + 1);
+        }
+        else if ((y - 1 >= 0) && !this->inCollision(mat, x, y - 1)) {
+            this->pos.setY(y - 1);
         }
     }
 };
