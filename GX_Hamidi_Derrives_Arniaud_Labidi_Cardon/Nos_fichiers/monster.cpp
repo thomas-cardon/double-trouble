@@ -225,9 +225,10 @@ void Monster::render(MinGL &window) {
 
 using namespace nsGame;
 
-void Monster::update(unsigned delta, CMat & mat, Player player1, Player player2)
+void Monster::update(unsigned delta, CMat & mat)
 {
-    MonsterMoves(mat, player1, player2);
+    Cooldowns::updateCooldowns(delta);
+    MonsterMoves(mat);
 };
 
 void Monster::render(MinGL &window) {
@@ -240,11 +241,16 @@ void Monster::MonsterMoves(CMat & mat)
 {
     unsigned a = 4;
     unsigned b = 2;
+    std::string Cd1;
+    Cooldowns::createCooldown(Cd1, 100);
 
-    if (this->behaviourId == 1 || this->behaviourId == 2) //Behaviour 1 : follow outer walls || Behaviour 2 : follow a little wall
+    std::string Cd2;
+    Cooldowns::createCooldown(Cd2, 110);
+
+
+    if (Cooldowns::isCooldownOver(Cd1) && (this->behaviourId == 1 || this->behaviourId == 2)) //Behaviour 1 : follow outer walls || Behaviour 2 : follow a little wall
     {
-        std::string Cd1;
-        Cooldowns::createCooldown(Cd1, 100);
+
         if (mat[this->getPosition().getY()][this->getPosition().getX() - 1] != '0') // MurGauche->bas
         {
             this->getPosition().setY(this->getPosition().getY() - 1);
@@ -269,10 +275,9 @@ void Monster::MonsterMoves(CMat & mat)
     else if (this->behaviourId == 3) // Behaviour : flee the player
     {
         //randomly moves
-        std::string Cd2;
-        Cooldowns::createCooldown(Cd2, 110);
-        vector<mat> DeplacementPossiblesX = [(this->getPosition().getX() + 1), (this->getPosition().getX() - 1)];
-        vector<mat> DeplacementPossiblesY = [(this->getPosition().getX() - 1),), (this->getPosition().getY() - 1), (this->getPosition().getY() + 1)];
+
+        vector<CMat> DeplacementPossiblesX = [(this->getPosition().getX() + 1), (this->getPosition().getX() - 1)];
+        vector<CMat> DeplacementPossiblesY = [(this->getPosition().getX() - 1),), (this->getPosition().getY() - 1), (this->getPosition().getY() + 1)];
         this->getPosition().setX(rand(DeplacementPossiblesX));
         this->getPosition().setY(rand(DeplacementPossiblesY));
     }
