@@ -36,6 +36,11 @@ void Monster::load() {
     this->spawn();
 }
 
+// Inspiré de l'algorithme trouvé sur Wikipédia: https://fr.wikipedia.org/wiki/Algorithme_de_parcours_en_largeur
+void BreadthFirstSearch(CMat & mat, nsGraphics::Vec2D A) {
+    std::vector<nsGraphics::Vec2D> list;
+}
+
 void Monster::update(unsigned delta, CMat & mat)
 {
     std::cout << "[Monster #" << this->behaviourId << "] Position: x= " << this->getPosition().getY() << ", y= " << this->getPosition().getY() << std::endl;
@@ -64,9 +69,10 @@ void Monster::update(unsigned delta, CMat & mat)
     }
     else if (this->behaviourId == 3) // Behaviour : flee the player
     {
+
         //randomly moves
-        this->pos.setX(this->getPosition().getX() + rand() % 1 -1);
-        this->pos.setY(this->getPosition().getY() + rand() % 1 -1);
+        this->pos.setX(this->getPosition().getX() + rand() % 1 - 1);
+        this->pos.setY(this->getPosition().getY() + rand() % 1 - 1);
     }
 };
 
