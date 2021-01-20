@@ -86,14 +86,15 @@ void GameState::update(MinGL & window, unsigned delta) {
     }
     else {
         player1->isAllowedToMove = player2->isAllowedToMove = false;
-
-        if (window.isPressed({ MENU_KEY, false })) {
-            audio.playSoundFromBuffer(RES_PATH + "/audio/button-select.wav");
-
-            this->destroy();
-            this->setState(0);
-        }
     }
+
+    if ((win != -1 && window.isPressed({ MENU_KEY, false })) || window.isPressed({ 27, false })) {
+        audio.playSoundFromBuffer(RES_PATH + "/audio/button-select.wav");
+
+        this->destroy();
+        this->setState(0);
+    }
+
 
     if (player1->canBeHitBy(player2)) { // KILL !
         std::cout << "Hit ! P1 HP: " << player1->hearts << " | P2 HP: " << player2->hearts << std::endl;
