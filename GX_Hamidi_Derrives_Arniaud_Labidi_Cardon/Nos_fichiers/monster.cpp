@@ -16,9 +16,6 @@
 #include "entity.h"
 #include "map.h"
 #include "cooldowns.h"
-
-#include <math.h>
-#include <vector>
 #include <random>
 
 using namespace nsGame;
@@ -26,7 +23,7 @@ using namespace nsGame;
 void Monster::update(unsigned delta, CMat & mat)
 {
     Cooldowns::updateCooldowns(delta);
-    MonsterMoves(mat);
+    MonsterMoves(mat) * CELL_SIZE;
 };
 
 void Monster::render(MinGL &window) {
