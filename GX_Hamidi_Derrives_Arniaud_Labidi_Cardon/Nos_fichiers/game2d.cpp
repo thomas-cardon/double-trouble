@@ -38,7 +38,7 @@ int load()
     srand(time(NULL));
 
     // Initialise le système
-    MinGL window("Double Trouble", nsGraphics::Vec2D(900, 640), nsGraphics::Vec2D(128, 128), nsGraphics::KBlack);
+    MinGL window("Double Trouble", nsGraphics::Vec2D(WINDOW_WIDTH, WINDOW_HEIGHT), nsGraphics::Vec2D(128, 128), nsGraphics::KBlack);
     window.initGlut();
     window.initGraphic();
 

@@ -1,7 +1,7 @@
 #ifndef GAME_2D_H
 #define GAME_2D_H
 
-#define FPS_LIMIT 60
+#include "definitions.h"
 #include <mingl/mingl.h>
 
 /**
