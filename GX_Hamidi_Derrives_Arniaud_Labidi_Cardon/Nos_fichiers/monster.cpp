@@ -239,8 +239,6 @@ void Monster::render(MinGL &window) {
 
 void Monster::MonsterMoves(CMat & mat)
 {
-    unsigned a = 4;
-    unsigned b = 2;
     std::string Cd1;
     Cooldowns::createCooldown(Cd1, 100);
 
@@ -275,11 +273,8 @@ void Monster::MonsterMoves(CMat & mat)
     else if (this->behaviourId == 3) // Behaviour : flee the player
     {
         //randomly moves
-
-        vector<CMat> DeplacementPossiblesX = [(this->getPosition().getX() + 1), (this->getPosition().getX() - 1)];
-        vector<CMat> DeplacementPossiblesY = [(this->getPosition().getX() - 1),), (this->getPosition().getY() - 1), (this->getPosition().getY() + 1)];
-        this->getPosition().setX(rand(DeplacementPossiblesX));
-        this->getPosition().setY(rand(DeplacementPossiblesY));
+        this->getPosition().setX(this->getPosition().getX() + rand() % 1 -1);
+        this->getPosition().setY(this->getPosition().getY() + rand() % 1 -1);
     }
 
 };
