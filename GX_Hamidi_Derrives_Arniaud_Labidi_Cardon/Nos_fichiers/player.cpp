@@ -37,11 +37,7 @@ Player::Player(unsigned N) : Entity() {
 }
 
 void Player::spawn() {
-    this->pos = nsGraphics::Vec2D(0, 0);
-
-    this->pos.setX(N == 1 ? 1 : 18);
-    this->pos.setY(N == 1 ? 1 : 18);
-
+    this->pos = nsGraphics::Vec2D(N == 1 ? 1 : 18, N == 1 ? 1 : 18);
     this->IS_FACING = N == 1 ? this->KEY_RIGHT : this->KEY_LEFT;
 }
 

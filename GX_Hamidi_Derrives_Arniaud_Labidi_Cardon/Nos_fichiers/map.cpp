@@ -123,9 +123,16 @@ void Map::load() {
     /* We're getting all empty positions */
     std::vector<nsGraphics::Vec2D> empty = getEmptyPositions();
 
-    /* Added food */
+    /* Adding food */
     for (unsigned i = 0; i < empty.size(); i++)
         this->spawnItem(new Cookie(empty[i]));
+
+    /* Adding monsters */
+    for (unsigned i = 1; i <= 4; i++) {
+        Monster *m = new Monster(i);
+        m->load();
+        this->monsters.push_back(m);
+    }
 }
 
 void Map::update(unsigned delta, Player *p1, Player *p2) {
@@ -157,10 +164,13 @@ void Map::update(unsigned delta, Player *p1, Player *p2) {
         return;
     }
 
+    for (auto & monster : monsters)
+        monster->update(delta, this->getMat());
+
     if (spawnNewItem && itemsLeft > 0) {
         nsGraphics::Vec2D pos = getEmptyPosition();
 
-        if (pos == p1->pos || pos == p2->pos) {
+        if (pos == p1->getPosition() || pos == p2->pos) {
             std::cout << "[Map] Item can't spawn because there's a player !" << std::endl;
             return;
         }
@@ -193,6 +203,9 @@ void Map::render(MinGL & window) {
 
     for (auto & item : items)
         item.second->render(window);
+
+    for (auto & monster : monsters)
+        monster->render(window);
 }
 
 unsigned Map::getMinX() {

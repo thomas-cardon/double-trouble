@@ -9,7 +9,9 @@
 #include "params.h"
 #include "type.h"
 
+#include "monster.h"
 #include "player.h"
+
 #include "item.h"
 
 /**
@@ -53,6 +55,9 @@ namespace nsGame {
         public:
             /** \brief Items ( + food) */
             std::map<std::pair<int, int> /* x/y coordinates */, Item*> items;
+
+            /** \brief Monsters */
+            std::vector<Monster*> monsters;
 
             /** \brief Items to spawn */
             unsigned itemsLeft = 8;
@@ -99,7 +104,7 @@ namespace nsGame {
              * @brief getMat
              * @return CMat grid
              */
-            CMat getMat() {
+            CMat & getMat() {
                 return grid;
             }
 
