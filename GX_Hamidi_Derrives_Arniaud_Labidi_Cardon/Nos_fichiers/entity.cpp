@@ -23,8 +23,8 @@ nsGraphics::Vec2D Entity::getPosition() {
 }
 
 bool Entity::inCollision(CMat map, unsigned x, unsigned y) {
-    if (map.size() < y + 1) return true;
-    if (map[y].size() < x + 1) return true;
+    if (y >= map.size() - 1) return true;
+    if (x >= map[y].size() - 1) return true;
 
     if (map[y][x] != '0') return true;
 
