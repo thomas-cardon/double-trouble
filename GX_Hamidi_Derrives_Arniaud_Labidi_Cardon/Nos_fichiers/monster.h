@@ -28,15 +28,28 @@ namespace nsGame {
      */
     class Monster : public Entity {
         private:
+            /** \brief Entity position */
+            nsGraphics::Vec2D _goingToPos;
+
+            /** \brief Indicates direction */
             char IS_FACING;
 
-            int delay = 130 * movementSpeed;
+            /** \brief Indicates type of behaviour */
             unsigned behaviourId;
         public:
+            /** \brief Allows entity to move or not */
+            bool canMove = true;
+
             /** \brief Animations for every direction */
             Animation bottom = Animation(600, true), top = Animation(600, true), left = Animation(600, true), right = Animation(600, true);
 
             Monster(unsigned behaviourId);
+
+            /**
+             * @brief Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID
+             * @return Entity ID
+             */
+            std::string getEntityId();
 
             /**
              * @brief Updates the ennemy

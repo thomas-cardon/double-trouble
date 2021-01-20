@@ -19,21 +19,29 @@ Monster::Monster(unsigned behaviourId) {
     this->behaviourId = behaviourId;
 }
 
+std::string Monster::getEntityId() {
+    return "Monster" + std::to_string(this->behaviourId);
+}
+
 void Monster::spawn() {
     this->pos.setX(1);
     this->pos.setY(1 * behaviourId);
 }
 
-void Monster::load() {
-    std::cout << "[Monster behaviourId=" << std::to_string(this->behaviourId) + "] Loading" << std::endl;
+void goTo(nsGraphics::Vec2D newPos) {
 
-    Cooldowns::createCooldown("monster_" + std::to_string(this->behaviourId) + "_move", delay);
+}
+
+void Monster::load() {
+    std::cout << "[Monster#" << getEntityId() + "] Loading" << std::endl;
+    Cooldowns::createCooldown(getEntityId() + "_move", this->_getDelay());
 
     for (int i = 1; i <= 6; i++) {
         this->top.sprites.push_back(nsGui::Sprite(RES_PATH + "/entities/monsters/" + std::to_string(this->behaviourId) + "/" + std::to_string(this->behaviourId) + "-" + std::to_string(i) + ".i2s"));
     }
 
     this->spawn();
+    goTo(nsGraphics::Vec2D(15, 15));
 }
 
 // Inspiré de l'algorithme trouvé sur Wikipédia: https://fr.wikipedia.org/wiki/Algorithme_de_parcours_en_largeur
@@ -43,36 +51,30 @@ void BreadthFirstSearch(CMat & mat, nsGraphics::Vec2D A) {
 
 void Monster::update(unsigned delta, CMat & mat)
 {
-    std::cout << "[Monster #" << this->behaviourId << "] Position: x= " << this->getPosition().getY() << ", y= " << this->getPosition().getY() << std::endl;
+    canMove = Cooldowns::isCooldownOver(getEntityId() + "_move");
 
-    if (this->behaviourId == 1 || this->behaviourId == 2) //Behaviour 1 : follow outer walls || Behaviour 2 : follow a little wall
+    std::cout << "[Monster#" << getEntityId() + "] Position: x= " << this->getPosition().getY() << ", y= " << this->getPosition().getY() << std::endl;
+
+    if (this->behaviourId == 1) //Behaviour 1 : follow outer walls || Behaviour 2 : follow a little wall
     {
-        if (mat[this->getPosition().getY()][this->getPosition().getX() - 1] != '0') // MurGauche->bas
-        {
-            this->pos.setY(this->getPosition().getY() - 1);
-        }
+        this->inCollision(mat, this->pos.getX(), this->pos.getY() + 1)
+    }
+    else if (this->behaviourId == 2) {
 
-        if (mat[this->getPosition().getY() - 1][this->getPosition().getX()] != '0') // MurBas->droite
-        {
-            this->pos.setX(this->getPosition().getX() + 1);
-        }
-
-        if (mat[this->getPosition().getY()][this->getPosition().getX() + 1] != '0') // MurDroite->haut
-        {
-            this->pos.setY(this->getPosition().getY() + 1);
-        }
-
-        if (mat[this->getPosition().getY() + 1][this->getPosition().getX()] != '0') // MurHaut->gauche
-        {
-            this->pos.setX(this->getPosition().getX() - 1);
-        }
     }
     else if (this->behaviourId == 3) // Behaviour : flee the player
     {
 
-        //randomly moves
-        this->pos.setX(this->getPosition().getX() + rand() % 1 - 1);
-        this->pos.setY(this->getPosition().getY() + rand() % 1 - 1);
+    }
+    else if (this->behaviourId == 4) { // Behaviour 4 => Random
+        int move = rand() % 4 + 1;
+        std::cout << move << std::endl;
+        if (move == 0) {
+            this->pos.setX(this->pos.getX() + 1);
+        }
+        else {
+
+        }
     }
 };
 
