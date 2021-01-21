@@ -58,12 +58,6 @@ namespace nsGame
             nsGraphics::Vec2D getPosition();
 
             /**
-             * @brief Checks if entity can be hit by another entity.
-             * @fn virtual bool canBeHitBy(Entity *entity);
-             */
-            bool canBeHitBy(Entity *entity);
-
-            /**
              * @brief Teleports the entity at its spawn
              * @fn void spawn();
              */
@@ -88,22 +82,28 @@ namespace nsGame
             bool inCollision(CMat map, unsigned x, unsigned y);
 
             /**
+             * @brief Checks if entity can be hit by another entity.
+             * @fn virtual bool canBeHitBy(Entity *entity);
+             */
+            bool canBeHitBy(Entity *entity);
+
+            /**
              * @brief Damages entity
              * @fn void damage();
              */
             void damage();
 
             /**
-             * @brief Kills entity
-             * @fn void damage();
-             */
-            void kill();
-
-            /**
              * @brief Tells if entity can be attacked
              * @fn bool canTakeDamage();
              */
             bool canTakeDamage();
+
+            /**
+             * @brief Kills entity
+             * @fn void damage();
+             */
+            void kill();
 
             /**
              * @brief Prevents entity to move for X milliseconds
