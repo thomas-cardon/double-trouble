@@ -12,6 +12,7 @@
 #define SCORE_FRUIT 200
 
 #define MENU_KEY 'a'
+#define ESC_KEY 27
 
 #define COOLDOWNS_ITEM_SPAWN 10*1000
 
