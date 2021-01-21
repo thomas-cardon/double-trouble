@@ -14,6 +14,7 @@
 #include "cookie.h"
 
 #include "fruit.cpp"
+#include "powerup.h"
 
 /**
  *
@@ -180,7 +181,8 @@ void Map::update(unsigned delta, Player *p1, Player *p2) {
             return;
         }
 
-        this->spawnItem(new Fruit(pos));
+        if (true) this->spawnItem(new Powerup(pos));
+        else this->spawnItem(new Fruit(pos));
     }
 }
 
