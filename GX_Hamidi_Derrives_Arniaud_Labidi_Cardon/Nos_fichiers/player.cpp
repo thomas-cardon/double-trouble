@@ -128,6 +128,8 @@ void Player::damage() {
 
     --hearts;
     noDamage(5000);
+
+    if (hearts <= 0) this->kill();
 }
 
 void Player::noDamage(int ms) {
