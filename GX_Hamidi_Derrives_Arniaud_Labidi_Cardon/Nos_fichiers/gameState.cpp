@@ -99,7 +99,7 @@ void GameState::update(MinGL & window, unsigned delta) {
 
         player2->score += 1000;
     }
-    else if (player1->canBeHitBy(player2) && !player2->canBeHitBy(player1)) { // +1 P1
+    else if (player2->canBeHitBy(player1) && !player1->canBeHitBy(player2)) { // +1 P1
         player2->damage();
         player2->spawn();
 
