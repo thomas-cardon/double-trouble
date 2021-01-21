@@ -23,10 +23,6 @@
 
 using namespace nsGame;
 
-Monster::Monster(unsigned behaviourId) {
-    this->behaviourId = behaviourId;
-}
-
 std::string Monster::getEntityId() {
     return "Monster" + std::to_string(this->behaviourId);
 }
@@ -58,10 +54,6 @@ void Monster::load() {
 
     this->audio.loadSound(RES_PATH + "/audio/monster-hit-1.wav");
 
-    for (int i = 1; i <= 6; i++) {
-        this->top.sprites.push_back(nsGui::Sprite(RES_PATH + "/entities/monsters/" + std::to_string(this->behaviourId) + "/" + std::to_string(this->behaviourId) + "-" + std::to_string(i) + ".i2s"));
-    }
-
     this->spawn();
 }
 
@@ -80,16 +72,20 @@ void Monster::update(unsigned delta, CMat & mat)
     {
         if (!this->inCollision(mat, x + 1, y) && y == 1) {
             this->pos.setX(x + 1); // Right
+            this->IS_FACING = 'D';
         }
         else if (!this->inCollision(mat, x, y - 1) && x == 1) {
             this->pos.setY(y - 1); // Down
+            this->IS_FACING = 'S';
         }
         else if (!this->inCollision(mat, x - 1, y) && y == mat.size() - 2) {
             this->pos.setX(x - 1); // Left
+            this->IS_FACING = 'Q';
         }
 
         else if (!this->inCollision(mat, x, y + 1) && y <= mat.size() - 2) {
             this->pos.setY(y + 1); // Up
+            this->IS_FACING = 'Z';
         }
     }
 
@@ -97,40 +93,49 @@ void Monster::update(unsigned delta, CMat & mat)
     {
         if (this->inCollision(mat, x, y + 1) && LastMove == 'd') {
             this->pos.setX(x + 1); // Right
+            this->IS_FACING = 'D';
             LastMove = 'd';
         }
         else if (this->inCollision(mat, x + 1, y) && LastMove == 'z') {
             this->pos.setY(y - 1); // Up
+            this->IS_FACING = 'Z';
             LastMove = 'z';
         }
         else if (this->inCollision(mat, x, y - 1) && LastMove == 'q') {
             this->pos.setX(x - 1); // Left
+            this->IS_FACING = 'Q';
             LastMove = 'q';
         }
         else if (this->inCollision(mat, x - 1, y) && LastMove == 's') {
             this->pos.setY(y + 1); // Down
+            this->IS_FACING = 'S';
             LastMove = 's';
         }
 
         else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1) && LastMove == 'z') {
             this->pos.setX(x + 1); // Right without collision on down
+            this->IS_FACING = 'D';
             LastMove = 'd';
         }
         else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1) && LastMove == 'q') {
             this->pos.setX(x - 1); // Up without collision on right
+            this->IS_FACING = 'Z';
             LastMove = 'z';
         }
         else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1) && LastMove == 's') {
             this->pos.setX(y - 1); // Left without collision on top
+            this->IS_FACING = 'Q';
             LastMove = 'q';
         }
         else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1) && LastMove == 'd') {
             this->pos.setX(y + 1); // Down without collision on left
+            this->IS_FACING = 'S';
             LastMove = 's';
         }
 
         else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1)) {
-             this->pos.setX(x + 1); // If there isn't collisions, right
+            this->pos.setX(x + 1); // If there isn't collisions, right
+            this->IS_FACING = 'D';
             LastMove = 'd';
         }
     }
@@ -160,15 +165,19 @@ void Monster::update(unsigned delta, CMat & mat)
 
         if (move == 0 && (x + 1 <= mat[y].size() - 1) && !this->inCollision(mat, x + 1, y)) {
             this->pos.setX(x + 1);
+            this->IS_FACING = 'D';
         }
         else if (move == 1 && (x - 1 >= 0) && !this->inCollision(mat, x - 1, y)) {
             this->pos.setX(x - 1);
+            this->IS_FACING = 'Q';
         }
         else if (move == 2 && (y + 1 <= mat.size() - 1) && !this->inCollision(mat, x, y + 1)) {
             this->pos.setY(y + 1);
+            this->IS_FACING = 'S';
         }
         else if ((y - 1 >= 0) && !this->inCollision(mat, x, y - 1)) {
             this->pos.setY(y - 1);
+            this->IS_FACING = 'Z';
         }
     }
 };
@@ -176,6 +185,20 @@ void Monster::update(unsigned delta, CMat & mat)
 void Monster::render(MinGL &window) {
     if (slain) return;
 
-    this->top.setPosition(this->getCoordinates());
-    this->top.render(window);
+    if (IS_FACING == 'Z') {
+        this->top.setPosition(this->getCoordinates());
+        window << this->top;
+    }
+    else if (IS_FACING == 'Q') {
+        this->left.setPosition(this->getCoordinates());
+        window << this->left;
+    }
+    else if (IS_FACING == 'D') {
+        this->right.setPosition(this->getCoordinates());
+        window << this->right;
+    }
+    else if (IS_FACING == 'S') {
+        this->bottom.setPosition(this->getCoordinates());
+        window << this->bottom;
+    }
 }

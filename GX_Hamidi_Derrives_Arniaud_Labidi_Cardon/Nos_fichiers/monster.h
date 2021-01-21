@@ -5,10 +5,10 @@
 #include <mingl/gui/sprite.h>
 #include <mingl/audio/audioengine.h>
 
-#include "entity.h"
-
-#include "animation.h"
 #include "type.h"
+
+#include "definitions.h"
+#include "entity.h"
 
 /**
  *
@@ -40,10 +40,12 @@ namespace nsGame {
             /** \brief Allows entity to move or not */
             bool canMove = true;
 
-            /** \brief Animations for every direction */
-            Animation bottom = Animation(600, true), top = Animation(600, true), left = Animation(600, true), right = Animation(600, true);
+            /** \brief Sprites for every direction */
+            nsGui::Sprite top, left, right, bottom;
 
-            Monster(unsigned behaviourId);
+            Monster(unsigned behaviourId) : top(RES_PATH + "/entities/monsters/" + std::to_string(behaviourId) + "M/2.i2s"), left(RES_PATH + "/entities/monsters/" + std::to_string(behaviourId) + "M/1.i2s"), right(RES_PATH + "/entities/monsters/" + std::to_string(behaviourId) + "M/5.i2s"), bottom(RES_PATH + "/entities/monsters/" + std::to_string(behaviourId) + "M/3.i2s") {
+                this->behaviourId = behaviourId;
+            };
 
             /**
              * @brief Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID
