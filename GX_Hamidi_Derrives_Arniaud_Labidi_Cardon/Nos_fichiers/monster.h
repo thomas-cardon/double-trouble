@@ -79,12 +79,16 @@ namespace nsGame {
              * @fn void update(CMat & mat, unsigned delta, Player player1, Player player2);
              */
 <<<<<<< main
+<<<<<<< main
             void update(unsigned delta, CMat & mat, Player player1, Player player2);
 >>>>>>> Refonte des classes
 =======
             void update(unsigned delta, CMat & mat);
 >>>>>>> Moves : finis
 
+=======
+            void update(unsigned delta, CMat & mat, Player &p1, Player &p2);
+>>>>>>> monster flee
             /**
              * @brief Renders resources
              * @fn void render(MinGL & window);
