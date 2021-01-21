@@ -263,6 +263,7 @@ HEADERS += \
     Nos_fichiers/animation.h \
     Nos_fichiers/cookie.h \
     Nos_fichiers/definitions.h \
+    Nos_fichiers/effectType.h \
     Nos_fichiers/entity.h \
     Nos_fichiers/fruit.h \
     Nos_fichiers/game2d.h \
