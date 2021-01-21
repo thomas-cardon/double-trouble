@@ -7,6 +7,7 @@
 
 #include <mingl/graphics/vec2d.h>
 #include <mingl/shape/rectangle.h>
+#include <mingl/gui/text.h>
 
 #include "definitions.h"
 #include "cooldowns.h"
@@ -45,7 +46,9 @@ std::string getRandomLevel() {
 
 nsGraphics::Vec2D Map::getEmptyPosition() {
     std::vector<nsGraphics::Vec2D> empty = this->getEmptyPositions();
-    return empty.at(rand() % empty.size());
+
+    if (empty.size() > 0) return empty.at(rand() % empty.size());
+    return nsGraphics::Vec2D(-1, -1);
 }
 
 std::vector<nsGraphics::Vec2D> Map::getEmptyPositions() {
@@ -53,7 +56,7 @@ std::vector<nsGraphics::Vec2D> Map::getEmptyPositions() {
 
     for (unsigned y = 0; y < getHeight(); y++) {
         for (unsigned x = 0; x < getWidth(); x++) {
-            if (this->grid[y][x] == '0') vec.push_back(nsGraphics::Vec2D(x, y));
+            if (this->grid[y][x] == '0' && this->items.count(std::make_pair(x, y)) == 0) vec.push_back(nsGraphics::Vec2D(x, y));
         }
     }
 
@@ -64,7 +67,7 @@ void Map::spawnItem(Item* item) {
     std::cout << "[Map] Spawns item at coordinates: x=" << item->getPosition().getX() << " y=" << item->getPosition().getY() << " " << item->getType() << std::endl;
     try {
         item->load();
-        items.insert(std::make_pair(std::make_pair(item->getPosition().getX(), item->getPosition().getY()), item));
+        items[std::make_pair(item->getPosition().getX(), item->getPosition().getY())] = item;
     }  catch (...) {
         std::cout << "[Map] Can't spawn item!";
     }
@@ -120,12 +123,19 @@ void Map::load() {
     /* We're getting all empty positions */
     std::vector<nsGraphics::Vec2D> empty = getEmptyPositions();
 
-    /* Added food */
+    /* Adding food */
     for (unsigned i = 0; i < empty.size(); i++)
         this->spawnItem(new Cookie(empty[i]));
+
+    /* Adding monsters */
+    for (unsigned i = 1; i <= 4; i++) {
+        Monster *m = new Monster(i);
+        m->load();
+        this->monsters.push_back(m);
+    }
 }
 
-void Map::update(unsigned delta, Player & player1, Player & player2) {
+void Map::update(unsigned delta, Player *p1, Player *p2) {
     /** \brief Every 6 seconds, a new fruit spawns, while the other ones despawn */
     bool spawnNewItem = Cooldowns::isCooldownOver("item_spawn");
 
@@ -136,10 +146,10 @@ void Map::update(unsigned delta, Player & player1, Player & player2) {
     /* Using a iterator to delete items when there's a player on it */
     auto it = this->items.begin();
     while (it != this->items.end()) {
-        if (player1.getPosition().getX() == it->first.first && player1.getPosition().getY() == it->first.second)
-            it->second->action(player1);
-        else if (player2.getPosition().getX() == it->first.first && player2.getPosition().getY() == it->first.second)
-            it->second->action(player2);
+        if (p1->getPosition().getX() == it->first.first && p1->getPosition().getY() == it->first.second)
+            it->second->action(p1);
+        else if (p2->getPosition().getX() == it->first.first && p2->getPosition().getY() == it->first.second)
+            it->second->action(p2);
         else if (spawnNewItem && it->second->getType() == ItemType::FRUIT) { // if a new item needs to be spawned, it removes the other fruits
             items.erase(it++);
             continue;
@@ -149,13 +159,28 @@ void Map::update(unsigned delta, Player & player1, Player & player2) {
             continue;
         }
 
+        --itemsLeft;
         items.erase(it++);
         return;
     }
 
-    if (spawnNewItem && itemsLeft != 0) {
-        this->spawnItem(new Fruit(getEmptyPosition()));
-        --itemsLeft;
+    for (auto & monster : monsters)
+        monster->update(delta, this->getMat());
+
+    if (spawnNewItem && itemsLeft > 0) {
+        nsGraphics::Vec2D pos = getEmptyPosition();
+
+        if (pos == p1->getPosition() || pos == p2->pos) {
+            std::cout << "[Map] Item can't spawn because there's a player !" << std::endl;
+            return;
+        }
+
+        if (pos.getX() == -1 && pos.getY() == -1) {
+            std::cout << "[Map] Item can't spawn because there's no space left !" << std::endl;
+            return;
+        }
+
+        this->spawnItem(new Fruit(pos));
     }
 }
 
@@ -178,6 +203,9 @@ void Map::render(MinGL & window) {
 
     for (auto & item : items)
         item.second->render(window);
+
+    for (auto & monster : monsters)
+        monster->render(window);
 }
 
 unsigned Map::getMinX() {

@@ -26,13 +26,18 @@ namespace nsGame
         protected:
             /** \brief Movement Speed */
             double movementSpeed = 1.0;
-
         public:
             /** \brief Prevents entity to move */
             bool isAllowedToMove = true;
 
             /** \brief Entity position */
             nsGraphics::Vec2D pos;
+
+            /**
+             * @brief Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID
+             * @return Entity ID
+             */
+            std::string getEntityId();
 
             /**
              * @brief This function is used to get the position on the screen/canvas/window, whatever you want to call it
@@ -48,9 +53,9 @@ namespace nsGame
 
             /**
              * @brief Checks if entity can be hit by another entity.
-             * @fn virtual bool canBeHitBy(Entity entity);
+             * @fn virtual bool canBeHitBy(Entity *entity);
              */
-            bool canBeHitBy(Entity entity);
+            bool canBeHitBy(Entity *entity);
 
             /**
              * @brief Teleports the entity at its spawn
@@ -81,6 +86,13 @@ namespace nsGame
              * @fn bool canTakeDamage();
              */
             bool canTakeDamage();
+
+            /**
+             * @brief Prevents entity to move for X milliseconds
+             */
+            unsigned _getDelay() {
+                return 140 / movementSpeed;
+            }
     };
 }
 

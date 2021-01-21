@@ -16,8 +16,8 @@ void Cookie::load() {}
 
 void Cookie::update(unsigned delta) {}
 
-void Cookie::action(Player & player) {
-    player.score += 35;
+void Cookie::action(Player *player) {
+    player->score += 35;
 }
 
 void Cookie::render(MinGL &window) {

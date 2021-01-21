@@ -17,8 +17,8 @@ void Powerup::load() {}
 
 void Powerup::update(unsigned delta) {}
 
-void Powerup::action(Player & player) {
-    player.score += 100;
+void Powerup::action(Player *player) {
+    player->score += 100;
 }
 
 void Powerup::render(MinGL &window) {

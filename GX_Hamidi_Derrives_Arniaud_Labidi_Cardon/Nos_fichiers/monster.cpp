@@ -58,7 +58,11 @@ void Monster::update(unsigned delta, CMat & mat)
 
     std::cout << "[Monster#" << getEntityId() + "] Position: x= " << this->getPosition().getY() << ", y= " << this->getPosition().getY() << std::endl;
 
+<<<<<<< HEAD
     if (this->behaviourId == 1) //Behaviour 1 : follow outer walls
+=======
+    if (this->behaviourId == 1) //Behaviour 1 : follow outer walls || Behaviour 2 : follow a little wall
+>>>>>>> main
     {
         unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
 
@@ -78,6 +82,7 @@ void Monster::update(unsigned delta, CMat & mat)
     else if (this->behaviourId == 2) {
 
     }
+<<<<<<< HEAD
 
     else if (this->behaviourId == 3) // Behaviour : if player close : flees to back right, else, move in random circle
     {
@@ -106,6 +111,12 @@ void Monster::update(unsigned delta, CMat & mat)
     }
 
 
+=======
+    else if (this->behaviourId == 3) // Behaviour : flee the player
+    {
+
+    }
+>>>>>>> main
     else if (false) { // this->behaviourId == 4) { // Behaviour 4 => Random
         int move = rand() % 4 + 1;
         unsigned x = this->getPosition().getX(), y = this->getPosition().getY();

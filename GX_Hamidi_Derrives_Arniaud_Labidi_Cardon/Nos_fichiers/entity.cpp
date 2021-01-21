@@ -1,5 +1,5 @@
 #include "entity.h"
-
+#include "cooldowns.h"
 /**
  *
  * \file    entity.cpp
@@ -23,8 +23,8 @@ nsGraphics::Vec2D Entity::getPosition() {
 }
 
 bool Entity::inCollision(CMat map, unsigned x, unsigned y) {
-    if (map.size() < y + 1) return true;
-    if (map[y].size() < x + 1) return true;
+    if (y >= map.size() - 1) return true;
+    if (x >= map[y].size() - 1) return true;
 
     if (map[y][x] != '0') return true;
 
@@ -32,8 +32,8 @@ bool Entity::inCollision(CMat map, unsigned x, unsigned y) {
 }
 
 
-bool Entity::canBeHitBy(Entity entity) {
-    if (this->getPosition().getX() == entity.getPosition().getX() && this->getPosition().getY() == entity.getPosition().getY())
+bool Entity::canBeHitBy(Entity *entity) {
+    if (this->getPosition().getX() == entity->getPosition().getX() && this->getPosition().getY() == entity->getPosition().getY())
         return true;
 
     return false;
@@ -48,8 +48,13 @@ double Entity::getMovementSpeed() {
     return this->movementSpeed;
 }
 
+std::string Entity::getEntityId() {
+    return "entity_" + std::to_string(rand());
+}
+
 void Entity::setMovementSpeed(double speed) {
     this->movementSpeed = speed;
+    Cooldowns::setCooldownDelay(this->getEntityId() + "_move", this->_getDelay());
 }
 
 bool Entity::canTakeDamage() {

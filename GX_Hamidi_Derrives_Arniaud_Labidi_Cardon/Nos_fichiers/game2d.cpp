@@ -2,6 +2,9 @@
 
 #include <iostream>
 #include <thread>
+#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 #include "stateManager.cpp"
 
@@ -31,8 +34,11 @@ void render(MinGL & window) {
 int timeElapsed = 0, frames = 0;
 int load()
 {
+    // Initialisation aléatoire
+    srand(time(NULL));
+
     // Initialise le système
-    MinGL window("Double Trouble", nsGraphics::Vec2D(900, 640), nsGraphics::Vec2D(128, 128), nsGraphics::KBlack);
+    MinGL window("Double Trouble", nsGraphics::Vec2D(WINDOW_WIDTH, WINDOW_HEIGHT), nsGraphics::Vec2D(128, 128), nsGraphics::KBlack);
     window.initGlut();
     window.initGraphic();
 

@@ -9,7 +9,9 @@
 #include "params.h"
 #include "type.h"
 
+#include "monster.h"
 #include "player.h"
+
 #include "item.h"
 
 /**
@@ -54,6 +56,9 @@ namespace nsGame {
             /** \brief Items ( + food) */
             std::map<std::pair<int, int> /* x/y coordinates */, Item*> items;
 
+            /** \brief Monsters */
+            std::vector<Monster*> monsters;
+
             /** \brief Items to spawn */
             unsigned itemsLeft = 8;
 
@@ -65,9 +70,9 @@ namespace nsGame {
             /**
              * @brief update
              * @param delta
-             * @fn void update(unsigned delta, Player & player1, Player & player2);
+             * @fn void update(unsigned delta, Player *p1, Player *p2);
              */
-            void update(unsigned delta, Player & player1, Player & player2);
+            void update(unsigned delta, Player *p1, Player *p2);
 
             /**
              * @brief Renders the layer of the map, with its cells (walls, etc.)
@@ -110,7 +115,7 @@ namespace nsGame {
             void spawnItem(Item* item);
 
             /**
-             * @brief Gets a place where there's nothing but a cell
+             * @brief Gets a place where there's just a cell (there may be a player)
              * @return nsGraphics::Vec2D
              */
             nsGraphics::Vec2D getEmptyPosition();

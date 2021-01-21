@@ -1,6 +1,11 @@
 #ifndef DEFINITIONS_H
 #define DEFINITIONS_H
 
+#define WINDOW_WIDTH 900
+#define WINDOW_HEIGHT 640
+
+#define FPS_LIMIT 60
+
 #define RES_PATH std::string("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res")
 
 #define SCORE_FOOD 35

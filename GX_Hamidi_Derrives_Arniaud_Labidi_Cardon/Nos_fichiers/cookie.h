@@ -55,7 +55,7 @@ namespace nsGame {
             * @brief Makes an action for the player
             * @param Player - The player that steps on an item
             */
-            void action(Player & player) override;
+            void action(Player *player) override;
 
             /**
              * @brief Gets item type

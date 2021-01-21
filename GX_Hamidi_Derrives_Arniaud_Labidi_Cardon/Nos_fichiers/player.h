@@ -31,9 +31,6 @@ namespace nsGame {
 
             /** \brief Keystrokes */
             char KEY_DOWN, KEY_UP, KEY_LEFT, KEY_RIGHT, KEY_ACTION_1;
-
-            /** \brief Prevents player to move for X milliseconds */
-            int delay = 125 * movementSpeed;
         public:
             /** \brief Animations for every direction */
             Animation bottom = Animation(600, true), top = Animation(600, true), left = Animation(600, true), right = Animation(600, true);
@@ -51,6 +48,12 @@ namespace nsGame {
             bool canMove = true;
 
             Player(unsigned N /* = 2 */);
+
+            /**
+             * @brief Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID
+             * @return Entity ID
+             */
+            std::string getEntityId();
 
             /**
              * @brief This function is called everytime a key is pressed.
@@ -99,12 +102,6 @@ namespace nsGame {
              * @fn void spawn();
              */
             void spawn();
-
-            /**
-             * @brief Sets the movement speed
-             * @fn void setMovementSpeed(double speed);
-             */
-            void setMovementSpeed(double speed);
     };
 }
 

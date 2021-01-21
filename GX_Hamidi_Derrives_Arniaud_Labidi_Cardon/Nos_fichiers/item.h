@@ -77,7 +77,7 @@ namespace nsGame {
             * @brief Makes an action for the player
             * @param Player - The player that steps on an item
             */
-           virtual void action(Player & player) = 0;
+           virtual void action(Player *player) = 0;
 
            /**
             * @brief Gets item type

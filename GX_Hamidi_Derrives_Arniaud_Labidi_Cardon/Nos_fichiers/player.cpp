@@ -37,18 +37,13 @@ Player::Player(unsigned N) : Entity() {
 }
 
 void Player::spawn() {
-    this->pos = nsGraphics::Vec2D(0, 0);
-
-    this->pos.setX(N == 1 ? 1 : 18);
-    this->pos.setY(N == 1 ? 1 : 18);
-
+    this->pos = nsGraphics::Vec2D(N == 1 ? 1 : 18, N == 1 ? 1 : 18);
     this->IS_FACING = N == 1 ? this->KEY_RIGHT : this->KEY_LEFT;
 }
 
 void Player::load(CMyParam params) {
     std::cout << "[Player N=" << std::to_string(N) + "] Loading" << std::endl;
-
-    Cooldowns::createCooldown("player" + std::to_string(N) + "_move", 140 / movementSpeed);
+    Cooldowns::createCooldown(getEntityId() + "_move", this->_getDelay());
 
     this->spawn();
 
@@ -93,7 +88,7 @@ void Player::update(MinGL & window, unsigned delta, CMat map) {
     /*
      * Movement cooldowns
      */
-    canMove = Cooldowns::isCooldownOver("player" + std::to_string(N) + "_move");
+    canMove = Cooldowns::isCooldownOver(getEntityId() + "_move");
 
     if (isAllowedToMove) {
         if (window.isPressed({ KEY_UP, false })) {
@@ -125,7 +120,7 @@ void Player::update(MinGL & window, unsigned delta, CMat map) {
 }
 
 bool Player::canTakeDamage() {
-    return Cooldowns::isCooldownOver("player" + std::to_string(N) + "_canTakeDamage", true);
+    return Cooldowns::isCooldownOver(getEntityId() + "_canTakeDamage", true);
 }
 
 void Player::damage() {
@@ -136,7 +131,7 @@ void Player::damage() {
 }
 
 void Player::noDamage(int ms) {
-    Cooldowns::createCooldown("player" + std::to_string(N) + "_canTakeDamage", ms);
+    Cooldowns::createCooldown(getEntityId() + "_canTakeDamage", ms);
 }
 
 void Player::render(MinGL & window) {
@@ -158,7 +153,6 @@ void Player::render(MinGL & window) {
     }
 }
 
-void Player::setMovementSpeed(double speed) {
-    this->movementSpeed = speed;
-    Cooldowns::setCooldownDelay("player" + std::to_string(N) + "_move", 200 / getMovementSpeed());
+std::string Player::getEntityId() {
+    return "Player" + std::to_string(this->N);
 }
