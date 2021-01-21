@@ -1,5 +1,5 @@
-#ifndef FRUIT_H
-#define FRUIT_H
+#ifndef POWERUP_H
+#define POWERUP_H
 
 #include <mingl/mingl.h>
 #include <mingl/gui/sprite.h>
@@ -23,6 +23,8 @@ namespace nsGame {
      */
     class Powerup : public Item
     {
+        private:
+            nsAudio::AudioEngine audio;
 
         public:
             Powerup(nsGraphics::Vec2D pos) : Item(pos) {}
@@ -58,7 +60,15 @@ namespace nsGame {
             ItemType getType() override {
                 return nsGame::ItemType::POWERUP;
             };
+
+            /**
+            * @brief This function is used to get the position on the screen/canvas/window, whatever you want to call it
+            * @fn virtual nsGraphics::Vec2D getCoordinates();
+            */
+            nsGraphics::Vec2D getCoordinates() {
+                return nsGraphics::Vec2D((this->pos.getX() * 32) + 16, (this->pos.getY() * 32) + 16);
+            }
     };
 }
 
-#endif // FRUIT_H
+#endif // POWERUP_H

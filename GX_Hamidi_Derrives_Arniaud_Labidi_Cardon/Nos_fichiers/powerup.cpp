@@ -1,6 +1,8 @@
 #include "powerup.h"
+#include "definitions.h"
+
 #include <mingl/gui/sprite.h>
-#include <mingl/shape/rectangle.h>
+#include <mingl/shape/circle.h>
 
 /**
  *
@@ -18,9 +20,12 @@ void Powerup::load() {}
 void Powerup::update(unsigned delta) {}
 
 void Powerup::action(Player *player) {
+    audio.playSoundFromBuffer(RES_PATH + "/audio/powerup-1.wav");
+
     player->score += 100;
+    player->noDamage(5000);
 }
 
 void Powerup::render(MinGL &window) {
-    window <<  nsShape::Rectangle(this->getCoordinates(), 2, nsGraphics::KGreen);
+    window <<  nsShape::Circle(this->getCoordinates(), 2, nsGraphics::RGBAcolor(255, 215));
 }
