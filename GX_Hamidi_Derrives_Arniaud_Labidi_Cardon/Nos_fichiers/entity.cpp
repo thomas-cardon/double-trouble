@@ -4,7 +4,7 @@
  *
  * \file    entity.cpp
  * \author  Thomas Cardon
- * \date    9 janvier 2020
+ * \date    9 janvier 2021
  * \version 1.0
  * \brief   Method definitions for Entity.h
  */
@@ -32,6 +32,14 @@ bool Entity::inCollision(CMat map, unsigned x, unsigned y) {
 }
 
 
+bool Entity::canTakeDamage() {
+    return this->_canTakeDamage;
+}
+
+void Entity::kill() {
+    this->slain = true;
+}
+
 bool Entity::canBeHitBy(Entity *entity) {
     if (this->canTakeDamage() && this->getPosition().getX() == entity->getPosition().getX() && this->getPosition().getY() == entity->getPosition().getY())
         return true;
@@ -55,12 +63,4 @@ std::string Entity::getEntityId() {
 void Entity::setMovementSpeed(double speed) {
     this->movementSpeed = speed;
     Cooldowns::setCooldownDelay(this->getEntityId() + "_move", this->_getDelay());
-}
-
-bool Entity::canTakeDamage() {
-    return false;
-}
-
-void Entity::kill() {
-    this->slain = true;
 }

@@ -4,7 +4,7 @@
  *
  * \file    cooldowns.cpp
  * \author  Thomas Cardon
- * \date    10 janvier 2020
+ * \date    10 janvier 2021
  * \version 1.0
  * \brief   Method definitions for cooldowns.h
  */
@@ -21,10 +21,13 @@ void Cooldowns::updateCooldowns(unsigned delta) {
 }
 
 bool Cooldowns::isCooldownOver(std::string id) {
+    if (cooldowns.find(id) == cooldowns.end()) return false;
+
     if (cooldowns[id].first >= cooldowns[id].second) {
         cooldowns[id].first = 0;
         return true;
     }
+
     return false;
 }
 

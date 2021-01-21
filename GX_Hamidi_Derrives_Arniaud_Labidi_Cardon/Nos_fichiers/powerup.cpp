@@ -8,14 +8,16 @@
  *
  * \file    powerup.cpp
  * \author  Thomas Cardon
- * \date    12 janvier 2020
+ * \date    12 janvier 2021
  * \version 1.0
  * \brief   Method definitions for powerup.h
  */
 
 using namespace nsGame;
 
-void Powerup::load() {}
+void Powerup::load() {
+    audio.loadSound(RES_PATH + "/audio/powerup-1.wav");
+}
 
 void Powerup::update(unsigned delta) {}
 
@@ -27,5 +29,5 @@ void Powerup::action(Player *player) {
 }
 
 void Powerup::render(MinGL &window) {
-    window << nsShape::Circle(this->getCoordinates(), 6, nsGraphics::RGBAcolor(255, 215));
+    window << nsShape::Circle(this->getCoordinates(), 8, nsGraphics::KBlack) << nsShape::Circle(this->getCoordinates(), 6, nsGraphics::RGBAcolor(255, 215));
 }

@@ -1,6 +1,6 @@
 /**
  * @file    monster.cpp
- * @authors Ines Hamidi, Thomas Cardon
+ * @authors Ines Hamidi, Thomas Cardon, Alexandre Arniaud
  * @date    11 janvier 2020
  * @version 1.0
  * @brief   Définition des méthodes de la classe monster.h
@@ -12,6 +12,14 @@
 #include "cooldowns.h"
 
 #include "definitions.h"
+
+/**
+ * \file    animation.cpp
+ * \author  Alexandre Arniaud, Thomas Cardon, Ines Hamidi
+ * \date    21 janvier 2021
+ * \version 1.0
+ * \brief   Method definitions for monster.h
+ */
 
 using namespace nsGame;
 
@@ -29,7 +37,17 @@ void Monster::spawn() {
 }
 
 void Monster::damage() {
+    this->audio.playSoundFromBuffer(RES_PATH + "/audio/monster-hit-1.wav");
     this->kill();
+}
+
+bool Monster::canBeHitBy(Entity *entity) {
+    if (entity->canBeHitBy(this)) return false;
+
+    if (this->getPosition().getX() == entity->getPosition().getX() && this->getPosition().getY() == entity->getPosition().getY() && !entity->canBeHitBy(this))
+        return true;
+
+    return false;
 }
 
 void Monster::load() {
@@ -37,6 +55,8 @@ void Monster::load() {
 
     this->movementSpeed = 0.35;
     Cooldowns::createCooldown(getEntityId() + "_move", this->_getDelay());
+
+    this->audio.loadSound(RES_PATH + "/audio/monster-hit-1.wav");
 
     for (int i = 1; i <= 6; i++) {
         this->top.sprites.push_back(nsGui::Sprite(RES_PATH + "/entities/monsters/" + std::to_string(this->behaviourId) + "/" + std::to_string(this->behaviourId) + "-" + std::to_string(i) + ".i2s"));
@@ -56,32 +76,37 @@ void Monster::update(unsigned delta, CMat & mat)
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (this->behaviourId == 1) //Behaviour 1 : follow outer walls
 =======
     if (this->behaviourId == 1) //Behaviour 1 : follow outer walls || Behaviour 2 : follow a little wall
 >>>>>>> main
 =======
+=======
+    unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
+
+>>>>>>> main
     if (this->behaviourId == 1) //Behaviour 1 : Follow outer walls
 >>>>>>> main
     {
-        unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
-
         if (!this->inCollision(mat, x + 1, y) && y == 1) {
-            this->pos.setX(x + 1);
+            this->pos.setX(x + 1); // Right
         }
         else if (!this->inCollision(mat, x, y - 1) && x == 1) {
-            this->pos.setY(y - 1);
+            this->pos.setY(y - 1); // Down
         }
         else if (!this->inCollision(mat, x - 1, y) && y == mat.size() - 2) {
-            this->pos.setX(x - 1);
+            this->pos.setX(x - 1); // Left
         }
 
         else if (!this->inCollision(mat, x, y + 1) && y <= mat.size() - 2) {
-            this->pos.setY(y + 1);
+            this->pos.setY(y + 1); // Up
         }
     }
+
     else if (this->behaviourId == 2) //Behaviour 2 : Follow a little wall
     {
+<<<<<<< HEAD
 
 
 <<<<<<< HEAD
@@ -117,8 +142,43 @@ void Monster::update(unsigned delta, CMat & mat)
     }//fi
 
     else
-    {
+=======
+        if (this->inCollision(mat, x, y + 1) && LastMove == 'd') {
+            this->pos.setX(x + 1); // Right
+        }
+        else if (this->inCollision(mat, x + 1, y) && LastMove == 'z') {
+            this->pos.setY(y - 1); // Up
+        }
+        else if (this->inCollision(mat, x, y - 1) && LastMove == 'q') {
+            this->pos.setX(x - 1); // Left
+        }
+        else if (this->inCollision(mat, x - 1, y) && LastMove == 's') {
+            this->pos.setY(y + 1); // Down
+        }
+        else if (!this->inCollision(mat, x, y) && LastMove == 'z') {
+            this->pos.setX(x + 1); // Right without collision
+            LastMove = 's';
+        }
+        else if (!this->inCollision(mat, x, y) && LastMove == 'q') {
+            this->pos.setX(x - 1); // Up without collision
+            LastMove = 'd';
+        }
+        else if (!this->inCollision(mat, x, y) && LastMove == 's') {
+            this->pos.setX(x - 1); // Left without collision
+            LastMove = 'z';
+        }
+        else if (!this->inCollision(mat, x, y) && LastMove == 'd') {
+            this->pos.setX(x + 1); // Down without collision
+            LastMove = 'q';
+        }
+    }
 
+    else if (this->behaviourId == 3) // Behaviour : Flee the player
+>>>>>>> main
+    {
+        bool circleID = rand() % 1;
+
+<<<<<<< HEAD
         if ((x - 1 >= 0) && !this->inCollision(mat, x - 1, y))
         {
             this->pos.setX(x - 1);
@@ -143,6 +203,23 @@ void Monster::update(unsigned delta, CMat & mat)
 
 >>>>>>> main
     else if (false) { // this->behaviourId == 4) { // Behaviour 4 => Random
+=======
+        if (circleID == 1) //circle to the left
+        {
+            this->pos.setX(x + 1);
+            this->pos.setY(y + 1);
+            this->pos.setX(x - 1);
+            this->pos.setY(y - 1);
+        }
+        else {
+            this->pos.setX(x - 1);
+            this->pos.setY(y - 1);
+            this->pos.setX(x + 1);
+            this->pos.setY(y + 1);
+        }
+    }
+    else if (this->behaviourId == 4) { // Behaviour 4 => Random
+>>>>>>> main
         int move = rand() % 4 + 1;
         unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
         std::cout << move << std::endl;

@@ -9,7 +9,7 @@
 /**
  * \file    entity.h
  * \author  Thomas Cardon
- * \date    10 janvier 2020
+ * \date    10 janvier 2021
  * \version 1.0
  * \brief   Definitions for the Entity class
  */
@@ -26,6 +26,9 @@ namespace nsGame
         protected:
             /** \brief Movement Speed */
             double movementSpeed = 1.0;
+
+            /** \brief Allows Entity to take damage */
+            bool _canTakeDamage = true;
         public:
             /** \brief Prevents entity to move */
             bool isAllowedToMove = true;
@@ -55,12 +58,6 @@ namespace nsGame
             nsGraphics::Vec2D getPosition();
 
             /**
-             * @brief Checks if entity can be hit by another entity.
-             * @fn virtual bool canBeHitBy(Entity *entity);
-             */
-            bool canBeHitBy(Entity *entity);
-
-            /**
              * @brief Teleports the entity at its spawn
              * @fn void spawn();
              */
@@ -85,22 +82,28 @@ namespace nsGame
             bool inCollision(CMat map, unsigned x, unsigned y);
 
             /**
+             * @brief Checks if entity can be hit by another entity.
+             * @fn virtual bool canBeHitBy(Entity *entity);
+             */
+            bool canBeHitBy(Entity *entity);
+
+            /**
              * @brief Damages entity
              * @fn void damage();
              */
             void damage();
 
             /**
-             * @brief Kills entity
-             * @fn void damage();
-             */
-            void kill();
-
-            /**
              * @brief Tells if entity can be attacked
              * @fn bool canTakeDamage();
              */
             bool canTakeDamage();
+
+            /**
+             * @brief Kills entity
+             * @fn void damage();
+             */
+            void kill();
 
             /**
              * @brief Prevents entity to move for X milliseconds

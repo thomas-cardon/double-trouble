@@ -20,7 +20,7 @@
  *
  * \file    monster.h
  * \authors Ines Hamidi, Thomas Cardon
- * \date    11 janvier 2020
+ * \date    11 janvier 2021
  * \version 1.0
  * \brief   Monster
  *
@@ -31,10 +31,11 @@ namespace nsGame {
     /**
      * @class Monster
      * @brief Defines the monsters class
-     * @authors Ines Hamidi, Thomas Cardon
+     * @authors Ines Hamidi, Thomas Cardon, Alexandre Arniaud
      */
     class Monster : public Entity {
         private:
+<<<<<<< HEAD
 <<<<<<< HEAD
             int delay = 130 * movementSpeed;
             int behaviourId = 1;
@@ -45,11 +46,16 @@ namespace nsGame {
              * @brief Updates the monster
              * @fn void update(CMat & mat, unsigned delta, Player player1, Player player2);
 =======
+=======
+            /** \brief Audio Engine */
+            nsAudio::AudioEngine audio;
+
+>>>>>>> main
             /** \brief Entity position */
             nsGraphics::Vec2D _goingToPos;
 
             /** \brief Indicates direction */
-            char IS_FACING;
+            char IS_FACING, LastMove;
 
             /** \brief Indicates type of behaviour */
             unsigned behaviourId;
@@ -67,12 +73,6 @@ namespace nsGame {
              * @return Entity ID
              */
             std::string getEntityId();
-
-            /**
-             * @brief Damages entity
-             * @fn void damage();
-             */
-            void damage();
 
             /**
              * @brief Updates the ennemy
@@ -104,6 +104,7 @@ namespace nsGame {
              */
             void spawn();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
             /**
              * @brief Sets the movement speed
@@ -117,6 +118,20 @@ namespace nsGame {
              */
             void MonsterMoves(CMat & mat);
 =======
+>>>>>>> main
+=======
+
+            /**
+             * @brief Damages entity
+             * @fn void damage();
+             */
+            void damage();
+
+            /**
+             * @brief Checks if entity can be hit by another entity.
+             * @fn virtual bool canBeHitBy(Entity *entity);
+             */
+            bool canBeHitBy(Entity *entity);
 >>>>>>> main
     };
 }

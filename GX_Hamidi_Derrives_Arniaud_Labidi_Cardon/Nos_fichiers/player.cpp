@@ -23,7 +23,7 @@
  *
  * \file    player.cpp
  * \author  Thomas Cardon
- * \date    10 janvier 2020
+ * \date    10 janvier 2021
  * \version 1.0
  * \brief   Method definitions for Player.h
  */
@@ -55,6 +55,8 @@ void Player::load(CMyParam params) {
         this->bottom.sprites.push_back(nsGui::Sprite(RES_PATH + "/entities/player" + std::to_string(N) + "/bottom-" + std::to_string(i) + ".i2s"));
         this->left.sprites.push_back(nsGui::Sprite(RES_PATH + "/entities/player" + std::to_string(N) + "/left-" + std::to_string(i) + ".i2s"));
         this->right.sprites.push_back(nsGui::Sprite(RES_PATH + "/entities/player" + std::to_string(N) + "/right-" + std::to_string(i) + ".i2s"));
+
+        this->invincible.sprites.push_back(nsGui::Sprite(RES_PATH + "/entities/noDamage/" + std::to_string(i) + ".i2s"));
     }
 
     this->KEY_UP = params.MapParamChar["P" + std::to_string(N) + "_KeyUp"];
@@ -89,6 +91,18 @@ void Player::update(MinGL & window, unsigned delta, CMat map) {
      * Movement cooldowns
      */
     canMove = Cooldowns::isCooldownOver(getEntityId() + "_move");
+    if (_noDamage != -1) {
+        if (_noDamage >= _noDamageFor) {
+            _noDamage = -1;
+            _canTakeDamage = true;
+        }
+        else {
+            _canTakeDamage = false;
+            _noDamage += delta;
+        }
+    }
+
+    std::cout << _noDamage << " " << _noDamageFor << std::endl;
 
     if (isAllowedToMove) {
         if (window.isPressed({ KEY_UP, false })) {
@@ -117,10 +131,8 @@ void Player::update(MinGL & window, unsigned delta, CMat map) {
     this->bottom.update(delta);
     this->right.update(delta);
     this->left.update(delta);
-}
 
-bool Player::canTakeDamage() {
-    return Cooldowns::isCooldownOver(getEntityId() + "_canTakeDamage", true);
+    this->invincible.update(delta);
 }
 
 void Player::damage() {
@@ -133,7 +145,8 @@ void Player::damage() {
 }
 
 void Player::noDamage(int ms) {
-    Cooldowns::createCooldown(getEntityId() + "_canTakeDamage", ms);
+    _noDamageFor = ms;
+    _noDamage = 0;
 }
 
 void Player::render(MinGL & window) {
@@ -152,6 +165,11 @@ void Player::render(MinGL & window) {
     else {
         this->left.setPosition(this->getCoordinates());
         this->left.render(window);
+    }
+
+    if (!this->canTakeDamage()) {
+        this->invincible.setPosition(this->getCoordinates());
+        this->invincible.render(window);
     }
 }
 

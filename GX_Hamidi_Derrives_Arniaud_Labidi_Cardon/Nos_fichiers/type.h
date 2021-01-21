@@ -1,5 +1,5 @@
-#ifndef TYPE_2_H
-#define TYPE_2_H
+#ifndef TYPE_H
+#define TYPE_H
 /*!
  * \file type.h
  * \brief Definition of usefull types or aliases for the project
@@ -65,27 +65,5 @@ struct AuthorizedKey {
  * @brief KAuthorizedKey
  */
 const AuthorizedKey KAuthorizedKey;
-
-/**
-  * @brief KColor : map between the "human" color and its correspondence for the Unix terminal
-  */
-
-const std::map <std::string, std::string> KColor
-{
-  {"KReset", "0"},
-  {"KBlack", "30"},
-  {"KRed", "31"},
-  {"KGreen", "32"},
-  {"KYellow", "33"},
-  {"KBlue", "34"},
-  {"KMAgenta", "35"},
-  {"KCyan", "36"},
-
-};
-
-/**
- * @brief KEmpty : character for an empty cell
- */
-const char KEmpty        = ' ';
 
 #endif // TYPE_H

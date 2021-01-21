@@ -13,7 +13,7 @@
 /**
  * \file    player.h
  * \author  Thomas Cardon, Alexandre Arniaud
- * \date    8 janvier 2020
+ * \date    8 janvier 2021
  * \version 1.0
  * \brief   Player
  */
@@ -32,8 +32,8 @@ namespace nsGame {
             /** \brief Keystrokes */
             char KEY_DOWN, KEY_UP, KEY_LEFT, KEY_RIGHT, KEY_ACTION_1;
         public:
-            /** \brief Animations for every direction */
-            Animation bottom = Animation(600, true), top = Animation(600, true), left = Animation(600, true), right = Animation(600, true);
+            /** \brief Animations for every direction, and effects */
+            Animation bottom = Animation(600, true), top = Animation(600, true), left = Animation(600, true), right = Animation(600, true), invincible = Animation(600, false);
 
             /** \brief Player hearts */
             unsigned hearts = 3;
@@ -46,6 +46,8 @@ namespace nsGame {
 
             /** \brief Allows player to move or not */
             bool canMove = true;
+
+            int _noDamage, _noDamageFor;
 
             Player(unsigned N /* = 2 */);
 
@@ -84,12 +86,6 @@ namespace nsGame {
              * @fn void noDamage(int ms);
              */
             void noDamage(int ms);
-
-            /**
-             * @brief Prevents player from being attacked for X milliseconds
-             * @fn bool canTakeDamage();
-             */
-            bool canTakeDamage();
 
             /**
              * @brief Decrements 1 to hearts, and disable damage for 5 seconds + adds movement speed;

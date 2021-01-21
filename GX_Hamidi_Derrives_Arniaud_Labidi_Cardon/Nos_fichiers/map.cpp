@@ -20,7 +20,7 @@
  *
  * \file    map.cpp
  * \author  Thomas Cardon
- * \date    13 janvier 2020
+ * \date    13 janvier 2021
  * \version 1.0
  * \brief   Method definitions for map.h
  */
@@ -181,7 +181,10 @@ void Map::update(unsigned delta, Player *p1, Player *p2) {
             return;
         }
 
-        if (true) this->spawnItem(new Powerup(pos));
+        if (rand() % 10 == 9 && !hasPowerupSpawned) {
+            this->spawnItem(new Powerup(pos));
+            hasPowerupSpawned = true;
+        }
         else this->spawnItem(new Fruit(pos));
     }
 }

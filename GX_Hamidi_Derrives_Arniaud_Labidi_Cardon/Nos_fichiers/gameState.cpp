@@ -4,7 +4,7 @@
  *
  * \file    gameState.cpp
  * \author  Thomas Cardon, Alexandre Arniaud, Angèle Derrives, Mohamed Labidi, Ines Hamidi
- * \date    12 janvier 2020
+ * \date    12 janvier 2021
  * \version 1.0
  * \brief   Method definitions for gameState.h
  */
@@ -109,7 +109,7 @@ void GameState::update(MinGL & window, unsigned delta) {
 
         player2->score += 1000;
     }
-    else if (player1->canBeHitBy(player2) && !player2->canBeHitBy(player1)) { // +1 P1
+    else if (player2->canBeHitBy(player1) && !player1->canBeHitBy(player2)) { // +1 P1
         player2->damage();
         player2->spawn();
 
