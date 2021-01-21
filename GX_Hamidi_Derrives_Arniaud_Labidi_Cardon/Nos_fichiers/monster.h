@@ -24,10 +24,13 @@ namespace nsGame {
     /**
      * @class Monster
      * @brief Defines the monsters class
-     * @authors Ines Hamidi, Thomas Cardon
+     * @authors Ines Hamidi, Thomas Cardon, Alexandre Arniaud
      */
     class Monster : public Entity {
         private:
+            /** \brief Audio Engine */
+            nsAudio::AudioEngine audio;
+
             /** \brief Entity position */
             nsGraphics::Vec2D _goingToPos;
 

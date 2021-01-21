@@ -62,6 +62,9 @@ namespace nsGame {
             /** \brief Items to spawn */
             unsigned itemsLeft = 8;
 
+            /** \brief Allows only one Powerup to be spawned */
+            bool hasPowerupSpawned = false;
+
             /**
              * @brief load
              */

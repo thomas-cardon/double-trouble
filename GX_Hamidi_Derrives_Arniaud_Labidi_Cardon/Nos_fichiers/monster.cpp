@@ -1,6 +1,6 @@
 /**
  * @file    monster.cpp
- * @authors Ines Hamidi, Thomas Cardon
+ * @authors Ines Hamidi, Thomas Cardon, Alexandre Arniaud
  * @date    11 janvier 2020
  * @version 1.0
  * @brief   Définition des méthodes de la classe monster.h
@@ -29,6 +29,7 @@ void Monster::spawn() {
 }
 
 void Monster::damage() {
+    this->audio.playSoundFromBuffer(RES_PATH + "/audio/monster-hit-1.wav");
     this->kill();
 }
 
@@ -46,6 +47,8 @@ void Monster::load() {
 
     this->movementSpeed = 0.35;
     Cooldowns::createCooldown(getEntityId() + "_move", this->_getDelay());
+
+    this->audio.loadSound(RES_PATH + "/audio/monster-hit-1.wav");
 
     for (int i = 1; i <= 6; i++) {
         this->top.sprites.push_back(nsGui::Sprite(RES_PATH + "/entities/monsters/" + std::to_string(this->behaviourId) + "/" + std::to_string(this->behaviourId) + "-" + std::to_string(i) + ".i2s"));
@@ -104,7 +107,7 @@ void Monster::update(unsigned delta, CMat & mat)
             this->pos.setY(y + 1);
         }
     }
-    else if (false) {//  (this->behaviourId == 4) { // Behaviour 4 => Random
+    else if (this->behaviourId == 4) { // Behaviour 4 => Random
         int move = rand() % 4 + 1;
         unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
         std::cout << move << std::endl;
