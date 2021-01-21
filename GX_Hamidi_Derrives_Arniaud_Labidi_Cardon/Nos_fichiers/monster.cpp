@@ -129,121 +129,60 @@ void Monster::update(unsigned delta, CMat & mat)
         if ((x + 1 <= mat[y].size() - 1) && !this->inCollision(mat, x + 1, y))
         {
             this->pos.setX(x + 1);
+            this->IS_FACING = 'D';
+
         };
 
         else if ((y + 1 <= mat.size() - 1) && !this->inCollision(mat, x, y + 1))
         {
             this->pos.setY(y + 1);
+            this->IS_FACING = 'Z';
+
         };
 
         else if ((x - 1 >= 0) && !this->inCollision(mat, x - 1, y))
         {
             this->pos.setX(x - 1);
+            this->IS_FACING = 'Q';
+
         };
 
         else if ((y - 1 >= 0) && !this->inCollision(mat, x, y - 1))
         {
              this->pos.setY(y - 1);
+             this->IS_FACING = 'S';
         };
     }//fi
 
-    else
-=======
-        if (this->inCollision(mat, x, y + 1) && LastMove == 'd') {
-            this->pos.setX(x + 1); // Right
-            this->IS_FACING = 'D';
-            LastMove = 'd';
-        }
-        else if (this->inCollision(mat, x + 1, y) && LastMove == 'z') {
-            this->pos.setY(y - 1); // Up
-            this->IS_FACING = 'Z';
-            LastMove = 'z';
-        }
-        else if (this->inCollision(mat, x, y - 1) && LastMove == 'q') {
-            this->pos.setX(x - 1); // Left
-            this->IS_FACING = 'Q';
-            LastMove = 'q';
-        }
-        else if (this->inCollision(mat, x - 1, y) && LastMove == 's') {
-            this->pos.setY(y + 1); // Down
-            this->IS_FACING = 'S';
-            LastMove = 's';
-        }
-
-<<<<<<< main
-        else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1) && LastMove == 'z') {
-            this->pos.setX(x + 1); // Right without collision on down
-            this->IS_FACING = 'D';
-            LastMove = 'd';
-        }
-        else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1) && LastMove == 'q') {
-            this->pos.setX(x - 1); // Up without collision on right
-            this->IS_FACING = 'Z';
-            LastMove = 'z';
-        }
-        else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1) && LastMove == 's') {
-            this->pos.setX(y - 1); // Left without collision on top
-            this->IS_FACING = 'Q';
-            LastMove = 'q';
-        }
-        else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1) && LastMove == 'd') {
-            this->pos.setX(y + 1); // Down without collision on left
-            this->IS_FACING = 'S';
-            LastMove = 's';
-        }
-
-        else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1)) {
-            this->pos.setX(x + 1); // If there isn't collisions, right
-            this->IS_FACING = 'D';
-            LastMove = 'd';
-        }
-    }
-
-    else if (this->behaviourId == 3) // Behaviour : Flee the player
->>>>>>> main
+    else //CircleID = 0
     {
-        bool circleID = rand() % 1;
-
-<<<<<<< HEAD
-        if ((x - 1 >= 0) && !this->inCollision(mat, x - 1, y))
-        {
-            this->pos.setX(x - 1);
-        }
-
-        else if ((y - 1 >= 0) && !this->inCollision(mat, x, y - 1))
+       if ((y - 1 >= 0) && !this->inCollision(mat, x, y - 1))
         {
             this->pos.setY(y - 1);
-        }
+            this->IS_FACING = 'S';
+        };
 
-        else if ((x + 1 <= mat[y].size() - 1) && !this->inCollision(mat, x + 1, y))
-        {
-            this->pos.setX(x + 1);
-        }
+       else if ((x - 1 >= 0) && !this->inCollision(mat, x - 1, y))
+         {
+            this->pos.setX(x - 1);
+            this->IS_FACING = 'Q';
+          };
 
         else if ((y + 1 <= mat.size() - 1) && !this->inCollision(mat, x, y + 1))
         {
-            this->pos.setY(y + 1);
-        }
-    }
-}//end of behaviour 3
+        this->pos.setY(y + 1);
+        this->IS_FACING = 'Z';
+        };
 
->>>>>>> main
-    else if (false) { // this->behaviourId == 4) { // Behaviour 4 => Random
-=======
-        if (circleID == 1) //circle to the left
+        if ((x + 1 <= mat[y].size() - 1) && !this->inCollision(mat, x + 1, y))
         {
-            this->pos.setX(x + 1);
-            this->pos.setY(y + 1);
-            this->pos.setX(x - 1);
-            this->pos.setY(y - 1);
-        }
-        else {
-            this->pos.setX(x - 1);
-            this->pos.setY(y - 1);
-            this->pos.setX(x + 1);
-            this->pos.setY(y + 1);
-        }
-    }
+          this->pos.setX(x + 1);
+          this->IS_FACING = 'D';
+        };
+
+    }//Felse
+}
+
     else if (this->behaviourId == 4) { // Behaviour 4 => Random
 >>>>>>> main
         int move = rand() % 4 + 1;
