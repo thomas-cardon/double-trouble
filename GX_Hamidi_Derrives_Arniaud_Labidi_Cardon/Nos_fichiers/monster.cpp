@@ -32,6 +32,15 @@ void Monster::damage() {
     this->kill();
 }
 
+bool Monster::canBeHitBy(Entity *entity) {
+    if (entity->canBeHitBy(this)) return false;
+
+    if (this->getPosition().getX() == entity->getPosition().getX() && this->getPosition().getY() == entity->getPosition().getY() && !entity->canBeHitBy(this))
+        return true;
+
+    return false;
+}
+
 void Monster::load() {
     std::cout << "[Monster#" << getEntityId() + "] Loading" << std::endl;
 
@@ -54,9 +63,10 @@ void Monster::update(unsigned delta, CMat & mat)
 
     //std::cout << "[Monster#" << getEntityId() + "] Position: x= " << this->getPosition().getY() << ", y= " << this->getPosition().getY() << std::endl;
 
+    unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
+
     if (this->behaviourId == 1) //Behaviour 1 : Follow outer walls
     {
-        unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
 
         if (!this->inCollision(mat, x + 1, y) && y == 1) {
             this->pos.setX(x + 1);
@@ -76,11 +86,25 @@ void Monster::update(unsigned delta, CMat & mat)
     {
 
     }
-    else if (this->behaviourId == 3) // Behaviour : Flee the player
+    else if (false) // this->behaviourId == 3) // Behaviour : Flee the player
     {
+        bool circleID = rand() % 1;
 
+        if (circleID == 1) //circle to the left
+        {
+            this->pos.setX(x + 1);
+            this->pos.setY(y + 1);
+            this->pos.setX(x - 1);
+            this->pos.setY(y - 1);
+        }
+        else {
+            this->pos.setX(x - 1);
+            this->pos.setY(y - 1);
+            this->pos.setX(x + 1);
+            this->pos.setY(y + 1);
+        }
     }
-    else if (false) { // this->behaviourId == 4) { // Behaviour 4 => Random
+    else if (false) {//  (this->behaviourId == 4) { // Behaviour 4 => Random
         int move = rand() % 4 + 1;
         unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
         std::cout << move << std::endl;
