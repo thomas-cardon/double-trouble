@@ -69,6 +69,12 @@ namespace nsGame {
             std::string getEntityId();
 
             /**
+             * @brief Damages entity
+             * @fn void damage();
+             */
+            void damage();
+
+            /**
              * @brief Updates the ennemy
              * @fn void update(unsigned delta, CMat & mat);
 >>>>>>> main

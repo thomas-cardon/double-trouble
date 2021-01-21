@@ -24,12 +24,12 @@ std::string Monster::getEntityId() {
 }
 
 void Monster::spawn() {
-    this->pos.setX(1);
+    this->pos.setX(15);
     this->pos.setY(1 * behaviourId);
 }
 
-void goTo(nsGraphics::Vec2D newPos) {
-
+void Monster::damage() {
+    this->kill();
 }
 
 void Monster::load() {
@@ -43,48 +43,54 @@ void Monster::load() {
     }
 
     this->spawn();
-    goTo(nsGraphics::Vec2D(15, 15));
-}
-
-// Inspiré de l'algorithme trouvé sur Wikipédia: https://fr.wikipedia.org/wiki/Algorithme_de_parcours_en_largeur
-void BreadthFirstSearch(CMat & mat, nsGraphics::Vec2D A) {
-    std::vector<nsGraphics::Vec2D> list;
 }
 
 void Monster::update(unsigned delta, CMat & mat)
 {
+    if (slain) return;
+
     canMove = Cooldowns::isCooldownOver(getEntityId() + "_move");
     if (!canMove) return;
 
-    std::cout << "[Monster#" << getEntityId() + "] Position: x= " << this->getPosition().getY() << ", y= " << this->getPosition().getY() << std::endl;
+    //std::cout << "[Monster#" << getEntityId() + "] Position: x= " << this->getPosition().getY() << ", y= " << this->getPosition().getY() << std::endl;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     if (this->behaviourId == 1) //Behaviour 1 : follow outer walls
 =======
     if (this->behaviourId == 1) //Behaviour 1 : follow outer walls || Behaviour 2 : follow a little wall
 >>>>>>> main
+=======
+    if (this->behaviourId == 1) //Behaviour 1 : Follow outer walls
+>>>>>>> main
     {
         unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
 
-        if ((x + 1 <= mat[y].size() - 1) && !this->inCollision(mat, x + 1, y)) {
+        if (!this->inCollision(mat, x + 1, y) && y == 1) {
             this->pos.setX(x + 1);
         }
-        else if ((x - 1 >= 0) && !this->inCollision(mat, x - 1, y)) {
-            this->pos.setX(x - 1);
-        }
-        else if ((y + 1 <= mat.size() - 1) && !this->inCollision(mat, x, y + 1)) {
-            this->pos.setY(y + 1);
-        }
-        else if ((y - 1 >= 0) && !this->inCollision(mat, x, y - 1)) {
+        else if (!this->inCollision(mat, x, y - 1) && x == 1) {
             this->pos.setY(y - 1);
         }
+        else if (!this->inCollision(mat, x - 1, y) && y == mat.size() - 2) {
+            this->pos.setX(x - 1);
+        }
+
+        else if (!this->inCollision(mat, x, y + 1) && y <= mat.size() - 2) {
+            this->pos.setY(y + 1);
+        }
     }
-    else if (this->behaviourId == 2) {
+    else if (this->behaviourId == 2) //Behaviour 2 : Follow a little wall
+    {
 
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     else if (this->behaviourId == 3) // Behaviour : if player close : flees to back right, else, move in random circle
+=======
+    else if (this->behaviourId == 3) // Behaviour : Flee the player
+>>>>>>> main
     {
         unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
 
@@ -132,6 +138,8 @@ void Monster::update(unsigned delta, CMat & mat)
 };
 
 void Monster::render(MinGL &window) {
+    if (slain) return;
+
     this->top.setPosition(this->getCoordinates());
     this->top.render(window);
 }

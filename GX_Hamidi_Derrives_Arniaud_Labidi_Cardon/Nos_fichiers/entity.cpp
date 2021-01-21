@@ -33,7 +33,7 @@ bool Entity::inCollision(CMat map, unsigned x, unsigned y) {
 
 
 bool Entity::canBeHitBy(Entity *entity) {
-    if (this->getPosition().getX() == entity->getPosition().getX() && this->getPosition().getY() == entity->getPosition().getY())
+    if (this->canTakeDamage() && this->getPosition().getX() == entity->getPosition().getX() && this->getPosition().getY() == entity->getPosition().getY())
         return true;
 
     return false;
@@ -59,4 +59,8 @@ void Entity::setMovementSpeed(double speed) {
 
 bool Entity::canTakeDamage() {
     return false;
+}
+
+void Entity::kill() {
+    this->slain = true;
 }
