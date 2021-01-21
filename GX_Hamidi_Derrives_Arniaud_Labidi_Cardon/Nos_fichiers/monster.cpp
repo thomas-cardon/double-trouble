@@ -45,7 +45,7 @@ void Monster::load() {
     this->spawn();
 }
 
-void Monster::update(unsigned delta, CMat & mat, Player &p1, Player &p2)
+void Monster::update(unsigned delta, CMat & mat)
 {
     if (slain) return;
 
@@ -86,61 +86,7 @@ void Monster::update(unsigned delta, CMat & mat, Player &p1, Player &p2)
 
 <<<<<<< HEAD
 
-    else if (this->behaviourId == 3) // Behaviour : if player close : flees to back right, else, move in random circle
-{
-    unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
 
-    if (p1)
-    //random circles
-    bool circleID = rand() % 1;
-
-    if (circleID == 1) //circle to the left
-    {
-        if ((x + 1 <= mat[y].size() - 1) && !this->inCollision(mat, x + 1, y))
-        {
-            this->pos.setX(x + 1);
-        };
-
-        else if ((y + 1 <= mat.size() - 1) && !this->inCollision(mat, x, y + 1))
-        {
-            this->pos.setY(y + 1);
-        };
-
-        else if ((x - 1 >= 0) && !this->inCollision(mat, x - 1, y))
-        {
-            this->pos.setX(x - 1);
-        };
-
-        else if ((y - 1 >= 0) && !this->inCollision(mat, x, y - 1))
-        {
-             this->pos.setY(y - 1);
-        };
-    }//fi
-
-    else
-    {
-
-        if ((x - 1 >= 0) && !this->inCollision(mat, x - 1, y))
-        {
-            this->pos.setX(x - 1);
-        }
-
-        else if ((y - 1 >= 0) && !this->inCollision(mat, x, y - 1))
-        {
-            this->pos.setY(y - 1);
-        }
-
-        else if ((x + 1 <= mat[y].size() - 1) && !this->inCollision(mat, x + 1, y))
-        {
-            this->pos.setX(x + 1);
-        }
-
-        else if ((y + 1 <= mat.size() - 1) && !this->inCollision(mat, x, y + 1))
-        {
-            this->pos.setY(y + 1);
-        }
-    }
-}//end of behaviour 3
 
 >>>>>>> main
     else if (false) { // this->behaviourId == 4) { // Behaviour 4 => Random
