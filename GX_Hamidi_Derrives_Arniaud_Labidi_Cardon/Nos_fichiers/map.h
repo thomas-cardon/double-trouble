@@ -17,7 +17,7 @@
 /**
  * @file    map.h
  * @author  Thomas Cardon
- * @date    8 janvier 2020
+ * @date    8 janvier 2021
  * @version 1.0
  * @brief   Map
  **/

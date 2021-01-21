@@ -13,6 +13,14 @@
 
 #include "definitions.h"
 
+/**
+ * \file    animation.cpp
+ * \author  Alexandre Arniaud, Thomas Cardon, Ines Hamidi
+ * \date    21 janvier 2021
+ * \version 1.0
+ * \brief   Method definitions for monster.h
+ */
+
 using namespace nsGame;
 
 Monster::Monster(unsigned behaviourId) {
@@ -54,27 +62,37 @@ void Monster::update(unsigned delta, CMat & mat)
 
     //std::cout << "[Monster#" << getEntityId() + "] Position: x= " << this->getPosition().getY() << ", y= " << this->getPosition().getY() << std::endl;
 
+    unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
     if (this->behaviourId == 1) //Behaviour 1 : Follow outer walls
     {
-        unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
-
         if (!this->inCollision(mat, x + 1, y) && y == 1) {
-            this->pos.setX(x + 1);
+            this->pos.setX(x + 1); // Right
         }
         else if (!this->inCollision(mat, x, y - 1) && x == 1) {
-            this->pos.setY(y - 1);
+            this->pos.setY(y - 1); // Down
         }
         else if (!this->inCollision(mat, x - 1, y) && y == mat.size() - 2) {
-            this->pos.setX(x - 1);
+            this->pos.setX(x - 1); // Left
         }
 
         else if (!this->inCollision(mat, x, y + 1) && y <= mat.size() - 2) {
-            this->pos.setY(y + 1);
+            this->pos.setY(y + 1); // Up
         }
     }
     else if (this->behaviourId == 2) //Behaviour 2 : Follow a little wall
     {
-
+        if (this->inCollision(mat, x, y + 1)) {
+            this->pos.setX(x + 1); // Right
+        }
+        else if (this->inCollision(mat, x - 1, y)) {
+            this->pos.setY(y - 1); // Down
+        }
+        else if (this->inCollision(mat, x, y - 1)) {
+            this->pos.setX(x - 1); // Left
+        }
+        else if (this->inCollision(mat, x + 1, y)) {
+            this->pos.setY(y + 1); // Up
+        }
     }
     else if (this->behaviourId == 3) // Behaviour : Flee the player
     {

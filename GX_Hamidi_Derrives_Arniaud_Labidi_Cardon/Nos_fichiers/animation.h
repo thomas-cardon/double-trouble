@@ -6,7 +6,7 @@
 /**
  * \file    animation.h
  * \author  Thomas Cardon
- * \date    12 janvier 2020
+ * \date    12 janvier 2021
  * \version 1.0
  * \brief   Animation
  */
