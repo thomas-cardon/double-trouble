@@ -110,12 +110,6 @@ void Monster::update(unsigned delta, CMat & mat)
 
     }
 
-
-=======
-    else if (this->behaviourId == 3) // Behaviour : flee the player
-    {
-
-    }
 >>>>>>> main
     else if (false) { // this->behaviourId == 4) { // Behaviour 4 => Random
         int move = rand() % 4 + 1;
