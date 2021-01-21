@@ -9,7 +9,7 @@
 /**
  * \file    entity.h
  * \author  Thomas Cardon
- * \date    10 janvier 2020
+ * \date    10 janvier 2021
  * \version 1.0
  * \brief   Definitions for the Entity class
  */

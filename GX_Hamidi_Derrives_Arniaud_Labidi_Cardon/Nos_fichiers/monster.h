@@ -14,7 +14,7 @@
  *
  * \file    monster.h
  * \authors Ines Hamidi, Thomas Cardon
- * \date    11 janvier 2020
+ * \date    11 janvier 2021
  * \version 1.0
  * \brief   Monster
  *
@@ -35,7 +35,7 @@ namespace nsGame {
             nsGraphics::Vec2D _goingToPos;
 
             /** \brief Indicates direction */
-            char IS_FACING;
+            char IS_FACING, LastMove;
 
             /** \brief Indicates type of behaviour */
             unsigned behaviourId;

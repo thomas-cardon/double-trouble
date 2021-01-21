@@ -8,7 +8,7 @@
  *
  * \file    mainMenuState.cpp
  * \author  Thomas Cardon
- * \date    9 janvier 2020
+ * \date    9 janvier 2021
  * \version 1.0
  * \brief   Main menu state
  */

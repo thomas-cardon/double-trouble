@@ -23,7 +23,7 @@
  *
  * \file    player.cpp
  * \author  Thomas Cardon
- * \date    10 janvier 2020
+ * \date    10 janvier 2021
  * \version 1.0
  * \brief   Method definitions for Player.h
  */

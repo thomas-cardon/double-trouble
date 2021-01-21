@@ -13,6 +13,14 @@
 
 #include "definitions.h"
 
+/**
+ * \file    animation.cpp
+ * \author  Alexandre Arniaud, Thomas Cardon, Ines Hamidi
+ * \date    21 janvier 2021
+ * \version 1.0
+ * \brief   Method definitions for monster.h
+ */
+
 using namespace nsGame;
 
 Monster::Monster(unsigned behaviourId) {
@@ -70,26 +78,54 @@ void Monster::update(unsigned delta, CMat & mat)
 
     if (this->behaviourId == 1) //Behaviour 1 : Follow outer walls
     {
-
         if (!this->inCollision(mat, x + 1, y) && y == 1) {
-            this->pos.setX(x + 1);
+            this->pos.setX(x + 1); // Right
         }
         else if (!this->inCollision(mat, x, y - 1) && x == 1) {
-            this->pos.setY(y - 1);
+            this->pos.setY(y - 1); // Down
         }
         else if (!this->inCollision(mat, x - 1, y) && y == mat.size() - 2) {
-            this->pos.setX(x - 1);
+            this->pos.setX(x - 1); // Left
         }
 
         else if (!this->inCollision(mat, x, y + 1) && y <= mat.size() - 2) {
-            this->pos.setY(y + 1);
+            this->pos.setY(y + 1); // Up
         }
     }
+
     else if (this->behaviourId == 2) //Behaviour 2 : Follow a little wall
     {
-
+        if (this->inCollision(mat, x, y + 1) && LastMove == 'd') {
+            this->pos.setX(x + 1); // Right
+        }
+        else if (this->inCollision(mat, x + 1, y) && LastMove == 'z') {
+            this->pos.setY(y - 1); // Up
+        }
+        else if (this->inCollision(mat, x, y - 1) && LastMove == 'q') {
+            this->pos.setX(x - 1); // Left
+        }
+        else if (this->inCollision(mat, x - 1, y) && LastMove == 's') {
+            this->pos.setY(y + 1); // Down
+        }
+        else if (!this->inCollision(mat, x, y) && LastMove == 'z') {
+            this->pos.setX(x + 1); // Right without collision
+            LastMove = 's';
+        }
+        else if (!this->inCollision(mat, x, y) && LastMove == 'q') {
+            this->pos.setX(x - 1); // Up without collision
+            LastMove = 'd';
+        }
+        else if (!this->inCollision(mat, x, y) && LastMove == 's') {
+            this->pos.setX(x - 1); // Left without collision
+            LastMove = 'z';
+        }
+        else if (!this->inCollision(mat, x, y) && LastMove == 'd') {
+            this->pos.setX(x + 1); // Down without collision
+            LastMove = 'q';
+        }
     }
-    else if (false) // this->behaviourId == 3) // Behaviour : Flee the player
+
+    else if (this->behaviourId == 3) // Behaviour : Flee the player
     {
         bool circleID = rand() % 1;
 

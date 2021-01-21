@@ -8,7 +8,7 @@
  *
  * \file    creditState.cpp
  * \authors Thomas Cardon, Alexandre Arniaud
- * \date    10 janvier 2020
+ * \date    10 janvier 2021
  * \version 1.0
  * \brief   Credits state
  */

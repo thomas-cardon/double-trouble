@@ -16,7 +16,7 @@
 /**
  * \file    gameState.h
  * \author  Thomas Cardon, Alexandre Arniaud, Angèle Derrives, Mohamed Labidi, Ines Hamidi
- * \date    12 janvier 2020
+ * \date    12 janvier 2021
  * \version 1.0
  * \brief   gameState
  */
