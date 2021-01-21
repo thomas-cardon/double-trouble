@@ -32,7 +32,7 @@ std::string Monster::getEntityId() {
 }
 
 void Monster::spawn() {
-    this->pos.setX(15);
+    this->pos.setX(10);
     this->pos.setY(1 * behaviourId);
 }
 
@@ -97,31 +97,41 @@ void Monster::update(unsigned delta, CMat & mat)
     {
         if (this->inCollision(mat, x, y + 1) && LastMove == 'd') {
             this->pos.setX(x + 1); // Right
+            LastMove = 'd';
         }
         else if (this->inCollision(mat, x + 1, y) && LastMove == 'z') {
             this->pos.setY(y - 1); // Up
+            LastMove = 'z';
         }
         else if (this->inCollision(mat, x, y - 1) && LastMove == 'q') {
             this->pos.setX(x - 1); // Left
+            LastMove = 'q';
         }
         else if (this->inCollision(mat, x - 1, y) && LastMove == 's') {
             this->pos.setY(y + 1); // Down
-        }
-        else if (!this->inCollision(mat, x, y) && LastMove == 'z') {
-            this->pos.setX(x + 1); // Right without collision
             LastMove = 's';
         }
-        else if (!this->inCollision(mat, x, y) && LastMove == 'q') {
-            this->pos.setX(x - 1); // Up without collision
+
+        else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1) && LastMove == 'z') {
+            this->pos.setX(x + 1); // Right without collision on down
             LastMove = 'd';
         }
-        else if (!this->inCollision(mat, x, y) && LastMove == 's') {
-            this->pos.setX(x - 1); // Left without collision
+        else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1) && LastMove == 'q') {
+            this->pos.setX(x - 1); // Up without collision on right
             LastMove = 'z';
         }
-        else if (!this->inCollision(mat, x, y) && LastMove == 'd') {
-            this->pos.setX(x + 1); // Down without collision
+        else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1) && LastMove == 's') {
+            this->pos.setX(y - 1); // Left without collision on top
             LastMove = 'q';
+        }
+        else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1) && LastMove == 'd') {
+            this->pos.setX(y + 1); // Down without collision on left
+            LastMove = 's';
+        }
+
+        else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1)) {
+             this->pos.setX(x + 1); // If there isn't collisions, right
+            LastMove = 'd';
         }
     }
 

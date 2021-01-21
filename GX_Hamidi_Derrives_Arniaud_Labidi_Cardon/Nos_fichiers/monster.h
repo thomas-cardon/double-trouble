@@ -31,9 +31,6 @@ namespace nsGame {
             /** \brief Audio Engine */
             nsAudio::AudioEngine audio;
 
-            /** \brief Entity position */
-            nsGraphics::Vec2D _goingToPos;
-
             /** \brief Indicates direction */
             char IS_FACING, LastMove;
 
