@@ -79,23 +79,28 @@ void Monster::update(unsigned delta, CMat & mat)
 
     }
 
-    else if (this->behaviourId == 3) // Behaviour : if player close : flees to back right, else, make rounds
+    else if (this->behaviourId == 3) // Behaviour : if player close : flees to back right, else, move in random circle
     {
         unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
 
-        if (distance Player/monster > a){
-            //make rounds
-            this->pos.setX(x + 1);
-            //cooldown
-            this->pos.setY(y + 1);
-            //cooldown
-            this->pos.setX(x - 1);
-            //cooldown
-            this->pos.setY(y - 1);}
 
-        else {
+        //random circles
+        bool circleID = rand() % 0 + 1;
+
+        if (circleID == 1) //circle to the left
+        {
+            this->pos.setX(x + 1);
+            this->pos.setY(y + 1);
             this->pos.setX(x - 1);
             this->pos.setY(y - 1);
+        }
+
+        else{
+
+            this->pos.setX(x - 1);
+            this->pos.setY(y - 1);
+            this->pos.setX(x + 1);
+            this->pos.setY(y + 1);
         }
 
     }
