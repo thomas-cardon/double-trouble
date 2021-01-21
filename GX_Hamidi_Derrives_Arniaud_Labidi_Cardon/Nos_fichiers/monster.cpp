@@ -318,7 +318,11 @@ void Monster::update(unsigned delta, CMat & mat)
 
     }
 
+<<<<<<< main
 
+=======
+>>>>>>> main
+>>>>>>> monster flee
     else if (false) { // this->behaviourId == 4) { // Behaviour 4 => Random
         int move = rand() % 4 + 1;
         unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
