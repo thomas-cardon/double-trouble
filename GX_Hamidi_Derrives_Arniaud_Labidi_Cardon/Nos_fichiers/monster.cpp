@@ -92,21 +92,37 @@ void Monster::update(unsigned delta, CMat & mat)
 
     else if (this->behaviourId == 2) //Behaviour 2 : Follow a little wall
     {
-        if (this->inCollision(mat, x, y + 1)) {
+        if (this->inCollision(mat, x, y + 1) && LastMove == 'd') {
             this->pos.setX(x + 1); // Right
         }
-        else if (this->inCollision(mat, x - 1, y)) {
-            this->pos.setY(y - 1); // Down
+        else if (this->inCollision(mat, x + 1, y) && LastMove == 'z') {
+            this->pos.setY(y - 1); // Up
         }
-        else if (this->inCollision(mat, x, y - 1)) {
+        else if (this->inCollision(mat, x, y - 1) && LastMove == 'q') {
             this->pos.setX(x - 1); // Left
         }
-        else if (this->inCollision(mat, x + 1, y)) {
-            this->pos.setY(y + 1); // Up
+        else if (this->inCollision(mat, x - 1, y) && LastMove == 's') {
+            this->pos.setY(y + 1); // Down
+        }
+        else if (!this->inCollision(mat, x, y) && LastMove == 'z') {
+            this->pos.setX(x + 1); // Right without collision
+            LastMove = 's';
+        }
+        else if (!this->inCollision(mat, x, y) && LastMove == 'q') {
+            this->pos.setX(x - 1); // Up without collision
+            LastMove = 'd';
+        }
+        else if (!this->inCollision(mat, x, y) && LastMove == 's') {
+            this->pos.setX(x - 1); // Left without collision
+            LastMove = 'z';
+        }
+        else if (!this->inCollision(mat, x, y) && LastMove == 'd') {
+            this->pos.setX(x + 1); // Down without collision
+            LastMove = 'q';
         }
     }
 
-    else if (false) // this->behaviourId == 3) // Behaviour : Flee the player
+    else if (this->behaviourId == 3) // Behaviour : Flee the player
     {
         bool circleID = rand() % 1;
 
@@ -125,7 +141,7 @@ void Monster::update(unsigned delta, CMat & mat)
         }
     }
 
-    else if (false) {//  (this->behaviourId == 4) { // Behaviour 4 => Random
+    else if (this->behaviourId == 4) { // Behaviour 4 => Random
         int move = rand() % 4 + 1;
         unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
         std::cout << move << std::endl;

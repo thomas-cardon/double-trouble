@@ -32,7 +32,7 @@ namespace nsGame {
             nsGraphics::Vec2D _goingToPos;
 
             /** \brief Indicates direction */
-            char IS_FACING;
+            char IS_FACING, LastMove;
 
             /** \brief Indicates type of behaviour */
             unsigned behaviourId;
