@@ -11,14 +11,12 @@
 #include "entity.h"
 
 /**
- *
  * \file    monster.h
  * \authors Ines Hamidi, Thomas Cardon
  * \date    11 janvier 2021
  * \version 1.0
  * \brief   Monster
- *
- **/
+ */
 
 namespace nsGame {
     /**
