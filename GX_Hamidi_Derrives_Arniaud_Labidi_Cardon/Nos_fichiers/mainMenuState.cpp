@@ -4,6 +4,8 @@
 #include "state.h"
 #include "cooldowns.h"
 
+#include "definitions.h"
+
 /**
  *
  * \file    mainMenuState.cpp
@@ -24,17 +26,17 @@ class MainMenuState : public State {
     public:
         nsAudio::AudioEngine audio;
 
-        nsGui::Sprite background = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/background.i2s", nsGraphics::Vec2D(0, 0));
+        nsGui::Sprite background = nsGui::Sprite(RES_PATH + "/gui/background.i2s", nsGraphics::Vec2D(0, 0));
 
-        nsGui::Sprite btn_play = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/btn_play.i2s", nsGraphics::Vec2D(409, 432));
-        nsGui::Sprite btn_quit = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/btn_quit.i2s", nsGraphics::Vec2D(409, 530));
-        nsGui::Sprite btn_credits = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/btn_credits.i2s", nsGraphics::Vec2D(410, 482));
+        nsGui::Sprite btn_play = nsGui::Sprite(RES_PATH + "/gui/btn_play.i2s", nsGraphics::Vec2D(409, 432));
+        nsGui::Sprite btn_quit = nsGui::Sprite(RES_PATH + "/gui/btn_quit.i2s", nsGraphics::Vec2D(409, 530));
+        nsGui::Sprite btn_credits = nsGui::Sprite(RES_PATH + "/gui/btn_credits.i2s", nsGraphics::Vec2D(410, 482));
 
-        nsGui::Sprite btn_play_hover = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/btn_play_hover.i2s", nsGraphics::Vec2D(417, 429));
-        nsGui::Sprite btn_quit_hover = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/btn_quit_hover.i2s", nsGraphics::Vec2D(399, 529));
-        nsGui::Sprite btn_credits_hover = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/btn_credits_hover.i2s", nsGraphics::Vec2D(401, 478));
+        nsGui::Sprite btn_play_hover = nsGui::Sprite(RES_PATH + "/gui/btn_play_hover.i2s", nsGraphics::Vec2D(417, 429));
+        nsGui::Sprite btn_quit_hover = nsGui::Sprite(RES_PATH + "/gui/btn_quit_hover.i2s", nsGraphics::Vec2D(399, 529));
+        nsGui::Sprite btn_credits_hover = nsGui::Sprite(RES_PATH + "/gui/btn_credits_hover.i2s", nsGraphics::Vec2D(401, 478));
 
-        nsGui::Sprite appuyer_a = nsGui::Sprite("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/gui/appuyer_a.i2s", nsGraphics::Vec2D(0, 0));
+        nsGui::Sprite appuyer_a = nsGui::Sprite(RES_PATH + "/gui/appuyer_a.i2s", nsGraphics::Vec2D(0, 0));
 
         bool canMove = true;
         int hovering = -1;
@@ -42,8 +44,8 @@ class MainMenuState : public State {
         void load() override {
             Cooldowns::createCooldown("mainMenu_move", 500);
 
-            audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-select.wav");
-            audio.loadSound("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-click.wav");
+            audio.loadSound(RES_PATH + "/audio/button-select.wav");
+            audio.loadSound(RES_PATH + "/audio/button-click.wav");
         }
 
         void events(nsEvent::Event_t event) override {
@@ -59,7 +61,7 @@ class MainMenuState : public State {
                 else if (hovering == 1) this->setState(99);
                 else if (hovering == 2) window.stopGaphic();
 
-                audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-click.wav");
+                audio.playSoundFromBuffer(RES_PATH + "/audio/button-click.wav");
                 return;
             }
 
@@ -74,7 +76,7 @@ class MainMenuState : public State {
             else return;
 
             canMove = false;
-            audio.playSoundFromBuffer("../GX_Hamidi_Derrives_Arniaud_Labidi_Cardon/Nos_fichiers/res/audio/button-select.wav");
+            audio.playSoundFromBuffer(RES_PATH + "/audio/button-select.wav");
         }
 
         void render(MinGL & window) override {

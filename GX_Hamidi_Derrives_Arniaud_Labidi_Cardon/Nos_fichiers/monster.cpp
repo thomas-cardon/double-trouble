@@ -23,8 +23,10 @@
 
 #include "definitions.h"
 
+#include <mingl/shape/circle.h>
+
 /**
- * \file    animation.cpp
+ * \file    monster.cpp
  * \author  Alexandre Arniaud, Thomas Cardon, Ines Hamidi
  * \date    21 janvier 2021
  * \version 1.0
@@ -74,6 +76,7 @@ void Monster::update(unsigned delta, CMat & mat)
     canMove = Cooldowns::isCooldownOver(getEntityId() + "_move");
     if (!canMove) return;
 
+<<<<<<< HEAD
     //std::cout << "[Monster#" << getEntityId() + "] Position: x= " << this->getPosition().getY() << ", y= " << this->getPosition().getY() << std::endl;
 
 <<<<<<< HEAD
@@ -85,6 +88,8 @@ void Monster::update(unsigned delta, CMat & mat)
 >>>>>>> main
 =======
 =======
+=======
+>>>>>>> main
     unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
 
 >>>>>>> main
@@ -113,9 +118,66 @@ void Monster::update(unsigned delta, CMat & mat)
     else if (this->behaviourId == 2) //Behaviour 2 : Follow a little wall
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 <<<<<<< HEAD
+=======
+        if (this->inCollision(mat, x, y + 1) && IS_FACING == 'D') {
+            this->pos.setX(x + 1); // Right
+            this->IS_FACING = 'D';
+            std::cout << "Mouvement droite normal" << std::endl;
+        }
+        else if (this->inCollision(mat, x + 1, y) && IS_FACING == 'Z') {
+            this->pos.setY(y - 1); // Up
+            this->IS_FACING = 'Z';
+            std::cout << "Mouvement haut normal" << std::endl;
+        }
+        else if (this->inCollision(mat, x, y - 1) && IS_FACING == 'Q') {
+            this->pos.setX(x - 1); // Left
+            this->IS_FACING = 'Q';
+            std::cout << "Mouvement gauche normal" << std::endl;
+        }
+        else if (this->inCollision(mat, x - 1, y) && IS_FACING == 'S') {
+            this->pos.setY(y + 1); // Down
+            this->IS_FACING = 'S';
+            std::cout << "Mouvement bas normal" << std::endl;
+        }
+
+        else if (!this->inCollision(mat, x + 1, y - 1) && IS_FACING == 'Z') {
+            this->pos.setX(x + 1); // Right without collision on down
+            this->IS_FACING = 'D';
+            IS_FACING = 'd';
+            std::cout << "Mouvement droite sans collision" << std::endl;
+        }
+        else if (!this->inCollision(mat, x - 1, y - 1) && IS_FACING == 'Q') {
+            this->pos.setX(x - 1); // Up without collision on right
+            this->IS_FACING = 'Z';
+            std::cout << "Mouvement haut sans collision" << std::endl;
+        }
+        else if (!this->inCollision(mat, x - 1, y + 1) && IS_FACING == 'S') {
+            this->pos.setX(y - 1); // Left without collision on top
+            this->IS_FACING = 'Q';
+            IS_FACING = 'q';
+            std::cout << "Mouvement Gauche sans collision" << std::endl;
+        }
+        else if (!this->inCollision(mat, x + 1, y + 1) && IS_FACING == 'D') {
+            this->pos.setX(y + 1); // Down without collision on left
+            this->IS_FACING = 'S';
+            std::cout << "Mouvement bas sans collision" << std::endl;
+        }
+
+        else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1)) {
+            this->pos.setX(x + 1); // If there isn't collisions, right
+            this->IS_FACING = 'D';
+        }
+
+        else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1) && IS_FACING == 'D') {
+             this->pos.setX(x + 1); // If there isn't collisions, right
+             std::cout << "Mouvement droite sans rien" << std::endl;
+        }
+    }
+>>>>>>> main
 
     else if (this->behaviourId == 3) // Behaviour : move in random circle
 {
@@ -186,8 +248,6 @@ void Monster::update(unsigned delta, CMat & mat)
     else if (this->behaviourId == 4) { // Behaviour 4 => Random
 >>>>>>> main
         int move = rand() % 4 + 1;
-        unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
-        std::cout << move << std::endl;
 
         if (move == 0 && (x + 1 <= mat[y].size() - 1) && !this->inCollision(mat, x + 1, y)) {
             this->pos.setX(x + 1);
@@ -227,6 +287,8 @@ void Monster::render(MinGL &window) {
         this->bottom.setPosition(this->getCoordinates());
         window << this->bottom;
     }
+        window << nsShape::Circle(nsGraphics::Vec2D(this->getCoordinates().getX() + 16, this->getCoordinates().getY() + 16), 8, nsGraphics::KPurple);
+
 }
 =======
 #include <mingl/mingl.h>
