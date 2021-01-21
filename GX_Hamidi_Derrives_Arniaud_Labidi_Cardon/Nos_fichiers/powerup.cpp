@@ -27,5 +27,5 @@ void Powerup::action(Player *player) {
 }
 
 void Powerup::render(MinGL &window) {
-    window <<  nsShape::Circle(this->getCoordinates(), 2, nsGraphics::RGBAcolor(255, 215));
+    window << nsShape::Circle(this->getCoordinates(), 6, nsGraphics::RGBAcolor(255, 215));
 }
