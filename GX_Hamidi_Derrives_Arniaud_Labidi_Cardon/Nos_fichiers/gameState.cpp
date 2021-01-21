@@ -119,11 +119,12 @@ void GameState::update(MinGL & window, unsigned delta) {
     }
     else {
         for (auto & monster : this->map->monsters) {
-            if (!monster->slain && monster->canBeHitBy(player1) && !player1->canBeHitBy(monster)) { // Powerup P1
+            if (monster->slain) continue;
+            if (monster->canBeHitBy(player1) && !player1->canBeHitBy(monster)) { // Powerup P1
                 monster->damage();
                 player1->score += 500;
             }
-            else if (!monster->slain && monster->canBeHitBy(player2) && !player2->canBeHitBy(monster)) { // Powerup P2
+            else if (monster->canBeHitBy(player2) && !player2->canBeHitBy(monster)) { // Powerup P2
                 monster->damage();
                 player1->score += 500;
             }
