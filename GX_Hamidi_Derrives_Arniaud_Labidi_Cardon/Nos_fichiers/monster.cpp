@@ -24,12 +24,12 @@ std::string Monster::getEntityId() {
 }
 
 void Monster::spawn() {
-    this->pos.setX(1);
+    this->pos.setX(15);
     this->pos.setY(1 * behaviourId);
 }
 
-void goTo(nsGraphics::Vec2D newPos) {
-
+void Monster::damage() {
+    this->kill();
 }
 
 void Monster::load() {
@@ -43,16 +43,12 @@ void Monster::load() {
     }
 
     this->spawn();
-    goTo(nsGraphics::Vec2D(15, 15));
-}
-
-// Inspiré de l'algorithme trouvé sur Wikipédia: https://fr.wikipedia.org/wiki/Algorithme_de_parcours_en_largeur
-void BreadthFirstSearch(CMat & mat, nsGraphics::Vec2D A) {
-    std::vector<nsGraphics::Vec2D> list;
 }
 
 void Monster::update(unsigned delta, CMat & mat)
 {
+    if (slain) return;
+
     canMove = Cooldowns::isCooldownOver(getEntityId() + "_move");
     if (!canMove) return;
 
@@ -103,6 +99,8 @@ void Monster::update(unsigned delta, CMat & mat)
 };
 
 void Monster::render(MinGL &window) {
+    if (slain) return;
+
     this->top.setPosition(this->getCoordinates());
     this->top.render(window);
 }
