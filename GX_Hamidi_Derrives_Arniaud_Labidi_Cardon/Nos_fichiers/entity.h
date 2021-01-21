@@ -1,10 +1,13 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
-#define CELL_SIZE 32
-
 #include <mingl/graphics/vec2d.h>
+
+#include "definitions.h"
+#include "animation.h"
 #include "type.h"
+
+#include "effectType.h"
 
 /**
  * \file    entity.h
@@ -23,6 +26,12 @@ namespace nsGame
      */
     struct Entity
     {
+        private:
+           Animation _invincible = Animation(600, false);
+
+           /** \brief Effect list */
+           std::map<nsGame::EffectType, Effect> effects;
+
         protected:
             /** \brief Movement Speed */
             double movementSpeed = 1.0;
@@ -108,6 +117,24 @@ namespace nsGame
              * @fn void damage();
              */
             void kill();
+
+            /**
+             * @brief Adds an effect to the entity
+             * @param EffectType - Effect ID
+             * @param Effect - Effect
+             */
+            void addEffect(EffectType type, Effect effect) {
+                this->effects[type] = effect;
+            }
+
+            /**
+             * @brief Removes an effect from the entity
+             * @param EffectType - Effect ID
+             * @param Effect - Effect
+             */
+            void removeEffect(EffectType type) {
+                this->effects.erase(type);
+            }
     };
 }
 

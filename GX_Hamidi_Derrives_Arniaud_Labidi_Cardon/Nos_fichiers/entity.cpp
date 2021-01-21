@@ -1,5 +1,6 @@
 #include "entity.h"
 #include "cooldowns.h"
+
 /**
  *
  * \file    entity.cpp
