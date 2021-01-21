@@ -84,9 +84,7 @@ void GameState::update(MinGL & window, unsigned delta) {
 
         player1->isAllowedToMove = player2->isAllowedToMove = true;
     }
-    else {
-        player1->isAllowedToMove = player2->isAllowedToMove = false;
-    }
+    else player1->isAllowedToMove = player2->isAllowedToMove = false;
 
     if ((win != -1 && window.isPressed({ MENU_KEY, false })) || window.isPressed({ 27, false })) {
         audio.playSoundFromBuffer(RES_PATH + "/audio/button-select.wav");
@@ -95,8 +93,19 @@ void GameState::update(MinGL & window, unsigned delta) {
         this->setState(0);
     }
 
+    if (player1->canBeHitBy(player2) && !player2->canBeHitBy(player1)) { // +1 P2
+        player1->damage();
+        player1->spawn();
 
-    if (player1->canBeHitBy(player2)) { // KILL !
+        player2->score += 1000;
+    }
+    else if (player1->canBeHitBy(player2) && !player2->canBeHitBy(player1)) { // +1 P1
+        player2->damage();
+        player2->spawn();
+
+        player1->score += 1000;
+    }
+    else if (player1->canBeHitBy(player2) && player2->canBeHitBy(player1)) { // KILL !
         std::cout << "Hit ! P1 HP: " << player1->hearts << " | P2 HP: " << player2->hearts << std::endl;
 
         player1->damage();
@@ -107,6 +116,26 @@ void GameState::update(MinGL & window, unsigned delta) {
 
         player1->score += 1000;
         player2->score += 1000;
+    }
+    else {
+        for (auto & monster : this->map->monsters) {
+            if (!monster->slain && monster->canBeHitBy(player1) && !player1->canBeHitBy(monster)) { // Powerup P1
+                monster->damage();
+                player1->score += 500;
+            }
+            else if (!monster->slain && monster->canBeHitBy(player2) && !player2->canBeHitBy(monster)) { // Powerup P2
+                monster->damage();
+                player1->score += 500;
+            }
+            else if (player1->canBeHitBy(monster)) { // Hurt P1
+                player1->damage();
+                player1->spawn();
+            }
+            else if (player2->canBeHitBy(monster)) { // Hurt P2
+                player2->damage();
+                player2->spawn();
+            }
+        }
     }
 }
 
