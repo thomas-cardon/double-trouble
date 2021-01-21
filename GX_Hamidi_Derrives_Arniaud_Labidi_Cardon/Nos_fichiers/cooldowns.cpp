@@ -21,10 +21,13 @@ void Cooldowns::updateCooldowns(unsigned delta) {
 }
 
 bool Cooldowns::isCooldownOver(std::string id) {
+    if (cooldowns.find(id) == cooldowns.end()) return false;
+
     if (cooldowns[id].first >= cooldowns[id].second) {
         cooldowns[id].first = 0;
         return true;
     }
+
     return false;
 }
 
