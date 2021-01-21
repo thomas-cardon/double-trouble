@@ -1,5 +1,6 @@
 #include <mingl/gui/sprite.h>
 #include <mingl/transition/transition_engine.h>
+#include <mingl/audio/audioengine.h>
 
 #include "state.h"
 #include "definitions.h"
@@ -24,8 +25,11 @@ class CreditState : public State {
     public:
         nsGui::Sprite sprite = nsGui::Sprite(RES_PATH + "/gui/credits.i2s", nsGraphics::Vec2D(0, 0));
         nsTransition::TransitionEngine transitionEngine;
+        nsAudio::AudioEngine audio;
 
         void load() override {
+            audio.loadSound(RES_PATH + "/audio/button-select.wav");
+
             nsTransition::TransitionContract spriteContract(sprite, sprite.TRANSITION_POSITION, std::chrono::seconds(11), { 0, -640 });
 
             spriteContract.setDestinationCallback([&] { this->setState(0); });
@@ -33,6 +37,12 @@ class CreditState : public State {
         }
 
         void update(MinGL & window, unsigned delta) override {
+            if (window.isPressed({ ESC_KEY, false })) {
+                audio.playSoundFromBuffer(RES_PATH + "/audio/button-select.wav");
+
+                this->destroy();
+                this->setState(0);
+            }
             transitionEngine.update(std::chrono::microseconds(delta * 1000));
         }
 
