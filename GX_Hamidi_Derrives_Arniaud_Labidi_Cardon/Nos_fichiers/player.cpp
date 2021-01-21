@@ -32,7 +32,7 @@ using namespace nsGame;
 
 nsAudio::AudioEngine audio;
 
-Player::Player(unsigned N) : Entity() {
+Player::Player(unsigned N) : Entity("player-" + std::to_string(N), nsGraphics::Vec2D(N == 1 ? 1 : 18, N == 1 ? 1 : 18)) {
     this->N = N;
 }
 
@@ -43,8 +43,7 @@ void Player::spawn() {
 
 void Player::load(CMyParam params) {
     std::cout << "[Player N=" << std::to_string(N) + "] Loading" << std::endl;
-    Cooldowns::createCooldown(getEntityId() + "_move", this->_getDelay());
-
+    this->setMovementSpeed(0.35);
     this->spawn();
 
     audio.loadSound(RES_PATH + "/audio/player-hit-1.wav");
@@ -90,7 +89,7 @@ void Player::update(MinGL & window, unsigned delta, CMat map) {
     /*
      * Movement cooldowns
      */
-    canMove = Cooldowns::isCooldownOver(getEntityId() + "_move");
+    canMove = Cooldowns::isCooldownOver(id + "_move");
     if (_noDamage != -1) {
         if (_noDamage >= _noDamageFor) {
             _noDamage = -1;
@@ -169,8 +168,4 @@ void Player::render(MinGL & window) {
         this->invincible.setPosition(this->getCoordinates());
         this->invincible.render(window);
     }
-}
-
-std::string Player::getEntityId() {
-    return "Player" + std::to_string(this->N);
 }
