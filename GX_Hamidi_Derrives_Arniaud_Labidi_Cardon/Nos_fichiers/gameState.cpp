@@ -126,7 +126,7 @@ void GameState::update(MinGL & window, unsigned delta) {
             }
             else if (monster->canBeHitBy(player2) && !player2->canBeHitBy(monster)) { // Powerup P2
                 monster->damage();
-                player1->score += 500;
+                player2->score += 500;
             }
             else if (player1->canBeHitBy(monster)) { // Hurt P1
                 player1->damage();

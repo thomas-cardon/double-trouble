@@ -102,8 +102,6 @@ void Player::update(MinGL & window, unsigned delta, CMat map) {
         }
     }
 
-    std::cout << _noDamage << " " << _noDamageFor << std::endl;
-
     if (isAllowedToMove) {
         if (window.isPressed({ KEY_UP, false })) {
             if (this->inCollision(map, this->pos.getX(), this->pos.getY() - 1))
