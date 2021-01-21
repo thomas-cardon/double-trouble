@@ -47,6 +47,8 @@ namespace nsGame {
             /** \brief Allows player to move or not */
             bool canMove = true;
 
+            int _noDamage, _noDamageFor;
+
             Player(unsigned N /* = 2 */);
 
             /**
@@ -84,12 +86,6 @@ namespace nsGame {
              * @fn void noDamage(int ms);
              */
             void noDamage(int ms);
-
-            /**
-             * @brief Prevents player from being attacked for X milliseconds
-             * @fn bool canTakeDamage();
-             */
-            bool canTakeDamage();
 
             /**
              * @brief Decrements 1 to hearts, and disable damage for 5 seconds + adds movement speed;

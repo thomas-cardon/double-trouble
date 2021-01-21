@@ -26,6 +26,9 @@ namespace nsGame
         protected:
             /** \brief Movement Speed */
             double movementSpeed = 1.0;
+
+            /** \brief Allows Entity to take damage */
+            bool _canTakeDamage = true;
         public:
             /** \brief Prevents entity to move */
             bool isAllowedToMove = true;

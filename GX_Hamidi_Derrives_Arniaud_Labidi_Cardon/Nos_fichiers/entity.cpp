@@ -58,7 +58,7 @@ void Entity::setMovementSpeed(double speed) {
 }
 
 bool Entity::canTakeDamage() {
-    return false;
+    return this->_canTakeDamage;
 }
 
 void Entity::kill() {

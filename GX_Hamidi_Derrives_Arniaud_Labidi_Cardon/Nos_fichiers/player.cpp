@@ -89,7 +89,16 @@ void Player::update(MinGL & window, unsigned delta, CMat map) {
      * Movement cooldowns
      */
     canMove = Cooldowns::isCooldownOver(getEntityId() + "_move");
-
+    if (_noDamage != -1) {
+        if (_noDamage >= _noDamageFor) {
+            _noDamage = -1;
+            _canTakeDamage = true;
+        }
+        else {
+            _canTakeDamage = false;
+            _noDamage += delta;
+        }
+    }
     if (isAllowedToMove) {
         if (window.isPressed({ KEY_UP, false })) {
             if (this->inCollision(map, this->pos.getX(), this->pos.getY() - 1))
@@ -119,10 +128,6 @@ void Player::update(MinGL & window, unsigned delta, CMat map) {
     this->left.update(delta);
 }
 
-bool Player::canTakeDamage() {
-    return Cooldowns::isCooldownOver(getEntityId() + "_canTakeDamage", true);
-}
-
 void Player::damage() {
     audio.playSoundFromBuffer(RES_PATH + "/audio/player-hit-1.wav");
 
@@ -133,7 +138,8 @@ void Player::damage() {
 }
 
 void Player::noDamage(int ms) {
-    Cooldowns::createCooldown(getEntityId() + "_canTakeDamage", ms);
+    _noDamageFor = ms;
+    _noDamage = 0;
 }
 
 void Player::render(MinGL & window) {
