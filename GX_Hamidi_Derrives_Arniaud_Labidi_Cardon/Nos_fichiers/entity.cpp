@@ -60,3 +60,7 @@ void Entity::setMovementSpeed(double speed) {
 bool Entity::canTakeDamage() {
     return false;
 }
+
+void Entity::kill() {
+    this->slain = true;
+}

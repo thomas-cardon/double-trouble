@@ -30,6 +30,9 @@ namespace nsGame
             /** \brief Prevents entity to move */
             bool isAllowedToMove = true;
 
+            /** \brief Says if entity has been killed */
+            bool slain = false;
+
             /** \brief Entity position */
             nsGraphics::Vec2D pos;
 
@@ -80,6 +83,18 @@ namespace nsGame
              * @fn bool inCollision(CMat map, unsigned x, unsigned y);
              */
             bool inCollision(CMat map, unsigned x, unsigned y);
+
+            /**
+             * @brief Damages entity
+             * @fn void damage();
+             */
+            void damage();
+
+            /**
+             * @brief Kills entity
+             * @fn void damage();
+             */
+            void kill();
 
             /**
              * @brief Tells if entity can be attacked
