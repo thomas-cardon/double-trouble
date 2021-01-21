@@ -52,7 +52,7 @@ void Monster::update(unsigned delta, CMat & mat)
     canMove = Cooldowns::isCooldownOver(getEntityId() + "_move");
     if (!canMove) return;
 
-    std::cout << "[Monster#" << getEntityId() + "] Position: x= " << this->getPosition().getY() << ", y= " << this->getPosition().getY() << std::endl;
+    //std::cout << "[Monster#" << getEntityId() + "] Position: x= " << this->getPosition().getY() << ", y= " << this->getPosition().getY() << std::endl;
 
     if (this->behaviourId == 1) //Behaviour 1 : Follow outer walls
     {
