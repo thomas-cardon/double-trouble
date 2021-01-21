@@ -91,52 +91,65 @@ void Monster::update(unsigned delta, CMat & mat)
 
     else if (this->behaviourId == 2) //Behaviour 2 : Follow a little wall
     {
-        if (this->inCollision(mat, x, y + 1) && LastMove == 'd') {
+        if (this->inCollision(mat, 0, y + 1) && LastMove == 'd') {
             this->pos.setX(x + 1); // Right
             this->IS_FACING = 'D';
             LastMove = 'd';
+            std::cout << "Mouvement droite normal" << std::endl;
         }
-        else if (this->inCollision(mat, x + 1, y) && LastMove == 'z') {
+        else if (this->inCollision(mat, x + 1, 0) && LastMove == 'z') {
             this->pos.setY(y - 1); // Up
             this->IS_FACING = 'Z';
             LastMove = 'z';
+            std::cout << "Mouvement haut normal" << std::endl;
         }
-        else if (this->inCollision(mat, x, y - 1) && LastMove == 'q') {
+        else if (this->inCollision(mat, 0, y - 1) && LastMove == 'q') {
             this->pos.setX(x - 1); // Left
             this->IS_FACING = 'Q';
             LastMove = 'q';
+            std::cout << "Mouvement gauche normal" << std::endl;
         }
-        else if (this->inCollision(mat, x - 1, y) && LastMove == 's') {
+        else if (this->inCollision(mat, x - 1, 0) && LastMove == 's') {
             this->pos.setY(y + 1); // Down
             this->IS_FACING = 'S';
             LastMove = 's';
+            std::cout << "Mouvement bas normal" << std::endl;
         }
 
-        else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1) && LastMove == 'z') {
+        else if (!this->inCollision(mat, x + 1, y - 1) && LastMove == 'z') {
             this->pos.setX(x + 1); // Right without collision on down
             this->IS_FACING = 'D';
             LastMove = 'd';
+            std::cout << "Mouvement droite sans collision" << std::endl;
         }
-        else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1) && LastMove == 'q') {
+        else if (!this->inCollision(mat, x - 1, y - 1) && LastMove == 'q') {
             this->pos.setX(x - 1); // Up without collision on right
             this->IS_FACING = 'Z';
             LastMove = 'z';
+            std::cout << "Mouvement haut sans collision" << std::endl;
         }
-        else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1) && LastMove == 's') {
+        else if (!this->inCollision(mat, x - 1, y + 1) && LastMove == 's') {
             this->pos.setX(y - 1); // Left without collision on top
             this->IS_FACING = 'Q';
             LastMove = 'q';
+            std::cout << "Mouvement haut sans collision" << std::endl;
         }
-        else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1) && LastMove == 'd') {
+        else if (!this->inCollision(mat, x + 1, y + 1) && LastMove == 'd') {
             this->pos.setX(y + 1); // Down without collision on left
             this->IS_FACING = 'S';
             LastMove = 's';
+            std::cout << "Mouvement gauche sans collision" << std::endl;
         }
 
         else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1)) {
             this->pos.setX(x + 1); // If there isn't collisions, right
             this->IS_FACING = 'D';
-            LastMove = 'd';
+        }
+
+        else if (!this->inCollision(mat, x + 1, y + 1) && !this->inCollision(mat, x - 1, y - 1) && LastMove == 'd') {
+             this->pos.setX(x + 1); // If there isn't collisions, right
+             LastMove = 'd';
+             std::cout << "Mouvement droite sans rien" << std::endl;
         }
     }
 
