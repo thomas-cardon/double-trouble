@@ -39,6 +39,85 @@ DISTFILES += \
     Nos_fichiers/res/audio/player-moving-1.wav \
     Nos_fichiers/res/audio/powerup-1.wav \
     Nos_fichiers/res/audio/shoot-1.wav \
+    Nos_fichiers/res/entities/monsters/1/1-1.i2s \
+    Nos_fichiers/res/entities/monsters/1/1-2.i2s \
+    Nos_fichiers/res/entities/monsters/1/1-3.i2s \
+    Nos_fichiers/res/entities/monsters/1/1-4.i2s \
+    Nos_fichiers/res/entities/monsters/1/1-5.i2s \
+    Nos_fichiers/res/entities/monsters/1/1-6.i2s \
+    Nos_fichiers/res/entities/monsters/2/2-1.i2s \
+    Nos_fichiers/res/entities/monsters/2/2-2.i2s \
+    Nos_fichiers/res/entities/monsters/2/2-3.i2s \
+    Nos_fichiers/res/entities/monsters/2/2-4.i2s \
+    Nos_fichiers/res/entities/monsters/2/2-5.i2s \
+    Nos_fichiers/res/entities/monsters/2/2-6.i2s \
+    Nos_fichiers/res/entities/monsters/3/3-1.i2s \
+    Nos_fichiers/res/entities/monsters/3/3-2.i2s \
+    Nos_fichiers/res/entities/monsters/3/3-3.i2s \
+    Nos_fichiers/res/entities/monsters/3/3-4.i2s \
+    Nos_fichiers/res/entities/monsters/3/3-5.i2s \
+    Nos_fichiers/res/entities/monsters/3/3-6.i2s \
+    Nos_fichiers/res/entities/monsters/4/4-1.i2s \
+    Nos_fichiers/res/entities/monsters/4/4-2.i2s \
+    Nos_fichiers/res/entities/monsters/4/4-3.i2s \
+    Nos_fichiers/res/entities/monsters/4/4-4.i2s \
+    Nos_fichiers/res/entities/monsters/4/4-5.i2s \
+    Nos_fichiers/res/entities/monsters/4/4-6.i2s \
+    Nos_fichiers/res/entities/player1/bottom-1.i2s \
+    Nos_fichiers/res/entities/player1/bottom-2.i2s \
+    Nos_fichiers/res/entities/player1/bottom-3.i2s \
+    Nos_fichiers/res/entities/player1/bottom-4.i2s \
+    Nos_fichiers/res/entities/player1/bottom-5.i2s \
+    Nos_fichiers/res/entities/player1/bottom-6.i2s \
+    Nos_fichiers/res/entities/player1/left-1.i2s \
+    Nos_fichiers/res/entities/player1/left-2.i2s \
+    Nos_fichiers/res/entities/player1/left-3.i2s \
+    Nos_fichiers/res/entities/player1/left-4.i2s \
+    Nos_fichiers/res/entities/player1/left-5.i2s \
+    Nos_fichiers/res/entities/player1/left-6.i2s \
+    Nos_fichiers/res/entities/player1/right-1.i2s \
+    Nos_fichiers/res/entities/player1/right-2.i2s \
+    Nos_fichiers/res/entities/player1/right-3.i2s \
+    Nos_fichiers/res/entities/player1/right-4.i2s \
+    Nos_fichiers/res/entities/player1/right-5.i2s \
+    Nos_fichiers/res/entities/player1/right-6.i2s \
+    Nos_fichiers/res/entities/player1/top-1.i2s \
+    Nos_fichiers/res/entities/player1/top-2.i2s \
+    Nos_fichiers/res/entities/player1/top-3.i2s \
+    Nos_fichiers/res/entities/player1/top-4.i2s \
+    Nos_fichiers/res/entities/player1/top-5.i2s \
+    Nos_fichiers/res/entities/player1/top-6.i2s \
+    Nos_fichiers/res/entities/player2/bottom-1.i2s \
+    Nos_fichiers/res/entities/player2/bottom-2.i2s \
+    Nos_fichiers/res/entities/player2/bottom-3.i2s \
+    Nos_fichiers/res/entities/player2/bottom-4.i2s \
+    Nos_fichiers/res/entities/player2/bottom-5.i2s \
+    Nos_fichiers/res/entities/player2/bottom-6.i2s \
+    Nos_fichiers/res/entities/player2/left-1.i2s \
+    Nos_fichiers/res/entities/player2/left-2.i2s \
+    Nos_fichiers/res/entities/player2/left-3.i2s \
+    Nos_fichiers/res/entities/player2/left-4.i2s \
+    Nos_fichiers/res/entities/player2/left-5.i2s \
+    Nos_fichiers/res/entities/player2/left-6.i2s \
+    Nos_fichiers/res/entities/player2/right-1.i2s \
+    Nos_fichiers/res/entities/player2/right-2.i2s \
+    Nos_fichiers/res/entities/player2/right-3.i2s \
+    Nos_fichiers/res/entities/player2/right-4.i2s \
+    Nos_fichiers/res/entities/player2/right-5.i2s \
+    Nos_fichiers/res/entities/player2/right-6.i2s \
+    Nos_fichiers/res/entities/player2/top-1.i2s \
+    Nos_fichiers/res/entities/player2/top-2.i2s \
+    Nos_fichiers/res/entities/player2/top-3.i2s \
+    Nos_fichiers/res/entities/player2/top-4.i2s \
+    Nos_fichiers/res/entities/player2/top-5.i2s \
+    Nos_fichiers/res/entities/player2/top-6.i2s \
+    Nos_fichiers/res/entities/powerball.png \
+    Nos_fichiers/res/entities/powerup/1.i2s \
+    Nos_fichiers/res/entities/powerup/2.i2s \
+    Nos_fichiers/res/entities/powerup/3.i2s \
+    Nos_fichiers/res/entities/powerup/4.i2s \
+    Nos_fichiers/res/entities/powerup/5.i2s \
+    Nos_fichiers/res/entities/powerup/6.i2s \
     Nos_fichiers/res/gui/APPUYER_A.png \
     Nos_fichiers/res/gui/Bouton Option.png \
     Nos_fichiers/res/gui/Bouton Option.png \
@@ -91,6 +170,7 @@ DISTFILES += \
     Nos_fichiers/res/gui/numbers/7.png \
     Nos_fichiers/res/gui/numbers/8.i2s \
     Nos_fichiers/res/gui/numbers/8.png \
+    Nos_fichiers/res/gui/numbers/9.i2s \
     Nos_fichiers/res/gui/numbers/Sans titre.png \
     Nos_fichiers/res/gui/numbers/img2si.py \
     Nos_fichiers/res/gui/sidebar/gamescore.png \
@@ -110,6 +190,10 @@ DISTFILES += \
     Nos_fichiers/res/gui/victory_screen/player2.i2s \
     Nos_fichiers/res/gui/victory_screen/player2.png \
     Nos_fichiers/res/img2si.py \
+    Nos_fichiers/res/items/fruit_0.i2s \
+    Nos_fichiers/res/items/fruit_1.i2s \
+    Nos_fichiers/res/items/fruit_2.i2s \
+    Nos_fichiers/res/items/fruit_3.i2s \
     Nos_fichiers/res/maps/level_0.map \
     Nos_fichiers/res/maps/level_1.map \
     Nos_fichiers/res/tile000.png \
@@ -162,7 +246,19 @@ DISTFILES += \
     Nos_fichiers/res/tile026.png \
     Nos_fichiers/res/tile027.png \
     Nos_fichiers/res/tile028.png \
-    Nos_fichiers/res/tile029.png
+    Nos_fichiers/res/tile029.png \
+    Nos_fichiers/res/tiles/corner-1.i2s \
+    Nos_fichiers/res/tiles/corner-2.i2s \
+    Nos_fichiers/res/tiles/corner-3.i2s \
+    Nos_fichiers/res/tiles/corner-4.i2s \
+    Nos_fichiers/res/tiles/t-wall-1.i2s \
+    Nos_fichiers/res/tiles/t-wall-2.i2s \
+    Nos_fichiers/res/tiles/wall-x-1.i2s \
+    Nos_fichiers/res/tiles/wall-x-2.i2s \
+    Nos_fichiers/res/tiles/wall-x-3.i2s \
+    Nos_fichiers/res/tiles/wall-y-1.i2s \
+    Nos_fichiers/res/tiles/wall-y-2.i2s \
+    Nos_fichiers/res/tiles/wall-y-3.i2s
 
 HEADERS += \
     Nos_fichiers/animation.h \

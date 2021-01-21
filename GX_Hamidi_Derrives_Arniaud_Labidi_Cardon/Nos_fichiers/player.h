@@ -32,8 +32,8 @@ namespace nsGame {
             /** \brief Keystrokes */
             char KEY_DOWN, KEY_UP, KEY_LEFT, KEY_RIGHT, KEY_ACTION_1;
         public:
-            /** \brief Animations for every direction */
-            Animation bottom = Animation(600, true), top = Animation(600, true), left = Animation(600, true), right = Animation(600, true);
+            /** \brief Animations for every direction, and effects */
+            Animation bottom = Animation(600, true), top = Animation(600, true), left = Animation(600, true), right = Animation(600, true), invincible = Animation(600, false);
 
             /** \brief Player hearts */
             unsigned hearts = 3;
