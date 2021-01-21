@@ -79,8 +79,7 @@ namespace nsGame {
              * @fn void update(unsigned delta, CMat & mat);
 >>>>>>> main
              */
-            void update(unsigned delta, CMat & mat);
-
+            void update(unsigned delta, CMat & mat, Player &p1, Player &p2);
             /**
              * @brief Renders resources
              * @fn void render(MinGL & window);
