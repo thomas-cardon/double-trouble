@@ -26,7 +26,7 @@ class CreditState : public State {
         nsTransition::TransitionEngine transitionEngine;
 
         void load() override {
-            nsTransition::TransitionContract spriteContract(sprite, sprite.TRANSITION_POSITION, std::chrono::seconds(10), { 0, -640 });
+            nsTransition::TransitionContract spriteContract(sprite, sprite.TRANSITION_POSITION, std::chrono::seconds(11), { 0, -640 });
 
             spriteContract.setDestinationCallback([&] {
                 this->setState(0);
