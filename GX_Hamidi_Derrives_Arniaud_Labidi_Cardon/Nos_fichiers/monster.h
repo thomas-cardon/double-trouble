@@ -5,12 +5,26 @@
 #include <mingl/gui/sprite.h>
 #include <mingl/audio/audioengine.h>
 
+<<<<<<< HEAD
 <<<<<<< main
 #include "type.h"
 
 #include "definitions.h"
 #include "entity.h"
 
+=======
+#include "entity.h"
+<<<<<<< HEAD
+#include "player.h"
+=======
+>>>>>>> main
+
+#include "animation.h"
+#include "type.h"
+
+<<<<<<< HEAD
+=======
+>>>>>>> ines-rework
 /**
  *
  * \file    monster.h
@@ -21,6 +35,7 @@
  *
  **/
 
+<<<<<<< HEAD
 =======
 #include "entity.h"
 #include "player.h"
@@ -29,6 +44,9 @@
 #include "type.h"
 
 >>>>>>> Refonte des classes
+=======
+>>>>>>> main
+>>>>>>> ines-rework
 namespace nsGame {
     /**
      * @class Monster
@@ -37,10 +55,32 @@ namespace nsGame {
      */
     class Monster : public Entity {
         private:
+<<<<<<< HEAD
 <<<<<<< main
             /** \brief Audio Engine */
             nsAudio::AudioEngine audio;
 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+            int delay = 130 * movementSpeed;
+            int behaviourId = 1;
+        public:
+            Monster(int behaviour) : behaviourId(behaviour) {}
+
+            /**
+             * @brief Updates the monster
+             * @fn void update(CMat & mat, unsigned delta, Player player1, Player player2);
+=======
+=======
+            /** \brief Audio Engine */
+            nsAudio::AudioEngine audio;
+
+>>>>>>> main
+            /** \brief Entity position */
+            nsGraphics::Vec2D _goingToPos;
+
+>>>>>>> ines-rework
             /** \brief Indicates direction */
             char IS_FACING, LastMove;
 
@@ -66,7 +106,9 @@ namespace nsGame {
             /**
              * @brief Updates the ennemy
              * @fn void update(unsigned delta, CMat & mat);
+>>>>>>> main
              */
+<<<<<<< HEAD
             void update(unsigned delta, CMat & mat);
 =======
             int delay = 130 * movementSpeed;
@@ -89,6 +131,9 @@ namespace nsGame {
 =======
             void update(unsigned delta, CMat & mat, Player &p1, Player &p2);
 >>>>>>> monster flee
+=======
+            void update(unsigned delta, CMat & mat, Player &p1, Player &p2);
+>>>>>>> ines-rework
             /**
              * @brief Renders resources
              * @fn void render(MinGL & window);
@@ -97,6 +142,7 @@ namespace nsGame {
 
             /**
              * @brief Loads the ennemy
+<<<<<<< HEAD
 <<<<<<< main
              * @fn void load();
              */
@@ -106,12 +152,40 @@ namespace nsGame {
              */
             void load(CMyParam & params);
 >>>>>>> Refonte des classes
+=======
+<<<<<<< HEAD
+             * @fn void load(CMyParam & params);
+             */
+            void load(CMyParam & params);
+=======
+             * @fn void load();
+             */
+            void load();
+>>>>>>> main
+>>>>>>> ines-rework
 
             /**
              * @brief Teleports the entity at its spawn
              * @fn void spawn();
              */
             void spawn();
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+            /**
+             * @brief Sets the movement speed
+             * @fn void setMovementSpeed(double speed);
+             */
+            void setMovementSpeed(double speed);
+
+            /**
+             * @brief MonsterMoves
+             * @param mat
+             */
+            void MonsterMoves(CMat & mat);
+=======
+>>>>>>> main
+=======
 
             /**
              * @brief Damages entity
@@ -125,6 +199,7 @@ namespace nsGame {
              */
 <<<<<<< main
             bool canBeHitBy(Entity *entity);
+<<<<<<< HEAD
 =======
             void setMovementSpeed(double speed);
 
@@ -138,6 +213,9 @@ namespace nsGame {
 =======
             void MonsterMoves(CMat & mat);
 >>>>>>> random moves
+=======
+>>>>>>> main
+>>>>>>> ines-rework
     };
 }
 
