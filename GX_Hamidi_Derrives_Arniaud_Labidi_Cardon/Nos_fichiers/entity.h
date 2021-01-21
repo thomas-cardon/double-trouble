@@ -29,21 +29,25 @@ namespace nsGame
 
             /** \brief Allows Entity to take damage */
             bool _canTakeDamage = true;
-        public:
+        public:            
+            /** \brief Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID */
+            std::string id;
+
+            /** \brief Entity position */
+            nsGraphics::Vec2D pos;
+
             /** \brief Prevents entity to move */
             bool isAllowedToMove = true;
 
             /** \brief Says if entity has been killed */
             bool slain = false;
 
-            /** \brief Entity position */
-            nsGraphics::Vec2D pos;
-
             /**
-             * @brief Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID
-             * @return Entity ID
+             * @brief Entity
+             * @param newId - Entity ID
+             * @param newPos - Entity position
              */
-            std::string getEntityId();
+            Entity(std::string newId, nsGraphics::Vec2D newPos) : id(newId), pos(newPos) {};
 
             /**
              * @brief This function is used to get the position on the screen/canvas/window, whatever you want to call it
@@ -104,13 +108,6 @@ namespace nsGame
              * @fn void damage();
              */
             void kill();
-
-            /**
-             * @brief Prevents entity to move for X milliseconds
-             */
-            unsigned _getDelay() {
-                return 140 / movementSpeed;
-            }
     };
 }
 
