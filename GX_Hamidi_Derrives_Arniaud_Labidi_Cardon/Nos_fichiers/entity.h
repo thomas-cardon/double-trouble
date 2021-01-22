@@ -1,9 +1,12 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
-#define CELL_SIZE 32
-
 #include <mingl/graphics/vec2d.h>
+
+#include "animation.h"
+#include "effectType.h"
+
+#include "definitions.h"
 #include "type.h"
 
 /**
@@ -23,12 +26,16 @@ namespace nsGame
      */
     struct Entity
     {
+        private:
+            Animation _invincible = Animation(600, false);
+
+            /** \brief Effect list */
+            std::map<nsGame::EffectType, Effect> effects;
+
         protected:
             /** \brief Movement Speed */
             double movementSpeed = 1.0;
 
-            /** \brief Allows Entity to take damage */
-            bool _canTakeDamage = true;
         public:
             /** \brief Prevents entity to move */
             bool isAllowedToMove = true;
@@ -38,6 +45,24 @@ namespace nsGame
 
             /** \brief Entity position */
             nsGraphics::Vec2D pos;
+
+            /**
+             * @brief load
+             */
+            void load();
+
+            /**
+             * @brief update
+             * @param delta
+             * @param mat
+             */
+            void update(unsigned delta, CMat & mat);
+
+            /**
+             * @brief render
+             * @param window
+             */
+            void render(MinGL & window);
 
             /**
              * @brief Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID
@@ -104,6 +129,27 @@ namespace nsGame
              * @fn void damage();
              */
             void kill();
+
+            /**
+             * @brief Adds an effect to the entity for x milliseconds
+             * @param EffectType - Effect ID
+             * @param unsigned delay
+             */
+            void addEffect(EffectType type, unsigned delay);
+
+            /**
+             * @brief Removes an effect from the entity
+             * @param EffectType - Effect ID
+             * @param Effect - Effect
+             */
+            void removeEffect(EffectType type);
+
+            /**
+             * @brief Says if entity has effect
+             * @param EffectType type
+             * @return true if effect is present
+             */
+            bool hasEffect(EffectType type);
 
             /**
              * @brief Prevents entity to move for X milliseconds

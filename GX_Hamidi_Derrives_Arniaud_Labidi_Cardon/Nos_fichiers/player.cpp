@@ -91,16 +91,6 @@ void Player::update(MinGL & window, unsigned delta, CMat map) {
      * Movement cooldowns
      */
     canMove = Cooldowns::isCooldownOver(id() + "_move");
-    if (_noDamage != -1) {
-        if (_noDamage >= _noDamageFor) {
-            _noDamage = -1;
-            _canTakeDamage = true;
-        }
-        else {
-            _canTakeDamage = false;
-            _noDamage += delta;
-        }
-    }
 
     if (isAllowedToMove) {
         if (window.isPressed({ KEY_UP, false })) {
@@ -163,11 +153,6 @@ void Player::render(MinGL & window) {
     else {
         this->left.setPosition(this->getCoordinates());
         this->left.render(window);
-    }
-
-    if (!this->canTakeDamage()) {
-        this->invincible.setPosition(this->getCoordinates());
-        this->invincible.render(window);
     }
 }
 

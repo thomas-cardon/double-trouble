@@ -14,6 +14,12 @@
 #include <map>
 
 /**
+ * @brief Effects : alias to the effects for an entity
+ * @typedef std::pair<unsigned, unsigned> Effect
+ */
+typedef std::pair<unsigned, unsigned> Effect;
+
+/**
  * @brief Cooldown : alias to the cooldowns and timings for the game
  * @typedef std::pair<unsigned, unsigned> Cooldown
  */
