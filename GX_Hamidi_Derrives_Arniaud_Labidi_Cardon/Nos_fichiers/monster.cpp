@@ -6,6 +6,8 @@
  * @brief   Définition des méthodes de la classe monster.h
  **/
 
+#include <math.h>
+
 #include "type.h"
 
 #include "monster.h"
@@ -54,7 +56,11 @@ void Monster::load() {
     this->spawn();
 }
 
-void Monster::update(unsigned delta, CMat & mat)
+int carre (int a) {
+    return a * a;
+}
+
+void Monster::update(unsigned delta, CMat & mat, Player *p1, Player *p2)
 {
     this->Entity::update(delta, mat);
 
@@ -130,22 +136,40 @@ void Monster::update(unsigned delta, CMat & mat)
 
     else if (this->behaviourId == 3) // Behaviour : Flee the player
     {
-        bool circleID = rand() % 1;
+        int distp1, distp2; // Va permettre de calculer la distance qui sépare le monstre des deux joueurs pour déterminer la distance la plus courte
+        distp1 = sqrt(carre((p1->getPosition().getX() - this->getPosition().getX())) + carre((p1->getPosition().getY() - this->getPosition().getY())));
+        distp2 = sqrt(carre((p2->getPosition().getX() - this->getPosition().getX())) + carre((p2->getPosition().getY() - this->getPosition().getY())));
+        Player *target = distp1 < distp2 ? p1 : p2; // On vérifie la distance la plus courte pour faire déplacer le monstre en fonction du joueur le plus proche
 
-        if (circleID == 1) //circle to the left
-        {
-            this->pos.setX(x + 1);
-            this->pos.setY(y + 1);
-            this->pos.setX(x - 1);
-            this->pos.setY(y - 1);
+        if (target->IS_FACING == target->KEY_UP) { // Le joueur va vers le haut ?
+            this->IS_FACING = 'S';
+
+            if (!this->inCollision(mat, x, y - 1))
+            this->pos.setY(this->pos.getY() - 1);
         }
-        else {
-            this->pos.setX(x - 1);
-            this->pos.setY(y - 1);
-            this->pos.setX(x + 1);
-            this->pos.setY(y + 1);
+
+        if (target->IS_FACING == target->KEY_DOWN) { // Le joueur va vers le bas ?
+            this->IS_FACING = 'Z';
+
+            if (!this->inCollision(mat, x, y + 1))
+            this->pos.setY(this->pos.getY() + 1);
+        }
+
+        if (target->IS_FACING == target->KEY_LEFT) { // Le joueur va vers la gauche?
+            this->IS_FACING = 'D';
+
+            if (!this->inCollision(mat, x + 1, y))
+            this->pos.setX(this->pos.getX() + 1);
+        }
+
+        if (target->IS_FACING == target->KEY_RIGHT) { // Le joueur va vers la droite ?
+            this->IS_FACING = 'Q';
+
+            if (!this->inCollision(mat, x - 1, y))
+            this->pos.setX(this->pos.getX() - 1);
         }
     }
+
     else if (this->behaviourId == 4) { // Behaviour 4 => Random
         int move = rand() % 4 + 1;
 
@@ -188,6 +212,4 @@ void Monster::render(MinGL &window) {
         this->bottom.setPosition(this->getCoordinates());
         window << this->bottom;
     }
-
-    window << nsShape::Circle(nsGraphics::Vec2D(this->getCoordinates().getX() + 16, this->getCoordinates().getY() + 16), 8, nsGraphics::KPurple);
 }

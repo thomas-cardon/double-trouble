@@ -25,13 +25,13 @@ namespace nsGame {
      * @author Thomas Cardon, Alexandre Arniaud
      */
     class Player : public Entity {
-        private:
+        public:
+            /** \brief Keystrokes */
+            char KEY_DOWN, KEY_UP, KEY_LEFT, KEY_RIGHT, KEY_ACTION_1;
+
             /** \brief Direction the player is facing */
             char IS_FACING;
 
-            /** \brief Keystrokes */
-            char KEY_DOWN, KEY_UP, KEY_LEFT, KEY_RIGHT, KEY_ACTION_1;
-        public:
             /** \brief Animations for every direction, and effects */
             Animation bottom = Animation(600, true), top = Animation(600, true), left = Animation(600, true), right = Animation(600, true), invincible = Animation(600, false);
 

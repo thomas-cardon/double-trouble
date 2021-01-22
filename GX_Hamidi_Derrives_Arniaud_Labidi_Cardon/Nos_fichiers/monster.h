@@ -9,6 +9,7 @@
 
 #include "definitions.h"
 #include "entity.h"
+#include "player.h"
 
 /**
  * \file    monster.h
@@ -46,10 +47,10 @@ namespace nsGame {
             }
 
             /**
-             * @brief Updates the ennemy
-             * @fn void update(unsigned delta, CMat & mat);
+             * @brief Updates the monster
+             * @fn void update(unsigned delta, CMat & mat, Player *p1, Player *p2);
              */
-            void update(unsigned delta, CMat & mat);
+            void update(unsigned delta, CMat & mat, Player *p1, Player *p2);
 
             /**
              * @brief Renders resources
