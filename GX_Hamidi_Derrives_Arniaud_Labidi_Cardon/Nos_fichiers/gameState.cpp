@@ -86,7 +86,7 @@ void GameState::update(MinGL & window, unsigned delta) {
     }
     else player1->isAllowedToMove = player2->isAllowedToMove = false;
 
-    if ((win != -1 && window.isPressed({ MENU_KEY, false })) || window.isPressed({ 27, false })) {
+    if ((win != -1 && window.isPressed({ MENU_KEY, false })) || window.isPressed({ ESC_KEY, false })) {
         audio.playSoundFromBuffer(RES_PATH + "/audio/button-select.wav");
 
         this->destroy();

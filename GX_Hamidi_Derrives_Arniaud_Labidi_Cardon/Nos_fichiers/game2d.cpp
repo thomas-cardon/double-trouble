@@ -78,7 +78,7 @@ int load()
         ++frames;
 
         if (timeElapsed >= 1000) {
-            cout << "FPS: " << frames << " / LIMIT : " << FPS_LIMIT << endl;
+            cout << "FPS: " << frames << " / Temps depuis dernier frame: " << timeElapsed << "ms / LIMIT : " << FPS_LIMIT << endl;
             timeElapsed = 0;
             frames = 0;
         }

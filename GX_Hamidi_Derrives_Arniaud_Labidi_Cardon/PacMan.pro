@@ -14,7 +14,6 @@ SOURCES += \
     Nos_fichiers/fruit.cpp \
     Nos_fichiers/game2d.cpp \
     Nos_fichiers/gameState.cpp \
-    Correc_Prof/gridmanagement.cpp \
     Nos_fichiers/loadingState.cpp \
     Nos_fichiers/mainMenuState.cpp \
     Nos_fichiers/map.cpp \
@@ -264,10 +263,10 @@ HEADERS += \
     Nos_fichiers/animation.h \
     Nos_fichiers/cookie.h \
     Nos_fichiers/definitions.h \
+    Nos_fichiers/effectType.h \
     Nos_fichiers/entity.h \
     Nos_fichiers/fruit.h \
     Nos_fichiers/game2d.h \
-    Correc_Prof/gridmanagement.h \
     Nos_fichiers/gameState.h \
     Nos_fichiers/item.h \
     Nos_fichiers/map.h \

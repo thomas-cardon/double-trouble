@@ -32,7 +32,7 @@ using namespace nsGame;
 
 nsAudio::AudioEngine audio;
 
-Player::Player(unsigned N) : Entity() {
+Player::Player(unsigned N) : Entity("player-" + std::to_string(N), nsGraphics::Vec2D(N == 1 ? 1 : 18, N == 1 ? 1 : 18)) {
     this->N = N;
 }
 
@@ -43,8 +43,9 @@ void Player::spawn() {
 
 void Player::load(CMyParam params) {
     std::cout << "[Player N=" << std::to_string(N) + "] Loading" << std::endl;
-    Cooldowns::createCooldown(getEntityId() + "_move", this->_getDelay());
+    this->Entity::load();
 
+    this->setMovementSpeed(0.35);
     this->spawn();
 
     audio.loadSound(RES_PATH + "/audio/player-hit-1.wav");
@@ -87,20 +88,12 @@ void Player::onKeyPress(char key) {
 }
 
 void Player::update(MinGL & window, unsigned delta, CMat map) {
+    this->Entity::update(delta, map);
+
     /*
      * Movement cooldowns
      */
-    canMove = Cooldowns::isCooldownOver(getEntityId() + "_move");
-    if (_noDamage != -1) {
-        if (_noDamage >= _noDamageFor) {
-            _noDamage = -1;
-            _canTakeDamage = true;
-        }
-        else {
-            _canTakeDamage = false;
-            _noDamage += delta;
-        }
-    }
+    canMove = Cooldowns::isCooldownOver(id + "_move");
 
     if (isAllowedToMove) {
         if (window.isPressed({ KEY_UP, false })) {
@@ -137,17 +130,14 @@ void Player::damage() {
     audio.playSoundFromBuffer(RES_PATH + "/audio/player-hit-1.wav");
 
     --hearts;
-    noDamage(5000);
+    this->addEffect(EffectType::INVICIBLE, 5000);
 
     if (hearts <= 0) this->kill();
 }
 
-void Player::noDamage(int ms) {
-    _noDamageFor = ms;
-    _noDamage = 0;
-}
-
 void Player::render(MinGL & window) {
+    this->Entity::render(window);
+
     if (this->IS_FACING == KEY_UP) {
         this->top.setPosition(this->getCoordinates());
         this->top.render(window);
@@ -164,13 +154,4 @@ void Player::render(MinGL & window) {
         this->left.setPosition(this->getCoordinates());
         this->left.render(window);
     }
-
-    if (!this->canTakeDamage()) {
-        this->invincible.setPosition(this->getCoordinates());
-        this->invincible.render(window);
-    }
-}
-
-std::string Player::getEntityId() {
-    return "Player" + std::to_string(this->N);
 }

@@ -1,10 +1,13 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
-#define CELL_SIZE 32
-
 #include <mingl/graphics/vec2d.h>
+
+#include "definitions.h"
+#include "animation.h"
 #include "type.h"
+
+#include "effectType.h"
 
 /**
  * \file    entity.h
@@ -23,27 +26,55 @@ namespace nsGame
      */
     struct Entity
     {
+        private:
+           Animation _invincible = Animation(600, false);
+
+           /** \brief Effect list */
+           std::map<nsGame::EffectType, Effect> effects;
+
         protected:
             /** \brief Movement Speed */
             double movementSpeed = 1.0;
 
             /** \brief Allows Entity to take damage */
             bool _canTakeDamage = true;
-        public:
+        public:            
+            /** \brief Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID */
+            std::string id;
+
+            /** \brief Entity position */
+            nsGraphics::Vec2D pos;
+
             /** \brief Prevents entity to move */
             bool isAllowedToMove = true;
 
             /** \brief Says if entity has been killed */
             bool slain = false;
 
-            /** \brief Entity position */
-            nsGraphics::Vec2D pos;
+            /**
+             * @brief Entity
+             * @param newId - Entity ID
+             * @param newPos - Entity position
+             */
+            Entity(std::string newId, nsGraphics::Vec2D newPos) : id(newId), pos(newPos) {};
 
             /**
-             * @brief Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID
-             * @return Entity ID
+             * @brief load
              */
-            std::string getEntityId();
+            void load();
+
+            /**
+             * @brief update
+             * @param delta
+             * @param mat
+             */
+            void update(unsigned delta, CMat & mat);
+
+            /**
+             * @brief render
+             * @param window
+             */
+            void render(MinGL & window);
 
             /**
              * @brief This function is used to get the position on the screen/canvas/window, whatever you want to call it
@@ -106,11 +137,25 @@ namespace nsGame
             void kill();
 
             /**
-             * @brief Prevents entity to move for X milliseconds
+             * @brief Adds an effect to the entity
+             * @param EffectType - Effect ID
+             * @param Effect - Effect
              */
-            unsigned _getDelay() {
-                return 140 / movementSpeed;
-            }
+            void addEffect(EffectType type, unsigned delay);
+
+            /**
+             * @brief Removes an effect from the entity
+             * @param EffectType - Effect ID
+             * @param Effect - Effect
+             */
+            void removeEffect(EffectType type);
+
+            /**
+             * @brief Says if entity has effect
+             * @param EffectType type
+             * @return true if effect is present
+             */
+            bool hasEffect(EffectType type);
     };
 }
 

@@ -25,10 +25,6 @@
 
 using namespace nsGame;
 
-std::string Monster::getEntityId() {
-    return "Monster" + std::to_string(this->behaviourId);
-}
-
 void Monster::spawn() {
     this->pos.setX(10);
     this->pos.setY(1 * behaviourId);
@@ -49,11 +45,10 @@ bool Monster::canBeHitBy(Entity *entity) {
 }
 
 void Monster::load() {
-    std::cout << "[Monster#" << getEntityId() + "] Loading" << std::endl;
+    std::cout << "[Monster#" << id + "] Loading" << std::endl;
+    this->Entity::load();
 
-    this->movementSpeed = 0.35;
-    Cooldowns::createCooldown(getEntityId() + "_move", this->_getDelay());
-
+    this->setMovementSpeed(0.35);
     this->audio.loadSound(RES_PATH + "/audio/monster-hit-1.wav");
 
     this->spawn();
@@ -61,9 +56,11 @@ void Monster::load() {
 
 void Monster::update(unsigned delta, CMat & mat)
 {
+    this->Entity::update(delta, mat);
+
     if (slain) return;
 
-    canMove = Cooldowns::isCooldownOver(getEntityId() + "_move");
+    canMove = Cooldowns::isCooldownOver(id + "_move");
     if (!canMove) return;
 
     unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
@@ -172,6 +169,7 @@ void Monster::update(unsigned delta, CMat & mat)
 };
 
 void Monster::render(MinGL &window) {
+    this->Entity::render(window);
     if (slain) return;
 
     if (IS_FACING == 'Z' || IS_FACING == 'J') {
@@ -190,6 +188,6 @@ void Monster::render(MinGL &window) {
         this->bottom.setPosition(this->getCoordinates());
         window << this->bottom;
     }
-        window << nsShape::Circle(nsGraphics::Vec2D(this->getCoordinates().getX() + 16, this->getCoordinates().getY() + 16), 8, nsGraphics::KPurple);
 
+    window << nsShape::Circle(nsGraphics::Vec2D(this->getCoordinates().getX() + 16, this->getCoordinates().getY() + 16), 8, nsGraphics::KPurple);
 }
