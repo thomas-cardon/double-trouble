@@ -120,19 +120,31 @@ void GameState::update(MinGL & window, unsigned delta) {
     else {
         for (auto & monster : this->map->monsters) {
             if (monster->slain) continue;
+            int x = monster->getPosition().getX(), y = monster->getPosition().getY();
 
-            Player* target = monster->canBeHitBy(player1) ? player1 : monster->canBeHitBy(player2) ? player2 : NULL;
-            if (target == NULL) return;
+            if (x == player1->getPosition().getX() && y == player1->getPosition().getY()) {
+                std::cout << "[" << monster->id()  << "] Collision P1" << std::endl;
 
-            std::cout << "Player hit " << target->id() << std::endl;
-
-            if (target->hasEffect(EffectType::POWER)) {
-                monster->damage();
-                target->score += 500;
+                if (player1->hasEffect(EffectType::POWER)) {
+                    monster->damage();
+                    player1->score += 500;
+                }
+                else if (!player1->hasEffect(EffectType::INVINCIBLE)) {
+                    player1->damage();
+                    player1->spawn();
+                }
             }
-            else if (!target->hasEffect(EffectType::INVINCIBLE)) {
-                target->damage();
-                target->spawn();
+            else if (x == player2->getPosition().getX() && y == player2->getPosition().getY()) {
+                std::cout << "[" << monster->id()  << "] Collision P2" << std::endl;
+
+                if (player2->hasEffect(EffectType::POWER)) {
+                    monster->damage();
+                    player2->score += 500;
+                }
+                else if (!player2->hasEffect(EffectType::INVINCIBLE)) {
+                    player2->damage();
+                    player2->spawn();
+                }
             }
         }
     }
