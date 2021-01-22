@@ -168,7 +168,7 @@ void Monster::update(unsigned delta, CMat & mat, Player *p1, Player *p2)
     }
 
     else if (this->behaviourId == 4) { // Behaviour 4 => Random
-        int move = rand() % 4 + 1;
+        int move = rand() % 12 + 1;
 
         if (move == 0 && (x + 1 <= mat[y].size() - 1) && !this->inCollision(mat, x + 1, y)) {
             this->pos.setX(x + 1);
@@ -182,7 +182,7 @@ void Monster::update(unsigned delta, CMat & mat, Player *p1, Player *p2)
             this->pos.setY(y + 1);
             this->IS_FACING = 'S';
         }
-        else if ((y - 1 >= 0) && !this->inCollision(mat, x, y - 1)) {
+        else if (move == 3 && (y - 1 >= 0) && !this->inCollision(mat, x, y - 1)) {
             this->pos.setY(y - 1);
             this->IS_FACING = 'Z';
         }
