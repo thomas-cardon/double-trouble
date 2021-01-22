@@ -26,14 +26,14 @@ namespace nsGame {
      */
     class Player : public Entity {
         public:
-            /** \brief Keystrokes */
-            char KEY_DOWN, KEY_UP, KEY_LEFT, KEY_RIGHT, KEY_ACTION_1;
-
             /** \brief Direction the player is facing */
             char IS_FACING;
 
+            /** \brief Keystrokes */
+            char KEY_DOWN, KEY_UP, KEY_LEFT, KEY_RIGHT, KEY_ACTION_1;
+
             /** \brief Animations for every direction, and effects */
-            Animation bottom = Animation(600, true), top = Animation(600, true), left = Animation(600, true), right = Animation(600, true), invincible = Animation(600, false);
+            Animation bottom = Animation(600, true), top = Animation(600, true), left = Animation(600, true), right = Animation(600, true);
 
             /** \brief Player hearts */
             unsigned hearts = 3;
@@ -53,7 +53,7 @@ namespace nsGame {
              * @brief Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID
              * @return Entity ID
              */
-            std::string getEntityId();
+            std::string id();
 
             /**
              * @brief This function is called everytime a key is pressed.

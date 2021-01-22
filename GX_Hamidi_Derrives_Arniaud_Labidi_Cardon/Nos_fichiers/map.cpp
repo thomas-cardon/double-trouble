@@ -181,7 +181,7 @@ void Map::update(unsigned delta, Player *p1, Player *p2) {
             return;
         }
 
-        if (rand() % 10 == 9 && !hasPowerupSpawned) {
+        if (true && !hasPowerupSpawned) {
             this->spawnItem(new Powerup(pos));
             hasPowerupSpawned = true;
         }

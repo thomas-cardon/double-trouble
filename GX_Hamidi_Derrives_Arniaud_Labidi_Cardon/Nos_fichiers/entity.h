@@ -3,11 +3,11 @@
 
 #include <mingl/graphics/vec2d.h>
 
-#include "definitions.h"
 #include "animation.h"
-#include "type.h"
-
 #include "effectType.h"
+
+#include "definitions.h"
+#include "type.h"
 
 /**
  * \file    entity.h
@@ -27,36 +27,25 @@ namespace nsGame
     struct Entity
     {
         private:
-           Animation _invincible = Animation(600, false);
+            nsGui::Sprite _invincible = nsGui::Sprite(RES_PATH + "/effects/invincible/1.i2s");
+            Animation _powerUp = Animation(600, false);
 
-           /** \brief Effect list */
-           std::map<nsGame::EffectType, Effect> effects;
+            /** \brief Effect list */
+            std::map<nsGame::EffectType, Effect> effects;
 
         protected:
             /** \brief Movement Speed */
             double movementSpeed = 1.0;
 
-            /** \brief Allows Entity to take damage */
-            bool _canTakeDamage = true;
-        public:            
-            /** \brief Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID */
-            std::string id;
-
-            /** \brief Entity position */
-            nsGraphics::Vec2D pos;
-
+        public:
             /** \brief Prevents entity to move */
             bool isAllowedToMove = true;
 
             /** \brief Says if entity has been killed */
             bool slain = false;
 
-            /**
-             * @brief Entity
-             * @param newId - Entity ID
-             * @param newPos - Entity position
-             */
-            Entity(std::string newId, nsGraphics::Vec2D newPos) : id(newId), pos(newPos) {};
+            /** \brief Entity position */
+            nsGraphics::Vec2D pos;
 
             /**
              * @brief load
@@ -75,6 +64,12 @@ namespace nsGame
              * @param window
              */
             void render(MinGL & window);
+
+            /**
+             * @brief Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID
+             * @return Entity ID
+             */
+            std::string id();
 
             /**
              * @brief This function is used to get the position on the screen/canvas/window, whatever you want to call it
@@ -125,21 +120,15 @@ namespace nsGame
             void damage();
 
             /**
-             * @brief Tells if entity can be attacked
-             * @fn bool canTakeDamage();
-             */
-            bool canTakeDamage();
-
-            /**
              * @brief Kills entity
              * @fn void damage();
              */
             void kill();
 
             /**
-             * @brief Adds an effect to the entity
+             * @brief Adds an effect to the entity for x milliseconds
              * @param EffectType - Effect ID
-             * @param Effect - Effect
+             * @param unsigned delay
              */
             void addEffect(EffectType type, unsigned delay);
 
@@ -156,6 +145,13 @@ namespace nsGame
              * @return true if effect is present
              */
             bool hasEffect(EffectType type);
+
+            /**
+             * @brief Prevents entity to move for X milliseconds
+             */
+            unsigned _getDelay() {
+                return 140 / movementSpeed;
+            }
     };
 }
 

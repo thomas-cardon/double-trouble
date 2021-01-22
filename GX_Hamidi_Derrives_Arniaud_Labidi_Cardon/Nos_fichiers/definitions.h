@@ -2,6 +2,7 @@
 #define DEFINITIONS_H
 
 #define CELL_SIZE 32
+
 #define WINDOW_WIDTH 900
 #define WINDOW_HEIGHT 640
 

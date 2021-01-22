@@ -13,7 +13,7 @@
 
 /**
  * \file    monster.h
- * \authors Ines Hamidi, Thomas Cardon
+ * \authors Ines Hamidi, Thomas Cardon, Alexandre Arniaud
  * \date    11 janvier 2021
  * \version 1.0
  * \brief   Monster
@@ -42,13 +42,19 @@ namespace nsGame {
             /** \brief Sprites for every direction */
             nsGui::Sprite top, left, right, bottom;
 
-            Monster(unsigned behaviourId) : Entity("monster-" + std::to_string(behaviourId), nsGraphics::Vec2D()), top(RES_PATH + "/entities/monsters/" + std::to_string(behaviourId) + "M/2.i2s"), left(RES_PATH + "/entities/monsters/" + std::to_string(behaviourId) + "M/2.i2s"), right(RES_PATH + "/entities/monsters/" + std::to_string(behaviourId) + "M/2.i2s"), bottom(RES_PATH + "/entities/monsters/" + std::to_string(behaviourId) + "M/2.i2s") {
+            Monster(unsigned behaviourId) : top(RES_PATH + "/entities/monsters/" + std::to_string(behaviourId) + "M/2.i2s"), left(RES_PATH + "/entities/monsters/" + std::to_string(behaviourId) + "M/1.i2s"), right(RES_PATH + "/entities/monsters/" + std::to_string(behaviourId) + "M/5.i2s"), bottom(RES_PATH + "/entities/monsters/" + std::to_string(behaviourId) + "M/3.i2s") {
                 this->behaviourId = behaviourId;
-            }
+            };
 
             /**
-             * @brief Updates the monster
-             * @fn void update(unsigned delta, CMat & mat, Player *p1, Player *p2);
+             * @brief Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID
+             * @return Entity ID
+             */
+            std::string id();
+
+            /**
+             * @brief Updates the ennemy
+             * @fn void update(unsigned delta, CMat & mat);
              */
             void update(unsigned delta, CMat & mat, Player *p1, Player *p2);
 
@@ -75,13 +81,7 @@ namespace nsGame {
              * @fn void damage();
              */
             void damage();
-
-            /**
-             * @brief Checks if entity can be hit by another entity.
-             * @fn virtual bool canBeHitBy(Entity *entity);
-             */
-            bool canBeHitBy(Entity *entity);
     };
 }
 
-#endif // ENNEMY_H
+#endif // MONSTER_H

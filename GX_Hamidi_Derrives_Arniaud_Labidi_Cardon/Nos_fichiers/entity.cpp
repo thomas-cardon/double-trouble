@@ -15,29 +15,35 @@ using namespace nsGame;
 
 void Entity::load() {
     for (int i = 1; i <= 6; i++)
-        this->_invincible.sprites.push_back(nsGui::Sprite(RES_PATH + "/entities/noDamage/" + std::to_string(i) + ".i2s"));
+        this->_powerUp.sprites.push_back(nsGui::Sprite(RES_PATH + "/effects/powerup/" + std::to_string(i) + ".i2s"));
 }
 
 void Entity::update(unsigned delta, CMat & mat) {
-    auto it = this->effects.begin();
+    std::map<nsGame::EffectType, Effect>::iterator it = this->effects.begin();
+
     while (it != this->effects.end()) {
-        if (it->second.first >= it->second.second)
+        it->second.first += delta;
+        if (it->second.second <= it->second.first) {
             it = this->effects.erase(it);
-        else {
-            it->second.second += delta;
-            ++it;
         }
+        else ++it;
     }
+
+    this->_powerUp.update(delta);
 }
 
 void Entity::render(MinGL &window) {
-    if (this->effects.count(nsGame::EffectType::POWER)) {
-        this->_invincible.setPosition(this->getCoordinates());
-        this->_invincible.render(window);
-    }
-
-    if (this->effects.count(nsGame::EffectType::INVICIBLE)) {
-        window << nsShape::Circle(this->getCoordinates(), 4, nsGraphics::KLime);
+    for (auto & effect : this->effects) {
+        switch(effect.first) {
+            case nsGame::EffectType::POWER:
+                this->_powerUp.setPosition(this->getCoordinates());
+                this->_powerUp.render(window);
+                break;
+            case nsGame::EffectType::INVINCIBLE:
+                this->_invincible.setPosition(this->getCoordinates());
+                window << this->_invincible;
+                break;
+        }
     }
 }
 
@@ -61,17 +67,12 @@ bool Entity::inCollision(CMat map, unsigned x, unsigned y) {
     return false;
 }
 
-
-bool Entity::canTakeDamage() {
-    return this->_canTakeDamage;
-}
-
 void Entity::kill() {
     this->slain = true;
 }
 
 bool Entity::canBeHitBy(Entity *entity) {
-    if (this->canTakeDamage() && this->getPosition().getX() == entity->getPosition().getX() && this->getPosition().getY() == entity->getPosition().getY())
+    if (this->getPosition().getX() == entity->getPosition().getX() && this->getPosition().getY() == entity->getPosition().getY())
         return true;
 
     return false;
@@ -85,9 +86,14 @@ void Entity::spawn() {
 double Entity::getMovementSpeed() {
     return this->movementSpeed;
 }
+
+std::string Entity::id() {
+    return "entity_" + std::to_string(rand());
+}
+
 void Entity::setMovementSpeed(double speed) {
     this->movementSpeed = speed;
-    Cooldowns::setCooldownDelay(this->id + "_move", 140 / movementSpeed);
+    Cooldowns::setCooldownDelay(this->id() + "_move", _getDelay());
 }
 
 void Entity::addEffect(EffectType type, unsigned delay) {

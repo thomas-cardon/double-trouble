@@ -37,23 +37,20 @@ void Monster::damage() {
     this->kill();
 }
 
-bool Monster::canBeHitBy(Entity *entity) {
-    if (entity->canBeHitBy(this)) return false;
-
-    if (this->getPosition().getX() == entity->getPosition().getX() && this->getPosition().getY() == entity->getPosition().getY() && !entity->canBeHitBy(this))
-        return true;
-
-    return false;
-}
-
 void Monster::load() {
-    std::cout << "[Monster#" << id + "] Loading" << std::endl;
+    std::cout << "[Monster#" << this->id() + "] Loading" << std::endl;
+    Cooldowns::createCooldown(id() + "_move", this->_getDelay());
+
     this->Entity::load();
 
-    this->setMovementSpeed(0.35);
+    this->setMovementSpeed(this->behaviourId == 4 ? 0.1 : 0.35);
     this->audio.loadSound(RES_PATH + "/audio/monster-hit-1.wav");
 
     this->spawn();
+}
+
+std::string Monster::id() {
+    return "monster-" + std::to_string(this->behaviourId);
 }
 
 int carre (int a) {
@@ -66,7 +63,7 @@ void Monster::update(unsigned delta, CMat & mat, Player *p1, Player *p2)
 
     if (slain) return;
 
-    canMove = Cooldowns::isCooldownOver(id + "_move");
+    canMove = Cooldowns::isCooldownOver(this->id() + "_move");
     if (!canMove) return;
 
     unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
@@ -171,7 +168,7 @@ void Monster::update(unsigned delta, CMat & mat, Player *p1, Player *p2)
     }
 
     else if (this->behaviourId == 4) { // Behaviour 4 => Random
-        int move = rand() % 4 + 1;
+        int move = rand() % 12 + 1;
 
         if (move == 0 && (x + 1 <= mat[y].size() - 1) && !this->inCollision(mat, x + 1, y)) {
             this->pos.setX(x + 1);
@@ -185,7 +182,7 @@ void Monster::update(unsigned delta, CMat & mat, Player *p1, Player *p2)
             this->pos.setY(y + 1);
             this->IS_FACING = 'S';
         }
-        else if ((y - 1 >= 0) && !this->inCollision(mat, x, y - 1)) {
+        else if (move == 3 && (y - 1 >= 0) && !this->inCollision(mat, x, y - 1)) {
             this->pos.setY(y - 1);
             this->IS_FACING = 'Z';
         }
@@ -193,8 +190,7 @@ void Monster::update(unsigned delta, CMat & mat, Player *p1, Player *p2)
 };
 
 void Monster::render(MinGL &window) {
-    this->Entity::render(window);
-    if (slain) return;
+    if (this->slain) return;
 
     if (IS_FACING == 'Z' || IS_FACING == 'J') {
         this->top.setPosition(this->getCoordinates());
@@ -212,4 +208,6 @@ void Monster::render(MinGL &window) {
         this->bottom.setPosition(this->getCoordinates());
         window << this->bottom;
     }
+
+    this->Entity::render(window);
 }

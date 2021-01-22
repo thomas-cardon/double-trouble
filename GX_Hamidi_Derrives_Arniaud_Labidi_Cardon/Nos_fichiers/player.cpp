@@ -32,7 +32,7 @@ using namespace nsGame;
 
 nsAudio::AudioEngine audio;
 
-Player::Player(unsigned N) : Entity("player-" + std::to_string(N), nsGraphics::Vec2D(N == 1 ? 1 : 18, N == 1 ? 1 : 18)) {
+Player::Player(unsigned N) : Entity() {
     this->N = N;
 }
 
@@ -45,7 +45,8 @@ void Player::load(CMyParam params) {
     std::cout << "[Player N=" << std::to_string(N) + "] Loading" << std::endl;
     this->Entity::load();
 
-    this->setMovementSpeed(0.35);
+    Cooldowns::createCooldown(id() + "_move", this->_getDelay());
+
     this->spawn();
 
     audio.loadSound(RES_PATH + "/audio/player-hit-1.wav");
@@ -56,8 +57,6 @@ void Player::load(CMyParam params) {
         this->bottom.sprites.push_back(nsGui::Sprite(RES_PATH + "/entities/player" + std::to_string(N) + "/bottom-" + std::to_string(i) + ".i2s"));
         this->left.sprites.push_back(nsGui::Sprite(RES_PATH + "/entities/player" + std::to_string(N) + "/left-" + std::to_string(i) + ".i2s"));
         this->right.sprites.push_back(nsGui::Sprite(RES_PATH + "/entities/player" + std::to_string(N) + "/right-" + std::to_string(i) + ".i2s"));
-
-        this->invincible.sprites.push_back(nsGui::Sprite(RES_PATH + "/entities/noDamage/" + std::to_string(i) + ".i2s"));
     }
 
     this->KEY_UP = params.MapParamChar["P" + std::to_string(N) + "_KeyUp"];
@@ -93,7 +92,7 @@ void Player::update(MinGL & window, unsigned delta, CMat map) {
     /*
      * Movement cooldowns
      */
-    canMove = Cooldowns::isCooldownOver(id + "_move");
+    canMove = Cooldowns::isCooldownOver(id() + "_move");
 
     if (isAllowedToMove) {
         if (window.isPressed({ KEY_UP, false })) {
@@ -122,22 +121,18 @@ void Player::update(MinGL & window, unsigned delta, CMat map) {
     this->bottom.update(delta);
     this->right.update(delta);
     this->left.update(delta);
-
-    this->invincible.update(delta);
 }
 
 void Player::damage() {
     audio.playSoundFromBuffer(RES_PATH + "/audio/player-hit-1.wav");
 
     --hearts;
-    this->addEffect(EffectType::INVICIBLE, 5000);
+    this->addEffect(EffectType::INVINCIBLE, 5000);
 
     if (hearts <= 0) this->kill();
 }
 
 void Player::render(MinGL & window) {
-    this->Entity::render(window);
-
     if (this->IS_FACING == KEY_UP) {
         this->top.setPosition(this->getCoordinates());
         this->top.render(window);
@@ -154,4 +149,10 @@ void Player::render(MinGL & window) {
         this->left.setPosition(this->getCoordinates());
         this->left.render(window);
     }
+
+    this->Entity::render(window);
+}
+
+std::string Player::id() {
+    return "Player" + std::to_string(this->N);
 }
