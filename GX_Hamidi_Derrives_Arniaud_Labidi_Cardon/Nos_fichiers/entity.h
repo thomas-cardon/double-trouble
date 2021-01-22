@@ -43,7 +43,7 @@ namespace nsGame
              * @brief Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID
              * @return Entity ID
              */
-            std::string getEntityId();
+            std::string id();
 
             /**
              * @brief This function is used to get the position on the screen/canvas/window, whatever you want to call it

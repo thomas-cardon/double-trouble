@@ -43,7 +43,7 @@ void Player::spawn() {
 
 void Player::load(CMyParam params) {
     std::cout << "[Player N=" << std::to_string(N) + "] Loading" << std::endl;
-    Cooldowns::createCooldown(getEntityId() + "_move", this->_getDelay());
+    Cooldowns::createCooldown(id() + "_move", this->_getDelay());
 
     this->spawn();
 
@@ -90,7 +90,7 @@ void Player::update(MinGL & window, unsigned delta, CMat map) {
     /*
      * Movement cooldowns
      */
-    canMove = Cooldowns::isCooldownOver(getEntityId() + "_move");
+    canMove = Cooldowns::isCooldownOver(id() + "_move");
     if (_noDamage != -1) {
         if (_noDamage >= _noDamageFor) {
             _noDamage = -1;
@@ -171,6 +171,6 @@ void Player::render(MinGL & window) {
     }
 }
 
-std::string Player::getEntityId() {
+std::string Player::id() {
     return "Player" + std::to_string(this->N);
 }

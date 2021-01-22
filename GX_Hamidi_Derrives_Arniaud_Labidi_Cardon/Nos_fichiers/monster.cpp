@@ -25,7 +25,7 @@
 
 using namespace nsGame;
 
-std::string Monster::getEntityId() {
+std::string Monster::id() {
     return "Monster" + std::to_string(this->behaviourId);
 }
 
@@ -49,10 +49,10 @@ bool Monster::canBeHitBy(Entity *entity) {
 }
 
 void Monster::load() {
-    std::cout << "[Monster#" << getEntityId() + "] Loading" << std::endl;
+    std::cout << "[Monster#" << id() + "] Loading" << std::endl;
 
     this->movementSpeed = 0.35;
-    Cooldowns::createCooldown(getEntityId() + "_move", this->_getDelay());
+    Cooldowns::createCooldown(id() + "_move", this->_getDelay());
 
     this->audio.loadSound(RES_PATH + "/audio/monster-hit-1.wav");
 
@@ -63,7 +63,7 @@ void Monster::update(unsigned delta, CMat & mat)
 {
     if (slain) return;
 
-    canMove = Cooldowns::isCooldownOver(getEntityId() + "_move");
+    canMove = Cooldowns::isCooldownOver(id() + "_move");
     if (!canMove) return;
 
     unsigned x = this->getPosition().getX(), y = this->getPosition().getY();
