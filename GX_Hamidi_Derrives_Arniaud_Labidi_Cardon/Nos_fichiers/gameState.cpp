@@ -93,19 +93,19 @@ void GameState::update(MinGL & window, unsigned delta) {
         this->setState(0);
     }
 
-    if (player1->canBeHitBy(player2) && !player2->canBeHitBy(player1)) { // +1 P2
+    if (player1->canBeHitBy(player2) && !player1->hasEffect(EffectType::INVINCIBLE) && player2->hasEffect(EffectType::INVINCIBLE)) { // +1 P2
         player1->damage();
         player1->spawn();
 
         player2->score += 1000;
     }
-    else if (player2->canBeHitBy(player1) && !player1->canBeHitBy(player2)) { // +1 P1
+    else if (player2->canBeHitBy(player1) && !player2->hasEffect(EffectType::INVINCIBLE) && player1->hasEffect(EffectType::INVINCIBLE)) { // +1 P1
         player2->damage();
         player2->spawn();
 
         player1->score += 1000;
     }
-    else if (player1->canBeHitBy(player2) && player2->canBeHitBy(player1)) { // KILL !
+    else if (player1->canBeHitBy(player2) && !player1->hasEffect(EffectType::INVINCIBLE) && !player2->hasEffect(EffectType::INVINCIBLE)) { // KILL !
         std::cout << "Hit ! P1 HP: " << player1->hearts << " | P2 HP: " << player2->hearts << std::endl;
 
         player1->damage();
@@ -120,19 +120,19 @@ void GameState::update(MinGL & window, unsigned delta) {
     else {
         for (auto & monster : this->map->monsters) {
             if (monster->slain) continue;
-            if (monster->canBeHitBy(player1) && !player1->canBeHitBy(monster)) { // Powerup P1
+            if (monster->canBeHitBy(player1) && player1->hasEffect(EffectType::POWER)) { // Powerup P1
                 monster->damage();
                 player1->score += 500;
             }
-            else if (monster->canBeHitBy(player2) && !player2->canBeHitBy(monster)) { // Powerup P2
+            else if (monster->canBeHitBy(player2) && player2->hasEffect(EffectType::POWER)) { // Powerup P2
                 monster->damage();
                 player2->score += 500;
             }
-            else if (player1->canBeHitBy(monster)) { // Hurt P1
+            else if (player1->canBeHitBy(monster) && !player1->hasEffect(EffectType::INVINCIBLE)) { // Hurt P1
                 player1->damage();
                 player1->spawn();
             }
-            else if (player2->canBeHitBy(monster)) { // Hurt P2
+            else if (player2->canBeHitBy(monster) && !player2->hasEffect(EffectType::INVINCIBLE)) { // Hurt P2
                 player2->damage();
                 player2->spawn();
             }

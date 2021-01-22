@@ -72,7 +72,7 @@ void Entity::kill() {
 }
 
 bool Entity::canBeHitBy(Entity *entity) {
-    if (this->canTakeDamage() && this->getPosition().getX() == entity->getPosition().getX() && this->getPosition().getY() == entity->getPosition().getY())
+    if (this->getPosition().getX() == entity->getPosition().getX() && this->getPosition().getY() == entity->getPosition().getY())
         return true;
 
     return false;

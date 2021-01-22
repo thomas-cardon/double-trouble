@@ -120,12 +120,6 @@ namespace nsGame
             void damage();
 
             /**
-             * @brief Tells if entity can be attacked
-             * @fn bool canTakeDamage();
-             */
-            bool canTakeDamage();
-
-            /**
              * @brief Kills entity
              * @fn void damage();
              */
