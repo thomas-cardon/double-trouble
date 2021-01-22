@@ -13,7 +13,7 @@
 
 /**
  * \file    monster.h
- * \authors Ines Hamidi, Thomas Cardon
+ * \authors Ines Hamidi, Thomas Cardon, Alexandre Arniaud
  * \date    11 janvier 2021
  * \version 1.0
  * \brief   Monster
@@ -81,13 +81,7 @@ namespace nsGame {
              * @fn void damage();
              */
             void damage();
-
-            /**
-             * @brief Checks if entity can be hit by another entity.
-             * @fn virtual bool canBeHitBy(Entity *entity);
-             */
-            bool canBeHitBy(Entity *entity);
     };
 }
 
-#endif // ENNEMY_H
+#endif // MONSTER_H

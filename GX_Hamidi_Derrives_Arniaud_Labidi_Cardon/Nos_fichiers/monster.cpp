@@ -37,22 +37,13 @@ void Monster::damage() {
     this->kill();
 }
 
-bool Monster::canBeHitBy(Entity *entity) {
-    if (entity->canBeHitBy(this)) return false;
-
-    if (this->getPosition().getX() == entity->getPosition().getX() && this->getPosition().getY() == entity->getPosition().getY() && !entity->canBeHitBy(this))
-        return true;
-
-    return false;
-}
-
 void Monster::load() {
     std::cout << "[Monster#" << this->id() + "] Loading" << std::endl;
     Cooldowns::createCooldown(id() + "_move", this->_getDelay());
 
     this->Entity::load();
 
-    this->setMovementSpeed(0.35);
+    this->setMovementSpeed(this->behaviourId == 4 ? 0.1 : 0.35);
     this->audio.loadSound(RES_PATH + "/audio/monster-hit-1.wav");
 
     this->spawn();
@@ -199,7 +190,7 @@ void Monster::update(unsigned delta, CMat & mat, Player *p1, Player *p2)
 };
 
 void Monster::render(MinGL &window) {
-    if (slain) return;
+    if (this->slain) return;
 
     if (IS_FACING == 'Z' || IS_FACING == 'J') {
         this->top.setPosition(this->getCoordinates());
