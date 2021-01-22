@@ -30,7 +30,7 @@ namespace nsGame {
             nsAudio::AudioEngine audio;
 
             /** \brief Indicates direction */
-            char IS_FACING, LastMove;
+            char IS_FACING = 'Z';
 
             /** \brief Indicates type of behaviour */
             unsigned behaviourId;
