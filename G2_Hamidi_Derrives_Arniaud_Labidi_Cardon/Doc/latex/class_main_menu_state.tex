@@ -1,0 +1,308 @@
+\hypertarget{class_main_menu_state}{}\section{Main\+Menu\+State Class Reference}
+\label{class_main_menu_state}\index{Main\+Menu\+State@{Main\+Menu\+State}}
+
+
+Defines the main menu.  
+
+
+
+
+Inheritance diagram for Main\+Menu\+State\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{class_main_menu_state__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Main\+Menu\+State\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{class_main_menu_state__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_main_menu_state_a723f41a3c34138c5c5f7dcafc076718e}{load} () override
+\begin{DoxyCompactList}\small\item\em Loads State resources. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_menu_state_a6d740479d4dce733c069921478d70a37}{events} (ns\+Event\+::\+Event\+\_\+t event) override
+\begin{DoxyCompactList}\small\item\em Handles min\+GL 2 mouse events. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_menu_state_a7846cc7f1bd9b1fc40d77cc8f7644e03}{update} (Min\+GL \&window, unsigned delta) override
+\begin{DoxyCompactList}\small\item\em Updates state. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_menu_state_a1f11855f3b961e7a71c7c4e16f0b3478}{render} (Min\+GL \&window) override
+\begin{DoxyCompactList}\small\item\em Renders resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ns\+Audio\+::\+Audio\+Engine \hyperlink{class_main_menu_state_ab3d896522cecaf5f804f2b433ff102f1}{audio}
+\item 
+ns\+Gui\+::\+Sprite \hyperlink{class_main_menu_state_a0cc76e15a2093e406857db39a65ea301}{background} = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/background.\+i2s\char`\"{}, ns\+Graphics\+::\+Vec2D(0, 0))
+\item 
+ns\+Gui\+::\+Sprite \hyperlink{class_main_menu_state_a7de6cb44676e4d79205a1554dc93af5c}{btn\+\_\+play} = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/btn\+\_\+play.\+i2s\char`\"{}, ns\+Graphics\+::\+Vec2D(409, 432))
+\item 
+ns\+Gui\+::\+Sprite \hyperlink{class_main_menu_state_a6aa9442fce374369cd9a04191f15b81e}{btn\+\_\+quit} = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/btn\+\_\+quit.\+i2s\char`\"{}, ns\+Graphics\+::\+Vec2D(409, 530))
+\item 
+ns\+Gui\+::\+Sprite \hyperlink{class_main_menu_state_a185ced99223cda9bc631685a7d5fde89}{btn\+\_\+credits} = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/btn\+\_\+credits.\+i2s\char`\"{}, ns\+Graphics\+::\+Vec2D(410, 482))
+\item 
+ns\+Gui\+::\+Sprite \hyperlink{class_main_menu_state_aade833b5a15f6bddd7d72e9f641a96ea}{btn\+\_\+play\+\_\+hover} = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/btn\+\_\+play\+\_\+hover.\+i2s\char`\"{}, ns\+Graphics\+::\+Vec2D(417, 429))
+\item 
+ns\+Gui\+::\+Sprite \hyperlink{class_main_menu_state_a7a2831cfa00750af1328b09199cb21e8}{btn\+\_\+quit\+\_\+hover} = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/btn\+\_\+quit\+\_\+hover.\+i2s\char`\"{}, ns\+Graphics\+::\+Vec2D(399, 529))
+\item 
+ns\+Gui\+::\+Sprite \hyperlink{class_main_menu_state_a4402cf66bc3af622d2b7c7a3e143d32a}{btn\+\_\+credits\+\_\+hover} = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/btn\+\_\+credits\+\_\+hover.\+i2s\char`\"{}, ns\+Graphics\+::\+Vec2D(401, 478))
+\item 
+ns\+Gui\+::\+Sprite \hyperlink{class_main_menu_state_ac2034a62c91d9b96ac70d7ed68a6bb0c}{appuyer\+\_\+a} = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/appuyer\+\_\+a.\+i2s\char`\"{}, ns\+Graphics\+::\+Vec2D(0, 0))
+\item 
+bool \hyperlink{class_main_menu_state_a9db4bda687dbd65f369026e82ab6f5fd}{can\+Move} = true
+\item 
+int \hyperlink{class_main_menu_state_ae40f9519e207f3f4d6b67f2c4e28dbfd}{hovering} = -\/1
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines the main menu. 
+
+\begin{DoxyAuthor}{Authors}
+Thomas Cardon, Alexandre Arniaud 
+\end{DoxyAuthor}
+
+
+Definition at line 20 of file main\+Menu\+State.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_main_menu_state_a6d740479d4dce733c069921478d70a37}\label{class_main_menu_state_a6d740479d4dce733c069921478d70a37}} 
+\index{Main\+Menu\+State@{Main\+Menu\+State}!events@{events}}
+\index{events@{events}!Main\+Menu\+State@{Main\+Menu\+State}}
+\subsubsection{\texorpdfstring{events()}{events()}}
+{\footnotesize\ttfamily void Main\+Menu\+State\+::events (\begin{DoxyParamCaption}\item[{ns\+Event\+::\+Event\+\_\+t}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles min\+GL 2 mouse events. 
+
+
+
+Reimplemented from \hyperlink{structns_game_1_1_state_a2e1daaca20e580bdb4baf8215e1b51c9}{ns\+Game\+::\+State}.
+
+
+
+Definition at line 51 of file main\+Menu\+State.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_menu_state_a6d740479d4dce733c069921478d70a37_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_main_menu_state_a723f41a3c34138c5c5f7dcafc076718e}\label{class_main_menu_state_a723f41a3c34138c5c5f7dcafc076718e}} 
+\index{Main\+Menu\+State@{Main\+Menu\+State}!load@{load}}
+\index{load@{load}!Main\+Menu\+State@{Main\+Menu\+State}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Main\+Menu\+State\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Loads State resources. 
+
+
+
+Reimplemented from \hyperlink{structns_game_1_1_state_a8644de505f7a84933f6d6e6651205791}{ns\+Game\+::\+State}.
+
+
+
+Definition at line 44 of file main\+Menu\+State.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_main_menu_state_a723f41a3c34138c5c5f7dcafc076718e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_menu_state_a723f41a3c34138c5c5f7dcafc076718e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_main_menu_state_a1f11855f3b961e7a71c7c4e16f0b3478}\label{class_main_menu_state_a1f11855f3b961e7a71c7c4e16f0b3478}} 
+\index{Main\+Menu\+State@{Main\+Menu\+State}!render@{render}}
+\index{render@{render}!Main\+Menu\+State@{Main\+Menu\+State}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Main\+Menu\+State\+::render (\begin{DoxyParamCaption}\item[{Min\+GL \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders resources. 
+
+
+
+Reimplemented from \hyperlink{structns_game_1_1_state_a214f8ee52de4b318f1ed3861a578ce67}{ns\+Game\+::\+State}.
+
+
+
+Definition at line 82 of file main\+Menu\+State.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_menu_state_a1f11855f3b961e7a71c7c4e16f0b3478_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_main_menu_state_a7846cc7f1bd9b1fc40d77cc8f7644e03}\label{class_main_menu_state_a7846cc7f1bd9b1fc40d77cc8f7644e03}} 
+\index{Main\+Menu\+State@{Main\+Menu\+State}!update@{update}}
+\index{update@{update}!Main\+Menu\+State@{Main\+Menu\+State}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Main\+Menu\+State\+::update (\begin{DoxyParamCaption}\item[{Min\+GL \&}]{window,  }\item[{unsigned}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates state. 
+
+
+
+Reimplemented from \hyperlink{structns_game_1_1_state_ae809e89ac9df4a43ab90d5d5932e2bc7}{ns\+Game\+::\+State}.
+
+
+
+Definition at line 55 of file main\+Menu\+State.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_menu_state_a7846cc7f1bd9b1fc40d77cc8f7644e03_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_menu_state_a7846cc7f1bd9b1fc40d77cc8f7644e03_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_main_menu_state_ac2034a62c91d9b96ac70d7ed68a6bb0c}\label{class_main_menu_state_ac2034a62c91d9b96ac70d7ed68a6bb0c}} 
+\index{Main\+Menu\+State@{Main\+Menu\+State}!appuyer\+\_\+a@{appuyer\+\_\+a}}
+\index{appuyer\+\_\+a@{appuyer\+\_\+a}!Main\+Menu\+State@{Main\+Menu\+State}}
+\subsubsection{\texorpdfstring{appuyer\+\_\+a}{appuyer\_a}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite Main\+Menu\+State\+::appuyer\+\_\+a = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/appuyer\+\_\+a.\+i2s\char`\"{}, ns\+Graphics\+::\+Vec2D(0, 0))}
+
+
+
+Definition at line 39 of file main\+Menu\+State.\+cpp.
+
+\mbox{\Hypertarget{class_main_menu_state_ab3d896522cecaf5f804f2b433ff102f1}\label{class_main_menu_state_ab3d896522cecaf5f804f2b433ff102f1}} 
+\index{Main\+Menu\+State@{Main\+Menu\+State}!audio@{audio}}
+\index{audio@{audio}!Main\+Menu\+State@{Main\+Menu\+State}}
+\subsubsection{\texorpdfstring{audio}{audio}}
+{\footnotesize\ttfamily ns\+Audio\+::\+Audio\+Engine Main\+Menu\+State\+::audio}
+
+
+
+Definition at line 27 of file main\+Menu\+State.\+cpp.
+
+\mbox{\Hypertarget{class_main_menu_state_a0cc76e15a2093e406857db39a65ea301}\label{class_main_menu_state_a0cc76e15a2093e406857db39a65ea301}} 
+\index{Main\+Menu\+State@{Main\+Menu\+State}!background@{background}}
+\index{background@{background}!Main\+Menu\+State@{Main\+Menu\+State}}
+\subsubsection{\texorpdfstring{background}{background}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite Main\+Menu\+State\+::background = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/background.\+i2s\char`\"{}, ns\+Graphics\+::\+Vec2D(0, 0))}
+
+
+
+Definition at line 29 of file main\+Menu\+State.\+cpp.
+
+\mbox{\Hypertarget{class_main_menu_state_a185ced99223cda9bc631685a7d5fde89}\label{class_main_menu_state_a185ced99223cda9bc631685a7d5fde89}} 
+\index{Main\+Menu\+State@{Main\+Menu\+State}!btn\+\_\+credits@{btn\+\_\+credits}}
+\index{btn\+\_\+credits@{btn\+\_\+credits}!Main\+Menu\+State@{Main\+Menu\+State}}
+\subsubsection{\texorpdfstring{btn\+\_\+credits}{btn\_credits}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite Main\+Menu\+State\+::btn\+\_\+credits = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/btn\+\_\+credits.\+i2s\char`\"{}, ns\+Graphics\+::\+Vec2D(410, 482))}
+
+
+
+Definition at line 33 of file main\+Menu\+State.\+cpp.
+
+\mbox{\Hypertarget{class_main_menu_state_a4402cf66bc3af622d2b7c7a3e143d32a}\label{class_main_menu_state_a4402cf66bc3af622d2b7c7a3e143d32a}} 
+\index{Main\+Menu\+State@{Main\+Menu\+State}!btn\+\_\+credits\+\_\+hover@{btn\+\_\+credits\+\_\+hover}}
+\index{btn\+\_\+credits\+\_\+hover@{btn\+\_\+credits\+\_\+hover}!Main\+Menu\+State@{Main\+Menu\+State}}
+\subsubsection{\texorpdfstring{btn\+\_\+credits\+\_\+hover}{btn\_credits\_hover}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite Main\+Menu\+State\+::btn\+\_\+credits\+\_\+hover = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/btn\+\_\+credits\+\_\+hover.\+i2s\char`\"{}, ns\+Graphics\+::\+Vec2D(401, 478))}
+
+
+
+Definition at line 37 of file main\+Menu\+State.\+cpp.
+
+\mbox{\Hypertarget{class_main_menu_state_a7de6cb44676e4d79205a1554dc93af5c}\label{class_main_menu_state_a7de6cb44676e4d79205a1554dc93af5c}} 
+\index{Main\+Menu\+State@{Main\+Menu\+State}!btn\+\_\+play@{btn\+\_\+play}}
+\index{btn\+\_\+play@{btn\+\_\+play}!Main\+Menu\+State@{Main\+Menu\+State}}
+\subsubsection{\texorpdfstring{btn\+\_\+play}{btn\_play}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite Main\+Menu\+State\+::btn\+\_\+play = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/btn\+\_\+play.\+i2s\char`\"{}, ns\+Graphics\+::\+Vec2D(409, 432))}
+
+
+
+Definition at line 31 of file main\+Menu\+State.\+cpp.
+
+\mbox{\Hypertarget{class_main_menu_state_aade833b5a15f6bddd7d72e9f641a96ea}\label{class_main_menu_state_aade833b5a15f6bddd7d72e9f641a96ea}} 
+\index{Main\+Menu\+State@{Main\+Menu\+State}!btn\+\_\+play\+\_\+hover@{btn\+\_\+play\+\_\+hover}}
+\index{btn\+\_\+play\+\_\+hover@{btn\+\_\+play\+\_\+hover}!Main\+Menu\+State@{Main\+Menu\+State}}
+\subsubsection{\texorpdfstring{btn\+\_\+play\+\_\+hover}{btn\_play\_hover}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite Main\+Menu\+State\+::btn\+\_\+play\+\_\+hover = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/btn\+\_\+play\+\_\+hover.\+i2s\char`\"{}, ns\+Graphics\+::\+Vec2D(417, 429))}
+
+
+
+Definition at line 35 of file main\+Menu\+State.\+cpp.
+
+\mbox{\Hypertarget{class_main_menu_state_a6aa9442fce374369cd9a04191f15b81e}\label{class_main_menu_state_a6aa9442fce374369cd9a04191f15b81e}} 
+\index{Main\+Menu\+State@{Main\+Menu\+State}!btn\+\_\+quit@{btn\+\_\+quit}}
+\index{btn\+\_\+quit@{btn\+\_\+quit}!Main\+Menu\+State@{Main\+Menu\+State}}
+\subsubsection{\texorpdfstring{btn\+\_\+quit}{btn\_quit}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite Main\+Menu\+State\+::btn\+\_\+quit = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/btn\+\_\+quit.\+i2s\char`\"{}, ns\+Graphics\+::\+Vec2D(409, 530))}
+
+
+
+Definition at line 32 of file main\+Menu\+State.\+cpp.
+
+\mbox{\Hypertarget{class_main_menu_state_a7a2831cfa00750af1328b09199cb21e8}\label{class_main_menu_state_a7a2831cfa00750af1328b09199cb21e8}} 
+\index{Main\+Menu\+State@{Main\+Menu\+State}!btn\+\_\+quit\+\_\+hover@{btn\+\_\+quit\+\_\+hover}}
+\index{btn\+\_\+quit\+\_\+hover@{btn\+\_\+quit\+\_\+hover}!Main\+Menu\+State@{Main\+Menu\+State}}
+\subsubsection{\texorpdfstring{btn\+\_\+quit\+\_\+hover}{btn\_quit\_hover}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite Main\+Menu\+State\+::btn\+\_\+quit\+\_\+hover = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/btn\+\_\+quit\+\_\+hover.\+i2s\char`\"{}, ns\+Graphics\+::\+Vec2D(399, 529))}
+
+
+
+Definition at line 36 of file main\+Menu\+State.\+cpp.
+
+\mbox{\Hypertarget{class_main_menu_state_a9db4bda687dbd65f369026e82ab6f5fd}\label{class_main_menu_state_a9db4bda687dbd65f369026e82ab6f5fd}} 
+\index{Main\+Menu\+State@{Main\+Menu\+State}!can\+Move@{can\+Move}}
+\index{can\+Move@{can\+Move}!Main\+Menu\+State@{Main\+Menu\+State}}
+\subsubsection{\texorpdfstring{can\+Move}{canMove}}
+{\footnotesize\ttfamily bool Main\+Menu\+State\+::can\+Move = true}
+
+
+
+Definition at line 41 of file main\+Menu\+State.\+cpp.
+
+\mbox{\Hypertarget{class_main_menu_state_ae40f9519e207f3f4d6b67f2c4e28dbfd}\label{class_main_menu_state_ae40f9519e207f3f4d6b67f2c4e28dbfd}} 
+\index{Main\+Menu\+State@{Main\+Menu\+State}!hovering@{hovering}}
+\index{hovering@{hovering}!Main\+Menu\+State@{Main\+Menu\+State}}
+\subsubsection{\texorpdfstring{hovering}{hovering}}
+{\footnotesize\ttfamily int Main\+Menu\+State\+::hovering = -\/1}
+
+
+
+Definition at line 42 of file main\+Menu\+State.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Nos\+\_\+fichiers/\hyperlink{main_menu_state_8cpp}{main\+Menu\+State.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+<map id="nsGame::Strawberry::Strawberry" name="nsGame::Strawberry::Strawberry">
+<area shape="rect" id="node2" href="$classns_game_1_1_strawberry.html#a0db46752979078f7bc64703425887ff5" title="Loads food. " alt="" coords="196,5,339,47"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_strawberry.html#a67f6d787f200bc7202b4ede2bde2b9ac" title="Updates food. " alt="" coords="196,71,339,112"/>
+<area shape="rect" id="node5" href="$classns_game_1_1_strawberry.html#a7d4b1b56782cdca38e37a0ea254f7dc5" title="Renders resources. " alt="" coords="196,136,339,177"/>
+<area shape="rect" id="node4" href="$structns_game_1_1_item.html#a52af52633c8924e35b47347f8c51a22e" title="This function is used to get the position on the screen/canvas/window, whatever you want to call it..." alt="" coords="387,78,588,105"/>
+</map>

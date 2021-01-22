@@ -1,0 +1,11 @@
+<map id="nsGame::Cooldowns::isCooldownOver" name="nsGame::Cooldowns::isCooldownOver">
+<area shape="rect" id="node2" href="$class_main_menu_state.html#a7846cc7f1bd9b1fc40d77cc8f7644e03" title="Updates state. " alt="" coords="437,5,597,32"/>
+<area shape="rect" id="node6" href="$classns_game_1_1_map.html#a2b7108ae33859839be0b85329f729de9" title="update " alt="" coords="217,56,367,83"/>
+<area shape="rect" id="node8" href="$classns_game_1_1_monster.html#a0fa9eca417938bdbf9f12befd4531b34" title="Updates the ennemy. " alt="" coords="205,157,379,184"/>
+<area shape="rect" id="node10" href="$classns_game_1_1_player.html#a8702d56a2f8651a53511b4dbea30d0f6" title="Updates player. " alt="" coords="211,107,373,133"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_state_manager.html#ab9c5e47745b79af657c08adcc8607475" title="Updates the current state. " alt="" coords="656,27,816,69"/>
+<area shape="rect" id="node4" href="$game2d_8h.html#a70c7a760d43263eead3fedac2fe55ed3" title="Updates all sub components every tick. " alt="" coords="864,35,925,61"/>
+<area shape="rect" id="node5" href="$game2d_8h.html#ab223e99bd1bae1986af774532abb06c9" title="Loads the game. " alt="" coords="973,35,1020,61"/>
+<area shape="rect" id="node7" href="$classns_game_1_1_game_state.html#a4d3cb871a1aec541a37fe241664b738c" title="Updates state. " alt="" coords="441,57,594,98"/>
+<area shape="rect" id="node9" href="$classns_game_1_1_monster.html#a93d359ec069d9667352b54e3b531b4e3" title="nsGame::Monster::Monster" alt="" coords="427,157,608,184"/>
+</map>

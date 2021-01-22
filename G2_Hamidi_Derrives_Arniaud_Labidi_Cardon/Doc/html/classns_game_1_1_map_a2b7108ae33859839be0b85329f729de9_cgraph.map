@@ -1,0 +1,16 @@
+<map id="nsGame::Map::update" name="nsGame::Map::update">
+<area shape="rect" id="node2" href="$classns_game_1_1_cooldowns.html#a423a58fcbbf7688556c5706249365f12" title="Checks if a cooldown is over. " alt="" coords="221,5,373,47"/>
+<area shape="rect" id="node3" href="$structns_game_1_1_entity.html#ab7fc1631346d2c643161d229dd653edd" title="Gets the coordinates compared to the map. " alt="" coords="204,71,391,98"/>
+<area shape="rect" id="node4" href="$classns_game_1_1_map.html#a2cbbebf0522026dff6cfbb0236fe5150" title="getMat " alt="" coords="221,173,373,199"/>
+<area shape="rect" id="node5" href="$classns_game_1_1_map.html#a7197e3e471d8a827ad195e74707f4052" title="Adds an item to the item list with given coordinates. " alt="" coords="458,122,634,149"/>
+<area shape="rect" id="node12" href="$classns_game_1_1_map.html#a9c7ae85f01db94d0bedbce4aee4d52f0" title="Gets a place where there&#39;s just a cell (there may be a player) " alt="" coords="439,223,653,250"/>
+<area shape="rect" id="node13" href="$classns_game_1_1_map.html#a098dda0872f84fa83c61693efaca48f1" title="Gets a list of positions where there&#39;s nothing but a cell. " alt="" coords="701,223,924,250"/>
+<area shape="rect" id="node6" href="$structns_game_1_1_item.html#abd124b5001b8dc63b8513e5b85c6c2b9" title="Gets the coordinates compared to the map. " alt="" coords="723,110,902,137"/>
+<area shape="rect" id="node7" href="$structns_game_1_1_item.html#a5887b6e9225ae8a276801225eca83808" title="Loads item. " alt="" coords="987,21,1125,47"/>
+<area shape="rect" id="node11" href="$structns_game_1_1_item.html#a69156550e5083928cbb673ca2db671f5" title="Gets item type. " alt="" coords="733,161,893,187"/>
+<area shape="rect" id="node8" href="$structns_game_1_1_item.html#a96c07d0f91eef0d77e91d1a7397091a1" title="Updates item. " alt="" coords="980,71,1132,98"/>
+<area shape="rect" id="node9" href="$structns_game_1_1_item.html#a451b6491efc475c9ca47dcccdbbde707" title="Renders resources. " alt="" coords="981,122,1131,149"/>
+<area shape="rect" id="node10" href="$structns_game_1_1_item.html#af74dffcf9bde4a4297749f4e1852395b" title="Makes an action for the player. " alt="" coords="982,173,1130,199"/>
+<area shape="rect" id="node14" href="$classns_game_1_1_map.html#a8ae7e6fe93f1318c0d7d2569e73ec144" title="Gets the map height. " alt="" coords="972,223,1140,250"/>
+<area shape="rect" id="node15" href="$classns_game_1_1_map.html#a948d05a71e53131418c9cf19c2da1062" title="Gets the map width. " alt="" coords="974,274,1138,301"/>
+</map>

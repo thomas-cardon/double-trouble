@@ -1,0 +1,4 @@
+<map id="nsGame::Player::setMovementSpeed" name="nsGame::Player::setMovementSpeed">
+<area shape="rect" id="node2" href="$classns_game_1_1_cooldowns.html#a0db5b81efac93aacc0b12b2aa520620b" title="Sets a new delay for a cooldown that had been saved already. " alt="" coords="280,5,432,47"/>
+<area shape="rect" id="node3" href="$structns_game_1_1_entity.html#a03b934337b3c013abcccf3dfea6396d1" title="Gets the movement speed. " alt="" coords="256,71,456,112"/>
+</map>

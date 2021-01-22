@@ -1,0 +1,4 @@
+<map id="nsGame::Entity" name="nsGame::Entity">
+<area shape="rect" id="node2" href="$classns_game_1_1_monster.html" title="Defines the monsters class. " alt="" coords="5,80,132,107"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_player.html" title="Defines the player&#39;s class. " alt="" coords="156,80,272,107"/>
+</map>

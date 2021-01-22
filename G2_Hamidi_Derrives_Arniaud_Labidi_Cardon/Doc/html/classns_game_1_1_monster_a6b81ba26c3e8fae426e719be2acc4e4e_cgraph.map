@@ -1,0 +1,9 @@
+<map id="nsGame::Monster::load" name="nsGame::Monster::load">
+<area shape="rect" id="node2" href="$classns_game_1_1_monster.html#a14a0c542fe9c8b6772a3984ed674c9cf" title="Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID..." alt="" coords="240,5,384,32"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_cooldowns.html#a70e8df0692a58a08b31b2b6c9578265e" title="Saves a cooldown into the map. " alt="" coords="236,57,388,98"/>
+<area shape="rect" id="node4" href="$structns_game_1_1_entity.html#a0c574fba3e12b9bb976d72953626e550" title="Prevents entity to move for X milliseconds. " alt="" coords="460,148,640,175"/>
+<area shape="rect" id="node5" href="$structns_game_1_1_entity.html#ae0aa595447b5f3d2c0b80fb99305c56e" title="load " alt="" coords="239,173,385,200"/>
+<area shape="rect" id="node6" href="$structns_game_1_1_entity.html#a0254c30b6223caa723303266ad04e4cd" title="Sets the movement speed. " alt="" coords="212,225,412,266"/>
+<area shape="rect" id="node8" href="$classns_game_1_1_monster.html#a6ee4a9d2cea5d327379de3416a059169" title="Teleports the entity at its spawn. " alt="" coords="226,291,398,317"/>
+<area shape="rect" id="node7" href="$classns_game_1_1_cooldowns.html#a0db5b81efac93aacc0b12b2aa520620b" title="Sets a new delay for a cooldown that had been saved already. " alt="" coords="474,225,626,266"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="nsGame::Entity::setMovementSpeed" name="nsGame::Entity::setMovementSpeed">
+<area shape="rect" id="node2" href="$classns_game_1_1_cooldowns.html#a0db5b81efac93aacc0b12b2aa520620b" title="Sets a new delay for a cooldown that had been saved already. " alt="" coords="267,5,419,47"/>
+<area shape="rect" id="node3" href="$structns_game_1_1_entity.html#a0c574fba3e12b9bb976d72953626e550" title="Prevents entity to move for X milliseconds. " alt="" coords="253,71,433,98"/>
+</map>

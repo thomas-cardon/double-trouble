@@ -1,0 +1,264 @@
+\hypertarget{structns_game_1_1_item}{}\section{ns\+Game\+:\+:Item Class Reference}
+\label{structns_game_1_1_item}\index{ns\+Game\+::\+Item@{ns\+Game\+::\+Item}}
+
+
+Defines the \hyperlink{structns_game_1_1_item}{Item}.  
+
+
+
+
+{\ttfamily \#include $<$item.\+h$>$}
+
+
+
+Inheritance diagram for ns\+Game\+:\+:Item\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_item__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structns_game_1_1_item_a7b70bf14fdd5c660ac1181f86482685b}{Item} (ns\+Graphics\+::\+Vec2D \hyperlink{structns_game_1_1_item_a5518876a13f3d2eda659d29748097f1a}{pos})
+\begin{DoxyCompactList}\small\item\em Generate an item with his position. \end{DoxyCompactList}\item 
+ns\+Graphics\+::\+Vec2D \hyperlink{structns_game_1_1_item_a52af52633c8924e35b47347f8c51a22e}{get\+Coordinates} ()
+\begin{DoxyCompactList}\small\item\em This function is used to get the position on the screen/canvas/window, whatever you want to call it. \end{DoxyCompactList}\item 
+ns\+Graphics\+::\+Vec2D \hyperlink{structns_game_1_1_item_abd124b5001b8dc63b8513e5b85c6c2b9}{get\+Position} ()
+\begin{DoxyCompactList}\small\item\em Gets the coordinates compared to the map. \end{DoxyCompactList}\item 
+virtual void \hyperlink{structns_game_1_1_item_a5887b6e9225ae8a276801225eca83808}{load} ()=0
+\begin{DoxyCompactList}\small\item\em Loads item. \end{DoxyCompactList}\item 
+virtual void \hyperlink{structns_game_1_1_item_a96c07d0f91eef0d77e91d1a7397091a1}{update} (unsigned delta)=0
+\begin{DoxyCompactList}\small\item\em Updates item. \end{DoxyCompactList}\item 
+virtual void \hyperlink{structns_game_1_1_item_a451b6491efc475c9ca47dcccdbbde707}{render} (Min\+GL \&window)=0
+\begin{DoxyCompactList}\small\item\em Renders resources. \end{DoxyCompactList}\item 
+virtual void \hyperlink{structns_game_1_1_item_af74dffcf9bde4a4297749f4e1852395b}{action} (\hyperlink{classns_game_1_1_player}{Player} $\ast$player)=0
+\begin{DoxyCompactList}\small\item\em Makes an action for the player. \end{DoxyCompactList}\item 
+virtual \hyperlink{namespacens_game_a5f7db01e6447720e9a145f0b3c68a4d7}{Item\+Type} \hyperlink{structns_game_1_1_item_a69156550e5083928cbb673ca2db671f5}{get\+Type} ()
+\begin{DoxyCompactList}\small\item\em Gets item type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ns\+Graphics\+::\+Vec2D \hyperlink{structns_game_1_1_item_a5518876a13f3d2eda659d29748097f1a}{pos}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structns_game_1_1_item}{Item} coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines the \hyperlink{structns_game_1_1_item}{Item}. 
+
+\begin{DoxyAuthor}{Author}
+Thomas Cardon, Alexandre Arniaud 
+\end{DoxyAuthor}
+
+
+Definition at line 31 of file item.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structns_game_1_1_item_a7b70bf14fdd5c660ac1181f86482685b}\label{structns_game_1_1_item_a7b70bf14fdd5c660ac1181f86482685b}} 
+\index{ns\+Game\+::\+Item@{ns\+Game\+::\+Item}!Item@{Item}}
+\index{Item@{Item}!ns\+Game\+::\+Item@{ns\+Game\+::\+Item}}
+\subsubsection{\texorpdfstring{Item()}{Item()}}
+{\footnotesize\ttfamily ns\+Game\+::\+Item\+::\+Item (\begin{DoxyParamCaption}\item[{ns\+Graphics\+::\+Vec2D}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generate an item with his position. 
+
+
+
+Definition at line 38 of file item.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structns_game_1_1_item_af74dffcf9bde4a4297749f4e1852395b}\label{structns_game_1_1_item_af74dffcf9bde4a4297749f4e1852395b}} 
+\index{ns\+Game\+::\+Item@{ns\+Game\+::\+Item}!action@{action}}
+\index{action@{action}!ns\+Game\+::\+Item@{ns\+Game\+::\+Item}}
+\subsubsection{\texorpdfstring{action()}{action()}}
+{\footnotesize\ttfamily virtual void ns\+Game\+::\+Item\+::action (\begin{DoxyParamCaption}\item[{\hyperlink{classns_game_1_1_player}{Player} $\ast$}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Makes an action for the player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classns_game_1_1_player}{Player}} & -\/ The player that steps on an item \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classns_game_1_1_cookie_a2cd4ee8c83b99191643d6e9ef2267b1a}{ns\+Game\+::\+Cookie}, \hyperlink{classns_game_1_1_fruit_ad33836a67756dba7390b95c57898e91c}{ns\+Game\+::\+Fruit}, and \hyperlink{classns_game_1_1_powerup_af307aba7b61132f2dc037d8ef62581f9}{ns\+Game\+::\+Powerup}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_item_af74dffcf9bde4a4297749f4e1852395b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structns_game_1_1_item_a52af52633c8924e35b47347f8c51a22e}\label{structns_game_1_1_item_a52af52633c8924e35b47347f8c51a22e}} 
+\index{ns\+Game\+::\+Item@{ns\+Game\+::\+Item}!get\+Coordinates@{get\+Coordinates}}
+\index{get\+Coordinates@{get\+Coordinates}!ns\+Game\+::\+Item@{ns\+Game\+::\+Item}}
+\subsubsection{\texorpdfstring{get\+Coordinates()}{getCoordinates()}}
+{\footnotesize\ttfamily ns\+Graphics\+::\+Vec2D ns\+Game\+::\+Item\+::get\+Coordinates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This function is used to get the position on the screen/canvas/window, whatever you want to call it. 
+
+
+
+Definition at line 46 of file item.\+h.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_item_a52af52633c8924e35b47347f8c51a22e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structns_game_1_1_item_abd124b5001b8dc63b8513e5b85c6c2b9}\label{structns_game_1_1_item_abd124b5001b8dc63b8513e5b85c6c2b9}} 
+\index{ns\+Game\+::\+Item@{ns\+Game\+::\+Item}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!ns\+Game\+::\+Item@{ns\+Game\+::\+Item}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
+{\footnotesize\ttfamily ns\+Graphics\+::\+Vec2D ns\+Game\+::\+Item\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the coordinates compared to the map. 
+
+
+
+Definition at line 54 of file item.\+h.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_item_abd124b5001b8dc63b8513e5b85c6c2b9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_item_abd124b5001b8dc63b8513e5b85c6c2b9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structns_game_1_1_item_a69156550e5083928cbb673ca2db671f5}\label{structns_game_1_1_item_a69156550e5083928cbb673ca2db671f5}} 
+\index{ns\+Game\+::\+Item@{ns\+Game\+::\+Item}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!ns\+Game\+::\+Item@{ns\+Game\+::\+Item}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}}
+{\footnotesize\ttfamily virtual \hyperlink{namespacens_game_a5f7db01e6447720e9a145f0b3c68a4d7}{Item\+Type} ns\+Game\+::\+Item\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets item type. 
+
+\begin{DoxyReturn}{Returns}
+Item\+Type.\+I\+T\+EM 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classns_game_1_1_cookie_ac5c28f610947708bc1f31b1e8a88ef42}{ns\+Game\+::\+Cookie}, \hyperlink{classns_game_1_1_fruit_a4d704f296f536afc2980183bb21e4c62}{ns\+Game\+::\+Fruit}, and \hyperlink{classns_game_1_1_powerup_a34f105d75a90ddbbc6afa46c83bdccf6}{ns\+Game\+::\+Powerup}.
+
+
+
+Definition at line 86 of file item.\+h.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_item_a69156550e5083928cbb673ca2db671f5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structns_game_1_1_item_a5887b6e9225ae8a276801225eca83808}\label{structns_game_1_1_item_a5887b6e9225ae8a276801225eca83808}} 
+\index{ns\+Game\+::\+Item@{ns\+Game\+::\+Item}!load@{load}}
+\index{load@{load}!ns\+Game\+::\+Item@{ns\+Game\+::\+Item}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Item\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Loads item. 
+
+
+
+Implemented in \hyperlink{classns_game_1_1_cookie_a20769adf2b327f4bf519e851073b1891}{ns\+Game\+::\+Cookie}, \hyperlink{classns_game_1_1_fruit_a28c4ae21607dbad699602528c6ffc583}{ns\+Game\+::\+Fruit}, and \hyperlink{classns_game_1_1_powerup_a2a228e8f89bed454ad8011dfd88068c6}{ns\+Game\+::\+Powerup}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_item_a5887b6e9225ae8a276801225eca83808_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structns_game_1_1_item_a451b6491efc475c9ca47dcccdbbde707}\label{structns_game_1_1_item_a451b6491efc475c9ca47dcccdbbde707}} 
+\index{ns\+Game\+::\+Item@{ns\+Game\+::\+Item}!render@{render}}
+\index{render@{render}!ns\+Game\+::\+Item@{ns\+Game\+::\+Item}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Item\+::render (\begin{DoxyParamCaption}\item[{Min\+GL \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Renders resources. 
+
+
+
+Implemented in \hyperlink{classns_game_1_1_cookie_a7e321497bf9d9baa738d987e9c47dd5e}{ns\+Game\+::\+Cookie}, \hyperlink{classns_game_1_1_fruit_a99622754f8cf90bb285b4808e98372c7}{ns\+Game\+::\+Fruit}, and \hyperlink{classns_game_1_1_powerup_ad113cfd795157168c103b71560180201}{ns\+Game\+::\+Powerup}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_item_a451b6491efc475c9ca47dcccdbbde707_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structns_game_1_1_item_a96c07d0f91eef0d77e91d1a7397091a1}\label{structns_game_1_1_item_a96c07d0f91eef0d77e91d1a7397091a1}} 
+\index{ns\+Game\+::\+Item@{ns\+Game\+::\+Item}!update@{update}}
+\index{update@{update}!ns\+Game\+::\+Item@{ns\+Game\+::\+Item}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily int ns\+Game\+::\+Item\+::update (\begin{DoxyParamCaption}\item[{unsigned}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Updates item. 
+
+
+
+Implemented in \hyperlink{classns_game_1_1_cookie_aaea5c3967effe908f2676a5ded17aa39}{ns\+Game\+::\+Cookie}, \hyperlink{classns_game_1_1_fruit_adade5568e2f552576d0d32b714b9ac02}{ns\+Game\+::\+Fruit}, and \hyperlink{classns_game_1_1_powerup_a0f86905ba37cc0a4e80827db0563cfa3}{ns\+Game\+::\+Powerup}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_item_a96c07d0f91eef0d77e91d1a7397091a1_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structns_game_1_1_item_a5518876a13f3d2eda659d29748097f1a}\label{structns_game_1_1_item_a5518876a13f3d2eda659d29748097f1a}} 
+\index{ns\+Game\+::\+Item@{ns\+Game\+::\+Item}!pos@{pos}}
+\index{pos@{pos}!ns\+Game\+::\+Item@{ns\+Game\+::\+Item}}
+\subsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily ns\+Graphics\+::\+Vec2D ns\+Game\+::\+Item\+::pos\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\hyperlink{structns_game_1_1_item}{Item} coordinates. 
+
+
+
+Definition at line 34 of file item.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Nos\+\_\+fichiers/\hyperlink{item_8h}{item.\+h}\end{DoxyCompactItemize}

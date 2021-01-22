@@ -1,0 +1,10 @@
+<map id="nsGame::Entity::getCoordinates" name="nsGame::Entity::getCoordinates">
+<area shape="rect" id="node2" href="$structns_game_1_1_entity.html#a4663cc85381acc9aaac120a85b6f24d0" title="render " alt="" coords="263,45,420,72"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_monster.html#afe0b8e0d63cfef2cf0026f81facae620" title="Renders resources. " alt="" coords="468,5,639,32"/>
+<area shape="rect" id="node5" href="$classns_game_1_1_player.html#a34b359a72d3dbdf537c72161898376f3" title="Renders resources. " alt="" coords="473,75,633,101"/>
+<area shape="rect" id="node4" href="$classns_game_1_1_monster.html#a93d359ec069d9667352b54e3b531b4e3" title="nsGame::Monster::Monster" alt="" coords="687,5,868,32"/>
+<area shape="rect" id="node6" href="$classns_game_1_1_game_state.html#a1e3179b016431332ecff880e09e267d3" title="Renders resources. " alt="" coords="701,67,854,109"/>
+<area shape="rect" id="node7" href="$classns_game_1_1_state_manager.html#a6f5b564dbd4e84529a125aca38f4339d" title="Renders current state resources. " alt="" coords="916,67,1076,109"/>
+<area shape="rect" id="node8" href="$game2d_8h.html#a45fbe5b33369650f26eaf34d709efb7b" title="Renders every component. " alt="" coords="1124,75,1183,101"/>
+<area shape="rect" id="node9" href="$game2d_8h.html#ab223e99bd1bae1986af774532abb06c9" title="Loads the game. " alt="" coords="1231,75,1277,101"/>
+</map>

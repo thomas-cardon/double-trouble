@@ -1,0 +1,200 @@
+\hypertarget{structns_game_1_1_state}{}\section{ns\+Game\+:\+:State Class Reference}
+\label{structns_game_1_1_state}\index{ns\+Game\+::\+State@{ns\+Game\+::\+State}}
+
+
+A class defining the different states of the game (In-\/game, Menus, Loading...)  
+
+
+
+
+{\ttfamily \#include $<$state.\+h$>$}
+
+
+
+Inheritance diagram for ns\+Game\+:\+:State\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_state__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{structns_game_1_1_state_a8644de505f7a84933f6d6e6651205791}{load} ()
+\begin{DoxyCompactList}\small\item\em Loads \hyperlink{structns_game_1_1_state}{State} resources. \end{DoxyCompactList}\item 
+virtual void \hyperlink{structns_game_1_1_state_a70a0cf146071a8f9fcb8ca0b2c0f8f44}{destroy} ()
+\begin{DoxyCompactList}\small\item\em Destroys state (and resets it) \end{DoxyCompactList}\item 
+virtual void \hyperlink{structns_game_1_1_state_ae809e89ac9df4a43ab90d5d5932e2bc7}{update} (Min\+GL \&window, unsigned delta)
+\begin{DoxyCompactList}\small\item\em Updates state. \end{DoxyCompactList}\item 
+virtual void \hyperlink{structns_game_1_1_state_a214f8ee52de4b318f1ed3861a578ce67}{render} (Min\+GL \&window)
+\begin{DoxyCompactList}\small\item\em Renders resources. \end{DoxyCompactList}\item 
+virtual void \hyperlink{structns_game_1_1_state_a2e1daaca20e580bdb4baf8215e1b51c9}{events} (ns\+Event\+::\+Event\+\_\+t event)
+\begin{DoxyCompactList}\small\item\em Handles min\+GL 2 mouse events. \end{DoxyCompactList}\item 
+void \hyperlink{structns_game_1_1_state_adab442cc7a1edda5adaa55e8d510633f}{set\+State} (int logic)
+\begin{DoxyCompactList}\small\item\em Changes logic. \end{DoxyCompactList}\item 
+int \hyperlink{structns_game_1_1_state_abcc65369e15769b5c6ae588f61beeb02}{get\+State} ()
+\begin{DoxyCompactList}\small\item\em Gets current logic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{structns_game_1_1_state_a5e7566cb6bba78e6a01d4fc5f568ec5d}{has\+Loaded} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class defining the different states of the game (In-\/game, Menus, Loading...) 
+
+\begin{DoxyAuthor}{Author}
+Thomas Cardon 
+\end{DoxyAuthor}
+
+
+Definition at line 23 of file state.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structns_game_1_1_state_a70a0cf146071a8f9fcb8ca0b2c0f8f44}\label{structns_game_1_1_state_a70a0cf146071a8f9fcb8ca0b2c0f8f44}} 
+\index{ns\+Game\+::\+State@{ns\+Game\+::\+State}!destroy@{destroy}}
+\index{destroy@{destroy}!ns\+Game\+::\+State@{ns\+Game\+::\+State}}
+\subsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+State\+::destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destroys state (and resets it) 
+
+
+
+Reimplemented in \hyperlink{classns_game_1_1_game_state_ac0fdc8e463ca2e79a0fb58e12e5b39c9}{ns\+Game\+::\+Game\+State}.
+
+
+
+Definition at line 40 of file state.\+h.
+
+\mbox{\Hypertarget{structns_game_1_1_state_a2e1daaca20e580bdb4baf8215e1b51c9}\label{structns_game_1_1_state_a2e1daaca20e580bdb4baf8215e1b51c9}} 
+\index{ns\+Game\+::\+State@{ns\+Game\+::\+State}!events@{events}}
+\index{events@{events}!ns\+Game\+::\+State@{ns\+Game\+::\+State}}
+\subsubsection{\texorpdfstring{events()}{events()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+State\+::events (\begin{DoxyParamCaption}\item[{ns\+Event\+::\+Event\+\_\+t}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Handles min\+GL 2 mouse events. 
+
+
+
+Reimplemented in \hyperlink{class_main_menu_state_a6d740479d4dce733c069921478d70a37}{Main\+Menu\+State}.
+
+
+
+Definition at line 60 of file state.\+h.
+
+\mbox{\Hypertarget{structns_game_1_1_state_abcc65369e15769b5c6ae588f61beeb02}\label{structns_game_1_1_state_abcc65369e15769b5c6ae588f61beeb02}} 
+\index{ns\+Game\+::\+State@{ns\+Game\+::\+State}!get\+State@{get\+State}}
+\index{get\+State@{get\+State}!ns\+Game\+::\+State@{ns\+Game\+::\+State}}
+\subsubsection{\texorpdfstring{get\+State()}{getState()}}
+{\footnotesize\ttfamily int ns\+Game\+::\+State\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets current logic. 
+
+
+
+Definition at line 74 of file state.\+h.
+
+\mbox{\Hypertarget{structns_game_1_1_state_a8644de505f7a84933f6d6e6651205791}\label{structns_game_1_1_state_a8644de505f7a84933f6d6e6651205791}} 
+\index{ns\+Game\+::\+State@{ns\+Game\+::\+State}!load@{load}}
+\index{load@{load}!ns\+Game\+::\+State@{ns\+Game\+::\+State}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+State\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Loads \hyperlink{structns_game_1_1_state}{State} resources. 
+
+
+
+Reimplemented in \hyperlink{classns_game_1_1_game_state_a66f7b8027a33f473fd22c212700586f2}{ns\+Game\+::\+Game\+State}, \hyperlink{class_main_menu_state_a723f41a3c34138c5c5f7dcafc076718e}{Main\+Menu\+State}, \hyperlink{class_credit_state_a32ec8ae5c12ee636cfd2b949b8e980e1}{Credit\+State}, and \hyperlink{class_loading_state_a66c29bb02cb85fbc522040dc23739118}{Loading\+State}.
+
+
+
+Definition at line 32 of file state.\+h.
+
+\mbox{\Hypertarget{structns_game_1_1_state_a214f8ee52de4b318f1ed3861a578ce67}\label{structns_game_1_1_state_a214f8ee52de4b318f1ed3861a578ce67}} 
+\index{ns\+Game\+::\+State@{ns\+Game\+::\+State}!render@{render}}
+\index{render@{render}!ns\+Game\+::\+State@{ns\+Game\+::\+State}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+State\+::render (\begin{DoxyParamCaption}\item[{Min\+GL \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Renders resources. 
+
+
+
+Reimplemented in \hyperlink{classns_game_1_1_game_state_a1e3179b016431332ecff880e09e267d3}{ns\+Game\+::\+Game\+State}, \hyperlink{class_main_menu_state_a1f11855f3b961e7a71c7c4e16f0b3478}{Main\+Menu\+State}, \hyperlink{class_credit_state_aa4ba316fca29d0e79ee70891e373a060}{Credit\+State}, and \hyperlink{class_loading_state_a64812e3f15d84b60ab8313509ba07520}{Loading\+State}.
+
+
+
+Definition at line 52 of file state.\+h.
+
+\mbox{\Hypertarget{structns_game_1_1_state_adab442cc7a1edda5adaa55e8d510633f}\label{structns_game_1_1_state_adab442cc7a1edda5adaa55e8d510633f}} 
+\index{ns\+Game\+::\+State@{ns\+Game\+::\+State}!set\+State@{set\+State}}
+\index{set\+State@{set\+State}!ns\+Game\+::\+State@{ns\+Game\+::\+State}}
+\subsubsection{\texorpdfstring{set\+State()}{setState()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+State\+::set\+State (\begin{DoxyParamCaption}\item[{int}]{logic }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Changes logic. 
+
+
+
+Definition at line 66 of file state.\+h.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_state_adab442cc7a1edda5adaa55e8d510633f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structns_game_1_1_state_ae809e89ac9df4a43ab90d5d5932e2bc7}\label{structns_game_1_1_state_ae809e89ac9df4a43ab90d5d5932e2bc7}} 
+\index{ns\+Game\+::\+State@{ns\+Game\+::\+State}!update@{update}}
+\index{update@{update}!ns\+Game\+::\+State@{ns\+Game\+::\+State}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily int ns\+Game\+::\+State\+::update (\begin{DoxyParamCaption}\item[{Min\+GL \&}]{window,  }\item[{unsigned}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Updates state. 
+
+
+
+Reimplemented in \hyperlink{classns_game_1_1_game_state_a4d3cb871a1aec541a37fe241664b738c}{ns\+Game\+::\+Game\+State}, \hyperlink{class_main_menu_state_a7846cc7f1bd9b1fc40d77cc8f7644e03}{Main\+Menu\+State}, \hyperlink{class_credit_state_a52a92d650fce22fa08b37359c3a5aa64}{Credit\+State}, and \hyperlink{class_loading_state_a2c84aeaac65724696a6cacd6474119bf}{Loading\+State}.
+
+
+
+Definition at line 46 of file state.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structns_game_1_1_state_a5e7566cb6bba78e6a01d4fc5f568ec5d}\label{structns_game_1_1_state_a5e7566cb6bba78e6a01d4fc5f568ec5d}} 
+\index{ns\+Game\+::\+State@{ns\+Game\+::\+State}!has\+Loaded@{has\+Loaded}}
+\index{has\+Loaded@{has\+Loaded}!ns\+Game\+::\+State@{ns\+Game\+::\+State}}
+\subsubsection{\texorpdfstring{has\+Loaded}{hasLoaded}}
+{\footnotesize\ttfamily bool ns\+Game\+::\+State\+::has\+Loaded = false}
+
+
+
+Definition at line 26 of file state.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Nos\+\_\+fichiers/\hyperlink{state_8h}{state.\+h}\end{DoxyCompactItemize}

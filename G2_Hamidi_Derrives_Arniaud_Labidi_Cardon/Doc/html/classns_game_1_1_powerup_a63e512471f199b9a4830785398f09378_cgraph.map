@@ -1,0 +1,8 @@
+<map id="nsGame::Powerup::Powerup" name="nsGame::Powerup::Powerup">
+<area shape="rect" id="node2" href="$classns_game_1_1_powerup.html#a2a228e8f89bed454ad8011dfd88068c6" title="Loads food. " alt="" coords="250,5,413,32"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_powerup.html#a0f86905ba37cc0a4e80827db0563cfa3" title="Updates food. " alt="" coords="243,56,420,83"/>
+<area shape="rect" id="node4" href="$classns_game_1_1_powerup.html#ad113cfd795157168c103b71560180201" title="Renders resources. " alt="" coords="244,107,419,133"/>
+<area shape="rect" id="node6" href="$classns_game_1_1_powerup.html#af307aba7b61132f2dc037d8ef62581f9" title="Makes an action for the player. " alt="" coords="245,157,418,184"/>
+<area shape="rect" id="node5" href="$classns_game_1_1_powerup.html#a31700271cd7bd2040d26bcac7f437408" title="This function is used to get the position on the screen/canvas/window, whatever you want to call it..." alt="" coords="468,107,695,133"/>
+<area shape="rect" id="node7" href="$structns_game_1_1_entity.html#a0fbe0a80400a03319fbe3bd50919535c" title="Adds an effect to the entity for x milliseconds. " alt="" coords="493,157,670,184"/>
+</map>

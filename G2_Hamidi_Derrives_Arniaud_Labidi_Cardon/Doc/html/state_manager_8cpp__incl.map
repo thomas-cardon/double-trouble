@@ -1,0 +1,20 @@
+<map id="Nos_fichiers/stateManager.cpp" name="Nos_fichiers/stateManager.cpp">
+<area shape="rect" id="node3" href="$state_manager_8h.html" title="stateManager.h" alt="" coords="692,393,804,420"/>
+<area shape="rect" id="node4" href="$loading_state_8cpp.html" title="Loading state. " alt="" coords="269,229,387,256"/>
+<area shape="rect" id="node7" href="$main_menu_state_8cpp.html" title="Main menu state. " alt="" coords="492,229,631,256"/>
+<area shape="rect" id="node15" href="$game_state_8cpp.html" title="Method definitions for gameState.h. " alt="" coords="1031,80,1142,107"/>
+<area shape="rect" id="node26" href="$credit_state_8cpp.html" title="Credits state. " alt="" coords="134,229,245,256"/>
+<area shape="rect" id="node6" href="$state_8h.html" title="State. " alt="" coords="591,311,654,338"/>
+<area shape="rect" id="node9" href="$cooldowns_8h.html" title="Method definitions for Player.h. " alt="" coords="1561,468,1655,495"/>
+<area shape="rect" id="node14" href="$definitions_8h.html" title="definitions.h" alt="" coords="777,543,869,569"/>
+<area shape="rect" id="node11" href="$type_8h.html" title="Definition of usefull types or aliases for the project. " alt="" coords="1615,543,1673,569"/>
+<area shape="rect" id="node16" href="$game_state_8h.html" title="gameState " alt="" coords="1039,155,1135,181"/>
+<area shape="rect" id="node17" href="$params_8h.html" title="Paramters&#39; definition and associated functions. " alt="" coords="1706,311,1782,338"/>
+<area shape="rect" id="node18" href="$map_8h.html" title="Map. " alt="" coords="1264,229,1323,256"/>
+<area shape="rect" id="node24" href="$player_8h.html" title="Player. " alt="" coords="1335,393,1403,420"/>
+<area shape="rect" id="node19" href="$monster_8h.html" title="Monster. " alt="" coords="1157,311,1237,338"/>
+<area shape="rect" id="node25" href="$item_8h.html" title="Item. " alt="" coords="1264,311,1323,338"/>
+<area shape="rect" id="node20" href="$entity_8h.html" title="Definitions for the Entity class. " alt="" coords="1267,468,1333,495"/>
+<area shape="rect" id="node22" href="$animation_8h.html" title="Animation. " alt="" coords="945,543,1034,569"/>
+<area shape="rect" id="node23" href="$effect_type_8h.html" title="EffectType. " alt="" coords="1238,543,1333,569"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="nsGame::StateManager::render" name="nsGame::StateManager::render">
+<area shape="rect" id="node2" href="$class_main_menu_state.html#a1f11855f3b961e7a71c7c4e16f0b3478" title="Renders resources. " alt="" coords="213,54,371,81"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_game_state.html#a1e3179b016431332ecff880e09e267d3" title="Renders resources. " alt="" coords="215,105,369,147"/>
+<area shape="rect" id="node13" href="$class_credit_state.html#aa4ba316fca29d0e79ee70891e373a060" title="Renders resources. " alt="" coords="226,171,358,198"/>
+<area shape="rect" id="node14" href="$class_loading_state.html#a64812e3f15d84b60ab8313509ba07520" title="Renders resources. " alt="" coords="221,222,363,249"/>
+<area shape="rect" id="node4" href="$classns_game_1_1_map.html#a3660d6272f910c1b702c4e8f3f463f2b" title="Renders the layer of the map, with its cells (walls, etc.) " alt="" coords="425,33,573,59"/>
+<area shape="rect" id="node5" href="$classns_game_1_1_player.html#a34b359a72d3dbdf537c72161898376f3" title="Renders resources. " alt="" coords="419,83,579,110"/>
+<area shape="rect" id="node11" href="$classns_game_1_1_game_state.html#a8d9cadd7432dfd4b7ada08e37bf6b30d" title="Renders the score on the sidebar for a given player. " alt="" coords="422,135,575,176"/>
+<area shape="rect" id="node12" href="$classns_game_1_1_game_state.html#a66f328c56ed9887e02a93db856316d4c" title="Renders the victory screen. " alt="" coords="422,200,575,241"/>
+<area shape="rect" id="node6" href="$classns_game_1_1_animation.html#a1a103b09407581b74933001fb8b3a8f0" title="Sets position on the map. " alt="" coords="864,5,1009,47"/>
+<area shape="rect" id="node7" href="$structns_game_1_1_entity.html#a727ed96ea0a27b7232e701ed0ba6d3a4" title="This function is used to get the position on the screen/canvas/window, whatever you want to call it..." alt="" coords="832,75,1041,102"/>
+<area shape="rect" id="node9" href="$classns_game_1_1_animation.html#a348e25058d77891160c015da88ea4837" title="Renders resources. " alt="" coords="864,135,1009,176"/>
+<area shape="rect" id="node10" href="$structns_game_1_1_entity.html#a4663cc85381acc9aaac120a85b6f24d0" title="render " alt="" coords="627,58,784,85"/>
+<area shape="rect" id="node8" href="$structns_game_1_1_entity.html#ab7fc1631346d2c643161d229dd653edd" title="Gets the coordinates compared to the map. " alt="" coords="1089,75,1276,102"/>
+</map>

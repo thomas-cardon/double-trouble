@@ -1,0 +1,537 @@
+\hypertarget{structns_game_1_1_entity}{}\section{ns\+Game\+:\+:Entity Class Reference}
+\label{structns_game_1_1_entity}\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+
+
+Defines the \hyperlink{structns_game_1_1_entity}{Entity} class.  
+
+
+
+
+{\ttfamily \#include $<$entity.\+h$>$}
+
+
+
+Inheritance diagram for ns\+Game\+:\+:Entity\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{structns_game_1_1_entity__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{structns_game_1_1_entity_ae0aa595447b5f3d2c0b80fb99305c56e}{load} ()
+\begin{DoxyCompactList}\small\item\em load \end{DoxyCompactList}\item 
+void \hyperlink{structns_game_1_1_entity_af1da5da20798e01469c4a438d0b4174c}{update} (unsigned delta, \hyperlink{type_8h_a64a592133575ccebb1b36453acbec02b}{C\+Mat} \&mat)
+\begin{DoxyCompactList}\small\item\em update \end{DoxyCompactList}\item 
+void \hyperlink{structns_game_1_1_entity_a4663cc85381acc9aaac120a85b6f24d0}{render} (Min\+GL \&window)
+\begin{DoxyCompactList}\small\item\em render \end{DoxyCompactList}\item 
+std\+::string \hyperlink{structns_game_1_1_entity_aa0057e4e5b73cc0187602c3180347a3a}{id} ()
+\begin{DoxyCompactList}\small\item\em Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID. \end{DoxyCompactList}\item 
+ns\+Graphics\+::\+Vec2D \hyperlink{structns_game_1_1_entity_a727ed96ea0a27b7232e701ed0ba6d3a4}{get\+Coordinates} ()
+\begin{DoxyCompactList}\small\item\em This function is used to get the position on the screen/canvas/window, whatever you want to call it. \end{DoxyCompactList}\item 
+ns\+Graphics\+::\+Vec2D \hyperlink{structns_game_1_1_entity_ab7fc1631346d2c643161d229dd653edd}{get\+Position} ()
+\begin{DoxyCompactList}\small\item\em Gets the coordinates compared to the map. \end{DoxyCompactList}\item 
+void \hyperlink{structns_game_1_1_entity_ac09f45ca50c9fef57a50c4414fc7e20d}{spawn} ()
+\begin{DoxyCompactList}\small\item\em Teleports the entity at its spawn. \end{DoxyCompactList}\item 
+double \hyperlink{structns_game_1_1_entity_a03b934337b3c013abcccf3dfea6396d1}{get\+Movement\+Speed} ()
+\begin{DoxyCompactList}\small\item\em Gets the movement speed. \end{DoxyCompactList}\item 
+void \hyperlink{structns_game_1_1_entity_a0254c30b6223caa723303266ad04e4cd}{set\+Movement\+Speed} (double speed)
+\begin{DoxyCompactList}\small\item\em Sets the movement speed. \end{DoxyCompactList}\item 
+bool \hyperlink{structns_game_1_1_entity_a5dd00624fa76be09de80a6d2a982ea09}{in\+Collision} (\hyperlink{type_8h_a64a592133575ccebb1b36453acbec02b}{C\+Mat} map, unsigned x, unsigned y)
+\begin{DoxyCompactList}\small\item\em Checks if entity would be in collision with a structure (walls...) $\vert$ O\+V\+E\+R\+R\+I\+DE IF N\+E\+E\+D\+ED (Flying monsters?) \end{DoxyCompactList}\item 
+bool \hyperlink{structns_game_1_1_entity_ab5e14a11c0e89dce65f14366989a03b9}{can\+Be\+Hit\+By} (\hyperlink{structns_game_1_1_entity}{Entity} $\ast$entity)
+\begin{DoxyCompactList}\small\item\em Checks if entity can be hit by another entity. \end{DoxyCompactList}\item 
+void \hyperlink{structns_game_1_1_entity_a7a39068f9b48d1ec3fc5ef881e142b55}{damage} ()
+\begin{DoxyCompactList}\small\item\em Damages entity. \end{DoxyCompactList}\item 
+void \hyperlink{structns_game_1_1_entity_a522648b330daab91b49f78f0737a943f}{kill} ()
+\item 
+void \hyperlink{structns_game_1_1_entity_a0fbe0a80400a03319fbe3bd50919535c}{add\+Effect} (\hyperlink{namespacens_game_afea521dd2ba8e97be9549ce9936f4522}{Effect\+Type} type, unsigned delay)
+\begin{DoxyCompactList}\small\item\em Adds an effect to the entity for x milliseconds. \end{DoxyCompactList}\item 
+void \hyperlink{structns_game_1_1_entity_accc47c70658884bd70938642fc1cc431}{remove\+Effect} (\hyperlink{namespacens_game_afea521dd2ba8e97be9549ce9936f4522}{Effect\+Type} type)
+\begin{DoxyCompactList}\small\item\em Removes an effect from the entity. \end{DoxyCompactList}\item 
+bool \hyperlink{structns_game_1_1_entity_af5bf634702f96ed5daac8130a3dee4f0}{has\+Effect} (\hyperlink{namespacens_game_afea521dd2ba8e97be9549ce9936f4522}{Effect\+Type} type)
+\begin{DoxyCompactList}\small\item\em Says if entity has effect. \end{DoxyCompactList}\item 
+unsigned \hyperlink{structns_game_1_1_entity_a0c574fba3e12b9bb976d72953626e550}{\+\_\+get\+Delay} ()
+\begin{DoxyCompactList}\small\item\em Prevents entity to move for X milliseconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{structns_game_1_1_entity_a3b26c2bf34732b4621932ab7d50421e9}{is\+Allowed\+To\+Move} = true
+\begin{DoxyCompactList}\small\item\em Prevents entity to move. \end{DoxyCompactList}\item 
+bool \hyperlink{structns_game_1_1_entity_aaf71fbc10979dcc5b5af55fcb6e44216}{slain} = false
+\begin{DoxyCompactList}\small\item\em Says if entity has been killed. \end{DoxyCompactList}\item 
+ns\+Graphics\+::\+Vec2D \hyperlink{structns_game_1_1_entity_a1ad359bb31e86c4971fd96b080ed43c4}{pos}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structns_game_1_1_entity}{Entity} position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{structns_game_1_1_entity_a2b5d83f01bdc1d58673b3fae9afe704e}{movement\+Speed} = 1.\+0
+\begin{DoxyCompactList}\small\item\em Movement Speed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines the \hyperlink{structns_game_1_1_entity}{Entity} class. 
+
+\begin{DoxyAuthor}{Author}
+Thomas Cardon 
+\end{DoxyAuthor}
+
+
+Definition at line 27 of file entity.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structns_game_1_1_entity_a0c574fba3e12b9bb976d72953626e550}\label{structns_game_1_1_entity_a0c574fba3e12b9bb976d72953626e550}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!\+\_\+get\+Delay@{\+\_\+get\+Delay}}
+\index{\+\_\+get\+Delay@{\+\_\+get\+Delay}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{\+\_\+get\+Delay()}{\_getDelay()}}
+{\footnotesize\ttfamily unsigned ns\+Game\+::\+Entity\+::\+\_\+get\+Delay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Prevents entity to move for X milliseconds. 
+
+
+
+Definition at line 152 of file entity.\+h.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_entity_a0c574fba3e12b9bb976d72953626e550_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structns_game_1_1_entity_a0fbe0a80400a03319fbe3bd50919535c}\label{structns_game_1_1_entity_a0fbe0a80400a03319fbe3bd50919535c}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!add\+Effect@{add\+Effect}}
+\index{add\+Effect@{add\+Effect}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{add\+Effect()}{addEffect()}}
+{\footnotesize\ttfamily void Entity\+::add\+Effect (\begin{DoxyParamCaption}\item[{\hyperlink{namespacens_game_afea521dd2ba8e97be9549ce9936f4522}{Effect\+Type}}]{type,  }\item[{unsigned}]{delay }\end{DoxyParamCaption})}
+
+
+
+Adds an effect to the entity for x milliseconds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Effect\+Type} & -\/ Effect ID \\
+\hline
+{\em unsigned} & delay \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 103 of file entity.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_entity_a0fbe0a80400a03319fbe3bd50919535c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structns_game_1_1_entity_ab5e14a11c0e89dce65f14366989a03b9}\label{structns_game_1_1_entity_ab5e14a11c0e89dce65f14366989a03b9}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!can\+Be\+Hit\+By@{can\+Be\+Hit\+By}}
+\index{can\+Be\+Hit\+By@{can\+Be\+Hit\+By}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{can\+Be\+Hit\+By()}{canBeHitBy()}}
+{\footnotesize\ttfamily bool ns\+Game\+::\+Entity\+::can\+Be\+Hit\+By (\begin{DoxyParamCaption}\item[{\hyperlink{structns_game_1_1_entity}{Entity} $\ast$}]{entity }\end{DoxyParamCaption})}
+
+
+
+Checks if entity can be hit by another entity. 
+
+
+
+Definition at line 78 of file entity.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_entity_ab5e14a11c0e89dce65f14366989a03b9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_entity_ab5e14a11c0e89dce65f14366989a03b9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structns_game_1_1_entity_a7a39068f9b48d1ec3fc5ef881e142b55}\label{structns_game_1_1_entity_a7a39068f9b48d1ec3fc5ef881e142b55}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!damage@{damage}}
+\index{damage@{damage}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{damage()}{damage()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Entity\+::damage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Damages entity. 
+
+Kills entity. \mbox{\Hypertarget{structns_game_1_1_entity_a727ed96ea0a27b7232e701ed0ba6d3a4}\label{structns_game_1_1_entity_a727ed96ea0a27b7232e701ed0ba6d3a4}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!get\+Coordinates@{get\+Coordinates}}
+\index{get\+Coordinates@{get\+Coordinates}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{get\+Coordinates()}{getCoordinates()}}
+{\footnotesize\ttfamily ns\+Graphics\+::\+Vec2D ns\+Game\+::\+Entity\+::get\+Coordinates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function is used to get the position on the screen/canvas/window, whatever you want to call it. 
+
+
+
+Definition at line 54 of file entity.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_entity_a727ed96ea0a27b7232e701ed0ba6d3a4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_entity_a727ed96ea0a27b7232e701ed0ba6d3a4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structns_game_1_1_entity_a03b934337b3c013abcccf3dfea6396d1}\label{structns_game_1_1_entity_a03b934337b3c013abcccf3dfea6396d1}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!get\+Movement\+Speed@{get\+Movement\+Speed}}
+\index{get\+Movement\+Speed@{get\+Movement\+Speed}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{get\+Movement\+Speed()}{getMovementSpeed()}}
+{\footnotesize\ttfamily bool ns\+Game\+::\+Entity\+::get\+Movement\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the movement speed. 
+
+
+
+Definition at line 90 of file entity.\+cpp.
+
+\mbox{\Hypertarget{structns_game_1_1_entity_ab7fc1631346d2c643161d229dd653edd}\label{structns_game_1_1_entity_ab7fc1631346d2c643161d229dd653edd}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
+{\footnotesize\ttfamily ns\+Graphics\+::\+Vec2D ns\+Game\+::\+Entity\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the coordinates compared to the map. 
+
+
+
+Definition at line 61 of file entity.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_entity_ab7fc1631346d2c643161d229dd653edd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structns_game_1_1_entity_af5bf634702f96ed5daac8130a3dee4f0}\label{structns_game_1_1_entity_af5bf634702f96ed5daac8130a3dee4f0}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!has\+Effect@{has\+Effect}}
+\index{has\+Effect@{has\+Effect}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{has\+Effect()}{hasEffect()}}
+{\footnotesize\ttfamily bool Entity\+::has\+Effect (\begin{DoxyParamCaption}\item[{\hyperlink{namespacens_game_afea521dd2ba8e97be9549ce9936f4522}{Effect\+Type}}]{type }\end{DoxyParamCaption})}
+
+
+
+Says if entity has effect. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Effect\+Type} & type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if effect is present 
+\end{DoxyReturn}
+
+
+Definition at line 111 of file entity.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_entity_af5bf634702f96ed5daac8130a3dee4f0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structns_game_1_1_entity_aa0057e4e5b73cc0187602c3180347a3a}\label{structns_game_1_1_entity_aa0057e4e5b73cc0187602c3180347a3a}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!id@{id}}
+\index{id@{id}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily std\+::string Entity\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{structns_game_1_1_entity}{Entity} ID 
+\end{DoxyReturn}
+
+
+Definition at line 94 of file entity.\+cpp.
+
+\mbox{\Hypertarget{structns_game_1_1_entity_a5dd00624fa76be09de80a6d2a982ea09}\label{structns_game_1_1_entity_a5dd00624fa76be09de80a6d2a982ea09}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!in\+Collision@{in\+Collision}}
+\index{in\+Collision@{in\+Collision}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{in\+Collision()}{inCollision()}}
+{\footnotesize\ttfamily bool ns\+Game\+::\+Entity\+::in\+Collision (\begin{DoxyParamCaption}\item[{\hyperlink{type_8h_a64a592133575ccebb1b36453acbec02b}{C\+Mat}}]{map,  }\item[{unsigned}]{x,  }\item[{unsigned}]{y }\end{DoxyParamCaption})}
+
+
+
+Checks if entity would be in collision with a structure (walls...) $\vert$ O\+V\+E\+R\+R\+I\+DE IF N\+E\+E\+D\+ED (Flying monsters?) 
+
+
+
+Definition at line 65 of file entity.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_entity_a5dd00624fa76be09de80a6d2a982ea09_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structns_game_1_1_entity_a522648b330daab91b49f78f0737a943f}\label{structns_game_1_1_entity_a522648b330daab91b49f78f0737a943f}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!kill@{kill}}
+\index{kill@{kill}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{kill()}{kill()}}
+{\footnotesize\ttfamily void Entity\+::kill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 74 of file entity.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_entity_a522648b330daab91b49f78f0737a943f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structns_game_1_1_entity_ae0aa595447b5f3d2c0b80fb99305c56e}\label{structns_game_1_1_entity_ae0aa595447b5f3d2c0b80fb99305c56e}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!load@{load}}
+\index{load@{load}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Entity\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+load 
+
+
+
+Definition at line 16 of file entity.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_entity_ae0aa595447b5f3d2c0b80fb99305c56e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structns_game_1_1_entity_accc47c70658884bd70938642fc1cc431}\label{structns_game_1_1_entity_accc47c70658884bd70938642fc1cc431}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!remove\+Effect@{remove\+Effect}}
+\index{remove\+Effect@{remove\+Effect}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{remove\+Effect()}{removeEffect()}}
+{\footnotesize\ttfamily void Entity\+::remove\+Effect (\begin{DoxyParamCaption}\item[{\hyperlink{namespacens_game_afea521dd2ba8e97be9549ce9936f4522}{Effect\+Type}}]{type }\end{DoxyParamCaption})}
+
+
+
+Removes an effect from the entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Effect\+Type} & -\/ Effect ID \\
+\hline
+{\em Effect} & -\/ Effect \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 107 of file entity.\+cpp.
+
+\mbox{\Hypertarget{structns_game_1_1_entity_a4663cc85381acc9aaac120a85b6f24d0}\label{structns_game_1_1_entity_a4663cc85381acc9aaac120a85b6f24d0}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!render@{render}}
+\index{render@{render}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Entity\+::render (\begin{DoxyParamCaption}\item[{Min\+GL \&}]{window }\end{DoxyParamCaption})}
+
+
+
+render 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file entity.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_entity_a4663cc85381acc9aaac120a85b6f24d0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_entity_a4663cc85381acc9aaac120a85b6f24d0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structns_game_1_1_entity_a0254c30b6223caa723303266ad04e4cd}\label{structns_game_1_1_entity_a0254c30b6223caa723303266ad04e4cd}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!set\+Movement\+Speed@{set\+Movement\+Speed}}
+\index{set\+Movement\+Speed@{set\+Movement\+Speed}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{set\+Movement\+Speed()}{setMovementSpeed()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Entity\+::set\+Movement\+Speed (\begin{DoxyParamCaption}\item[{double}]{speed }\end{DoxyParamCaption})}
+
+
+
+Sets the movement speed. 
+
+
+
+Definition at line 98 of file entity.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_entity_a0254c30b6223caa723303266ad04e4cd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_entity_a0254c30b6223caa723303266ad04e4cd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structns_game_1_1_entity_ac09f45ca50c9fef57a50c4414fc7e20d}\label{structns_game_1_1_entity_ac09f45ca50c9fef57a50c4414fc7e20d}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!spawn@{spawn}}
+\index{spawn@{spawn}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{spawn()}{spawn()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Entity\+::spawn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Teleports the entity at its spawn. 
+
+
+
+Definition at line 85 of file entity.\+cpp.
+
+\mbox{\Hypertarget{structns_game_1_1_entity_af1da5da20798e01469c4a438d0b4174c}\label{structns_game_1_1_entity_af1da5da20798e01469c4a438d0b4174c}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!update@{update}}
+\index{update@{update}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Entity\+::update (\begin{DoxyParamCaption}\item[{unsigned}]{delta,  }\item[{\hyperlink{type_8h_a64a592133575ccebb1b36453acbec02b}{C\+Mat} \&}]{mat }\end{DoxyParamCaption})}
+
+
+
+update 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta} & \\
+\hline
+{\em mat} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 24 of file entity.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{structns_game_1_1_entity_af1da5da20798e01469c4a438d0b4174c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structns_game_1_1_entity_af1da5da20798e01469c4a438d0b4174c_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structns_game_1_1_entity_a3b26c2bf34732b4621932ab7d50421e9}\label{structns_game_1_1_entity_a3b26c2bf34732b4621932ab7d50421e9}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!is\+Allowed\+To\+Move@{is\+Allowed\+To\+Move}}
+\index{is\+Allowed\+To\+Move@{is\+Allowed\+To\+Move}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{is\+Allowed\+To\+Move}{isAllowedToMove}}
+{\footnotesize\ttfamily bool ns\+Game\+::\+Entity\+::is\+Allowed\+To\+Move = true}
+
+
+
+Prevents entity to move. 
+
+
+
+Definition at line 42 of file entity.\+h.
+
+\mbox{\Hypertarget{structns_game_1_1_entity_a2b5d83f01bdc1d58673b3fae9afe704e}\label{structns_game_1_1_entity_a2b5d83f01bdc1d58673b3fae9afe704e}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!movement\+Speed@{movement\+Speed}}
+\index{movement\+Speed@{movement\+Speed}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{movement\+Speed}{movementSpeed}}
+{\footnotesize\ttfamily double ns\+Game\+::\+Entity\+::movement\+Speed = 1.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Movement Speed. 
+
+
+
+Definition at line 38 of file entity.\+h.
+
+\mbox{\Hypertarget{structns_game_1_1_entity_a1ad359bb31e86c4971fd96b080ed43c4}\label{structns_game_1_1_entity_a1ad359bb31e86c4971fd96b080ed43c4}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!pos@{pos}}
+\index{pos@{pos}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily ns\+Graphics\+::\+Vec2D ns\+Game\+::\+Entity\+::pos}
+
+
+
+\hyperlink{structns_game_1_1_entity}{Entity} position. 
+
+
+
+Definition at line 48 of file entity.\+h.
+
+\mbox{\Hypertarget{structns_game_1_1_entity_aaf71fbc10979dcc5b5af55fcb6e44216}\label{structns_game_1_1_entity_aaf71fbc10979dcc5b5af55fcb6e44216}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!slain@{slain}}
+\index{slain@{slain}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{slain}{slain}}
+{\footnotesize\ttfamily bool ns\+Game\+::\+Entity\+::slain = false}
+
+
+
+Says if entity has been killed. 
+
+
+
+Definition at line 45 of file entity.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Nos\+\_\+fichiers/\hyperlink{entity_8h}{entity.\+h}\item 
+Nos\+\_\+fichiers/\hyperlink{entity_8cpp}{entity.\+cpp}\end{DoxyCompactItemize}

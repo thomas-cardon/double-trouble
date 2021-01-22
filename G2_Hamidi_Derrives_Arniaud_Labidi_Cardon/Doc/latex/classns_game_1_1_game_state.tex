@@ -1,0 +1,488 @@
+\hypertarget{classns_game_1_1_game_state}{}\section{ns\+Game\+:\+:Game\+State Class Reference}
+\label{classns_game_1_1_game_state}\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+
+
+Defines the game logic.  
+
+
+
+
+{\ttfamily \#include $<$game\+State.\+h$>$}
+
+
+
+Inheritance diagram for ns\+Game\+:\+:Game\+State\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classns_game_1_1_game_state__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns\+Game\+:\+:Game\+State\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_game_state__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classns_game_1_1_game_state_a66f7b8027a33f473fd22c212700586f2}{load} () override
+\begin{DoxyCompactList}\small\item\em Loads \hyperlink{structns_game_1_1_state}{State} resources. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classns_game_1_1_game_state_ac0fdc8e463ca2e79a0fb58e12e5b39c9}{destroy} () override
+\begin{DoxyCompactList}\small\item\em Destroys state (and resets it) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classns_game_1_1_game_state_a4d3cb871a1aec541a37fe241664b738c}{update} (Min\+GL \&window, unsigned delta) override
+\begin{DoxyCompactList}\small\item\em Updates state. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_game_state_a78176e52c8f3c745bb88a4214f5aa29b}{check\+For\+Win} (\hyperlink{classns_game_1_1_player}{Player} $\ast$p1, \hyperlink{classns_game_1_1_player}{Player} $\ast$p2)
+\begin{DoxyCompactList}\small\item\em Checks every tick (\hyperlink{structns_game_1_1_state_ae809e89ac9df4a43ab90d5d5932e2bc7}{State\+::update()}) if one of the players have won (or not). \end{DoxyCompactList}\item 
+virtual void \hyperlink{classns_game_1_1_game_state_a1e3179b016431332ecff880e09e267d3}{render} (Min\+GL \&window) override
+\begin{DoxyCompactList}\small\item\em Renders resources. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_game_state_a8d9cadd7432dfd4b7ada08e37bf6b30d}{render\+Score} (Min\+GL \&window, \hyperlink{classns_game_1_1_player}{Player} p)
+\begin{DoxyCompactList}\small\item\em Renders the score on the sidebar for a given player. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_game_state_a66f328c56ed9887e02a93db856316d4c}{render\+Victory\+Screen} (Min\+GL \&window)
+\begin{DoxyCompactList}\small\item\em Renders the victory screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classns_game_1_1_game_state_aa5b4cb6af0e806d442e5291578a6822a}{win} = -\/1
+\begin{DoxyCompactList}\small\item\em Victory status\+: -\/1 = not yet, 0 = equal, 1 = player 1, 2 = player 2. \end{DoxyCompactList}\item 
+\hyperlink{classns_game_1_1_map}{Map} $\ast$ \hyperlink{classns_game_1_1_game_state_a451982a5efe66e5402402ed0f996fca6}{map}
+\begin{DoxyCompactList}\small\item\em The game map, and its grid. \end{DoxyCompactList}\item 
+\hyperlink{struct_c_my_param}{C\+My\+Param} \hyperlink{classns_game_1_1_game_state_a972d8482f9ed69d536ff8c7927a8c290}{Params}
+\begin{DoxyCompactList}\small\item\em The game configuration file. \end{DoxyCompactList}\item 
+\hyperlink{classns_game_1_1_player}{Player} $\ast$ \hyperlink{classns_game_1_1_game_state_aec14e8ba226edc828deabb6e6b276c70}{player1}
+\begin{DoxyCompactList}\small\item\em Players. \end{DoxyCompactList}\item 
+\hyperlink{classns_game_1_1_player}{Player} $\ast$ \hyperlink{classns_game_1_1_game_state_abd99551650ebb05056576dd2fee40b4b}{player2}
+\item 
+ns\+Audio\+::\+Audio\+Engine \hyperlink{classns_game_1_1_game_state_a9bd618bc831669e078759402caa0cb78}{audio}
+\begin{DoxyCompactList}\small\item\em min\+GL 2 audio engine \end{DoxyCompactList}\item 
+ns\+Gui\+::\+Sprite \hyperlink{classns_game_1_1_game_state_a144f7f71a2a43f8422a346e4bc9bb923}{sidebar} = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/sidebar/panel.\+i2s\char`\"{})
+\begin{DoxyCompactList}\small\item\em Sidebar resources. \end{DoxyCompactList}\item 
+ns\+Gui\+::\+Sprite \hyperlink{classns_game_1_1_game_state_afaac1bf595eef244503f5b15917e230d}{h0} = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/\hyperlink{classns_game_1_1_game_state_a144f7f71a2a43f8422a346e4bc9bb923}{sidebar}/hearts\+\_\+0.\+i2s\char`\"{})
+\item 
+ns\+Gui\+::\+Sprite \hyperlink{classns_game_1_1_game_state_a7d9cc08964a619c0f72a7000fe7f511c}{h1} = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/\hyperlink{classns_game_1_1_game_state_a144f7f71a2a43f8422a346e4bc9bb923}{sidebar}/hearts\+\_\+1.\+i2s\char`\"{})
+\item 
+ns\+Gui\+::\+Sprite \hyperlink{classns_game_1_1_game_state_a1fbc7862058993d3ff53db6f50d3949d}{h2} = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/\hyperlink{classns_game_1_1_game_state_a144f7f71a2a43f8422a346e4bc9bb923}{sidebar}/hearts\+\_\+2.\+i2s\char`\"{})
+\item 
+ns\+Gui\+::\+Sprite \hyperlink{classns_game_1_1_game_state_a421981b496870032de67b556f80ed1c9}{h3} = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/\hyperlink{classns_game_1_1_game_state_a144f7f71a2a43f8422a346e4bc9bb923}{sidebar}/hearts\+\_\+3.\+i2s\char`\"{})
+\item 
+ns\+Gui\+::\+Sprite \hyperlink{classns_game_1_1_game_state_a23ea4a0acc9d2f56f9c324ccfa6560ec}{victory\+Screen1} = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/victory\+\_\+screen/player1.\+i2s\char`\"{})
+\begin{DoxyCompactList}\small\item\em Victory screens. \end{DoxyCompactList}\item 
+ns\+Gui\+::\+Sprite \hyperlink{classns_game_1_1_game_state_ab94cabb5a2665d1afc31937b84880b6e}{victory\+Screen2} = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/victory\+\_\+screen/player2.\+i2s\char`\"{})
+\item 
+ns\+Gui\+::\+Sprite \hyperlink{classns_game_1_1_game_state_aa0eafc52f02691494625a63ad62cf7db}{equal\+Screen} = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/victory\+\_\+screen/equal.\+i2s\char`\"{})
+\item 
+std\+::vector$<$ ns\+Gui\+::\+Sprite $\ast$ $>$ \hyperlink{classns_game_1_1_game_state_a0b870e02f74c266d4a03dbe9210f7678}{numbers}
+\begin{DoxyCompactList}\small\item\em Set of numbers from 0 to 9, used for the scoreboard, since min\+GL 2 doesn\textquotesingle{}t allow custom fonts... \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines the game logic. 
+
+\begin{DoxyAuthor}{Author}
+Thomas Cardon, Alexandre Arniaud, Angèle Derrives, Mohamed Labidi, Ines Hamidi 
+\end{DoxyAuthor}
+
+
+Definition at line 30 of file game\+State.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classns_game_1_1_game_state_a78176e52c8f3c745bb88a4214f5aa29b}\label{classns_game_1_1_game_state_a78176e52c8f3c745bb88a4214f5aa29b}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!check\+For\+Win@{check\+For\+Win}}
+\index{check\+For\+Win@{check\+For\+Win}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{check\+For\+Win()}{checkForWin()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Game\+State\+::check\+For\+Win (\begin{DoxyParamCaption}\item[{\hyperlink{classns_game_1_1_player}{Player} $\ast$}]{p1,  }\item[{\hyperlink{classns_game_1_1_player}{Player} $\ast$}]{p2 }\end{DoxyParamCaption})}
+
+
+
+Checks every tick (\hyperlink{structns_game_1_1_state_ae809e89ac9df4a43ab90d5d5932e2bc7}{State\+::update()}) if one of the players have won (or not). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classns_game_1_1_player}{Player}} & player1 -\/ Le joueur 1 \\
+\hline
+{\em \hyperlink{classns_game_1_1_player}{Player}} & player2 -\/ Le joueur 2 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 58 of file game\+State.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_game_state_a78176e52c8f3c745bb88a4214f5aa29b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_game_state_ac0fdc8e463ca2e79a0fb58e12e5b39c9}\label{classns_game_1_1_game_state_ac0fdc8e463ca2e79a0fb58e12e5b39c9}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!destroy@{destroy}}
+\index{destroy@{destroy}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Game\+State\+::destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Destroys state (and resets it) 
+
+
+
+Reimplemented from \hyperlink{structns_game_1_1_state_a70a0cf146071a8f9fcb8ca0b2c0f8f44}{ns\+Game\+::\+State}.
+
+
+
+Definition at line 47 of file game\+State.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_game_state_ac0fdc8e463ca2e79a0fb58e12e5b39c9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_game_state_a66f7b8027a33f473fd22c212700586f2}\label{classns_game_1_1_game_state_a66f7b8027a33f473fd22c212700586f2}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!load@{load}}
+\index{load@{load}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Game\+State\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Loads \hyperlink{structns_game_1_1_state}{State} resources. 
+
+
+
+Reimplemented from \hyperlink{structns_game_1_1_state_a8644de505f7a84933f6d6e6651205791}{ns\+Game\+::\+State}.
+
+
+
+Definition at line 14 of file game\+State.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_game_state_a66f7b8027a33f473fd22c212700586f2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_game_state_a66f7b8027a33f473fd22c212700586f2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_game_state_a1e3179b016431332ecff880e09e267d3}\label{classns_game_1_1_game_state_a1e3179b016431332ecff880e09e267d3}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!render@{render}}
+\index{render@{render}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Game\+State\+::render (\begin{DoxyParamCaption}\item[{Min\+GL \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders resources. 
+
+
+
+Reimplemented from \hyperlink{structns_game_1_1_state_a214f8ee52de4b318f1ed3861a578ce67}{ns\+Game\+::\+State}.
+
+
+
+Definition at line 172 of file game\+State.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_game_state_a1e3179b016431332ecff880e09e267d3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_game_state_a1e3179b016431332ecff880e09e267d3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_game_state_a8d9cadd7432dfd4b7ada08e37bf6b30d}\label{classns_game_1_1_game_state_a8d9cadd7432dfd4b7ada08e37bf6b30d}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!render\+Score@{render\+Score}}
+\index{render\+Score@{render\+Score}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{render\+Score()}{renderScore()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Game\+State\+::render\+Score (\begin{DoxyParamCaption}\item[{Min\+GL \&}]{window,  }\item[{\hyperlink{classns_game_1_1_player}{Player}}]{p }\end{DoxyParamCaption})}
+
+
+
+Renders the score on the sidebar for a given player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Min\+GL} & \& window \\
+\hline
+{\em \hyperlink{classns_game_1_1_player}{Player}} & p \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 153 of file game\+State.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_game_state_a8d9cadd7432dfd4b7ada08e37bf6b30d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_game_state_a66f328c56ed9887e02a93db856316d4c}\label{classns_game_1_1_game_state_a66f328c56ed9887e02a93db856316d4c}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!render\+Victory\+Screen@{render\+Victory\+Screen}}
+\index{render\+Victory\+Screen@{render\+Victory\+Screen}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{render\+Victory\+Screen()}{renderVictoryScreen()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Game\+State\+::render\+Victory\+Screen (\begin{DoxyParamCaption}\item[{Min\+GL \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Renders the victory screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Min\+GL} & \& window \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 166 of file game\+State.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_game_state_a66f328c56ed9887e02a93db856316d4c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_game_state_a4d3cb871a1aec541a37fe241664b738c}\label{classns_game_1_1_game_state_a4d3cb871a1aec541a37fe241664b738c}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!update@{update}}
+\index{update@{update}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily int ns\+Game\+::\+Game\+State\+::update (\begin{DoxyParamCaption}\item[{Min\+GL \&}]{window,  }\item[{unsigned}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates state. 
+
+
+
+Reimplemented from \hyperlink{structns_game_1_1_state_ae809e89ac9df4a43ab90d5d5932e2bc7}{ns\+Game\+::\+State}.
+
+
+
+Definition at line 74 of file game\+State.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_game_state_a4d3cb871a1aec541a37fe241664b738c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_game_state_a4d3cb871a1aec541a37fe241664b738c_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classns_game_1_1_game_state_a9bd618bc831669e078759402caa0cb78}\label{classns_game_1_1_game_state_a9bd618bc831669e078759402caa0cb78}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!audio@{audio}}
+\index{audio@{audio}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{audio}{audio}}
+{\footnotesize\ttfamily ns\+Audio\+::\+Audio\+Engine ns\+Game\+::\+Game\+State\+::audio}
+
+
+
+min\+GL 2 audio engine 
+
+
+
+Definition at line 46 of file game\+State.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_game_state_aa0eafc52f02691494625a63ad62cf7db}\label{classns_game_1_1_game_state_aa0eafc52f02691494625a63ad62cf7db}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!equal\+Screen@{equal\+Screen}}
+\index{equal\+Screen@{equal\+Screen}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{equal\+Screen}{equalScreen}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite ns\+Game\+::\+Game\+State\+::equal\+Screen = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/victory\+\_\+screen/equal.\+i2s\char`\"{})}
+
+
+
+Definition at line 58 of file game\+State.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_game_state_afaac1bf595eef244503f5b15917e230d}\label{classns_game_1_1_game_state_afaac1bf595eef244503f5b15917e230d}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!h0@{h0}}
+\index{h0@{h0}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{h0}{h0}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite ns\+Game\+::\+Game\+State\+::h0 = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/\hyperlink{classns_game_1_1_game_state_a144f7f71a2a43f8422a346e4bc9bb923}{sidebar}/hearts\+\_\+0.\+i2s\char`\"{})}
+
+
+
+Definition at line 50 of file game\+State.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_game_state_a7d9cc08964a619c0f72a7000fe7f511c}\label{classns_game_1_1_game_state_a7d9cc08964a619c0f72a7000fe7f511c}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!h1@{h1}}
+\index{h1@{h1}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{h1}{h1}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite ns\+Game\+::\+Game\+State\+::h1 = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/\hyperlink{classns_game_1_1_game_state_a144f7f71a2a43f8422a346e4bc9bb923}{sidebar}/hearts\+\_\+1.\+i2s\char`\"{})}
+
+
+
+Definition at line 51 of file game\+State.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_game_state_a1fbc7862058993d3ff53db6f50d3949d}\label{classns_game_1_1_game_state_a1fbc7862058993d3ff53db6f50d3949d}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!h2@{h2}}
+\index{h2@{h2}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{h2}{h2}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite ns\+Game\+::\+Game\+State\+::h2 = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/\hyperlink{classns_game_1_1_game_state_a144f7f71a2a43f8422a346e4bc9bb923}{sidebar}/hearts\+\_\+2.\+i2s\char`\"{})}
+
+
+
+Definition at line 52 of file game\+State.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_game_state_a421981b496870032de67b556f80ed1c9}\label{classns_game_1_1_game_state_a421981b496870032de67b556f80ed1c9}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!h3@{h3}}
+\index{h3@{h3}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{h3}{h3}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite ns\+Game\+::\+Game\+State\+::h3 = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/\hyperlink{classns_game_1_1_game_state_a144f7f71a2a43f8422a346e4bc9bb923}{sidebar}/hearts\+\_\+3.\+i2s\char`\"{})}
+
+
+
+Definition at line 53 of file game\+State.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_game_state_a451982a5efe66e5402402ed0f996fca6}\label{classns_game_1_1_game_state_a451982a5efe66e5402402ed0f996fca6}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!map@{map}}
+\index{map@{map}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily \hyperlink{classns_game_1_1_map}{Map}$\ast$ ns\+Game\+::\+Game\+State\+::map}
+
+
+
+The game map, and its grid. 
+
+
+
+Definition at line 36 of file game\+State.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_game_state_a0b870e02f74c266d4a03dbe9210f7678}\label{classns_game_1_1_game_state_a0b870e02f74c266d4a03dbe9210f7678}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!numbers@{numbers}}
+\index{numbers@{numbers}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{numbers}{numbers}}
+{\footnotesize\ttfamily std\+::vector$<$ns\+Gui\+::\+Sprite$\ast$$>$ ns\+Game\+::\+Game\+State\+::numbers}
+
+
+
+Set of numbers from 0 to 9, used for the scoreboard, since min\+GL 2 doesn\textquotesingle{}t allow custom fonts... 
+
+
+
+Definition at line 61 of file game\+State.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_game_state_a972d8482f9ed69d536ff8c7927a8c290}\label{classns_game_1_1_game_state_a972d8482f9ed69d536ff8c7927a8c290}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!Params@{Params}}
+\index{Params@{Params}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{Params}{Params}}
+{\footnotesize\ttfamily \hyperlink{struct_c_my_param}{C\+My\+Param} ns\+Game\+::\+Game\+State\+::\+Params}
+
+
+
+The game configuration file. 
+
+
+
+Definition at line 39 of file game\+State.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_game_state_aec14e8ba226edc828deabb6e6b276c70}\label{classns_game_1_1_game_state_aec14e8ba226edc828deabb6e6b276c70}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!player1@{player1}}
+\index{player1@{player1}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{player1}{player1}}
+{\footnotesize\ttfamily \hyperlink{classns_game_1_1_player}{Player}$\ast$ ns\+Game\+::\+Game\+State\+::player1}
+
+
+
+Players. 
+
+
+
+Definition at line 42 of file game\+State.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_game_state_abd99551650ebb05056576dd2fee40b4b}\label{classns_game_1_1_game_state_abd99551650ebb05056576dd2fee40b4b}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!player2@{player2}}
+\index{player2@{player2}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{player2}{player2}}
+{\footnotesize\ttfamily \hyperlink{classns_game_1_1_player}{Player}$\ast$ ns\+Game\+::\+Game\+State\+::player2}
+
+
+
+Definition at line 43 of file game\+State.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_game_state_a144f7f71a2a43f8422a346e4bc9bb923}\label{classns_game_1_1_game_state_a144f7f71a2a43f8422a346e4bc9bb923}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!sidebar@{sidebar}}
+\index{sidebar@{sidebar}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{sidebar}{sidebar}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite ns\+Game\+::\+Game\+State\+::sidebar = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/sidebar/panel.\+i2s\char`\"{})}
+
+
+
+Sidebar resources. 
+
+
+
+Definition at line 49 of file game\+State.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_game_state_a23ea4a0acc9d2f56f9c324ccfa6560ec}\label{classns_game_1_1_game_state_a23ea4a0acc9d2f56f9c324ccfa6560ec}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!victory\+Screen1@{victory\+Screen1}}
+\index{victory\+Screen1@{victory\+Screen1}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{victory\+Screen1}{victoryScreen1}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite ns\+Game\+::\+Game\+State\+::victory\+Screen1 = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/victory\+\_\+screen/player1.\+i2s\char`\"{})}
+
+
+
+Victory screens. 
+
+
+
+Definition at line 56 of file game\+State.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_game_state_ab94cabb5a2665d1afc31937b84880b6e}\label{classns_game_1_1_game_state_ab94cabb5a2665d1afc31937b84880b6e}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!victory\+Screen2@{victory\+Screen2}}
+\index{victory\+Screen2@{victory\+Screen2}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{victory\+Screen2}{victoryScreen2}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite ns\+Game\+::\+Game\+State\+::victory\+Screen2 = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/victory\+\_\+screen/player2.\+i2s\char`\"{})}
+
+
+
+Definition at line 57 of file game\+State.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_game_state_aa5b4cb6af0e806d442e5291578a6822a}\label{classns_game_1_1_game_state_aa5b4cb6af0e806d442e5291578a6822a}} 
+\index{ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}!win@{win}}
+\index{win@{win}!ns\+Game\+::\+Game\+State@{ns\+Game\+::\+Game\+State}}
+\subsubsection{\texorpdfstring{win}{win}}
+{\footnotesize\ttfamily int ns\+Game\+::\+Game\+State\+::win = -\/1}
+
+
+
+Victory status\+: -\/1 = not yet, 0 = equal, 1 = player 1, 2 = player 2. 
+
+
+
+Definition at line 33 of file game\+State.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Nos\+\_\+fichiers/\hyperlink{game_state_8h}{game\+State.\+h}\item 
+Nos\+\_\+fichiers/\hyperlink{game_state_8cpp}{game\+State.\+cpp}\end{DoxyCompactItemize}

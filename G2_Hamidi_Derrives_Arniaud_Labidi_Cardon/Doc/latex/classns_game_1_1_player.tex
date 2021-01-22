@@ -1,0 +1,456 @@
+\hypertarget{classns_game_1_1_player}{}\section{ns\+Game\+:\+:Player Class Reference}
+\label{classns_game_1_1_player}\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+
+
+Defines the player\textquotesingle{}s class.  
+
+
+
+
+{\ttfamily \#include $<$player.\+h$>$}
+
+
+
+Inheritance diagram for ns\+Game\+:\+:Player\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{classns_game_1_1_player__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns\+Game\+:\+:Player\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classns_game_1_1_player__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classns_game_1_1_player_a3b9991c6a7a1f910ab53a4e9fd1eb1f9}{Player} (unsigned \hyperlink{classns_game_1_1_player_a6fc5b1fa9ec5ca495fedf4908942d2f0}{N})
+\item 
+std\+::string \hyperlink{classns_game_1_1_player_a339da658eb7a76de90ac66ec5cde929b}{id} ()
+\begin{DoxyCompactList}\small\item\em Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_player_a6633913bc19fdca8616b29ee265f7b28}{on\+Key\+Press} (char key)
+\begin{DoxyCompactList}\small\item\em This function is called everytime a key is pressed. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_player_a8702d56a2f8651a53511b4dbea30d0f6}{update} (Min\+GL \&window, unsigned delta, \hyperlink{type_8h_a64a592133575ccebb1b36453acbec02b}{C\+Mat} map)
+\begin{DoxyCompactList}\small\item\em Updates player. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_player_a34b359a72d3dbdf537c72161898376f3}{render} (Min\+GL \&window)
+\begin{DoxyCompactList}\small\item\em Renders resources. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_player_a279b6cf908ceeb398d99d8cd1e02fa56}{load} (\hyperlink{struct_c_my_param}{C\+My\+Param} params)
+\begin{DoxyCompactList}\small\item\em Loads player. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_player_a6593cce5f194289c251eba839972aaac}{damage} ()
+\begin{DoxyCompactList}\small\item\em Decrements 1 to hearts, and disable damage for 5 seconds + adds movement speed;. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_player_acab2fb26d3c0dddadccf7fcfc17b6e79}{spawn} ()
+\begin{DoxyCompactList}\small\item\em Teleports the entity at its spawn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{classns_game_1_1_player_ae2def499a090256dbcc508d9b660cdce}{I\+S\+\_\+\+F\+A\+C\+I\+NG}
+\begin{DoxyCompactList}\small\item\em Direction the player is facing. \end{DoxyCompactList}\item 
+char \hyperlink{classns_game_1_1_player_a9c8418e477b2a3609195a0f4b9cceef8}{K\+E\+Y\+\_\+\+D\+O\+WN}
+\begin{DoxyCompactList}\small\item\em Keystrokes. \end{DoxyCompactList}\item 
+char \hyperlink{classns_game_1_1_player_ad51e2d88b5eaab00bcfdf787bd13c437}{K\+E\+Y\+\_\+\+UP}
+\item 
+char \hyperlink{classns_game_1_1_player_ac7234b6672244108f24a1a606f5b7967}{K\+E\+Y\+\_\+\+L\+E\+FT}
+\item 
+char \hyperlink{classns_game_1_1_player_ae3e71092e1e40488562025cd8f6484ab}{K\+E\+Y\+\_\+\+R\+I\+G\+HT}
+\item 
+char \hyperlink{classns_game_1_1_player_a803a385cf0a9bb45ba8c17fe66ae13d6}{K\+E\+Y\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+1}
+\item 
+\hyperlink{classns_game_1_1_animation}{Animation} \hyperlink{classns_game_1_1_player_a7dc24a02c5afb2d939ac8cff0c43de09}{bottom} = \hyperlink{classns_game_1_1_animation}{Animation}(600, true)
+\begin{DoxyCompactList}\small\item\em Animations for every direction, and effects. \end{DoxyCompactList}\item 
+\hyperlink{classns_game_1_1_animation}{Animation} \hyperlink{classns_game_1_1_player_a1ef22765b2291da72b5c695a259160ec}{top} = \hyperlink{classns_game_1_1_animation}{Animation}(600, true)
+\item 
+\hyperlink{classns_game_1_1_animation}{Animation} \hyperlink{classns_game_1_1_player_ac2b76c2e7ee83954f517ebd03b0f76d3}{left} = \hyperlink{classns_game_1_1_animation}{Animation}(600, true)
+\item 
+\hyperlink{classns_game_1_1_animation}{Animation} \hyperlink{classns_game_1_1_player_a90ec9f96623d92ed28938e3770c16936}{right} = \hyperlink{classns_game_1_1_animation}{Animation}(600, true)
+\item 
+unsigned \hyperlink{classns_game_1_1_player_ae01e31235ac9210a5bb71c1db166ebe6}{hearts} = 3
+\begin{DoxyCompactList}\small\item\em \hyperlink{classns_game_1_1_player}{Player} hearts. \end{DoxyCompactList}\item 
+int \hyperlink{classns_game_1_1_player_af284db40fc7f885cc5ad889124e182c0}{score} = 0
+\begin{DoxyCompactList}\small\item\em \hyperlink{classns_game_1_1_player}{Player} score. \end{DoxyCompactList}\item 
+unsigned \hyperlink{classns_game_1_1_player_a6fc5b1fa9ec5ca495fedf4908942d2f0}{N} = 1
+\begin{DoxyCompactList}\small\item\em \hyperlink{classns_game_1_1_player}{Player} number. \end{DoxyCompactList}\item 
+bool \hyperlink{classns_game_1_1_player_a18028809a0ff7dc90f14a154834d2533}{can\+Move} = true
+\begin{DoxyCompactList}\small\item\em Allows player to move or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Defines the player\textquotesingle{}s class. 
+
+\begin{DoxyAuthor}{Author}
+Thomas Cardon, Alexandre Arniaud 
+\end{DoxyAuthor}
+
+
+Definition at line 27 of file player.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classns_game_1_1_player_a3b9991c6a7a1f910ab53a4e9fd1eb1f9}\label{classns_game_1_1_player_a3b9991c6a7a1f910ab53a4e9fd1eb1f9}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!Player@{Player}}
+\index{Player@{Player}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{unsigned}]{N }\end{DoxyParamCaption})}
+
+
+
+Definition at line 35 of file player.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classns_game_1_1_player_a6593cce5f194289c251eba839972aaac}\label{classns_game_1_1_player_a6593cce5f194289c251eba839972aaac}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!damage@{damage}}
+\index{damage@{damage}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{damage()}{damage()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Player\+::damage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Decrements 1 to hearts, and disable damage for 5 seconds + adds movement speed;. 
+
+
+
+Definition at line 126 of file player.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_player_a6593cce5f194289c251eba839972aaac_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_player_a6593cce5f194289c251eba839972aaac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_player_a339da658eb7a76de90ac66ec5cde929b}\label{classns_game_1_1_player_a339da658eb7a76de90ac66ec5cde929b}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!id@{id}}
+\index{id@{id}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily std\+::string Player\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{structns_game_1_1_entity}{Entity} ID 
+\end{DoxyReturn}
+
+
+Definition at line 156 of file player.\+cpp.
+
+\mbox{\Hypertarget{classns_game_1_1_player_a279b6cf908ceeb398d99d8cd1e02fa56}\label{classns_game_1_1_player_a279b6cf908ceeb398d99d8cd1e02fa56}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!load@{load}}
+\index{load@{load}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Player\+::load (\begin{DoxyParamCaption}\item[{\hyperlink{struct_c_my_param}{C\+My\+Param}}]{params }\end{DoxyParamCaption})}
+
+
+
+Loads player. 
+
+
+
+Definition at line 44 of file player.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_player_a279b6cf908ceeb398d99d8cd1e02fa56_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_player_a279b6cf908ceeb398d99d8cd1e02fa56_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_player_a6633913bc19fdca8616b29ee265f7b28}\label{classns_game_1_1_player_a6633913bc19fdca8616b29ee265f7b28}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!on\+Key\+Press@{on\+Key\+Press}}
+\index{on\+Key\+Press@{on\+Key\+Press}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{on\+Key\+Press()}{onKeyPress()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Player\+::on\+Key\+Press (\begin{DoxyParamCaption}\item[{char}]{key }\end{DoxyParamCaption})}
+
+
+
+This function is called everytime a key is pressed. 
+
+
+
+Definition at line 75 of file player.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_player_a6633913bc19fdca8616b29ee265f7b28_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_player_a34b359a72d3dbdf537c72161898376f3}\label{classns_game_1_1_player_a34b359a72d3dbdf537c72161898376f3}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!render@{render}}
+\index{render@{render}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Player\+::render (\begin{DoxyParamCaption}\item[{Min\+GL \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Renders resources. 
+
+
+
+Definition at line 135 of file player.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_player_a34b359a72d3dbdf537c72161898376f3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_player_a34b359a72d3dbdf537c72161898376f3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_player_acab2fb26d3c0dddadccf7fcfc17b6e79}\label{classns_game_1_1_player_acab2fb26d3c0dddadccf7fcfc17b6e79}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!spawn@{spawn}}
+\index{spawn@{spawn}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{spawn()}{spawn()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Player\+::spawn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Teleports the entity at its spawn. 
+
+
+
+Definition at line 39 of file player.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_player_acab2fb26d3c0dddadccf7fcfc17b6e79_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_player_a8702d56a2f8651a53511b4dbea30d0f6}\label{classns_game_1_1_player_a8702d56a2f8651a53511b4dbea30d0f6}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!update@{update}}
+\index{update@{update}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Player\+::update (\begin{DoxyParamCaption}\item[{Min\+GL \&}]{window,  }\item[{unsigned}]{delta,  }\item[{\hyperlink{type_8h_a64a592133575ccebb1b36453acbec02b}{C\+Mat}}]{map }\end{DoxyParamCaption})}
+
+
+
+Updates player. 
+
+
+
+Definition at line 89 of file player.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_player_a8702d56a2f8651a53511b4dbea30d0f6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_player_a8702d56a2f8651a53511b4dbea30d0f6_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classns_game_1_1_player_a7dc24a02c5afb2d939ac8cff0c43de09}\label{classns_game_1_1_player_a7dc24a02c5afb2d939ac8cff0c43de09}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!bottom@{bottom}}
+\index{bottom@{bottom}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{bottom}{bottom}}
+{\footnotesize\ttfamily \hyperlink{classns_game_1_1_animation}{Animation} ns\+Game\+::\+Player\+::bottom = \hyperlink{classns_game_1_1_animation}{Animation}(600, true)}
+
+
+
+Animations for every direction, and effects. 
+
+
+
+Definition at line 36 of file player.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_player_a18028809a0ff7dc90f14a154834d2533}\label{classns_game_1_1_player_a18028809a0ff7dc90f14a154834d2533}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!can\+Move@{can\+Move}}
+\index{can\+Move@{can\+Move}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{can\+Move}{canMove}}
+{\footnotesize\ttfamily bool ns\+Game\+::\+Player\+::can\+Move = true}
+
+
+
+Allows player to move or not. 
+
+
+
+Definition at line 48 of file player.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_player_ae01e31235ac9210a5bb71c1db166ebe6}\label{classns_game_1_1_player_ae01e31235ac9210a5bb71c1db166ebe6}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!hearts@{hearts}}
+\index{hearts@{hearts}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{hearts}{hearts}}
+{\footnotesize\ttfamily unsigned ns\+Game\+::\+Player\+::hearts = 3}
+
+
+
+\hyperlink{classns_game_1_1_player}{Player} hearts. 
+
+
+
+Definition at line 39 of file player.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_player_ae2def499a090256dbcc508d9b660cdce}\label{classns_game_1_1_player_ae2def499a090256dbcc508d9b660cdce}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!I\+S\+\_\+\+F\+A\+C\+I\+NG@{I\+S\+\_\+\+F\+A\+C\+I\+NG}}
+\index{I\+S\+\_\+\+F\+A\+C\+I\+NG@{I\+S\+\_\+\+F\+A\+C\+I\+NG}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{I\+S\+\_\+\+F\+A\+C\+I\+NG}{IS\_FACING}}
+{\footnotesize\ttfamily char ns\+Game\+::\+Player\+::\+I\+S\+\_\+\+F\+A\+C\+I\+NG}
+
+
+
+Direction the player is facing. 
+
+
+
+Definition at line 30 of file player.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_player_a803a385cf0a9bb45ba8c17fe66ae13d6}\label{classns_game_1_1_player_a803a385cf0a9bb45ba8c17fe66ae13d6}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!K\+E\+Y\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+1@{K\+E\+Y\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+1}}
+\index{K\+E\+Y\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+1@{K\+E\+Y\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+1}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+1}{KEY\_ACTION\_1}}
+{\footnotesize\ttfamily char ns\+Game\+::\+Player\+::\+K\+E\+Y\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+1}
+
+
+
+Definition at line 33 of file player.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_player_a9c8418e477b2a3609195a0f4b9cceef8}\label{classns_game_1_1_player_a9c8418e477b2a3609195a0f4b9cceef8}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!K\+E\+Y\+\_\+\+D\+O\+WN@{K\+E\+Y\+\_\+\+D\+O\+WN}}
+\index{K\+E\+Y\+\_\+\+D\+O\+WN@{K\+E\+Y\+\_\+\+D\+O\+WN}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+D\+O\+WN}{KEY\_DOWN}}
+{\footnotesize\ttfamily char ns\+Game\+::\+Player\+::\+K\+E\+Y\+\_\+\+D\+O\+WN}
+
+
+
+Keystrokes. 
+
+
+
+Definition at line 33 of file player.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_player_ac7234b6672244108f24a1a606f5b7967}\label{classns_game_1_1_player_ac7234b6672244108f24a1a606f5b7967}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!K\+E\+Y\+\_\+\+L\+E\+FT@{K\+E\+Y\+\_\+\+L\+E\+FT}}
+\index{K\+E\+Y\+\_\+\+L\+E\+FT@{K\+E\+Y\+\_\+\+L\+E\+FT}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+L\+E\+FT}{KEY\_LEFT}}
+{\footnotesize\ttfamily char ns\+Game\+::\+Player\+::\+K\+E\+Y\+\_\+\+L\+E\+FT}
+
+
+
+Definition at line 33 of file player.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_player_ae3e71092e1e40488562025cd8f6484ab}\label{classns_game_1_1_player_ae3e71092e1e40488562025cd8f6484ab}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!K\+E\+Y\+\_\+\+R\+I\+G\+HT@{K\+E\+Y\+\_\+\+R\+I\+G\+HT}}
+\index{K\+E\+Y\+\_\+\+R\+I\+G\+HT@{K\+E\+Y\+\_\+\+R\+I\+G\+HT}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+R\+I\+G\+HT}{KEY\_RIGHT}}
+{\footnotesize\ttfamily char ns\+Game\+::\+Player\+::\+K\+E\+Y\+\_\+\+R\+I\+G\+HT}
+
+
+
+Definition at line 33 of file player.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_player_ad51e2d88b5eaab00bcfdf787bd13c437}\label{classns_game_1_1_player_ad51e2d88b5eaab00bcfdf787bd13c437}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!K\+E\+Y\+\_\+\+UP@{K\+E\+Y\+\_\+\+UP}}
+\index{K\+E\+Y\+\_\+\+UP@{K\+E\+Y\+\_\+\+UP}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+\_\+\+UP}{KEY\_UP}}
+{\footnotesize\ttfamily char ns\+Game\+::\+Player\+::\+K\+E\+Y\+\_\+\+UP}
+
+
+
+Definition at line 33 of file player.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_player_ac2b76c2e7ee83954f517ebd03b0f76d3}\label{classns_game_1_1_player_ac2b76c2e7ee83954f517ebd03b0f76d3}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!left@{left}}
+\index{left@{left}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{left}{left}}
+{\footnotesize\ttfamily \hyperlink{classns_game_1_1_animation}{Animation} ns\+Game\+::\+Player\+::left = \hyperlink{classns_game_1_1_animation}{Animation}(600, true)}
+
+
+
+Definition at line 36 of file player.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_player_a6fc5b1fa9ec5ca495fedf4908942d2f0}\label{classns_game_1_1_player_a6fc5b1fa9ec5ca495fedf4908942d2f0}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!N@{N}}
+\index{N@{N}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily unsigned ns\+Game\+::\+Player\+::N = 1}
+
+
+
+\hyperlink{classns_game_1_1_player}{Player} number. 
+
+
+
+Definition at line 45 of file player.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_player_a90ec9f96623d92ed28938e3770c16936}\label{classns_game_1_1_player_a90ec9f96623d92ed28938e3770c16936}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!right@{right}}
+\index{right@{right}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{right}{right}}
+{\footnotesize\ttfamily \hyperlink{classns_game_1_1_animation}{Animation} ns\+Game\+::\+Player\+::right = \hyperlink{classns_game_1_1_animation}{Animation}(600, true)}
+
+
+
+Definition at line 36 of file player.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_player_af284db40fc7f885cc5ad889124e182c0}\label{classns_game_1_1_player_af284db40fc7f885cc5ad889124e182c0}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!score@{score}}
+\index{score@{score}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{score}{score}}
+{\footnotesize\ttfamily int ns\+Game\+::\+Player\+::score = 0}
+
+
+
+\hyperlink{classns_game_1_1_player}{Player} score. 
+
+
+
+Definition at line 42 of file player.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_player_a1ef22765b2291da72b5c695a259160ec}\label{classns_game_1_1_player_a1ef22765b2291da72b5c695a259160ec}} 
+\index{ns\+Game\+::\+Player@{ns\+Game\+::\+Player}!top@{top}}
+\index{top@{top}!ns\+Game\+::\+Player@{ns\+Game\+::\+Player}}
+\subsubsection{\texorpdfstring{top}{top}}
+{\footnotesize\ttfamily \hyperlink{classns_game_1_1_animation}{Animation} ns\+Game\+::\+Player\+::top = \hyperlink{classns_game_1_1_animation}{Animation}(600, true)}
+
+
+
+Definition at line 36 of file player.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Nos\+\_\+fichiers/\hyperlink{player_8h}{player.\+h}\item 
+Nos\+\_\+fichiers/\hyperlink{player_8cpp}{player.\+cpp}\end{DoxyCompactItemize}

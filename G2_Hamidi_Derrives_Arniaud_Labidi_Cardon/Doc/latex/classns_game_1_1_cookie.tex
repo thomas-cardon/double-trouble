@@ -1,0 +1,242 @@
+\hypertarget{classns_game_1_1_cookie}{}\section{ns\+Game\+:\+:Cookie Class Reference}
+\label{classns_game_1_1_cookie}\index{ns\+Game\+::\+Cookie@{ns\+Game\+::\+Cookie}}
+
+
+Defines Food.  
+
+
+
+
+{\ttfamily \#include $<$cookie.\+h$>$}
+
+
+
+Inheritance diagram for ns\+Game\+:\+:Cookie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classns_game_1_1_cookie__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns\+Game\+:\+:Cookie\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classns_game_1_1_cookie__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classns_game_1_1_cookie_a2e6c34dfd2892c48dc4ce2b503504674}{Cookie} (ns\+Graphics\+::\+Vec2D \hyperlink{structns_game_1_1_item_a5518876a13f3d2eda659d29748097f1a}{pos})
+\item 
+ns\+Graphics\+::\+Vec2D \hyperlink{classns_game_1_1_cookie_ab624101d018f74fb856bdfd7fd97c55e}{get\+Coordinates} ()
+\begin{DoxyCompactList}\small\item\em This function is used to get the position on the screen/canvas/window, whatever you want to call it. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_cookie_a20769adf2b327f4bf519e851073b1891}{load} () override
+\begin{DoxyCompactList}\small\item\em Loads food. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_cookie_aaea5c3967effe908f2676a5ded17aa39}{update} (unsigned delta) override
+\begin{DoxyCompactList}\small\item\em Updates food. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_cookie_a7e321497bf9d9baa738d987e9c47dd5e}{render} (Min\+GL \&window) override
+\begin{DoxyCompactList}\small\item\em Renders resources. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_cookie_a2cd4ee8c83b99191643d6e9ef2267b1a}{action} (\hyperlink{classns_game_1_1_player}{Player} $\ast$player) override
+\begin{DoxyCompactList}\small\item\em Makes an action for the player. \end{DoxyCompactList}\item 
+\hyperlink{namespacens_game_a5f7db01e6447720e9a145f0b3c68a4d7}{Item\+Type} \hyperlink{classns_game_1_1_cookie_ac5c28f610947708bc1f31b1e8a88ef42}{get\+Type} () override
+\begin{DoxyCompactList}\small\item\em Gets item type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Defines Food. 
+
+\begin{DoxyAuthor}{Authors}
+Thomas Cardon 
+\end{DoxyAuthor}
+
+
+Definition at line 23 of file cookie.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classns_game_1_1_cookie_a2e6c34dfd2892c48dc4ce2b503504674}\label{classns_game_1_1_cookie_a2e6c34dfd2892c48dc4ce2b503504674}} 
+\index{ns\+Game\+::\+Cookie@{ns\+Game\+::\+Cookie}!Cookie@{Cookie}}
+\index{Cookie@{Cookie}!ns\+Game\+::\+Cookie@{ns\+Game\+::\+Cookie}}
+\subsubsection{\texorpdfstring{Cookie()}{Cookie()}}
+{\footnotesize\ttfamily ns\+Game\+::\+Cookie\+::\+Cookie (\begin{DoxyParamCaption}\item[{ns\+Graphics\+::\+Vec2D}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 26 of file cookie.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classns_game_1_1_cookie_a2cd4ee8c83b99191643d6e9ef2267b1a}\label{classns_game_1_1_cookie_a2cd4ee8c83b99191643d6e9ef2267b1a}} 
+\index{ns\+Game\+::\+Cookie@{ns\+Game\+::\+Cookie}!action@{action}}
+\index{action@{action}!ns\+Game\+::\+Cookie@{ns\+Game\+::\+Cookie}}
+\subsubsection{\texorpdfstring{action()}{action()}}
+{\footnotesize\ttfamily void Cookie\+::action (\begin{DoxyParamCaption}\item[{\hyperlink{classns_game_1_1_player}{Player} $\ast$}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Makes an action for the player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classns_game_1_1_player}{Player}} & -\/ The player that steps on an item \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{structns_game_1_1_item_af74dffcf9bde4a4297749f4e1852395b}{ns\+Game\+::\+Item}.
+
+
+
+Definition at line 19 of file cookie.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_cookie_a2cd4ee8c83b99191643d6e9ef2267b1a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_cookie_ab624101d018f74fb856bdfd7fd97c55e}\label{classns_game_1_1_cookie_ab624101d018f74fb856bdfd7fd97c55e}} 
+\index{ns\+Game\+::\+Cookie@{ns\+Game\+::\+Cookie}!get\+Coordinates@{get\+Coordinates}}
+\index{get\+Coordinates@{get\+Coordinates}!ns\+Game\+::\+Cookie@{ns\+Game\+::\+Cookie}}
+\subsubsection{\texorpdfstring{get\+Coordinates()}{getCoordinates()}}
+{\footnotesize\ttfamily ns\+Graphics\+::\+Vec2D ns\+Game\+::\+Cookie\+::get\+Coordinates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This function is used to get the position on the screen/canvas/window, whatever you want to call it. 
+
+
+
+Definition at line 32 of file cookie.\+h.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_cookie_ab624101d018f74fb856bdfd7fd97c55e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_cookie_ab624101d018f74fb856bdfd7fd97c55e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_cookie_ac5c28f610947708bc1f31b1e8a88ef42}\label{classns_game_1_1_cookie_ac5c28f610947708bc1f31b1e8a88ef42}} 
+\index{ns\+Game\+::\+Cookie@{ns\+Game\+::\+Cookie}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!ns\+Game\+::\+Cookie@{ns\+Game\+::\+Cookie}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}}
+{\footnotesize\ttfamily \hyperlink{namespacens_game_a5f7db01e6447720e9a145f0b3c68a4d7}{Item\+Type} ns\+Game\+::\+Cookie\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets item type. 
+
+\begin{DoxyReturn}{Returns}
+Item\+Type.\+F\+O\+OD 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{structns_game_1_1_item_a69156550e5083928cbb673ca2db671f5}{ns\+Game\+::\+Item}.
+
+
+
+Definition at line 64 of file cookie.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_cookie_a20769adf2b327f4bf519e851073b1891}\label{classns_game_1_1_cookie_a20769adf2b327f4bf519e851073b1891}} 
+\index{ns\+Game\+::\+Cookie@{ns\+Game\+::\+Cookie}!load@{load}}
+\index{load@{load}!ns\+Game\+::\+Cookie@{ns\+Game\+::\+Cookie}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Cookie\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Loads food. 
+
+
+
+Implements \hyperlink{structns_game_1_1_item_a5887b6e9225ae8a276801225eca83808}{ns\+Game\+::\+Item}.
+
+
+
+Definition at line 15 of file cookie.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_cookie_a20769adf2b327f4bf519e851073b1891_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_cookie_a7e321497bf9d9baa738d987e9c47dd5e}\label{classns_game_1_1_cookie_a7e321497bf9d9baa738d987e9c47dd5e}} 
+\index{ns\+Game\+::\+Cookie@{ns\+Game\+::\+Cookie}!render@{render}}
+\index{render@{render}!ns\+Game\+::\+Cookie@{ns\+Game\+::\+Cookie}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Cookie\+::render (\begin{DoxyParamCaption}\item[{Min\+GL \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders resources. 
+
+
+
+Implements \hyperlink{structns_game_1_1_item_a451b6491efc475c9ca47dcccdbbde707}{ns\+Game\+::\+Item}.
+
+
+
+Definition at line 23 of file cookie.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_cookie_a7e321497bf9d9baa738d987e9c47dd5e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_cookie_a7e321497bf9d9baa738d987e9c47dd5e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_cookie_aaea5c3967effe908f2676a5ded17aa39}\label{classns_game_1_1_cookie_aaea5c3967effe908f2676a5ded17aa39}} 
+\index{ns\+Game\+::\+Cookie@{ns\+Game\+::\+Cookie}!update@{update}}
+\index{update@{update}!ns\+Game\+::\+Cookie@{ns\+Game\+::\+Cookie}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Cookie\+::update (\begin{DoxyParamCaption}\item[{unsigned}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates food. 
+
+
+
+Implements \hyperlink{structns_game_1_1_item_a96c07d0f91eef0d77e91d1a7397091a1}{ns\+Game\+::\+Item}.
+
+
+
+Definition at line 17 of file cookie.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_cookie_aaea5c3967effe908f2676a5ded17aa39_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Nos\+\_\+fichiers/\hyperlink{cookie_8h}{cookie.\+h}\item 
+Nos\+\_\+fichiers/\hyperlink{cookie_8cpp}{cookie.\+cpp}\end{DoxyCompactItemize}

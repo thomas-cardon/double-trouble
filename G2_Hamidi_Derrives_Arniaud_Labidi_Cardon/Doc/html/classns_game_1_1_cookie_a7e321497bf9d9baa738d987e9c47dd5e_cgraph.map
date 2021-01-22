@@ -1,0 +1,6 @@
+<map id="nsGame::Cookie::render" name="nsGame::Cookie::render">
+<area shape="rect" id="node2" href="$classns_game_1_1_cookie.html#ab624101d018f74fb856bdfd7fd97c55e" title="This function is used to get the position on the screen/canvas/window, whatever you want to call it..." alt="" coords="217,56,433,83"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_cookie.html#a20769adf2b327f4bf519e851073b1891" title="Loads food. " alt="" coords="489,5,641,32"/>
+<area shape="rect" id="node4" href="$classns_game_1_1_cookie.html#aaea5c3967effe908f2676a5ded17aa39" title="Updates food. " alt="" coords="481,56,648,83"/>
+<area shape="rect" id="node5" href="$classns_game_1_1_cookie.html#a2cd4ee8c83b99191643d6e9ef2267b1a" title="Makes an action for the player. " alt="" coords="483,107,646,133"/>
+</map>

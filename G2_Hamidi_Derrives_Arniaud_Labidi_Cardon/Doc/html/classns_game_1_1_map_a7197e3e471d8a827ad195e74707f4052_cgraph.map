@@ -1,0 +1,8 @@
+<map id="nsGame::Map::spawnItem" name="nsGame::Map::spawnItem">
+<area shape="rect" id="node2" href="$structns_game_1_1_item.html#abd124b5001b8dc63b8513e5b85c6c2b9" title="Gets the coordinates compared to the map. " alt="" coords="229,56,408,83"/>
+<area shape="rect" id="node3" href="$structns_game_1_1_item.html#a5887b6e9225ae8a276801225eca83808" title="Loads item. " alt="" coords="463,5,601,32"/>
+<area shape="rect" id="node7" href="$structns_game_1_1_item.html#a69156550e5083928cbb673ca2db671f5" title="Gets item type. " alt="" coords="239,107,399,133"/>
+<area shape="rect" id="node4" href="$structns_game_1_1_item.html#a96c07d0f91eef0d77e91d1a7397091a1" title="Updates item. " alt="" coords="456,56,608,83"/>
+<area shape="rect" id="node5" href="$structns_game_1_1_item.html#a451b6491efc475c9ca47dcccdbbde707" title="Renders resources. " alt="" coords="457,107,607,133"/>
+<area shape="rect" id="node6" href="$structns_game_1_1_item.html#af74dffcf9bde4a4297749f4e1852395b" title="Makes an action for the player. " alt="" coords="458,157,606,184"/>
+</map>

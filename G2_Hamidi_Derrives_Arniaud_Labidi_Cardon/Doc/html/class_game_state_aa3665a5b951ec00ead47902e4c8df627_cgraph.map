@@ -1,0 +1,8 @@
+<map id="GameState::render" name="GameState::render">
+<area shape="rect" id="node2" href="$classns_game_1_1_map.html#a3660d6272f910c1b702c4e8f3f463f2b" title="render " alt="" coords="191,21,339,47"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_player.html#a34b359a72d3dbdf537c72161898376f3" title="Renders resources. " alt="" coords="185,71,345,98"/>
+<area shape="rect" id="node4" href="$classns_game_1_1_animation.html#a1a103b09407581b74933001fb8b3a8f0" title="Sets position on the map. " alt="" coords="425,5,571,47"/>
+<area shape="rect" id="node5" href="$classns_game_1_1_entity.html#a727ed96ea0a27b7232e701ed0ba6d3a4" title="This function is used to get the position on the screen/canvas/window, whatever you want to call it..." alt="" coords="393,71,603,98"/>
+<area shape="rect" id="node7" href="$classns_game_1_1_animation.html#a348e25058d77891160c015da88ea4837" title="Renders resources. " alt="" coords="425,123,571,164"/>
+<area shape="rect" id="node6" href="$classns_game_1_1_entity.html#ab7fc1631346d2c643161d229dd653edd" title="Gets the coordinates compared to the map. " alt="" coords="651,71,837,98"/>
+</map>

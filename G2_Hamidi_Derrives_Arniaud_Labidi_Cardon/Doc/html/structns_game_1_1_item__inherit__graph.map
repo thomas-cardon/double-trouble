@@ -1,0 +1,5 @@
+<map id="nsGame::Item" name="nsGame::Item">
+<area shape="rect" id="node2" href="$classns_game_1_1_cookie.html" title="Defines Food. " alt="" coords="5,80,125,107"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_fruit.html" title="Defines Fruit. " alt="" coords="150,80,255,107"/>
+<area shape="rect" id="node4" href="$classns_game_1_1_powerup.html" title="Defines Powerup &#45; allows Pacman to eat monsters and players without getting killed. " alt="" coords="279,80,409,107"/>
+</map>

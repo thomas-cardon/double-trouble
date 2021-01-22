@@ -1,0 +1,5 @@
+<map id="nsGame::StateManager::load" name="nsGame::StateManager::load">
+<area shape="rect" id="node2" href="$class_main_menu_state.html#a723f41a3c34138c5c5f7dcafc076718e" title="Loads State resources. " alt="" coords="213,13,359,39"/>
+<area shape="rect" id="node4" href="$class_credit_state.html#a32ec8ae5c12ee636cfd2b949b8e980e1" title="Loads State resources. " alt="" coords="226,63,346,90"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_cooldowns.html#a70e8df0692a58a08b31b2b6c9578265e" title="Saves a cooldown into the map. " alt="" coords="407,5,559,47"/>
+</map>

@@ -1,0 +1,219 @@
+\hypertarget{classns_game_1_1_fruit}{}\section{ns\+Game\+:\+:Fruit Class Reference}
+\label{classns_game_1_1_fruit}\index{ns\+Game\+::\+Fruit@{ns\+Game\+::\+Fruit}}
+
+
+Defines \hyperlink{classns_game_1_1_fruit}{Fruit}.  
+
+
+
+
+{\ttfamily \#include $<$fruit.\+h$>$}
+
+
+
+Inheritance diagram for ns\+Game\+:\+:Fruit\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{classns_game_1_1_fruit__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns\+Game\+:\+:Fruit\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{classns_game_1_1_fruit__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classns_game_1_1_fruit_a3d8e8a000d60e2d1f71ebd1820dd6667}{Fruit} (ns\+Graphics\+::\+Vec2D \hyperlink{structns_game_1_1_item_a5518876a13f3d2eda659d29748097f1a}{pos})
+\item 
+void \hyperlink{classns_game_1_1_fruit_a28c4ae21607dbad699602528c6ffc583}{load} () override
+\begin{DoxyCompactList}\small\item\em Loads food. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_fruit_adade5568e2f552576d0d32b714b9ac02}{update} (unsigned delta) override
+\begin{DoxyCompactList}\small\item\em Updates food. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_fruit_a99622754f8cf90bb285b4808e98372c7}{render} (Min\+GL \&window) override
+\begin{DoxyCompactList}\small\item\em Renders resources. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_fruit_ad33836a67756dba7390b95c57898e91c}{action} (\hyperlink{classns_game_1_1_player}{Player} $\ast$player) override
+\begin{DoxyCompactList}\small\item\em Makes an action for the player. \end{DoxyCompactList}\item 
+\hyperlink{namespacens_game_a5f7db01e6447720e9a145f0b3c68a4d7}{Item\+Type} \hyperlink{classns_game_1_1_fruit_a4d704f296f536afc2980183bb21e4c62}{get\+Type} () override
+\begin{DoxyCompactList}\small\item\em Gets item type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Defines \hyperlink{classns_game_1_1_fruit}{Fruit}. 
+
+\begin{DoxyAuthor}{Authors}
+Thomas Cardon 
+\end{DoxyAuthor}
+
+
+Definition at line 25 of file fruit.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classns_game_1_1_fruit_a3d8e8a000d60e2d1f71ebd1820dd6667}\label{classns_game_1_1_fruit_a3d8e8a000d60e2d1f71ebd1820dd6667}} 
+\index{ns\+Game\+::\+Fruit@{ns\+Game\+::\+Fruit}!Fruit@{Fruit}}
+\index{Fruit@{Fruit}!ns\+Game\+::\+Fruit@{ns\+Game\+::\+Fruit}}
+\subsubsection{\texorpdfstring{Fruit()}{Fruit()}}
+{\footnotesize\ttfamily ns\+Game\+::\+Fruit\+::\+Fruit (\begin{DoxyParamCaption}\item[{ns\+Graphics\+::\+Vec2D}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 32 of file fruit.\+h.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_fruit_a3d8e8a000d60e2d1f71ebd1820dd6667_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classns_game_1_1_fruit_ad33836a67756dba7390b95c57898e91c}\label{classns_game_1_1_fruit_ad33836a67756dba7390b95c57898e91c}} 
+\index{ns\+Game\+::\+Fruit@{ns\+Game\+::\+Fruit}!action@{action}}
+\index{action@{action}!ns\+Game\+::\+Fruit@{ns\+Game\+::\+Fruit}}
+\subsubsection{\texorpdfstring{action()}{action()}}
+{\footnotesize\ttfamily void Fruit\+::action (\begin{DoxyParamCaption}\item[{\hyperlink{classns_game_1_1_player}{Player} $\ast$}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Makes an action for the player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classns_game_1_1_player}{Player}} & -\/ The player that steps on an item \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{structns_game_1_1_item_af74dffcf9bde4a4297749f4e1852395b}{ns\+Game\+::\+Item}.
+
+
+
+Definition at line 22 of file fruit.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{classns_game_1_1_fruit_ad33836a67756dba7390b95c57898e91c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_fruit_a4d704f296f536afc2980183bb21e4c62}\label{classns_game_1_1_fruit_a4d704f296f536afc2980183bb21e4c62}} 
+\index{ns\+Game\+::\+Fruit@{ns\+Game\+::\+Fruit}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!ns\+Game\+::\+Fruit@{ns\+Game\+::\+Fruit}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}}
+{\footnotesize\ttfamily \hyperlink{namespacens_game_a5f7db01e6447720e9a145f0b3c68a4d7}{Item\+Type} ns\+Game\+::\+Fruit\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets item type. 
+
+\begin{DoxyReturn}{Returns}
+Item\+Type.\+I\+T\+EM 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{structns_game_1_1_item_a69156550e5083928cbb673ca2db671f5}{ns\+Game\+::\+Item}.
+
+
+
+Definition at line 62 of file fruit.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_fruit_a28c4ae21607dbad699602528c6ffc583}\label{classns_game_1_1_fruit_a28c4ae21607dbad699602528c6ffc583}} 
+\index{ns\+Game\+::\+Fruit@{ns\+Game\+::\+Fruit}!load@{load}}
+\index{load@{load}!ns\+Game\+::\+Fruit@{ns\+Game\+::\+Fruit}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Fruit\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Loads food. 
+
+
+
+Implements \hyperlink{structns_game_1_1_item_a5887b6e9225ae8a276801225eca83808}{ns\+Game\+::\+Item}.
+
+
+
+Definition at line 16 of file fruit.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{classns_game_1_1_fruit_a28c4ae21607dbad699602528c6ffc583_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_fruit_a99622754f8cf90bb285b4808e98372c7}\label{classns_game_1_1_fruit_a99622754f8cf90bb285b4808e98372c7}} 
+\index{ns\+Game\+::\+Fruit@{ns\+Game\+::\+Fruit}!render@{render}}
+\index{render@{render}!ns\+Game\+::\+Fruit@{ns\+Game\+::\+Fruit}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Fruit\+::render (\begin{DoxyParamCaption}\item[{Min\+GL \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders resources. 
+
+
+
+Implements \hyperlink{structns_game_1_1_item_a451b6491efc475c9ca47dcccdbbde707}{ns\+Game\+::\+Item}.
+
+
+
+Definition at line 27 of file fruit.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_fruit_a99622754f8cf90bb285b4808e98372c7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classns_game_1_1_fruit_a99622754f8cf90bb285b4808e98372c7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_fruit_adade5568e2f552576d0d32b714b9ac02}\label{classns_game_1_1_fruit_adade5568e2f552576d0d32b714b9ac02}} 
+\index{ns\+Game\+::\+Fruit@{ns\+Game\+::\+Fruit}!update@{update}}
+\index{update@{update}!ns\+Game\+::\+Fruit@{ns\+Game\+::\+Fruit}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Fruit\+::update (\begin{DoxyParamCaption}\item[{unsigned}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates food. 
+
+
+
+Implements \hyperlink{structns_game_1_1_item_a96c07d0f91eef0d77e91d1a7397091a1}{ns\+Game\+::\+Item}.
+
+
+
+Definition at line 20 of file fruit.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classns_game_1_1_fruit_adade5568e2f552576d0d32b714b9ac02_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Nos\+\_\+fichiers/\hyperlink{fruit_8h}{fruit.\+h}\item 
+Nos\+\_\+fichiers/\hyperlink{fruit_8cpp}{fruit.\+cpp}\end{DoxyCompactItemize}

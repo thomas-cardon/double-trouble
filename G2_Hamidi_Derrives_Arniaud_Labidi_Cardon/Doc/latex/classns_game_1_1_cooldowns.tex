@@ -1,0 +1,179 @@
+\hypertarget{classns_game_1_1_cooldowns}{}\section{ns\+Game\+:\+:Cooldowns Class Reference}
+\label{classns_game_1_1_cooldowns}\index{ns\+Game\+::\+Cooldowns@{ns\+Game\+::\+Cooldowns}}
+
+
+{\ttfamily \#include $<$cooldowns.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classns_game_1_1_cooldowns_a70e8df0692a58a08b31b2b6c9578265e}{create\+Cooldown} (std\+::string id, unsigned delay)
+\begin{DoxyCompactList}\small\item\em Saves a cooldown into the map. \end{DoxyCompactList}\item 
+static void \hyperlink{classns_game_1_1_cooldowns_a35012d31be60c3743363d0487f2cead9}{update\+Cooldowns} (unsigned delta)
+\begin{DoxyCompactList}\small\item\em Updates cooldowns according to frame delta. \end{DoxyCompactList}\item 
+static bool \hyperlink{classns_game_1_1_cooldowns_a423a58fcbbf7688556c5706249365f12}{is\+Cooldown\+Over} (std\+::string id)
+\begin{DoxyCompactList}\small\item\em Checks if a cooldown is over. \end{DoxyCompactList}\item 
+static bool \hyperlink{classns_game_1_1_cooldowns_ace34dc5863d0cf6aa01120832b382cd2}{is\+Cooldown\+Over} (std\+::string id, bool has\+To\+Delete)
+\begin{DoxyCompactList}\small\item\em Checks if a cooldown is over, and deletes it if has\+To\+Delete=true. \end{DoxyCompactList}\item 
+static void \hyperlink{classns_game_1_1_cooldowns_a0db5b81efac93aacc0b12b2aa520620b}{set\+Cooldown\+Delay} (std\+::string id, unsigned delay)
+\begin{DoxyCompactList}\small\item\em Sets a new delay for a cooldown that had been saved already. \end{DoxyCompactList}\item 
+static void \hyperlink{classns_game_1_1_cooldowns_a820c7d29780f60b9f5ac5440e134de2e}{reset\+Cooldowns} ()
+\begin{DoxyCompactList}\small\item\em Removes all cooldowns. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file cooldowns.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classns_game_1_1_cooldowns_a70e8df0692a58a08b31b2b6c9578265e}\label{classns_game_1_1_cooldowns_a70e8df0692a58a08b31b2b6c9578265e}} 
+\index{ns\+Game\+::\+Cooldowns@{ns\+Game\+::\+Cooldowns}!create\+Cooldown@{create\+Cooldown}}
+\index{create\+Cooldown@{create\+Cooldown}!ns\+Game\+::\+Cooldowns@{ns\+Game\+::\+Cooldowns}}
+\subsubsection{\texorpdfstring{create\+Cooldown()}{createCooldown()}}
+{\footnotesize\ttfamily void Cooldowns\+::create\+Cooldown (\begin{DoxyParamCaption}\item[{std\+::string}]{id,  }\item[{unsigned}]{delay }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Saves a cooldown into the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & id \\
+\hline
+{\em int} & delay \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 14 of file cooldowns.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_cooldowns_a70e8df0692a58a08b31b2b6c9578265e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_cooldowns_a423a58fcbbf7688556c5706249365f12}\label{classns_game_1_1_cooldowns_a423a58fcbbf7688556c5706249365f12}} 
+\index{ns\+Game\+::\+Cooldowns@{ns\+Game\+::\+Cooldowns}!is\+Cooldown\+Over@{is\+Cooldown\+Over}}
+\index{is\+Cooldown\+Over@{is\+Cooldown\+Over}!ns\+Game\+::\+Cooldowns@{ns\+Game\+::\+Cooldowns}}
+\subsubsection{\texorpdfstring{is\+Cooldown\+Over()}{isCooldownOver()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Cooldowns\+::is\+Cooldown\+Over (\begin{DoxyParamCaption}\item[{std\+::string}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if a cooldown is over. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 23 of file cooldowns.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_cooldowns_a423a58fcbbf7688556c5706249365f12_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_cooldowns_ace34dc5863d0cf6aa01120832b382cd2}\label{classns_game_1_1_cooldowns_ace34dc5863d0cf6aa01120832b382cd2}} 
+\index{ns\+Game\+::\+Cooldowns@{ns\+Game\+::\+Cooldowns}!is\+Cooldown\+Over@{is\+Cooldown\+Over}}
+\index{is\+Cooldown\+Over@{is\+Cooldown\+Over}!ns\+Game\+::\+Cooldowns@{ns\+Game\+::\+Cooldowns}}
+\subsubsection{\texorpdfstring{is\+Cooldown\+Over()}{isCooldownOver()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Cooldowns\+::is\+Cooldown\+Over (\begin{DoxyParamCaption}\item[{std\+::string}]{id,  }\item[{bool}]{has\+To\+Delete }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if a cooldown is over, and deletes it if has\+To\+Delete=true. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & id \\
+\hline
+{\em bool} & has\+To\+Delete \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 34 of file cooldowns.\+cpp.
+
+\mbox{\Hypertarget{classns_game_1_1_cooldowns_a820c7d29780f60b9f5ac5440e134de2e}\label{classns_game_1_1_cooldowns_a820c7d29780f60b9f5ac5440e134de2e}} 
+\index{ns\+Game\+::\+Cooldowns@{ns\+Game\+::\+Cooldowns}!reset\+Cooldowns@{reset\+Cooldowns}}
+\index{reset\+Cooldowns@{reset\+Cooldowns}!ns\+Game\+::\+Cooldowns@{ns\+Game\+::\+Cooldowns}}
+\subsubsection{\texorpdfstring{reset\+Cooldowns()}{resetCooldowns()}}
+{\footnotesize\ttfamily void Cooldowns\+::reset\+Cooldowns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes all cooldowns. 
+
+
+
+Definition at line 49 of file cooldowns.\+cpp.
+
+\mbox{\Hypertarget{classns_game_1_1_cooldowns_a0db5b81efac93aacc0b12b2aa520620b}\label{classns_game_1_1_cooldowns_a0db5b81efac93aacc0b12b2aa520620b}} 
+\index{ns\+Game\+::\+Cooldowns@{ns\+Game\+::\+Cooldowns}!set\+Cooldown\+Delay@{set\+Cooldown\+Delay}}
+\index{set\+Cooldown\+Delay@{set\+Cooldown\+Delay}!ns\+Game\+::\+Cooldowns@{ns\+Game\+::\+Cooldowns}}
+\subsubsection{\texorpdfstring{set\+Cooldown\+Delay()}{setCooldownDelay()}}
+{\footnotesize\ttfamily void Cooldowns\+::set\+Cooldown\+Delay (\begin{DoxyParamCaption}\item[{std\+::string}]{id,  }\item[{unsigned}]{delay }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sets a new delay for a cooldown that had been saved already. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & id \\
+\hline
+{\em unsigned} & delay \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 45 of file cooldowns.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_cooldowns_a0db5b81efac93aacc0b12b2aa520620b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_cooldowns_a35012d31be60c3743363d0487f2cead9}\label{classns_game_1_1_cooldowns_a35012d31be60c3743363d0487f2cead9}} 
+\index{ns\+Game\+::\+Cooldowns@{ns\+Game\+::\+Cooldowns}!update\+Cooldowns@{update\+Cooldowns}}
+\index{update\+Cooldowns@{update\+Cooldowns}!ns\+Game\+::\+Cooldowns@{ns\+Game\+::\+Cooldowns}}
+\subsubsection{\texorpdfstring{update\+Cooldowns()}{updateCooldowns()}}
+{\footnotesize\ttfamily void Cooldowns\+::update\+Cooldowns (\begin{DoxyParamCaption}\item[{unsigned}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Updates cooldowns according to frame delta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unsigned} & delta \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 18 of file cooldowns.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Nos\+\_\+fichiers/\hyperlink{cooldowns_8h}{cooldowns.\+h}\item 
+Nos\+\_\+fichiers/\hyperlink{cooldowns_8cpp}{cooldowns.\+cpp}\end{DoxyCompactItemize}

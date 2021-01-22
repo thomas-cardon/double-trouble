@@ -1,0 +1,5 @@
+<map id="nsGame::Food::getCoordinates" name="nsGame::Food::getCoordinates">
+<area shape="rect" id="node2" href="$classns_game_1_1_food.html#a3d166bdb20aea5fe4ebf3c90b9c27e85" title="Loads food. " alt="" coords="265,5,405,32"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_food.html#a84b519ecca0f27b862878170e08c8731" title="Updates food. " alt="" coords="257,56,412,83"/>
+<area shape="rect" id="node4" href="$classns_game_1_1_food.html#a503e4b78c3a07ec6dbc9cfe2c79742e0" title="Renders resources. " alt="" coords="259,107,411,133"/>
+</map>

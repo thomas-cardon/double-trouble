@@ -1,0 +1,258 @@
+\hypertarget{classns_game_1_1_entity}{}\section{ns\+Game\+:\+:Entity Class Reference}
+\label{classns_game_1_1_entity}\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+
+
+Defines the \hyperlink{classns_game_1_1_entity}{Entity} class.  
+
+
+
+
+{\ttfamily \#include $<$entity.\+h$>$}
+
+
+
+Inheritance diagram for ns\+Game\+:\+:Entity\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{classns_game_1_1_entity__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual ns\+Graphics\+::\+Vec2D \hyperlink{classns_game_1_1_entity_a727ed96ea0a27b7232e701ed0ba6d3a4}{get\+Coordinates} ()
+\begin{DoxyCompactList}\small\item\em This function is used to get the position on the screen/canvas/window, whatever you want to call it. \end{DoxyCompactList}\item 
+virtual ns\+Graphics\+::\+Vec2D \hyperlink{classns_game_1_1_entity_ab7fc1631346d2c643161d229dd653edd}{get\+Position} ()
+\begin{DoxyCompactList}\small\item\em Gets the coordinates compared to the map. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classns_game_1_1_entity_a3e5ba5a1f5b7491dc79b3dbbe5f75701}{can\+Be\+Hit\+By} (\hyperlink{classns_game_1_1_entity}{Entity} entity)
+\begin{DoxyCompactList}\small\item\em Checks if entity can be hit by another entity. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classns_game_1_1_entity_ac09f45ca50c9fef57a50c4414fc7e20d}{spawn} ()
+\begin{DoxyCompactList}\small\item\em Teleports the entity at its spawn. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classns_game_1_1_entity_a03b934337b3c013abcccf3dfea6396d1}{get\+Movement\+Speed} ()
+\begin{DoxyCompactList}\small\item\em Gets the movement speed. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classns_game_1_1_entity_a0254c30b6223caa723303266ad04e4cd}{set\+Movement\+Speed} (double speed)
+\begin{DoxyCompactList}\small\item\em Sets the movement speed. \end{DoxyCompactList}\item 
+bool \hyperlink{classns_game_1_1_entity_a5dd00624fa76be09de80a6d2a982ea09}{in\+Collision} (\hyperlink{type_8h_a64a592133575ccebb1b36453acbec02b}{C\+Mat} map, unsigned x, unsigned y)
+\begin{DoxyCompactList}\small\item\em Checks if entity would be in collision with a structure (walls...) $\vert$ O\+V\+E\+R\+R\+I\+DE IF N\+E\+E\+D\+ED (Flying monsters?) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned \hyperlink{classns_game_1_1_entity_a1e6e0c4a54bb2ce22f2c5f2a646b08fe}{hearts} = 3
+\item 
+ns\+Graphics\+::\+Vec2D \hyperlink{classns_game_1_1_entity_a1ad359bb31e86c4971fd96b080ed43c4}{pos}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classns_game_1_1_entity_a2b5d83f01bdc1d58673b3fae9afe704e}{movement\+Speed} = 1.\+0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines the \hyperlink{classns_game_1_1_entity}{Entity} class. 
+
+\begin{DoxyAuthor}{Author}
+Thomas Cardon 
+\end{DoxyAuthor}
+
+
+Definition at line 16 of file entity.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classns_game_1_1_entity_a3e5ba5a1f5b7491dc79b3dbbe5f75701}\label{classns_game_1_1_entity_a3e5ba5a1f5b7491dc79b3dbbe5f75701}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!can\+Be\+Hit\+By@{can\+Be\+Hit\+By}}
+\index{can\+Be\+Hit\+By@{can\+Be\+Hit\+By}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{can\+Be\+Hit\+By()}{canBeHitBy()}}
+{\footnotesize\ttfamily bool ns\+Game\+::\+Entity\+::can\+Be\+Hit\+By (\begin{DoxyParamCaption}\item[{\hyperlink{classns_game_1_1_entity}{Entity}}]{entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks if entity can be hit by another entity. 
+
+
+
+Definition at line 35 of file entity.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_entity_a3e5ba5a1f5b7491dc79b3dbbe5f75701_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_entity_a3e5ba5a1f5b7491dc79b3dbbe5f75701_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_entity_a727ed96ea0a27b7232e701ed0ba6d3a4}\label{classns_game_1_1_entity_a727ed96ea0a27b7232e701ed0ba6d3a4}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!get\+Coordinates@{get\+Coordinates}}
+\index{get\+Coordinates@{get\+Coordinates}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{get\+Coordinates()}{getCoordinates()}}
+{\footnotesize\ttfamily ns\+Graphics\+::\+Vec2D ns\+Game\+::\+Entity\+::get\+Coordinates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This function is used to get the position on the screen/canvas/window, whatever you want to call it. 
+
+
+
+Definition at line 14 of file entity.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_entity_a727ed96ea0a27b7232e701ed0ba6d3a4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_entity_a727ed96ea0a27b7232e701ed0ba6d3a4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_entity_a03b934337b3c013abcccf3dfea6396d1}\label{classns_game_1_1_entity_a03b934337b3c013abcccf3dfea6396d1}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!get\+Movement\+Speed@{get\+Movement\+Speed}}
+\index{get\+Movement\+Speed@{get\+Movement\+Speed}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{get\+Movement\+Speed()}{getMovementSpeed()}}
+{\footnotesize\ttfamily bool ns\+Game\+::\+Entity\+::get\+Movement\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the movement speed. 
+
+
+
+Definition at line 47 of file entity.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_entity_a03b934337b3c013abcccf3dfea6396d1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_entity_ab7fc1631346d2c643161d229dd653edd}\label{classns_game_1_1_entity_ab7fc1631346d2c643161d229dd653edd}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
+{\footnotesize\ttfamily ns\+Graphics\+::\+Vec2D ns\+Game\+::\+Entity\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the coordinates compared to the map. 
+
+
+
+Definition at line 21 of file entity.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_entity_ab7fc1631346d2c643161d229dd653edd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_entity_a5dd00624fa76be09de80a6d2a982ea09}\label{classns_game_1_1_entity_a5dd00624fa76be09de80a6d2a982ea09}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!in\+Collision@{in\+Collision}}
+\index{in\+Collision@{in\+Collision}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{in\+Collision()}{inCollision()}}
+{\footnotesize\ttfamily bool ns\+Game\+::\+Entity\+::in\+Collision (\begin{DoxyParamCaption}\item[{\hyperlink{type_8h_a64a592133575ccebb1b36453acbec02b}{C\+Mat}}]{map,  }\item[{unsigned}]{x,  }\item[{unsigned}]{y }\end{DoxyParamCaption})}
+
+
+
+Checks if entity would be in collision with a structure (walls...) $\vert$ O\+V\+E\+R\+R\+I\+DE IF N\+E\+E\+D\+ED (Flying monsters?) 
+
+
+
+Definition at line 25 of file entity.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_entity_a5dd00624fa76be09de80a6d2a982ea09_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_entity_a0254c30b6223caa723303266ad04e4cd}\label{classns_game_1_1_entity_a0254c30b6223caa723303266ad04e4cd}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!set\+Movement\+Speed@{set\+Movement\+Speed}}
+\index{set\+Movement\+Speed@{set\+Movement\+Speed}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{set\+Movement\+Speed()}{setMovementSpeed()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Entity\+::set\+Movement\+Speed (\begin{DoxyParamCaption}\item[{double}]{speed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the movement speed. 
+
+
+
+Reimplemented in \hyperlink{classns_game_1_1_player_ac3861ee9b9f4a8bedcc6f002ab70e39c}{ns\+Game\+::\+Player}.
+
+
+
+Definition at line 51 of file entity.\+cpp.
+
+\mbox{\Hypertarget{classns_game_1_1_entity_ac09f45ca50c9fef57a50c4414fc7e20d}\label{classns_game_1_1_entity_ac09f45ca50c9fef57a50c4414fc7e20d}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!spawn@{spawn}}
+\index{spawn@{spawn}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{spawn()}{spawn()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Entity\+::spawn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Teleports the entity at its spawn. 
+
+
+
+Reimplemented in \hyperlink{classns_game_1_1_player_aa689f9928e911480b23b00c654cd48f8}{ns\+Game\+::\+Player}.
+
+
+
+Definition at line 42 of file entity.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classns_game_1_1_entity_a1e6e0c4a54bb2ce22f2c5f2a646b08fe}\label{classns_game_1_1_entity_a1e6e0c4a54bb2ce22f2c5f2a646b08fe}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!hearts@{hearts}}
+\index{hearts@{hearts}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{hearts}{hearts}}
+{\footnotesize\ttfamily unsigned ns\+Game\+::\+Entity\+::hearts = 3}
+
+
+
+Definition at line 21 of file entity.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_entity_a2b5d83f01bdc1d58673b3fae9afe704e}\label{classns_game_1_1_entity_a2b5d83f01bdc1d58673b3fae9afe704e}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!movement\+Speed@{movement\+Speed}}
+\index{movement\+Speed@{movement\+Speed}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{movement\+Speed}{movementSpeed}}
+{\footnotesize\ttfamily double ns\+Game\+::\+Entity\+::movement\+Speed = 1.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 19 of file entity.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_entity_a1ad359bb31e86c4971fd96b080ed43c4}\label{classns_game_1_1_entity_a1ad359bb31e86c4971fd96b080ed43c4}} 
+\index{ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}!pos@{pos}}
+\index{pos@{pos}!ns\+Game\+::\+Entity@{ns\+Game\+::\+Entity}}
+\subsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily ns\+Graphics\+::\+Vec2D ns\+Game\+::\+Entity\+::pos}
+
+
+
+Definition at line 23 of file entity.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Nos\+\_\+fichiers/\hyperlink{entity_8h}{entity.\+h}\item 
+Nos\+\_\+fichiers/\hyperlink{entity_8cpp}{entity.\+cpp}\end{DoxyCompactItemize}

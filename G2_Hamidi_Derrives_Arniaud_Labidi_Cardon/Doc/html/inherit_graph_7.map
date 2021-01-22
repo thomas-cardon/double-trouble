@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$structns_game_1_1_state.html" title="A class defining the different states of the game (In&#45;game, Menus, Loading...) " alt="" coords="5,81,116,108"/>
+<area shape="rect" id="node2" href="$class_credit_state.html" title="Defines the credits. " alt="" coords="193,5,281,32"/>
+<area shape="rect" id="node3" href="$class_loading_state.html" title="Defines the loading state. " alt="" coords="187,56,286,83"/>
+<area shape="rect" id="node4" href="$class_main_menu_state.html" title="Defines the main menu. " alt="" coords="180,107,293,133"/>
+<area shape="rect" id="node5" href="$classns_game_1_1_game_state.html" title="Defines the game logic. " alt="" coords="164,157,309,184"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="nsGame::Food::render" name="nsGame::Food::render">
+<area shape="rect" id="node2" href="$classns_game_1_1_food.html#a65337270b0da5319663117449547118c" title="This function is used to get the position on the screen/canvas/window, whatever you want to call it..." alt="" coords="205,31,409,57"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_food.html#a3d166bdb20aea5fe4ebf3c90b9c27e85" title="Loads food. " alt="" coords="465,5,605,32"/>
+<area shape="rect" id="node4" href="$classns_game_1_1_food.html#a84b519ecca0f27b862878170e08c8731" title="Updates food. " alt="" coords="457,56,612,83"/>
+</map>

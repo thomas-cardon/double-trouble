@@ -1,0 +1,10 @@
+<map id="Nos_fichiers/cooldowns.h" name="Nos_fichiers/cooldowns.h">
+<area shape="rect" id="node2" href="$cooldowns_8cpp.html" title="Method definitions for cooldowns.h. " alt="" coords="5,80,192,107"/>
+<area shape="rect" id="node4" href="$entity_8cpp.html" title="Method definitions for Entity.h. " alt="" coords="217,80,373,107"/>
+<area shape="rect" id="node5" href="$main_menu_state_8cpp.html" title="Main menu state. " alt="" coords="397,80,611,107"/>
+<area shape="rect" id="node8" href="$map_8cpp.html" title="Method definitions for map.h. " alt="" coords="636,80,785,107"/>
+<area shape="rect" id="node9" href="$monster_8cpp.html" title="Définition des méthodes de la classe monster.h. " alt="" coords="809,80,980,107"/>
+<area shape="rect" id="node3" href="$player_8cpp.html" title="Définition des méthodes de la classe Player. " alt="" coords="19,155,178,181"/>
+<area shape="rect" id="node6" href="$state_manager_8cpp.html" title="Method definitions for stateManager.h. " alt="" coords="403,155,605,181"/>
+<area shape="rect" id="node7" href="$game2d_8cpp.html" title="Method definitions for game2d.h. " alt="" coords="419,229,589,256"/>
+</map>

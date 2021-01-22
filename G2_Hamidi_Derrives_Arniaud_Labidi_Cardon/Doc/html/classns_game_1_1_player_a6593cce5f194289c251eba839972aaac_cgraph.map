@@ -1,0 +1,4 @@
+<map id="nsGame::Player::damage" name="nsGame::Player::damage">
+<area shape="rect" id="node2" href="$structns_game_1_1_entity.html#a0fbe0a80400a03319fbe3bd50919535c" title="Adds an effect to the entity for x milliseconds. " alt="" coords="224,5,401,32"/>
+<area shape="rect" id="node3" href="$structns_game_1_1_entity.html#a522648b330daab91b49f78f0737a943f" title="nsGame::Entity::kill" alt="" coords="244,56,381,83"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="Nos_fichiers/gameState.cpp" name="Nos_fichiers/gameState.cpp">
+<area shape="rect" id="node2" href="$game_state_8h.html" title="gameState " alt="" coords="356,80,452,107"/>
+<area shape="rect" id="node5" href="$type_8h.html" title="Definition of usefull types or aliases for the project. " alt="" coords="952,453,1011,480"/>
+<area shape="rect" id="node9" href="$params_8h.html" title="Paramters&#39; definition and associated functions. " alt="" coords="1053,229,1129,256"/>
+<area shape="rect" id="node10" href="$map_8h.html" title="Map. " alt="" coords="536,155,595,181"/>
+<area shape="rect" id="node11" href="$definitions_8h.html" title="definitions.h" alt="" coords="146,453,238,480"/>
+<area shape="rect" id="node18" href="$player_8h.html" title="Player. " alt="" coords="457,304,525,331"/>
+<area shape="rect" id="node20" href="$state_8h.html" title="State. " alt="" coords="854,229,917,256"/>
+<area shape="rect" id="node13" href="$monster_8h.html" title="Monster. " alt="" coords="525,229,605,256"/>
+<area shape="rect" id="node19" href="$item_8h.html" title="Item. " alt="" coords="629,229,688,256"/>
+<area shape="rect" id="node14" href="$entity_8h.html" title="Definitions for the Entity class. " alt="" coords="545,379,610,405"/>
+<area shape="rect" id="node16" href="$animation_8h.html" title="Animation. " alt="" coords="382,453,471,480"/>
+<area shape="rect" id="node17" href="$effect_type_8h.html" title="EffectType. " alt="" coords="495,453,590,480"/>
+<area shape="rect" id="node21" href="$state_manager_8h.html" title="stateManager.h" alt="" coords="904,304,1016,331"/>
+</map>

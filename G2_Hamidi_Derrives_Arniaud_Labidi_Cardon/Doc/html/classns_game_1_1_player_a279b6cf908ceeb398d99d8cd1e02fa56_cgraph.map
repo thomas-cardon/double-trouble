@@ -1,0 +1,6 @@
+<map id="nsGame::Player::load" name="nsGame::Player::load">
+<area shape="rect" id="node2" href="$structns_game_1_1_entity.html#ae0aa595447b5f3d2c0b80fb99305c56e" title="load " alt="" coords="219,5,364,32"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_cooldowns.html#a70e8df0692a58a08b31b2b6c9578265e" title="Saves a cooldown into the map. " alt="" coords="215,57,367,98"/>
+<area shape="rect" id="node4" href="$structns_game_1_1_entity.html#a0c574fba3e12b9bb976d72953626e550" title="Prevents entity to move for X milliseconds. " alt="" coords="201,123,381,149"/>
+<area shape="rect" id="node5" href="$classns_game_1_1_player.html#acab2fb26d3c0dddadccf7fcfc17b6e79" title="Teleports the entity at its spawn. " alt="" coords="210,173,373,200"/>
+</map>

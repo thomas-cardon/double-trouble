@@ -1,0 +1,11 @@
+<map id="nsGame::GameState::render" name="nsGame::GameState::render">
+<area shape="rect" id="node2" href="$classns_game_1_1_map.html#a3660d6272f910c1b702c4e8f3f463f2b" title="Renders the layer of the map, with its cells (walls, etc.) " alt="" coords="213,33,361,59"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_player.html#a34b359a72d3dbdf537c72161898376f3" title="Renders resources. " alt="" coords="207,83,367,110"/>
+<area shape="rect" id="node9" href="$classns_game_1_1_game_state.html#a8d9cadd7432dfd4b7ada08e37bf6b30d" title="Renders the score on the sidebar for a given player. " alt="" coords="210,135,363,176"/>
+<area shape="rect" id="node10" href="$classns_game_1_1_game_state.html#a66f328c56ed9887e02a93db856316d4c" title="Renders the victory screen. " alt="" coords="210,200,363,241"/>
+<area shape="rect" id="node4" href="$classns_game_1_1_animation.html#a1a103b09407581b74933001fb8b3a8f0" title="Sets position on the map. " alt="" coords="652,5,797,47"/>
+<area shape="rect" id="node5" href="$structns_game_1_1_entity.html#a727ed96ea0a27b7232e701ed0ba6d3a4" title="This function is used to get the position on the screen/canvas/window, whatever you want to call it..." alt="" coords="620,75,829,102"/>
+<area shape="rect" id="node7" href="$classns_game_1_1_animation.html#a348e25058d77891160c015da88ea4837" title="Renders resources. " alt="" coords="652,135,797,176"/>
+<area shape="rect" id="node8" href="$structns_game_1_1_entity.html#a4663cc85381acc9aaac120a85b6f24d0" title="render " alt="" coords="415,58,572,85"/>
+<area shape="rect" id="node6" href="$structns_game_1_1_entity.html#ab7fc1631346d2c643161d229dd653edd" title="Gets the coordinates compared to the map. " alt="" coords="877,75,1064,102"/>
+</map>

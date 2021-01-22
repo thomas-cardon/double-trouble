@@ -1,0 +1,18 @@
+<map id="Nos_fichiers/player.h" name="Nos_fichiers/player.h">
+<area shape="rect" id="node2" href="$item_8h.html" title="Item. " alt="" coords="439,80,574,107"/>
+<area shape="rect" id="node8" href="$map_8h.html" title="Map. " alt="" coords="605,155,739,181"/>
+<area shape="rect" id="node9" href="$game_state_8h.html" title="gameState " alt="" coords="720,229,893,256"/>
+<area shape="rect" id="node15" href="$monster_8h.html" title="Monster. " alt="" coords="755,80,912,107"/>
+<area shape="rect" id="node17" href="$player_8cpp.html" title="Définition des méthodes de la classe Player. " alt="" coords="1010,80,1169,107"/>
+<area shape="rect" id="node3" href="$cookie_8h.html" title="Cookie. " alt="" coords="433,155,581,181"/>
+<area shape="rect" id="node6" href="$fruit_8h.html" title="Fruit. " alt="" coords="54,155,186,181"/>
+<area shape="rect" id="node13" href="$powerup_8h.html" title="Powerup. " alt="" coords="250,155,409,181"/>
+<area shape="rect" id="node4" href="$cookie_8cpp.html" title="Method definitions for cookie.h. " alt="" coords="424,229,587,256"/>
+<area shape="rect" id="node5" href="$map_8cpp.html" title="Method definitions for map.h. " alt="" coords="427,304,576,331"/>
+<area shape="rect" id="node7" href="$fruit_8cpp.html" title="Method definitions for fruit.h. " alt="" coords="5,229,152,256"/>
+<area shape="rect" id="node10" href="$game_state_8cpp.html" title="Method definitions for gameState.h. " alt="" coords="713,304,900,331"/>
+<area shape="rect" id="node11" href="$state_manager_8cpp.html" title="Method definitions for stateManager.h. " alt="" coords="705,379,908,405"/>
+<area shape="rect" id="node12" href="$game2d_8cpp.html" title="Method definitions for game2d.h. " alt="" coords="721,453,892,480"/>
+<area shape="rect" id="node14" href="$powerup_8cpp.html" title="Method definitions for powerup.h. " alt="" coords="176,229,349,256"/>
+<area shape="rect" id="node16" href="$monster_8cpp.html" title="Définition des méthodes de la classe monster.h. " alt="" coords="764,155,935,181"/>
+</map>

@@ -1,0 +1,319 @@
+\hypertarget{classns_game_1_1_monster}{}\section{ns\+Game\+:\+:Monster Class Reference}
+\label{classns_game_1_1_monster}\index{ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}}
+
+
+Defines the monsters class.  
+
+
+
+
+{\ttfamily \#include $<$monster.\+h$>$}
+
+
+
+Inheritance diagram for ns\+Game\+:\+:Monster\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classns_game_1_1_monster__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns\+Game\+:\+:Monster\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classns_game_1_1_monster__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classns_game_1_1_monster_a93d359ec069d9667352b54e3b531b4e3}{Monster} (unsigned behaviour\+Id)
+\item 
+std\+::string \hyperlink{classns_game_1_1_monster_a14a0c542fe9c8b6772a3984ed674c9cf}{id} ()
+\begin{DoxyCompactList}\small\item\em Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_monster_a0fa9eca417938bdbf9f12befd4531b34}{update} (unsigned delta, \hyperlink{type_8h_a64a592133575ccebb1b36453acbec02b}{C\+Mat} \&mat, \hyperlink{classns_game_1_1_player}{Player} $\ast$p1, \hyperlink{classns_game_1_1_player}{Player} $\ast$p2)
+\begin{DoxyCompactList}\small\item\em Updates the ennemy. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_monster_afe0b8e0d63cfef2cf0026f81facae620}{render} (Min\+GL \&window)
+\begin{DoxyCompactList}\small\item\em Renders resources. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_monster_a6b81ba26c3e8fae426e719be2acc4e4e}{load} ()
+\begin{DoxyCompactList}\small\item\em Loads the ennemy. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_monster_a6ee4a9d2cea5d327379de3416a059169}{spawn} ()
+\begin{DoxyCompactList}\small\item\em Teleports the entity at its spawn. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_monster_a48644849ca73888a148d6afb7eb0fa17}{damage} ()
+\begin{DoxyCompactList}\small\item\em Damages entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classns_game_1_1_monster_ab3290fa9f51e0fcbeff313cd6c8fec7e}{can\+Move} = true
+\begin{DoxyCompactList}\small\item\em Allows entity to move or not. \end{DoxyCompactList}\item 
+ns\+Gui\+::\+Sprite \hyperlink{classns_game_1_1_monster_ad20c897b4b4042a27ad2eefeead5ea47}{top}
+\begin{DoxyCompactList}\small\item\em Sprites for every direction. \end{DoxyCompactList}\item 
+ns\+Gui\+::\+Sprite \hyperlink{classns_game_1_1_monster_abce2dcb5accc85533cb9176a913d8d5c}{left}
+\item 
+ns\+Gui\+::\+Sprite \hyperlink{classns_game_1_1_monster_a32a00b717e96ccc6008b978d048802d6}{right}
+\item 
+ns\+Gui\+::\+Sprite \hyperlink{classns_game_1_1_monster_a1ce7159819ef30be7f9efed781f7ce49}{bottom}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Defines the monsters class. 
+
+\begin{DoxyAuthor}{Authors}
+Ines Hamidi, Thomas Cardon, Alexandre Arniaud 
+\end{DoxyAuthor}
+
+
+Definition at line 28 of file monster.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classns_game_1_1_monster_a93d359ec069d9667352b54e3b531b4e3}\label{classns_game_1_1_monster_a93d359ec069d9667352b54e3b531b4e3}} 
+\index{ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}!Monster@{Monster}}
+\index{Monster@{Monster}!ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}}
+\subsubsection{\texorpdfstring{Monster()}{Monster()}}
+{\footnotesize\ttfamily ns\+Game\+::\+Monster\+::\+Monster (\begin{DoxyParamCaption}\item[{unsigned}]{behaviour\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 45 of file monster.\+h.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_monster_a93d359ec069d9667352b54e3b531b4e3_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classns_game_1_1_monster_a48644849ca73888a148d6afb7eb0fa17}\label{classns_game_1_1_monster_a48644849ca73888a148d6afb7eb0fa17}} 
+\index{ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}!damage@{damage}}
+\index{damage@{damage}!ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}}
+\subsubsection{\texorpdfstring{damage()}{damage()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Monster\+::damage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Damages entity. 
+
+
+
+Definition at line 35 of file monster.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_monster_a48644849ca73888a148d6afb7eb0fa17_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_monster_a48644849ca73888a148d6afb7eb0fa17_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_monster_a14a0c542fe9c8b6772a3984ed674c9cf}\label{classns_game_1_1_monster_a14a0c542fe9c8b6772a3984ed674c9cf}} 
+\index{ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}!id@{id}}
+\index{id@{id}!ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}}
+\subsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily std\+::string Monster\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{structns_game_1_1_entity}{Entity} ID 
+\end{DoxyReturn}
+
+
+Definition at line 52 of file monster.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_monster_a14a0c542fe9c8b6772a3984ed674c9cf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_monster_a6b81ba26c3e8fae426e719be2acc4e4e}\label{classns_game_1_1_monster_a6b81ba26c3e8fae426e719be2acc4e4e}} 
+\index{ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}!load@{load}}
+\index{load@{load}!ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Monster\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads the ennemy. 
+
+
+
+Definition at line 40 of file monster.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_monster_a6b81ba26c3e8fae426e719be2acc4e4e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_monster_a6b81ba26c3e8fae426e719be2acc4e4e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_monster_afe0b8e0d63cfef2cf0026f81facae620}\label{classns_game_1_1_monster_afe0b8e0d63cfef2cf0026f81facae620}} 
+\index{ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}!render@{render}}
+\index{render@{render}!ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Monster\+::render (\begin{DoxyParamCaption}\item[{Min\+GL \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Renders resources. 
+
+
+
+Definition at line 192 of file monster.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_monster_afe0b8e0d63cfef2cf0026f81facae620_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_monster_afe0b8e0d63cfef2cf0026f81facae620_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_monster_a6ee4a9d2cea5d327379de3416a059169}\label{classns_game_1_1_monster_a6ee4a9d2cea5d327379de3416a059169}} 
+\index{ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}!spawn@{spawn}}
+\index{spawn@{spawn}!ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}}
+\subsubsection{\texorpdfstring{spawn()}{spawn()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Monster\+::spawn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Teleports the entity at its spawn. 
+
+
+
+Definition at line 30 of file monster.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_monster_a6ee4a9d2cea5d327379de3416a059169_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_monster_a0fa9eca417938bdbf9f12befd4531b34}\label{classns_game_1_1_monster_a0fa9eca417938bdbf9f12befd4531b34}} 
+\index{ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}!update@{update}}
+\index{update@{update}!ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Monster\+::update (\begin{DoxyParamCaption}\item[{unsigned}]{delta,  }\item[{\hyperlink{type_8h_a64a592133575ccebb1b36453acbec02b}{C\+Mat} \&}]{mat,  }\item[{\hyperlink{classns_game_1_1_player}{Player} $\ast$}]{p1,  }\item[{\hyperlink{classns_game_1_1_player}{Player} $\ast$}]{p2 }\end{DoxyParamCaption})}
+
+
+
+Updates the ennemy. 
+
+
+
+Definition at line 60 of file monster.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_monster_a0fa9eca417938bdbf9f12befd4531b34_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_monster_a0fa9eca417938bdbf9f12befd4531b34_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classns_game_1_1_monster_a1ce7159819ef30be7f9efed781f7ce49}\label{classns_game_1_1_monster_a1ce7159819ef30be7f9efed781f7ce49}} 
+\index{ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}!bottom@{bottom}}
+\index{bottom@{bottom}!ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}}
+\subsubsection{\texorpdfstring{bottom}{bottom}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite ns\+Game\+::\+Monster\+::bottom}
+
+
+
+Definition at line 43 of file monster.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_monster_ab3290fa9f51e0fcbeff313cd6c8fec7e}\label{classns_game_1_1_monster_ab3290fa9f51e0fcbeff313cd6c8fec7e}} 
+\index{ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}!can\+Move@{can\+Move}}
+\index{can\+Move@{can\+Move}!ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}}
+\subsubsection{\texorpdfstring{can\+Move}{canMove}}
+{\footnotesize\ttfamily bool ns\+Game\+::\+Monster\+::can\+Move = true}
+
+
+
+Allows entity to move or not. 
+
+
+
+Definition at line 40 of file monster.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_monster_abce2dcb5accc85533cb9176a913d8d5c}\label{classns_game_1_1_monster_abce2dcb5accc85533cb9176a913d8d5c}} 
+\index{ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}!left@{left}}
+\index{left@{left}!ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}}
+\subsubsection{\texorpdfstring{left}{left}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite ns\+Game\+::\+Monster\+::left}
+
+
+
+Definition at line 43 of file monster.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_monster_a32a00b717e96ccc6008b978d048802d6}\label{classns_game_1_1_monster_a32a00b717e96ccc6008b978d048802d6}} 
+\index{ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}!right@{right}}
+\index{right@{right}!ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}}
+\subsubsection{\texorpdfstring{right}{right}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite ns\+Game\+::\+Monster\+::right}
+
+
+
+Definition at line 43 of file monster.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_monster_ad20c897b4b4042a27ad2eefeead5ea47}\label{classns_game_1_1_monster_ad20c897b4b4042a27ad2eefeead5ea47}} 
+\index{ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}!top@{top}}
+\index{top@{top}!ns\+Game\+::\+Monster@{ns\+Game\+::\+Monster}}
+\subsubsection{\texorpdfstring{top}{top}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite ns\+Game\+::\+Monster\+::top}
+
+
+
+Sprites for every direction. 
+
+
+
+Definition at line 43 of file monster.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Nos\+\_\+fichiers/\hyperlink{monster_8h}{monster.\+h}\item 
+Nos\+\_\+fichiers/\hyperlink{monster_8cpp}{monster.\+cpp}\end{DoxyCompactItemize}

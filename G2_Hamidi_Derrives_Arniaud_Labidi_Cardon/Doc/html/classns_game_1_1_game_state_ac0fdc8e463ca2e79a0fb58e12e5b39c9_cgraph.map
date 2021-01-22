@@ -1,0 +1,8 @@
+<map id="nsGame::GameState::destroy" name="nsGame::GameState::destroy">
+<area shape="rect" id="node2" href="$classns_game_1_1_player.html#acab2fb26d3c0dddadccf7fcfc17b6e79" title="Teleports the entity at its spawn. " alt="" coords="207,5,369,32"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_map.html#a11fd1b88b5f3c923dad2c88df16e4373" title="load " alt="" coords="220,56,356,83"/>
+<area shape="rect" id="node4" href="$map_8cpp.html#a80ba96737f2daeda26fdd4bf7488cc26" title="getRandomLevel" alt="" coords="469,31,589,57"/>
+<area shape="rect" id="node5" href="$classns_game_1_1_map.html#a098dda0872f84fa83c61693efaca48f1" title="Gets a list of positions where there&#39;s nothing but a cell. " alt="" coords="417,81,640,108"/>
+<area shape="rect" id="node6" href="$classns_game_1_1_map.html#a8ae7e6fe93f1318c0d7d2569e73ec144" title="Gets the map height. " alt="" coords="688,56,856,83"/>
+<area shape="rect" id="node7" href="$classns_game_1_1_map.html#a948d05a71e53131418c9cf19c2da1062" title="Gets the map width. " alt="" coords="690,107,854,133"/>
+</map>

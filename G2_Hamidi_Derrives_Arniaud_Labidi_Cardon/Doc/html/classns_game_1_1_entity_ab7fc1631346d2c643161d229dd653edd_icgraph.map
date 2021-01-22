@@ -1,0 +1,12 @@
+<map id="nsGame::Entity::getPosition" name="nsGame::Entity::getPosition">
+<area shape="rect" id="node2" href="$classns_game_1_1_entity.html#a727ed96ea0a27b7232e701ed0ba6d3a4" title="This function is used to get the position on the screen/canvas/window, whatever you want to call it..." alt="" coords="240,15,449,42"/>
+<area shape="rect" id="node8" href="$classns_game_1_1_entity.html#a3e5ba5a1f5b7491dc79b3dbbe5f75701" title="Checks if entity can be hit by another entity. " alt="" coords="497,77,688,103"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_player.html#a34b359a72d3dbdf537c72161898376f3" title="Renders resources. " alt="" coords="513,14,673,41"/>
+<area shape="rect" id="node4" href="$classns_game_1_1_game_state.html#a1e3179b016431332ecff880e09e267d3" title="Renders resources. " alt="" coords="736,5,889,47"/>
+<area shape="rect" id="node5" href="$classns_game_1_1_state_manager.html#a6f5b564dbd4e84529a125aca38f4339d" title="Renders current state resources. " alt="" coords="937,5,1097,47"/>
+<area shape="rect" id="node6" href="$game2d_8h.html#a45fbe5b33369650f26eaf34d709efb7b" title="Renders every component. " alt="" coords="1147,17,1205,43"/>
+<area shape="rect" id="node7" href="$game2d_8h.html#ab223e99bd1bae1986af774532abb06c9" title="Loads the game. " alt="" coords="1255,46,1301,73"/>
+<area shape="rect" id="node9" href="$classns_game_1_1_game_state.html#a4d3cb871a1aec541a37fe241664b738c" title="Updates state. " alt="" coords="736,71,889,112"/>
+<area shape="rect" id="node10" href="$classns_game_1_1_state_manager.html#ab9c5e47745b79af657c08adcc8607475" title="Updates the current state. " alt="" coords="937,71,1097,112"/>
+<area shape="rect" id="node11" href="$game2d_8h.html#a70c7a760d43263eead3fedac2fe55ed3" title="Updates all sub components every tick. " alt="" coords="1145,71,1207,98"/>
+</map>

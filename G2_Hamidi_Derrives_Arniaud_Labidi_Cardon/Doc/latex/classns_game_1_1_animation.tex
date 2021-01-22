@@ -1,0 +1,249 @@
+\hypertarget{classns_game_1_1_animation}{}\section{ns\+Game\+:\+:Animation Class Reference}
+\label{classns_game_1_1_animation}\index{ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}}
+
+
+Defines animations.  
+
+
+
+
+{\ttfamily \#include $<$animation.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classns_game_1_1_animation_aebaabfa10569678e6a7d30fa9c8d031d}{Animation} ()
+\item 
+\hyperlink{classns_game_1_1_animation_a0554455321614f3f94bbcbd5b784cfd5}{Animation} (ns\+Graphics\+::\+Vec2D pos)
+\item 
+\hyperlink{classns_game_1_1_animation_a022c8e1738aee4ce2e2c15abbeedc711}{Animation} (unsigned \hyperlink{classns_game_1_1_animation_abde2f282d6d865a253f0a6edc0964508}{delay}, bool \hyperlink{classns_game_1_1_animation_a3f119a84e6993f0676c9cde2b84a61dd}{alternate})
+\item 
+\hyperlink{classns_game_1_1_animation_a0170b0eeb1b1f41d4f0a5270877e9897}{Animation} (unsigned \hyperlink{classns_game_1_1_animation_abde2f282d6d865a253f0a6edc0964508}{delay}, bool \hyperlink{classns_game_1_1_animation_a3f119a84e6993f0676c9cde2b84a61dd}{alternate}, ns\+Graphics\+::\+Vec2D pos)
+\item 
+void \hyperlink{classns_game_1_1_animation_a5f32b1fc6ad5d228a4153d7421fa457b}{update} (unsigned delta)
+\begin{DoxyCompactList}\small\item\em Updates animation, changes sprite according to delta and direction. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_animation_a626733cd1a3031caf438b656f1d805cd}{set\+Coordinates} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Sets coordinates on the window. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_animation_a1a103b09407581b74933001fb8b3a8f0}{set\+Position} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Sets position on the map. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_animation_a2dc40787df4708e3f5d81e5529595574}{set\+Position} (ns\+Graphics\+::\+Vec2D pos)
+\begin{DoxyCompactList}\small\item\em Sets position on the map. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_animation_a348e25058d77891160c015da88ea4837}{render} (Min\+GL \&window)
+\begin{DoxyCompactList}\small\item\em Renders resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned \hyperlink{classns_game_1_1_animation_abde2f282d6d865a253f0a6edc0964508}{delay} = 500
+\begin{DoxyCompactList}\small\item\em Delay between frames. \end{DoxyCompactList}\item 
+unsigned \hyperlink{classns_game_1_1_animation_a2cb68d312de6b044102c6a1e65221eb3}{current\+Sprite} = 0
+\item 
+bool \hyperlink{classns_game_1_1_animation_a3f119a84e6993f0676c9cde2b84a61dd}{alternate} = true
+\begin{DoxyCompactList}\small\item\em Allows animation to go from start to end, then end to start, and vice versa. \end{DoxyCompactList}\item 
+std\+::vector$<$ ns\+Gui\+::\+Sprite $>$ \hyperlink{classns_game_1_1_animation_a1757a8a9ce0a3fc6a75b1289b78753bb}{sprites}
+\begin{DoxyCompactList}\small\item\em Sprites list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines animations. 
+
+\begin{DoxyAuthor}{Author}
+Thomas Cardon 
+\end{DoxyAuthor}
+
+
+Definition at line 20 of file animation.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classns_game_1_1_animation_aebaabfa10569678e6a7d30fa9c8d031d}\label{classns_game_1_1_animation_aebaabfa10569678e6a7d30fa9c8d031d}} 
+\index{ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}}
+\subsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily ns\+Game\+::\+Animation\+::\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classns_game_1_1_animation_a0554455321614f3f94bbcbd5b784cfd5}\label{classns_game_1_1_animation_a0554455321614f3f94bbcbd5b784cfd5}} 
+\index{ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}}
+\subsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}\item[{ns\+Graphics\+::\+Vec2D}]{pos }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file animation.\+cpp.
+
+\mbox{\Hypertarget{classns_game_1_1_animation_a022c8e1738aee4ce2e2c15abbeedc711}\label{classns_game_1_1_animation_a022c8e1738aee4ce2e2c15abbeedc711}} 
+\index{ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}}
+\subsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}\item[{unsigned}]{delay,  }\item[{bool}]{alternate }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file animation.\+cpp.
+
+\mbox{\Hypertarget{classns_game_1_1_animation_a0170b0eeb1b1f41d4f0a5270877e9897}\label{classns_game_1_1_animation_a0170b0eeb1b1f41d4f0a5270877e9897}} 
+\index{ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}}
+\subsubsection{\texorpdfstring{Animation()}{Animation()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}\item[{unsigned}]{delay,  }\item[{bool}]{alternate,  }\item[{ns\+Graphics\+::\+Vec2D}]{pos }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file animation.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classns_game_1_1_animation_a348e25058d77891160c015da88ea4837}\label{classns_game_1_1_animation_a348e25058d77891160c015da88ea4837}} 
+\index{ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}!render@{render}}
+\index{render@{render}!ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Animation\+::render (\begin{DoxyParamCaption}\item[{Min\+GL \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Renders resources. 
+
+
+
+Definition at line 61 of file animation.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_animation_a348e25058d77891160c015da88ea4837_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_animation_a626733cd1a3031caf438b656f1d805cd}\label{classns_game_1_1_animation_a626733cd1a3031caf438b656f1d805cd}} 
+\index{ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}!set\+Coordinates@{set\+Coordinates}}
+\index{set\+Coordinates@{set\+Coordinates}!ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}}
+\subsubsection{\texorpdfstring{set\+Coordinates()}{setCoordinates()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Animation\+::set\+Coordinates (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Sets coordinates on the window. 
+
+
+
+Definition at line 47 of file animation.\+cpp.
+
+\mbox{\Hypertarget{classns_game_1_1_animation_a1a103b09407581b74933001fb8b3a8f0}\label{classns_game_1_1_animation_a1a103b09407581b74933001fb8b3a8f0}} 
+\index{ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}}
+\subsubsection{\texorpdfstring{set\+Position()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ns\+Game\+::\+Animation\+::set\+Position (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Sets position on the map. 
+
+
+
+Definition at line 56 of file animation.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_animation_a1a103b09407581b74933001fb8b3a8f0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_animation_a2dc40787df4708e3f5d81e5529595574}\label{classns_game_1_1_animation_a2dc40787df4708e3f5d81e5529595574}} 
+\index{ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}}
+\subsubsection{\texorpdfstring{set\+Position()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ns\+Game\+::\+Animation\+::set\+Position (\begin{DoxyParamCaption}\item[{ns\+Graphics\+::\+Vec2D}]{pos }\end{DoxyParamCaption})}
+
+
+
+Sets position on the map. 
+
+
+
+Definition at line 52 of file animation.\+cpp.
+
+\mbox{\Hypertarget{classns_game_1_1_animation_a5f32b1fc6ad5d228a4153d7421fa457b}\label{classns_game_1_1_animation_a5f32b1fc6ad5d228a4153d7421fa457b}} 
+\index{ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}!update@{update}}
+\index{update@{update}!ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Animation\+::update (\begin{DoxyParamCaption}\item[{unsigned}]{delta }\end{DoxyParamCaption})}
+
+
+
+Updates animation, changes sprite according to delta and direction. 
+
+
+
+Definition at line 28 of file animation.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_animation_a5f32b1fc6ad5d228a4153d7421fa457b_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classns_game_1_1_animation_a3f119a84e6993f0676c9cde2b84a61dd}\label{classns_game_1_1_animation_a3f119a84e6993f0676c9cde2b84a61dd}} 
+\index{ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}!alternate@{alternate}}
+\index{alternate@{alternate}!ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}}
+\subsubsection{\texorpdfstring{alternate}{alternate}}
+{\footnotesize\ttfamily bool ns\+Game\+::\+Animation\+::alternate = true}
+
+
+
+Allows animation to go from start to end, then end to start, and vice versa. 
+
+
+
+Definition at line 39 of file animation.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_animation_a2cb68d312de6b044102c6a1e65221eb3}\label{classns_game_1_1_animation_a2cb68d312de6b044102c6a1e65221eb3}} 
+\index{ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}!current\+Sprite@{current\+Sprite}}
+\index{current\+Sprite@{current\+Sprite}!ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}}
+\subsubsection{\texorpdfstring{current\+Sprite}{currentSprite}}
+{\footnotesize\ttfamily unsigned ns\+Game\+::\+Animation\+::current\+Sprite = 0}
+
+
+
+Definition at line 36 of file animation.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_animation_abde2f282d6d865a253f0a6edc0964508}\label{classns_game_1_1_animation_abde2f282d6d865a253f0a6edc0964508}} 
+\index{ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}!delay@{delay}}
+\index{delay@{delay}!ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}}
+\subsubsection{\texorpdfstring{delay}{delay}}
+{\footnotesize\ttfamily unsigned ns\+Game\+::\+Animation\+::delay = 500}
+
+
+
+Delay between frames. 
+
+
+
+Definition at line 36 of file animation.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_animation_a1757a8a9ce0a3fc6a75b1289b78753bb}\label{classns_game_1_1_animation_a1757a8a9ce0a3fc6a75b1289b78753bb}} 
+\index{ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}!sprites@{sprites}}
+\index{sprites@{sprites}!ns\+Game\+::\+Animation@{ns\+Game\+::\+Animation}}
+\subsubsection{\texorpdfstring{sprites}{sprites}}
+{\footnotesize\ttfamily std\+::vector$<$ns\+Gui\+::\+Sprite$>$ ns\+Game\+::\+Animation\+::sprites}
+
+
+
+Sprites list. 
+
+
+
+Definition at line 42 of file animation.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Nos\+\_\+fichiers/\hyperlink{animation_8h}{animation.\+h}\item 
+Nos\+\_\+fichiers/\hyperlink{animation_8cpp}{animation.\+cpp}\end{DoxyCompactItemize}

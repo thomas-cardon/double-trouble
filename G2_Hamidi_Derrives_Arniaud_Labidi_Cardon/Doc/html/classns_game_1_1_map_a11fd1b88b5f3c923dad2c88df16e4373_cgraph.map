@@ -1,0 +1,21 @@
+<map id="nsGame::Map::load" name="nsGame::Map::load">
+<area shape="rect" id="node2" href="$map_8cpp.html#a80ba96737f2daeda26fdd4bf7488cc26" title="getRandomLevel" alt="" coords="241,79,361,106"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_cooldowns.html#a70e8df0692a58a08b31b2b6c9578265e" title="Saves a cooldown into the map. " alt="" coords="484,5,636,47"/>
+<area shape="rect" id="node4" href="$classns_game_1_1_map.html#a098dda0872f84fa83c61693efaca48f1" title="Gets a list of positions where there&#39;s nothing but a cell. " alt="" coords="189,341,412,367"/>
+<area shape="rect" id="node7" href="$classns_game_1_1_map.html#a7197e3e471d8a827ad195e74707f4052" title="Adds an item to the item list with given coordinates. " alt="" coords="213,467,389,494"/>
+<area shape="rect" id="node14" href="$classns_game_1_1_monster.html#a6b81ba26c3e8fae426e719be2acc4e4e" title="Loads the ennemy. " alt="" coords="221,181,380,207"/>
+<area shape="rect" id="node5" href="$classns_game_1_1_map.html#a8ae7e6fe93f1318c0d7d2569e73ec144" title="Gets the map height. " alt="" coords="476,341,644,367"/>
+<area shape="rect" id="node6" href="$classns_game_1_1_map.html#a948d05a71e53131418c9cf19c2da1062" title="Gets the map width. " alt="" coords="478,391,642,418"/>
+<area shape="rect" id="node8" href="$structns_game_1_1_item.html#abd124b5001b8dc63b8513e5b85c6c2b9" title="Gets the coordinates compared to the map. " alt="" coords="471,493,649,519"/>
+<area shape="rect" id="node9" href="$structns_game_1_1_item.html#a5887b6e9225ae8a276801225eca83808" title="Loads item. " alt="" coords="729,442,867,469"/>
+<area shape="rect" id="node13" href="$structns_game_1_1_item.html#a69156550e5083928cbb673ca2db671f5" title="Gets item type. " alt="" coords="480,543,640,570"/>
+<area shape="rect" id="node10" href="$structns_game_1_1_item.html#a96c07d0f91eef0d77e91d1a7397091a1" title="Updates item. " alt="" coords="722,493,874,519"/>
+<area shape="rect" id="node11" href="$structns_game_1_1_item.html#a451b6491efc475c9ca47dcccdbbde707" title="Renders resources. " alt="" coords="723,543,873,570"/>
+<area shape="rect" id="node12" href="$structns_game_1_1_item.html#af74dffcf9bde4a4297749f4e1852395b" title="Makes an action for the player. " alt="" coords="724,594,872,621"/>
+<area shape="rect" id="node15" href="$classns_game_1_1_monster.html#a14a0c542fe9c8b6772a3984ed674c9cf" title="Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID..." alt="" coords="488,71,632,98"/>
+<area shape="rect" id="node16" href="$structns_game_1_1_entity.html#a0c574fba3e12b9bb976d72953626e550" title="Prevents entity to move for X milliseconds. " alt="" coords="708,122,888,149"/>
+<area shape="rect" id="node17" href="$structns_game_1_1_entity.html#ae0aa595447b5f3d2c0b80fb99305c56e" title="load " alt="" coords="487,239,633,266"/>
+<area shape="rect" id="node18" href="$structns_game_1_1_entity.html#a0254c30b6223caa723303266ad04e4cd" title="Sets the movement speed. " alt="" coords="460,173,660,215"/>
+<area shape="rect" id="node20" href="$classns_game_1_1_monster.html#a6ee4a9d2cea5d327379de3416a059169" title="Teleports the entity at its spawn. " alt="" coords="474,290,646,317"/>
+<area shape="rect" id="node19" href="$classns_game_1_1_cooldowns.html#a0db5b81efac93aacc0b12b2aa520620b" title="Sets a new delay for a cooldown that had been saved already. " alt="" coords="722,173,874,215"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="GameState" name="GameState">
+<area shape="rect" id="node2" href="$classns_game_1_1_state.html" title="A class defining the different states of the game (In&#45;game, Menus, Loading...) " alt="" coords="5,139,116,165"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_map.html" title="nsGame::Map" alt="" coords="141,139,245,165"/>
+<area shape="rect" id="node4" href="$classns_game_1_1_player.html" title="Defines the player&#39;s class. " alt="" coords="269,139,385,165"/>
+<area shape="rect" id="node5" href="$classns_game_1_1_entity.html" title="Defines the Entity class. " alt="" coords="196,5,309,32"/>
+<area shape="rect" id="node6" href="$classns_game_1_1_animation.html" title="Defines animations. " alt="" coords="333,5,471,32"/>
+<area shape="rect" id="node7" href="$struct_c_my_param.html" title="Struct containing all the game&#39;s parameters. " alt="" coords="410,139,498,165"/>
+</map>

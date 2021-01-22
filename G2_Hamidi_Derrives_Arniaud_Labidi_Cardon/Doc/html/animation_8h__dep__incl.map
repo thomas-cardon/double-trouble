@@ -1,0 +1,22 @@
+<map id="Nos_fichiers/animation.h" name="Nos_fichiers/animation.h">
+<area shape="rect" id="node2" href="$animation_8cpp.html" title="Method definitions for animation.h. " alt="" coords="577,80,757,107"/>
+<area shape="rect" id="node3" href="$entity_8h.html" title="Definitions for the Entity class. " alt="" coords="834,80,977,107"/>
+<area shape="rect" id="node4" href="$player_8h.html" title="Player. " alt="" coords="722,155,867,181"/>
+<area shape="rect" id="node18" href="$monster_8h.html" title="Monster. " alt="" coords="827,229,984,256"/>
+<area shape="rect" id="node20" href="$player_8cpp.html" title="Définition des méthodes de la classe Player. " alt="" coords="1009,229,1167,256"/>
+<area shape="rect" id="node21" href="$entity_8cpp.html" title="Method definitions for Entity.h. " alt="" coords="994,155,1150,181"/>
+<area shape="rect" id="node5" href="$item_8h.html" title="Item. " alt="" coords="446,229,581,256"/>
+<area shape="rect" id="node11" href="$map_8h.html" title="Map. " alt="" coords="617,304,751,331"/>
+<area shape="rect" id="node12" href="$game_state_8h.html" title="gameState " alt="" coords="712,379,885,405"/>
+<area shape="rect" id="node6" href="$cookie_8h.html" title="Cookie. " alt="" coords="262,304,410,331"/>
+<area shape="rect" id="node9" href="$fruit_8h.html" title="Fruit. " alt="" coords="65,304,197,331"/>
+<area shape="rect" id="node16" href="$powerup_8h.html" title="Powerup. " alt="" coords="434,304,593,331"/>
+<area shape="rect" id="node7" href="$cookie_8cpp.html" title="Method definitions for cookie.h. " alt="" coords="176,379,339,405"/>
+<area shape="rect" id="node8" href="$map_8cpp.html" title="Method definitions for map.h. " alt="" coords="417,453,567,480"/>
+<area shape="rect" id="node10" href="$fruit_8cpp.html" title="Method definitions for fruit.h. " alt="" coords="5,379,152,405"/>
+<area shape="rect" id="node13" href="$game_state_8cpp.html" title="Method definitions for gameState.h. " alt="" coords="705,453,892,480"/>
+<area shape="rect" id="node14" href="$state_manager_8cpp.html" title="Method definitions for stateManager.h. " alt="" coords="697,528,900,555"/>
+<area shape="rect" id="node15" href="$game2d_8cpp.html" title="Method definitions for game2d.h. " alt="" coords="713,603,884,629"/>
+<area shape="rect" id="node17" href="$powerup_8cpp.html" title="Method definitions for powerup.h. " alt="" coords="413,379,587,405"/>
+<area shape="rect" id="node19" href="$monster_8cpp.html" title="Définition des méthodes de la classe monster.h. " alt="" coords="827,304,997,331"/>
+</map>

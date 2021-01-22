@@ -1,0 +1,12 @@
+<map id="nsGame::Entity::_getDelay" name="nsGame::Entity::_getDelay">
+<area shape="rect" id="node2" href="$structns_game_1_1_entity.html#a0254c30b6223caa723303266ad04e4cd" title="Sets the movement speed. " alt="" coords="233,5,433,47"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_monster.html#a6b81ba26c3e8fae426e719be2acc4e4e" title="Loads the ennemy. " alt="" coords="481,46,640,73"/>
+<area shape="rect" id="node11" href="$classns_game_1_1_player.html#a279b6cf908ceeb398d99d8cd1e02fa56" title="Loads player. " alt="" coords="487,122,635,149"/>
+<area shape="rect" id="node4" href="$classns_game_1_1_map.html#a11fd1b88b5f3c923dad2c88df16e4373" title="load " alt="" coords="711,21,847,47"/>
+<area shape="rect" id="node10" href="$classns_game_1_1_monster.html#a93d359ec069d9667352b54e3b531b4e3" title="nsGame::Monster::Monster" alt="" coords="688,71,869,98"/>
+<area shape="rect" id="node5" href="$classns_game_1_1_game_state.html#a66f7b8027a33f473fd22c212700586f2" title="Loads State resources. " alt="" coords="917,71,1095,98"/>
+<area shape="rect" id="node6" href="$classns_game_1_1_game_state.html#a4d3cb871a1aec541a37fe241664b738c" title="Updates state. " alt="" coords="1143,64,1296,105"/>
+<area shape="rect" id="node7" href="$classns_game_1_1_state_manager.html#ab9c5e47745b79af657c08adcc8607475" title="Updates the current state. " alt="" coords="1344,64,1504,105"/>
+<area shape="rect" id="node8" href="$game2d_8h.html#a70c7a760d43263eead3fedac2fe55ed3" title="Updates all sub components every tick. " alt="" coords="1552,71,1613,98"/>
+<area shape="rect" id="node9" href="$game2d_8h.html#ab223e99bd1bae1986af774532abb06c9" title="Loads the game. " alt="" coords="1661,71,1708,98"/>
+</map>

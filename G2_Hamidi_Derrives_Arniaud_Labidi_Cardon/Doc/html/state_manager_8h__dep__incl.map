@@ -1,0 +1,10 @@
+<map id="Nos_fichiers/stateManager.h" name="Nos_fichiers/stateManager.h">
+<area shape="rect" id="node2" href="$state_8h.html" title="State. " alt="" coords="300,80,439,107"/>
+<area shape="rect" id="node4" href="$state_manager_8cpp.html" title="Method definitions for stateManager.h. " alt="" coords="349,304,552,331"/>
+<area shape="rect" id="node3" href="$credit_state_8cpp.html" title="Credits state. " alt="" coords="5,229,192,256"/>
+<area shape="rect" id="node6" href="$loading_state_8cpp.html" title="Loading state. " alt="" coords="217,229,413,256"/>
+<area shape="rect" id="node7" href="$main_menu_state_8cpp.html" title="Main menu state. " alt="" coords="262,155,477,181"/>
+<area shape="rect" id="node8" href="$game_state_8h.html" title="gameState " alt="" coords="501,155,675,181"/>
+<area shape="rect" id="node5" href="$game2d_8cpp.html" title="Method definitions for game2d.h. " alt="" coords="365,379,536,405"/>
+<area shape="rect" id="node9" href="$game_state_8cpp.html" title="Method definitions for gameState.h. " alt="" coords="488,229,675,256"/>
+</map>

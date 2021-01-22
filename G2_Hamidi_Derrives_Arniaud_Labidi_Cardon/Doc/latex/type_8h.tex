@@ -1,0 +1,155 @@
+\hypertarget{type_8h}{}\section{Nos\+\_\+fichiers/type.h File Reference}
+\label{type_8h}\index{Nos\+\_\+fichiers/type.\+h@{Nos\+\_\+fichiers/type.\+h}}
+
+
+Definition of usefull types or aliases for the project.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+Include dependency graph for type.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{type_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{type_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_c_my_param}{C\+My\+Param}
+\begin{DoxyCompactList}\small\item\em Struct containing all the game\textquotesingle{}s parameters. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_authorized_key}{Authorized\+Key}
+\begin{DoxyCompactList}\small\item\em Struct containing all the authorized keys in the struct \hyperlink{struct_c_my_param}{C\+My\+Param}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::pair$<$ unsigned, unsigned $>$ \hyperlink{type_8h_ad7b87ea1ccd7642b3a46c6a7de328b4b}{Effect}
+\begin{DoxyCompactList}\small\item\em Effects \+: alias to the effects for an entity. \end{DoxyCompactList}\item 
+typedef std\+::pair$<$ unsigned, unsigned $>$ \hyperlink{type_8h_a0e47e95d703a52b1e0d7f4a79cfa5e00}{Cooldown}
+\begin{DoxyCompactList}\small\item\em Cooldown \+: alias to the cooldowns and timings for the game. \end{DoxyCompactList}\item 
+typedef std\+::vector$<$ char $>$ \hyperlink{type_8h_a1b4a68a866d4df732090bb91611dcb79}{C\+V\+Line}
+\begin{DoxyCompactList}\small\item\em C\+V\+Line \+: alias to a line of the matrix. \end{DoxyCompactList}\item 
+typedef std\+::vector$<$ \hyperlink{type_8h_a1b4a68a866d4df732090bb91611dcb79}{C\+V\+Line} $>$ \hyperlink{type_8h_a64a592133575ccebb1b36453acbec02b}{C\+Mat}
+\begin{DoxyCompactList}\small\item\em C\+Mat \+: alias to a game grid type. \end{DoxyCompactList}\item 
+typedef std\+::pair$<$ unsigned, unsigned $>$ \hyperlink{type_8h_a24d0255311d8a3f9d41d5d317a83413a}{C\+Position}
+\begin{DoxyCompactList}\small\item\em C\+Position \+: a pair gathering the coordinates in the grid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{struct_authorized_key}{Authorized\+Key} \hyperlink{type_8h_aeb6b858f886b8520a7f220b3de0bef1a}{K\+Authorized\+Key}
+\begin{DoxyCompactList}\small\item\em K\+Authorized\+Key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definition of usefull types or aliases for the project. 
+
+\begin{DoxyAuthor}{Author}
+Alain Casali 
+
+Marc Laporte 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+18 décembre 2018 
+\end{DoxyDate}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{type_8h_a64a592133575ccebb1b36453acbec02b}\label{type_8h_a64a592133575ccebb1b36453acbec02b}} 
+\index{type.\+h@{type.\+h}!C\+Mat@{C\+Mat}}
+\index{C\+Mat@{C\+Mat}!type.\+h@{type.\+h}}
+\subsubsection{\texorpdfstring{C\+Mat}{CMat}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{type_8h_a1b4a68a866d4df732090bb91611dcb79}{C\+V\+Line} $>$ \hyperlink{type_8h_a64a592133575ccebb1b36453acbec02b}{C\+Mat}}
+
+
+
+C\+Mat \+: alias to a game grid type. 
+
+
+
+Definition at line 38 of file type.\+h.
+
+\mbox{\Hypertarget{type_8h_a0e47e95d703a52b1e0d7f4a79cfa5e00}\label{type_8h_a0e47e95d703a52b1e0d7f4a79cfa5e00}} 
+\index{type.\+h@{type.\+h}!Cooldown@{Cooldown}}
+\index{Cooldown@{Cooldown}!type.\+h@{type.\+h}}
+\subsubsection{\texorpdfstring{Cooldown}{Cooldown}}
+{\footnotesize\ttfamily std\+::pair$<$ unsigned, unsigned $>$ \hyperlink{type_8h_a0e47e95d703a52b1e0d7f4a79cfa5e00}{Cooldown}}
+
+
+
+Cooldown \+: alias to the cooldowns and timings for the game. 
+
+
+
+Definition at line 26 of file type.\+h.
+
+\mbox{\Hypertarget{type_8h_a24d0255311d8a3f9d41d5d317a83413a}\label{type_8h_a24d0255311d8a3f9d41d5d317a83413a}} 
+\index{type.\+h@{type.\+h}!C\+Position@{C\+Position}}
+\index{C\+Position@{C\+Position}!type.\+h@{type.\+h}}
+\subsubsection{\texorpdfstring{C\+Position}{CPosition}}
+{\footnotesize\ttfamily std\+::pair$<$ unsigned, unsigned $>$ \hyperlink{type_8h_a24d0255311d8a3f9d41d5d317a83413a}{C\+Position}}
+
+
+
+C\+Position \+: a pair gathering the coordinates in the grid. 
+
+
+
+Definition at line 44 of file type.\+h.
+
+\mbox{\Hypertarget{type_8h_a1b4a68a866d4df732090bb91611dcb79}\label{type_8h_a1b4a68a866d4df732090bb91611dcb79}} 
+\index{type.\+h@{type.\+h}!C\+V\+Line@{C\+V\+Line}}
+\index{C\+V\+Line@{C\+V\+Line}!type.\+h@{type.\+h}}
+\subsubsection{\texorpdfstring{C\+V\+Line}{CVLine}}
+{\footnotesize\ttfamily typedef std\+::vector$<$ char $>$ \hyperlink{type_8h_a1b4a68a866d4df732090bb91611dcb79}{C\+V\+Line}}
+
+
+
+C\+V\+Line \+: alias to a line of the matrix. 
+
+
+
+Definition at line 32 of file type.\+h.
+
+\mbox{\Hypertarget{type_8h_ad7b87ea1ccd7642b3a46c6a7de328b4b}\label{type_8h_ad7b87ea1ccd7642b3a46c6a7de328b4b}} 
+\index{type.\+h@{type.\+h}!Effect@{Effect}}
+\index{Effect@{Effect}!type.\+h@{type.\+h}}
+\subsubsection{\texorpdfstring{Effect}{Effect}}
+{\footnotesize\ttfamily std\+::pair$<$ unsigned, unsigned $>$ \hyperlink{type_8h_ad7b87ea1ccd7642b3a46c6a7de328b4b}{Effect}}
+
+
+
+Effects \+: alias to the effects for an entity. 
+
+
+
+Definition at line 20 of file type.\+h.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{type_8h_aeb6b858f886b8520a7f220b3de0bef1a}\label{type_8h_aeb6b858f886b8520a7f220b3de0bef1a}} 
+\index{type.\+h@{type.\+h}!K\+Authorized\+Key@{K\+Authorized\+Key}}
+\index{K\+Authorized\+Key@{K\+Authorized\+Key}!type.\+h@{type.\+h}}
+\subsubsection{\texorpdfstring{K\+Authorized\+Key}{KAuthorizedKey}}
+{\footnotesize\ttfamily const \hyperlink{struct_authorized_key}{Authorized\+Key} K\+Authorized\+Key}
+
+
+
+K\+Authorized\+Key. 
+
+
+
+Definition at line 73 of file type.\+h.
+

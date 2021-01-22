@@ -1,0 +1,4 @@
+<map id="MainMenuState::load" name="MainMenuState::load">
+<area shape="rect" id="node2" href="$classns_game_1_1_state_manager.html#a337170555d3a9a71cbc16c30a8364981" title="Loads all states. " alt="" coords="199,5,359,47"/>
+<area shape="rect" id="node3" href="$game2d_8h.html#ab223e99bd1bae1986af774532abb06c9" title="Loads the game. " alt="" coords="407,13,453,39"/>
+</map>

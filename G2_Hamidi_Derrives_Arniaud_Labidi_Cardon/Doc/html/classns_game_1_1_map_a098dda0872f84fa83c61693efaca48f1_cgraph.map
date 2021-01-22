@@ -1,0 +1,4 @@
+<map id="nsGame::Map::getEmptyPositions" name="nsGame::Map::getEmptyPositions">
+<area shape="rect" id="node2" href="$classns_game_1_1_map.html#a8ae7e6fe93f1318c0d7d2569e73ec144" title="Gets the map height. " alt="" coords="276,5,444,32"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_map.html#a948d05a71e53131418c9cf19c2da1062" title="Gets the map width. " alt="" coords="278,56,442,83"/>
+</map>

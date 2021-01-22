@@ -1,0 +1,7 @@
+<map id="nsGame::Player::update" name="nsGame::Player::update">
+<area shape="rect" id="node2" href="$structns_game_1_1_entity.html#af1da5da20798e01469c4a438d0b4174c" title="update " alt="" coords="233,5,393,32"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_animation.html#a5f32b1fc6ad5d228a4153d7421fa457b" title="Updates animation, changes sprite according to delta and direction. " alt="" coords="459,23,604,65"/>
+<area shape="rect" id="node4" href="$classns_game_1_1_cooldowns.html#a423a58fcbbf7688556c5706249365f12" title="Checks if a cooldown is over. " alt="" coords="237,107,389,149"/>
+<area shape="rect" id="node5" href="$structns_game_1_1_entity.html#a5dd00624fa76be09de80a6d2a982ea09" title="Checks if entity would be in collision with a structure (walls...) | OVERRIDE IF NEEDED (Flying monst..." alt="" coords="223,173,404,200"/>
+<area shape="rect" id="node6" href="$classns_game_1_1_player.html#a6633913bc19fdca8616b29ee265f7b28" title="This function is called everytime a key is pressed. " alt="" coords="216,224,411,251"/>
+</map>

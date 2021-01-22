@@ -1,0 +1,171 @@
+\hypertarget{class_credit_state}{}\section{Credit\+State Class Reference}
+\label{class_credit_state}\index{Credit\+State@{Credit\+State}}
+
+
+Defines the credits.  
+
+
+
+
+Inheritance diagram for Credit\+State\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_credit_state__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Credit\+State\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_credit_state__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_credit_state_a32ec8ae5c12ee636cfd2b949b8e980e1}{load} () override
+\begin{DoxyCompactList}\small\item\em Loads State resources. \end{DoxyCompactList}\item 
+void \hyperlink{class_credit_state_a52a92d650fce22fa08b37359c3a5aa64}{update} (Min\+GL \&window, unsigned delta) override
+\begin{DoxyCompactList}\small\item\em Updates state. \end{DoxyCompactList}\item 
+void \hyperlink{class_credit_state_aa4ba316fca29d0e79ee70891e373a060}{render} (Min\+GL \&window) override
+\begin{DoxyCompactList}\small\item\em Renders resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ns\+Gui\+::\+Sprite \hyperlink{class_credit_state_a10ae436f8c1ca5d87cc960ada3cadb18}{sprite} = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/credits.\+i2s\char`\"{}, ns\+Graphics\+::\+Vec2D(0, 0))
+\item 
+ns\+Transition\+::\+Transition\+Engine \hyperlink{class_credit_state_a12c76114d83f1788b356c0cbbc74bcaf}{transition\+Engine}
+\item 
+ns\+Audio\+::\+Audio\+Engine \hyperlink{class_credit_state_a8dd128ec1e8d3b8da0da5bd0be38c96d}{audio}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines the credits. 
+
+\begin{DoxyAuthor}{Authors}
+Thomas Cardon, Alexandre Arniaud 
+\end{DoxyAuthor}
+
+
+Definition at line 19 of file credit\+State.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_credit_state_a32ec8ae5c12ee636cfd2b949b8e980e1}\label{class_credit_state_a32ec8ae5c12ee636cfd2b949b8e980e1}} 
+\index{Credit\+State@{Credit\+State}!load@{load}}
+\index{load@{load}!Credit\+State@{Credit\+State}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Credit\+State\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Loads State resources. 
+
+
+
+Reimplemented from \hyperlink{structns_game_1_1_state_a8644de505f7a84933f6d6e6651205791}{ns\+Game\+::\+State}.
+
+
+
+Definition at line 30 of file credit\+State.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_credit_state_a32ec8ae5c12ee636cfd2b949b8e980e1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_credit_state_aa4ba316fca29d0e79ee70891e373a060}\label{class_credit_state_aa4ba316fca29d0e79ee70891e373a060}} 
+\index{Credit\+State@{Credit\+State}!render@{render}}
+\index{render@{render}!Credit\+State@{Credit\+State}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Credit\+State\+::render (\begin{DoxyParamCaption}\item[{Min\+GL \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders resources. 
+
+
+
+Reimplemented from \hyperlink{structns_game_1_1_state_a214f8ee52de4b318f1ed3861a578ce67}{ns\+Game\+::\+State}.
+
+
+
+Definition at line 49 of file credit\+State.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_credit_state_aa4ba316fca29d0e79ee70891e373a060_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_credit_state_a52a92d650fce22fa08b37359c3a5aa64}\label{class_credit_state_a52a92d650fce22fa08b37359c3a5aa64}} 
+\index{Credit\+State@{Credit\+State}!update@{update}}
+\index{update@{update}!Credit\+State@{Credit\+State}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Credit\+State\+::update (\begin{DoxyParamCaption}\item[{Min\+GL \&}]{window,  }\item[{unsigned}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates state. 
+
+
+
+Reimplemented from \hyperlink{structns_game_1_1_state_ae809e89ac9df4a43ab90d5d5932e2bc7}{ns\+Game\+::\+State}.
+
+
+
+Definition at line 39 of file credit\+State.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_credit_state_a52a92d650fce22fa08b37359c3a5aa64_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_credit_state_a8dd128ec1e8d3b8da0da5bd0be38c96d}\label{class_credit_state_a8dd128ec1e8d3b8da0da5bd0be38c96d}} 
+\index{Credit\+State@{Credit\+State}!audio@{audio}}
+\index{audio@{audio}!Credit\+State@{Credit\+State}}
+\subsubsection{\texorpdfstring{audio}{audio}}
+{\footnotesize\ttfamily ns\+Audio\+::\+Audio\+Engine Credit\+State\+::audio}
+
+
+
+Definition at line 28 of file credit\+State.\+cpp.
+
+\mbox{\Hypertarget{class_credit_state_a10ae436f8c1ca5d87cc960ada3cadb18}\label{class_credit_state_a10ae436f8c1ca5d87cc960ada3cadb18}} 
+\index{Credit\+State@{Credit\+State}!sprite@{sprite}}
+\index{sprite@{sprite}!Credit\+State@{Credit\+State}}
+\subsubsection{\texorpdfstring{sprite}{sprite}}
+{\footnotesize\ttfamily ns\+Gui\+::\+Sprite Credit\+State\+::sprite = ns\+Gui\+::\+Sprite(\hyperlink{definitions_8h_a793644bd88146828177a2a4f57e3bf01}{R\+E\+S\+\_\+\+P\+A\+TH} + \char`\"{}/gui/credits.\+i2s\char`\"{}, ns\+Graphics\+::\+Vec2D(0, 0))}
+
+
+
+Definition at line 26 of file credit\+State.\+cpp.
+
+\mbox{\Hypertarget{class_credit_state_a12c76114d83f1788b356c0cbbc74bcaf}\label{class_credit_state_a12c76114d83f1788b356c0cbbc74bcaf}} 
+\index{Credit\+State@{Credit\+State}!transition\+Engine@{transition\+Engine}}
+\index{transition\+Engine@{transition\+Engine}!Credit\+State@{Credit\+State}}
+\subsubsection{\texorpdfstring{transition\+Engine}{transitionEngine}}
+{\footnotesize\ttfamily ns\+Transition\+::\+Transition\+Engine Credit\+State\+::transition\+Engine}
+
+
+
+Definition at line 27 of file credit\+State.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Nos\+\_\+fichiers/\hyperlink{credit_state_8cpp}{credit\+State.\+cpp}\end{DoxyCompactItemize}

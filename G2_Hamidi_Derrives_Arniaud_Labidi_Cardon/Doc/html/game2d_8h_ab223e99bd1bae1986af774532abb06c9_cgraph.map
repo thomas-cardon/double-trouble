@@ -1,0 +1,51 @@
+<map id="load" name="load">
+<area shape="rect" id="node2" href="$classns_game_1_1_state_manager.html#a337170555d3a9a71cbc16c30a8364981" title="Loads all states. " alt="" coords="100,142,260,183"/>
+<area shape="rect" id="node6" href="$game2d_8cpp.html#a70c7a760d43263eead3fedac2fe55ed3" title="Updates all sub components every tick. " alt="" coords="149,371,211,397"/>
+<area shape="rect" id="node38" href="$game2d_8cpp.html#a45fbe5b33369650f26eaf34d709efb7b" title="Renders every component. " alt="" coords="151,451,209,477"/>
+<area shape="rect" id="node3" href="$class_main_menu_state.html#a723f41a3c34138c5c5f7dcafc076718e" title="Loads State resources. " alt="" coords="315,17,461,44"/>
+<area shape="rect" id="node5" href="$class_credit_state.html#a32ec8ae5c12ee636cfd2b949b8e980e1" title="Loads State resources. " alt="" coords="328,149,448,176"/>
+<area shape="rect" id="node4" href="$classns_game_1_1_cooldowns.html#a70e8df0692a58a08b31b2b6c9578265e" title="Saves a cooldown into the map. " alt="" coords="1463,86,1615,127"/>
+<area shape="rect" id="node7" href="$classns_game_1_1_state_manager.html#ab9c5e47745b79af657c08adcc8607475" title="Updates the current state. " alt="" coords="516,363,676,405"/>
+<area shape="rect" id="node8" href="$classns_game_1_1_state_manager.html#acc7933a4b2160d8058789e24c0bd3cc6" title="nsGame::StateManager\l::events" alt="" coords="724,330,884,371"/>
+<area shape="rect" id="node10" href="$class_main_menu_state.html#a7846cc7f1bd9b1fc40d77cc8f7644e03" title="Updates state. " alt="" coords="724,500,884,527"/>
+<area shape="rect" id="node12" href="$classns_game_1_1_game_state.html#a4d3cb871a1aec541a37fe241664b738c" title="Updates state. " alt="" coords="727,395,881,437"/>
+<area shape="rect" id="node37" href="$class_credit_state.html#a52a92d650fce22fa08b37359c3a5aa64" title="Updates state. " alt="" coords="737,279,871,305"/>
+<area shape="rect" id="node9" href="$class_main_menu_state.html#a6d740479d4dce733c069921478d70a37" title="Handles minGL 2 mouse events. " alt="" coords="957,43,1117,69"/>
+<area shape="rect" id="node11" href="$classns_game_1_1_cooldowns.html#a423a58fcbbf7688556c5706249365f12" title="Checks if a cooldown is over. " alt="" coords="1211,678,1363,719"/>
+<area shape="rect" id="node13" href="$classns_game_1_1_game_state.html#a66f7b8027a33f473fd22c212700586f2" title="Loads State resources. " alt="" coords="948,93,1125,120"/>
+<area shape="rect" id="node19" href="$classns_game_1_1_player.html#acab2fb26d3c0dddadccf7fcfc17b6e79" title="Teleports the entity at its spawn. " alt="" coords="1458,315,1621,341"/>
+<area shape="rect" id="node20" href="$classns_game_1_1_map.html#a2b7108ae33859839be0b85329f729de9" title="update " alt="" coords="961,529,1112,556"/>
+<area shape="rect" id="node21" href="$structns_game_1_1_entity.html#ab7fc1631346d2c643161d229dd653edd" title="Gets the coordinates compared to the map. " alt="" coords="1193,627,1380,653"/>
+<area shape="rect" id="node22" href="$classns_game_1_1_map.html#a2cbbebf0522026dff6cfbb0236fe5150" title="getMat " alt="" coords="1211,525,1363,552"/>
+<area shape="rect" id="node24" href="$classns_game_1_1_player.html#a8702d56a2f8651a53511b4dbea30d0f6" title="Updates player. " alt="" coords="955,783,1118,809"/>
+<area shape="rect" id="node29" href="$classns_game_1_1_game_state.html#a78176e52c8f3c745bb88a4214f5aa29b" title="Checks every tick (State::update()) if one of the players have won (or not). " alt="" coords="960,145,1113,186"/>
+<area shape="rect" id="node30" href="$classns_game_1_1_game_state.html#ac0fdc8e463ca2e79a0fb58e12e5b39c9" title="Destroys state (and resets it) " alt="" coords="960,210,1113,251"/>
+<area shape="rect" id="node31" href="$structns_game_1_1_state.html#adab442cc7a1edda5adaa55e8d510633f" title="Changes logic. " alt="" coords="953,276,1120,303"/>
+<area shape="rect" id="node32" href="$structns_game_1_1_entity.html#ab5e14a11c0e89dce65f14366989a03b9" title="Checks if entity can be hit by another entity. " alt="" coords="941,631,1132,657"/>
+<area shape="rect" id="node33" href="$structns_game_1_1_entity.html#af5bf634702f96ed5daac8130a3dee4f0" title="Says if entity has effect. " alt="" coords="948,377,1125,404"/>
+<area shape="rect" id="node34" href="$classns_game_1_1_player.html#a6593cce5f194289c251eba839972aaac" title="Decrements 1 to hearts, and disable damage for 5 seconds + adds movement speed;. " alt="" coords="951,428,1122,455"/>
+<area shape="rect" id="node14" href="$params_8cpp.html#a233f4b43e28be93e3b42bd621d268a40" title="LoadParams" alt="" coords="1239,144,1334,171"/>
+<area shape="rect" id="node15" href="$classns_game_1_1_map.html#a11fd1b88b5f3c923dad2c88df16e4373" title="load " alt="" coords="1219,235,1355,261"/>
+<area shape="rect" id="node18" href="$classns_game_1_1_player.html#a279b6cf908ceeb398d99d8cd1e02fa56" title="Loads player. " alt="" coords="1213,93,1361,120"/>
+<area shape="rect" id="node16" href="$classns_game_1_1_map.html#a098dda0872f84fa83c61693efaca48f1" title="Gets a list of positions where there&#39;s nothing but a cell. " alt="" coords="1695,525,1917,552"/>
+<area shape="rect" id="node17" href="$classns_game_1_1_map.html#a7197e3e471d8a827ad195e74707f4052" title="Adds an item to the item list with given coordinates. " alt="" coords="1451,475,1627,501"/>
+<area shape="rect" id="node23" href="$classns_game_1_1_map.html#a9c7ae85f01db94d0bedbce4aee4d52f0" title="Gets a place where there&#39;s just a cell (there may be a player) " alt="" coords="1432,576,1647,603"/>
+<area shape="rect" id="node25" href="$structns_game_1_1_entity.html#af1da5da20798e01469c4a438d0b4174c" title="update " alt="" coords="1207,845,1367,872"/>
+<area shape="rect" id="node26" href="$classns_game_1_1_animation.html#a5f32b1fc6ad5d228a4153d7421fa457b" title="Updates animation, changes sprite according to delta and direction. " alt="" coords="1467,863,1612,905"/>
+<area shape="rect" id="node27" href="$structns_game_1_1_entity.html#a5dd00624fa76be09de80a6d2a982ea09" title="Checks if entity would be in collision with a structure (walls...) | OVERRIDE IF NEEDED (Flying monst..." alt="" coords="1196,744,1377,771"/>
+<area shape="rect" id="node28" href="$classns_game_1_1_player.html#a6633913bc19fdca8616b29ee265f7b28" title="This function is called everytime a key is pressed. " alt="" coords="1189,795,1384,821"/>
+<area shape="rect" id="node35" href="$structns_game_1_1_entity.html#a0fbe0a80400a03319fbe3bd50919535c" title="Adds an effect to the entity for x milliseconds. " alt="" coords="1198,373,1375,400"/>
+<area shape="rect" id="node36" href="$structns_game_1_1_entity.html#a522648b330daab91b49f78f0737a943f" title="nsGame::Entity::kill" alt="" coords="1218,424,1355,451"/>
+<area shape="rect" id="node39" href="$classns_game_1_1_state_manager.html#a6f5b564dbd4e84529a125aca38f4339d" title="Renders current state resources. " alt="" coords="308,490,468,531"/>
+<area shape="rect" id="node40" href="$class_main_menu_state.html#a1f11855f3b961e7a71c7c4e16f0b3478" title="Renders resources. " alt="" coords="517,548,675,575"/>
+<area shape="rect" id="node41" href="$classns_game_1_1_game_state.html#a1e3179b016431332ecff880e09e267d3" title="Renders resources. " alt="" coords="519,729,673,770"/>
+<area shape="rect" id="node49" href="$class_credit_state.html#aa4ba316fca29d0e79ee70891e373a060" title="Renders resources. " alt="" coords="530,447,662,473"/>
+<area shape="rect" id="node50" href="$class_loading_state.html#a64812e3f15d84b60ab8313509ba07520" title="Renders resources. " alt="" coords="525,497,667,524"/>
+<area shape="rect" id="node42" href="$classns_game_1_1_map.html#a3660d6272f910c1b702c4e8f3f463f2b" title="Renders the layer of the map, with its cells (walls, etc.) " alt="" coords="730,736,878,763"/>
+<area shape="rect" id="node43" href="$classns_game_1_1_player.html#a34b359a72d3dbdf537c72161898376f3" title="Renders resources. " alt="" coords="724,787,884,813"/>
+<area shape="rect" id="node47" href="$classns_game_1_1_game_state.html#a8d9cadd7432dfd4b7ada08e37bf6b30d" title="Renders the score on the sidebar for a given player. " alt="" coords="727,838,881,879"/>
+<area shape="rect" id="node48" href="$classns_game_1_1_game_state.html#a66f328c56ed9887e02a93db856316d4c" title="Renders the victory screen. " alt="" coords="727,670,881,711"/>
+<area shape="rect" id="node44" href="$classns_game_1_1_animation.html#a1a103b09407581b74933001fb8b3a8f0" title="Sets position on the map. " alt="" coords="964,834,1109,875"/>
+<area shape="rect" id="node45" href="$structns_game_1_1_entity.html#a727ed96ea0a27b7232e701ed0ba6d3a4" title="This function is used to get the position on the screen/canvas/window, whatever you want to call it..." alt="" coords="932,732,1141,759"/>
+<area shape="rect" id="node46" href="$classns_game_1_1_animation.html#a348e25058d77891160c015da88ea4837" title="Renders resources. " alt="" coords="964,899,1109,941"/>
+</map>

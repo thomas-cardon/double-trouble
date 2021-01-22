@@ -1,0 +1,7 @@
+<map id="nsGame::Fruit::Fruit" name="nsGame::Fruit::Fruit">
+<area shape="rect" id="node2" href="$classns_game_1_1_fruit.html#a28c4ae21607dbad699602528c6ffc583" title="Loads food. " alt="" coords="199,5,337,32"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_fruit.html#adade5568e2f552576d0d32b714b9ac02" title="Updates food. " alt="" coords="192,56,344,83"/>
+<area shape="rect" id="node4" href="$classns_game_1_1_fruit.html#a99622754f8cf90bb285b4808e98372c7" title="Renders resources. " alt="" coords="193,107,343,133"/>
+<area shape="rect" id="node6" href="$classns_game_1_1_fruit.html#ad33836a67756dba7390b95c57898e91c" title="Makes an action for the player. " alt="" coords="194,157,342,184"/>
+<area shape="rect" id="node5" href="$structns_game_1_1_item.html#a52af52633c8924e35b47347f8c51a22e" title="This function is used to get the position on the screen/canvas/window, whatever you want to call it..." alt="" coords="392,107,593,133"/>
+</map>

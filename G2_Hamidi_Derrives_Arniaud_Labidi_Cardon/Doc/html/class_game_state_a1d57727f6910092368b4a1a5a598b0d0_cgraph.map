@@ -1,0 +1,15 @@
+<map id="GameState::update" name="GameState::update">
+<area shape="rect" id="node2" href="$classns_game_1_1_map.html#a9e382ecaf3a464a995a1ca5aad910321" title="update " alt="" coords="208,60,359,87"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_player.html#a8702d56a2f8651a53511b4dbea30d0f6" title="Updates player. " alt="" coords="202,111,365,137"/>
+<area shape="rect" id="node8" href="$classns_game_1_1_map.html#a00f4885d6da59cc290af3c0909befd67" title="getMat " alt="" coords="207,169,359,196"/>
+<area shape="rect" id="node9" href="$classns_game_1_1_entity.html#a3e5ba5a1f5b7491dc79b3dbbe5f75701" title="Checks if entity can be hit by another entity. " alt="" coords="188,220,379,247"/>
+<area shape="rect" id="node11" href="$classns_game_1_1_player.html#a6593cce5f194289c251eba839972aaac" title="Decrements 1 to hearts, and disable damage for 5 seconds + adds movement speed;. " alt="" coords="198,271,369,297"/>
+<area shape="rect" id="node14" href="$classns_game_1_1_player.html#a70f77987489f35d784ae7621ffdcc7aa" title="Teleports the entity at its spawn. " alt="" coords="202,321,365,348"/>
+<area shape="rect" id="node4" href="$cooldowns_8cpp.html#a130ba09fd0ac47a7818fb31496fbb6db" title="Checks if a cooldown is over. " alt="" coords="465,5,583,32"/>
+<area shape="rect" id="node5" href="$classns_game_1_1_entity.html#a5dd00624fa76be09de80a6d2a982ea09" title="Checks if entity would be in collision with a structure (walls...) | OVERRIDE IF NEEDED (Flying monst..." alt="" coords="433,56,615,83"/>
+<area shape="rect" id="node6" href="$classns_game_1_1_player.html#a6633913bc19fdca8616b29ee265f7b28" title="This function is called everytime a key is pressed. " alt="" coords="427,107,621,133"/>
+<area shape="rect" id="node7" href="$classns_game_1_1_animation.html#a5f32b1fc6ad5d228a4153d7421fa457b" title="Updates animation, changes sprite according to delta and direction. " alt="" coords="451,158,597,199"/>
+<area shape="rect" id="node10" href="$classns_game_1_1_entity.html#ab7fc1631346d2c643161d229dd653edd" title="Gets the coordinates compared to the map. " alt="" coords="431,224,617,251"/>
+<area shape="rect" id="node12" href="$classns_game_1_1_player.html#abb04e1273c1ab175f11698ab7fe1658f" title="Prevents player from being attacked for X milliseconds. " alt="" coords="431,275,617,301"/>
+<area shape="rect" id="node13" href="$cooldowns_8cpp.html#a015a26972704bbab026aa3c22131196b" title="Saves a cooldown into the map. " alt="" coords="669,275,785,301"/>
+</map>

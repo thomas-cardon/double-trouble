@@ -1,0 +1,185 @@
+\hypertarget{classns_game_1_1_food}{}\section{ns\+Game\+:\+:Food Class Reference}
+\label{classns_game_1_1_food}\index{ns\+Game\+::\+Food@{ns\+Game\+::\+Food}}
+
+
+{\ttfamily \#include $<$food.\+h$>$}
+
+
+
+Inheritance diagram for ns\+Game\+:\+:Food\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{classns_game_1_1_food__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns\+Game\+:\+:Food\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{classns_game_1_1_food__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classns_game_1_1_food_a7c7420d787be8025d23447bd24e7c2f4}{Food} (ns\+Graphics\+::\+Vec2D \hyperlink{structns_game_1_1_item_a5518876a13f3d2eda659d29748097f1a}{pos})
+\item 
+ns\+Graphics\+::\+Vec2D \hyperlink{classns_game_1_1_food_a65337270b0da5319663117449547118c}{get\+Coordinates} ()
+\begin{DoxyCompactList}\small\item\em This function is used to get the position on the screen/canvas/window, whatever you want to call it. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_food_a3d166bdb20aea5fe4ebf3c90b9c27e85}{load} () override
+\begin{DoxyCompactList}\small\item\em Loads food. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_food_a84b519ecca0f27b862878170e08c8731}{update} (unsigned delta) override
+\begin{DoxyCompactList}\small\item\em Updates food. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_food_a503e4b78c3a07ec6dbc9cfe2c79742e0}{render} (Min\+GL \&window) override
+\begin{DoxyCompactList}\small\item\em Renders resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 23 of file food.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classns_game_1_1_food_a7c7420d787be8025d23447bd24e7c2f4}\label{classns_game_1_1_food_a7c7420d787be8025d23447bd24e7c2f4}} 
+\index{ns\+Game\+::\+Food@{ns\+Game\+::\+Food}!Food@{Food}}
+\index{Food@{Food}!ns\+Game\+::\+Food@{ns\+Game\+::\+Food}}
+\subsubsection{\texorpdfstring{Food()}{Food()}}
+{\footnotesize\ttfamily ns\+Game\+::\+Food\+::\+Food (\begin{DoxyParamCaption}\item[{ns\+Graphics\+::\+Vec2D}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 26 of file food.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classns_game_1_1_food_a65337270b0da5319663117449547118c}\label{classns_game_1_1_food_a65337270b0da5319663117449547118c}} 
+\index{ns\+Game\+::\+Food@{ns\+Game\+::\+Food}!get\+Coordinates@{get\+Coordinates}}
+\index{get\+Coordinates@{get\+Coordinates}!ns\+Game\+::\+Food@{ns\+Game\+::\+Food}}
+\subsubsection{\texorpdfstring{get\+Coordinates()}{getCoordinates()}}
+{\footnotesize\ttfamily ns\+Graphics\+::\+Vec2D ns\+Game\+::\+Food\+::get\+Coordinates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This function is used to get the position on the screen/canvas/window, whatever you want to call it. 
+
+
+
+Definition at line 32 of file food.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_food_a65337270b0da5319663117449547118c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_food_a65337270b0da5319663117449547118c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_food_a3d166bdb20aea5fe4ebf3c90b9c27e85}\label{classns_game_1_1_food_a3d166bdb20aea5fe4ebf3c90b9c27e85}} 
+\index{ns\+Game\+::\+Food@{ns\+Game\+::\+Food}!load@{load}}
+\index{load@{load}!ns\+Game\+::\+Food@{ns\+Game\+::\+Food}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Food\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Loads food. 
+
+
+
+Implements \hyperlink{structns_game_1_1_item_a5887b6e9225ae8a276801225eca83808}{ns\+Game\+::\+Item}.
+
+
+
+Definition at line 14 of file food.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_food_a3d166bdb20aea5fe4ebf3c90b9c27e85_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_food_a503e4b78c3a07ec6dbc9cfe2c79742e0}\label{classns_game_1_1_food_a503e4b78c3a07ec6dbc9cfe2c79742e0}} 
+\index{ns\+Game\+::\+Food@{ns\+Game\+::\+Food}!render@{render}}
+\index{render@{render}!ns\+Game\+::\+Food@{ns\+Game\+::\+Food}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Food\+::render (\begin{DoxyParamCaption}\item[{Min\+GL \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders resources. 
+
+
+
+Implements \hyperlink{structns_game_1_1_item_a451b6491efc475c9ca47dcccdbbde707}{ns\+Game\+::\+Item}.
+
+
+
+Definition at line 18 of file food.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_food_a503e4b78c3a07ec6dbc9cfe2c79742e0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_food_a503e4b78c3a07ec6dbc9cfe2c79742e0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_food_a84b519ecca0f27b862878170e08c8731}\label{classns_game_1_1_food_a84b519ecca0f27b862878170e08c8731}} 
+\index{ns\+Game\+::\+Food@{ns\+Game\+::\+Food}!update@{update}}
+\index{update@{update}!ns\+Game\+::\+Food@{ns\+Game\+::\+Food}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Food\+::update (\begin{DoxyParamCaption}\item[{unsigned}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates food. 
+
+
+
+Implements \hyperlink{structns_game_1_1_item_a96c07d0f91eef0d77e91d1a7397091a1}{ns\+Game\+::\+Item}.
+
+
+
+Definition at line 16 of file food.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_food_a84b519ecca0f27b862878170e08c8731_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Nos\+\_\+fichiers/\hyperlink{food_8h}{food.\+h}\item 
+Nos\+\_\+fichiers/\hyperlink{food_8cpp}{food.\+cpp}\end{DoxyCompactItemize}

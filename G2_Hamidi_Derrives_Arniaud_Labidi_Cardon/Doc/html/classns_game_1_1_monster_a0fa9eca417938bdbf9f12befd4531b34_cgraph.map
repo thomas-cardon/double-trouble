@@ -1,0 +1,8 @@
+<map id="nsGame::Monster::update" name="nsGame::Monster::update">
+<area shape="rect" id="node2" href="$structns_game_1_1_entity.html#af1da5da20798e01469c4a438d0b4174c" title="update " alt="" coords="240,13,400,39"/>
+<area shape="rect" id="node4" href="$classns_game_1_1_cooldowns.html#a423a58fcbbf7688556c5706249365f12" title="Checks if a cooldown is over. " alt="" coords="244,64,396,105"/>
+<area shape="rect" id="node5" href="$structns_game_1_1_entity.html#ab7fc1631346d2c643161d229dd653edd" title="Gets the coordinates compared to the map. " alt="" coords="227,130,413,157"/>
+<area shape="rect" id="node6" href="$structns_game_1_1_entity.html#a5dd00624fa76be09de80a6d2a982ea09" title="Checks if entity would be in collision with a structure (walls...) | OVERRIDE IF NEEDED (Flying monst..." alt="" coords="229,181,411,207"/>
+<area shape="rect" id="node7" href="$monster_8cpp.html#a1f40219f6c6004e2ad15df517c98c85a" title="carre" alt="" coords="295,231,345,258"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_animation.html#a5f32b1fc6ad5d228a4153d7421fa457b" title="Updates animation, changes sprite according to delta and direction. " alt="" coords="461,5,607,47"/>
+</map>

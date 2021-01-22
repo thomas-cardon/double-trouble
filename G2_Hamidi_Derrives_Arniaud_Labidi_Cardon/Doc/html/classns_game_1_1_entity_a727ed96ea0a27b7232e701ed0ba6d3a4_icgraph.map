@@ -1,0 +1,7 @@
+<map id="nsGame::Entity::getCoordinates" name="nsGame::Entity::getCoordinates">
+<area shape="rect" id="node2" href="$classns_game_1_1_player.html#a34b359a72d3dbdf537c72161898376f3" title="Renders resources. " alt="" coords="263,13,423,39"/>
+<area shape="rect" id="node3" href="$classns_game_1_1_game_state.html#a1e3179b016431332ecff880e09e267d3" title="Renders resources. " alt="" coords="471,5,624,47"/>
+<area shape="rect" id="node4" href="$classns_game_1_1_state_manager.html#a6f5b564dbd4e84529a125aca38f4339d" title="Renders current state resources. " alt="" coords="672,5,832,47"/>
+<area shape="rect" id="node5" href="$game2d_8h.html#a45fbe5b33369650f26eaf34d709efb7b" title="Renders every component. " alt="" coords="880,13,939,39"/>
+<area shape="rect" id="node6" href="$game2d_8h.html#ab223e99bd1bae1986af774532abb06c9" title="Loads the game. " alt="" coords="987,13,1033,39"/>
+</map>

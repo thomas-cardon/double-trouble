@@ -1,0 +1,249 @@
+\hypertarget{classns_game_1_1_powerup}{}\section{ns\+Game\+:\+:Powerup Class Reference}
+\label{classns_game_1_1_powerup}\index{ns\+Game\+::\+Powerup@{ns\+Game\+::\+Powerup}}
+
+
+Defines \hyperlink{classns_game_1_1_powerup}{Powerup} -\/ allows Pacman to eat monsters and players without getting killed.  
+
+
+
+
+{\ttfamily \#include $<$powerup.\+h$>$}
+
+
+
+Inheritance diagram for ns\+Game\+:\+:Powerup\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classns_game_1_1_powerup__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns\+Game\+:\+:Powerup\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classns_game_1_1_powerup__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classns_game_1_1_powerup_a63e512471f199b9a4830785398f09378}{Powerup} (ns\+Graphics\+::\+Vec2D \hyperlink{structns_game_1_1_item_a5518876a13f3d2eda659d29748097f1a}{pos})
+\item 
+void \hyperlink{classns_game_1_1_powerup_a2a228e8f89bed454ad8011dfd88068c6}{load} () override
+\begin{DoxyCompactList}\small\item\em Loads food. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_powerup_a0f86905ba37cc0a4e80827db0563cfa3}{update} (unsigned delta) override
+\begin{DoxyCompactList}\small\item\em Updates food. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_powerup_ad113cfd795157168c103b71560180201}{render} (Min\+GL \&window) override
+\begin{DoxyCompactList}\small\item\em Renders resources. \end{DoxyCompactList}\item 
+void \hyperlink{classns_game_1_1_powerup_af307aba7b61132f2dc037d8ef62581f9}{action} (\hyperlink{classns_game_1_1_player}{Player} $\ast$player) override
+\begin{DoxyCompactList}\small\item\em Makes an action for the player. \end{DoxyCompactList}\item 
+\hyperlink{namespacens_game_a5f7db01e6447720e9a145f0b3c68a4d7}{Item\+Type} \hyperlink{classns_game_1_1_powerup_a34f105d75a90ddbbc6afa46c83bdccf6}{get\+Type} () override
+\begin{DoxyCompactList}\small\item\em Gets item type. \end{DoxyCompactList}\item 
+ns\+Graphics\+::\+Vec2D \hyperlink{classns_game_1_1_powerup_a31700271cd7bd2040d26bcac7f437408}{get\+Coordinates} ()
+\begin{DoxyCompactList}\small\item\em This function is used to get the position on the screen/canvas/window, whatever you want to call it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Defines \hyperlink{classns_game_1_1_powerup}{Powerup} -\/ allows Pacman to eat monsters and players without getting killed. 
+
+\begin{DoxyAuthor}{Authors}
+Thomas Cardon 
+\end{DoxyAuthor}
+
+
+Definition at line 24 of file powerup.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classns_game_1_1_powerup_a63e512471f199b9a4830785398f09378}\label{classns_game_1_1_powerup_a63e512471f199b9a4830785398f09378}} 
+\index{ns\+Game\+::\+Powerup@{ns\+Game\+::\+Powerup}!Powerup@{Powerup}}
+\index{Powerup@{Powerup}!ns\+Game\+::\+Powerup@{ns\+Game\+::\+Powerup}}
+\subsubsection{\texorpdfstring{Powerup()}{Powerup()}}
+{\footnotesize\ttfamily ns\+Game\+::\+Powerup\+::\+Powerup (\begin{DoxyParamCaption}\item[{ns\+Graphics\+::\+Vec2D}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 30 of file powerup.\+h.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_powerup_a63e512471f199b9a4830785398f09378_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classns_game_1_1_powerup_af307aba7b61132f2dc037d8ef62581f9}\label{classns_game_1_1_powerup_af307aba7b61132f2dc037d8ef62581f9}} 
+\index{ns\+Game\+::\+Powerup@{ns\+Game\+::\+Powerup}!action@{action}}
+\index{action@{action}!ns\+Game\+::\+Powerup@{ns\+Game\+::\+Powerup}}
+\subsubsection{\texorpdfstring{action()}{action()}}
+{\footnotesize\ttfamily void Powerup\+::action (\begin{DoxyParamCaption}\item[{\hyperlink{classns_game_1_1_player}{Player} $\ast$}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Makes an action for the player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classns_game_1_1_player}{Player}} & -\/ The player that steps on an item \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{structns_game_1_1_item_af74dffcf9bde4a4297749f4e1852395b}{ns\+Game\+::\+Item}.
+
+
+
+Definition at line 24 of file powerup.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_powerup_af307aba7b61132f2dc037d8ef62581f9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_powerup_af307aba7b61132f2dc037d8ef62581f9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_powerup_a31700271cd7bd2040d26bcac7f437408}\label{classns_game_1_1_powerup_a31700271cd7bd2040d26bcac7f437408}} 
+\index{ns\+Game\+::\+Powerup@{ns\+Game\+::\+Powerup}!get\+Coordinates@{get\+Coordinates}}
+\index{get\+Coordinates@{get\+Coordinates}!ns\+Game\+::\+Powerup@{ns\+Game\+::\+Powerup}}
+\subsubsection{\texorpdfstring{get\+Coordinates()}{getCoordinates()}}
+{\footnotesize\ttfamily ns\+Graphics\+::\+Vec2D ns\+Game\+::\+Powerup\+::get\+Coordinates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This function is used to get the position on the screen/canvas/window, whatever you want to call it. 
+
+
+
+Definition at line 68 of file powerup.\+h.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_powerup_a31700271cd7bd2040d26bcac7f437408_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_powerup_a34f105d75a90ddbbc6afa46c83bdccf6}\label{classns_game_1_1_powerup_a34f105d75a90ddbbc6afa46c83bdccf6}} 
+\index{ns\+Game\+::\+Powerup@{ns\+Game\+::\+Powerup}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!ns\+Game\+::\+Powerup@{ns\+Game\+::\+Powerup}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}}
+{\footnotesize\ttfamily \hyperlink{namespacens_game_a5f7db01e6447720e9a145f0b3c68a4d7}{Item\+Type} ns\+Game\+::\+Powerup\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets item type. 
+
+\begin{DoxyReturn}{Returns}
+Item\+Type.\+I\+T\+EM 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{structns_game_1_1_item_a69156550e5083928cbb673ca2db671f5}{ns\+Game\+::\+Item}.
+
+
+
+Definition at line 60 of file powerup.\+h.
+
+\mbox{\Hypertarget{classns_game_1_1_powerup_a2a228e8f89bed454ad8011dfd88068c6}\label{classns_game_1_1_powerup_a2a228e8f89bed454ad8011dfd88068c6}} 
+\index{ns\+Game\+::\+Powerup@{ns\+Game\+::\+Powerup}!load@{load}}
+\index{load@{load}!ns\+Game\+::\+Powerup@{ns\+Game\+::\+Powerup}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Powerup\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Loads food. 
+
+
+
+Implements \hyperlink{structns_game_1_1_item_a5887b6e9225ae8a276801225eca83808}{ns\+Game\+::\+Item}.
+
+
+
+Definition at line 18 of file powerup.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_powerup_a2a228e8f89bed454ad8011dfd88068c6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_powerup_ad113cfd795157168c103b71560180201}\label{classns_game_1_1_powerup_ad113cfd795157168c103b71560180201}} 
+\index{ns\+Game\+::\+Powerup@{ns\+Game\+::\+Powerup}!render@{render}}
+\index{render@{render}!ns\+Game\+::\+Powerup@{ns\+Game\+::\+Powerup}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Powerup\+::render (\begin{DoxyParamCaption}\item[{Min\+GL \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders resources. 
+
+
+
+Implements \hyperlink{structns_game_1_1_item_a451b6491efc475c9ca47dcccdbbde707}{ns\+Game\+::\+Item}.
+
+
+
+Definition at line 31 of file powerup.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_powerup_ad113cfd795157168c103b71560180201_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_powerup_ad113cfd795157168c103b71560180201_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classns_game_1_1_powerup_a0f86905ba37cc0a4e80827db0563cfa3}\label{classns_game_1_1_powerup_a0f86905ba37cc0a4e80827db0563cfa3}} 
+\index{ns\+Game\+::\+Powerup@{ns\+Game\+::\+Powerup}!update@{update}}
+\index{update@{update}!ns\+Game\+::\+Powerup@{ns\+Game\+::\+Powerup}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void ns\+Game\+::\+Powerup\+::update (\begin{DoxyParamCaption}\item[{unsigned}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates food. 
+
+
+
+Implements \hyperlink{structns_game_1_1_item_a96c07d0f91eef0d77e91d1a7397091a1}{ns\+Game\+::\+Item}.
+
+
+
+Definition at line 22 of file powerup.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns_game_1_1_powerup_a0f86905ba37cc0a4e80827db0563cfa3_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Nos\+\_\+fichiers/\hyperlink{powerup_8h}{powerup.\+h}\item 
+Nos\+\_\+fichiers/\hyperlink{powerup_8cpp}{powerup.\+cpp}\end{DoxyCompactItemize}

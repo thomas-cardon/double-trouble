@@ -1,0 +1,7 @@
+<map id="nsGame::Monster::render" name="nsGame::Monster::render">
+<area shape="rect" id="node2" href="$structns_game_1_1_entity.html#a727ed96ea0a27b7232e701ed0ba6d3a4" title="This function is used to get the position on the screen/canvas/window, whatever you want to call it..." alt="" coords="429,5,639,32"/>
+<area shape="rect" id="node4" href="$structns_game_1_1_entity.html#a4663cc85381acc9aaac120a85b6f24d0" title="render " alt="" coords="224,60,381,87"/>
+<area shape="rect" id="node3" href="$structns_game_1_1_entity.html#ab7fc1631346d2c643161d229dd653edd" title="Gets the coordinates compared to the map. " alt="" coords="687,5,873,32"/>
+<area shape="rect" id="node5" href="$classns_game_1_1_animation.html#a1a103b09407581b74933001fb8b3a8f0" title="Sets position on the map. " alt="" coords="461,57,607,98"/>
+<area shape="rect" id="node6" href="$classns_game_1_1_animation.html#a348e25058d77891160c015da88ea4837" title="Renders resources. " alt="" coords="461,122,607,163"/>
+</map>
