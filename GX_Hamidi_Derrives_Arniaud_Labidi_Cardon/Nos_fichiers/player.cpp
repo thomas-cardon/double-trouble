@@ -32,7 +32,7 @@ using namespace nsGame;
 
 nsAudio::AudioEngine audio;
 
-Player::Player(unsigned N) : Entity("player-" + std::to_string(N), nsGraphics::Vec2D(N == 1 ? 1 : 18, N == 1 ? 1 : 18)) {
+Player::Player(unsigned N) : Entity() {
     this->N = N;
 }
 
@@ -43,9 +43,8 @@ void Player::spawn() {
 
 void Player::load(CMyParam params) {
     std::cout << "[Player N=" << std::to_string(N) + "] Loading" << std::endl;
-    this->Entity::load();
+    Cooldowns::createCooldown(id() + "_move", this->_getDelay());
 
-    this->setMovementSpeed(0.35);
     this->spawn();
 
     audio.loadSound(RES_PATH + "/audio/player-hit-1.wav");
@@ -88,12 +87,10 @@ void Player::onKeyPress(char key) {
 }
 
 void Player::update(MinGL & window, unsigned delta, CMat map) {
-    this->Entity::update(delta, map);
-
     /*
      * Movement cooldowns
      */
-    canMove = Cooldowns::isCooldownOver(id + "_move");
+    canMove = Cooldowns::isCooldownOver(id() + "_move");
 
     if (isAllowedToMove) {
         if (window.isPressed({ KEY_UP, false })) {
@@ -136,8 +133,6 @@ void Player::damage() {
 }
 
 void Player::render(MinGL & window) {
-    this->Entity::render(window);
-
     if (this->IS_FACING == KEY_UP) {
         this->top.setPosition(this->getCoordinates());
         this->top.render(window);
@@ -154,4 +149,8 @@ void Player::render(MinGL & window) {
         this->left.setPosition(this->getCoordinates());
         this->left.render(window);
     }
+}
+
+std::string Player::id() {
+    return "Player" + std::to_string(this->N);
 }

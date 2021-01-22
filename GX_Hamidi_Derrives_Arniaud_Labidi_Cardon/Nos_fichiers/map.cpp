@@ -166,7 +166,7 @@ void Map::update(unsigned delta, Player *p1, Player *p2) {
     }
 
     for (auto & monster : monsters)
-        monster->update(delta, this->getMat(), p1, p2);
+        monster->update(delta, this->getMat());
 
     if (spawnNewItem && itemsLeft > 0) {
         nsGraphics::Vec2D pos = getEmptyPosition();
