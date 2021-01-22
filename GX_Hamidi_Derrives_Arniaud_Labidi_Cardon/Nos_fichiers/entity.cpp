@@ -16,6 +16,9 @@ using namespace nsGame;
 void Entity::load() {
     for (int i = 1; i <= 6; i++)
         this->_powerUp.sprites.push_back(nsGui::Sprite(RES_PATH + "/effects/powerup/" + std::to_string(i) + ".i2s"));
+
+    for (int i = 1; i <= 8; i++)
+        this->_invincible.sprites.push_back(nsGui::Sprite(RES_PATH + "/effects/invincible/" + std::to_string(i) + ".i2s"));
 }
 
 void Entity::update(unsigned delta, CMat & mat) {
@@ -30,6 +33,7 @@ void Entity::update(unsigned delta, CMat & mat) {
     }
 
     this->_powerUp.update(delta);
+    this->_invincible.update(delta);
 }
 
 void Entity::render(MinGL &window) {
@@ -41,7 +45,7 @@ void Entity::render(MinGL &window) {
                 break;
             case nsGame::EffectType::INVINCIBLE:
                 this->_invincible.setPosition(this->getCoordinates());
-                window << this->_invincible;
+                this->_invincible.render(window);
                 break;
         }
     }

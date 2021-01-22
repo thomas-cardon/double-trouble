@@ -27,8 +27,8 @@ namespace nsGame
     struct Entity
     {
         private:
-            nsGui::Sprite _invincible = nsGui::Sprite(RES_PATH + "/effects/invincible/1.i2s");
-            Animation _powerUp = Animation(600, false);
+            Animation _powerUp = Animation(833, false);
+            Animation _invincible = Animation(625, true);
 
             /** \brief Effect list */
             std::map<nsGame::EffectType, Effect> effects;
