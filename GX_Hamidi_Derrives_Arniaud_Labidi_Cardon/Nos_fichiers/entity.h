@@ -59,6 +59,24 @@ namespace nsGame
             Entity(std::string newId, nsGraphics::Vec2D newPos) : id(newId), pos(newPos) {};
 
             /**
+             * @brief load
+             */
+            void load();
+
+            /**
+             * @brief update
+             * @param delta
+             * @param mat
+             */
+            void update(unsigned delta, CMat & mat);
+
+            /**
+             * @brief render
+             * @param window
+             */
+            void render(MinGL & window);
+
+            /**
              * @brief This function is used to get the position on the screen/canvas/window, whatever you want to call it
              * @fn virtual nsGraphics::Vec2D getCoordinates();
              */
@@ -123,18 +141,21 @@ namespace nsGame
              * @param EffectType - Effect ID
              * @param Effect - Effect
              */
-            void addEffect(EffectType type, Effect effect) {
-                this->effects[type] = effect;
-            }
+            void addEffect(EffectType type, unsigned delay);
 
             /**
              * @brief Removes an effect from the entity
              * @param EffectType - Effect ID
              * @param Effect - Effect
              */
-            void removeEffect(EffectType type) {
-                this->effects.erase(type);
-            }
+            void removeEffect(EffectType type);
+
+            /**
+             * @brief Says if entity has effect
+             * @param EffectType type
+             * @return true if effect is present
+             */
+            bool hasEffect(EffectType type);
     };
 }
 

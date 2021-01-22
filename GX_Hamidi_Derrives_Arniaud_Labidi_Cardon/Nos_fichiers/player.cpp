@@ -43,6 +43,8 @@ void Player::spawn() {
 
 void Player::load(CMyParam params) {
     std::cout << "[Player N=" << std::to_string(N) + "] Loading" << std::endl;
+    this->Entity::load();
+
     this->setMovementSpeed(0.35);
     this->spawn();
 
@@ -86,20 +88,12 @@ void Player::onKeyPress(char key) {
 }
 
 void Player::update(MinGL & window, unsigned delta, CMat map) {
+    this->Entity::update(delta, map);
+
     /*
      * Movement cooldowns
      */
     canMove = Cooldowns::isCooldownOver(id + "_move");
-    if (_noDamage != -1) {
-        if (_noDamage >= _noDamageFor) {
-            _noDamage = -1;
-            _canTakeDamage = true;
-        }
-        else {
-            _canTakeDamage = false;
-            _noDamage += delta;
-        }
-    }
 
     if (isAllowedToMove) {
         if (window.isPressed({ KEY_UP, false })) {
@@ -136,17 +130,14 @@ void Player::damage() {
     audio.playSoundFromBuffer(RES_PATH + "/audio/player-hit-1.wav");
 
     --hearts;
-    noDamage(5000);
+    this->addEffect(EffectType::INVICIBLE, 5000);
 
     if (hearts <= 0) this->kill();
 }
 
-void Player::noDamage(int ms) {
-    _noDamageFor = ms;
-    _noDamage = 0;
-}
-
 void Player::render(MinGL & window) {
+    this->Entity::render(window);
+
     if (this->IS_FACING == KEY_UP) {
         this->top.setPosition(this->getCoordinates());
         this->top.render(window);
@@ -162,10 +153,5 @@ void Player::render(MinGL & window) {
     else {
         this->left.setPosition(this->getCoordinates());
         this->left.render(window);
-    }
-
-    if (!this->canTakeDamage()) {
-        this->invincible.setPosition(this->getCoordinates());
-        this->invincible.render(window);
     }
 }

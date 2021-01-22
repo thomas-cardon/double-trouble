@@ -46,6 +46,7 @@ bool Monster::canBeHitBy(Entity *entity) {
 
 void Monster::load() {
     std::cout << "[Monster#" << id + "] Loading" << std::endl;
+    this->Entity::load();
 
     this->setMovementSpeed(0.35);
     this->audio.loadSound(RES_PATH + "/audio/monster-hit-1.wav");
@@ -55,6 +56,8 @@ void Monster::load() {
 
 void Monster::update(unsigned delta, CMat & mat)
 {
+    this->Entity::update(delta, mat);
+
     if (slain) return;
 
     canMove = Cooldowns::isCooldownOver(id + "_move");
@@ -181,6 +184,7 @@ void Monster::update(unsigned delta, CMat & mat)
 };
 
 void Monster::render(MinGL &window) {
+    this->Entity::render(window);
     if (slain) return;
 
     if (IS_FACING == 'Z') {
