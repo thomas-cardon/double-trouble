@@ -3,7 +3,7 @@
 
 namespace nsGame {
     enum EffectType {
-        INVICIBLE,
+        INVINCIBLE,
         POWER
     };
 }
