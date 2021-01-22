@@ -127,14 +127,9 @@ void Player::damage() {
     audio.playSoundFromBuffer(RES_PATH + "/audio/player-hit-1.wav");
 
     --hearts;
-    noDamage(5000);
+    this->addEffect(EffectType::INVICIBLE, 5000);
 
     if (hearts <= 0) this->kill();
-}
-
-void Player::noDamage(int ms) {
-    _noDamageFor = ms;
-    _noDamage = 0;
 }
 
 void Player::render(MinGL & window) {

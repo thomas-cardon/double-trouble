@@ -25,7 +25,7 @@ void Powerup::action(Player *player) {
     audio.playSoundFromBuffer(RES_PATH + "/audio/powerup-1.wav");
 
     player->score += 100;
-    player->noDamage(5000);
+    player->addEffect(EffectType::POWER, 5000);
 }
 
 void Powerup::render(MinGL &window) {

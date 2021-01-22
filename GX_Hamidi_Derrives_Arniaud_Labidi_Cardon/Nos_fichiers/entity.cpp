@@ -55,7 +55,7 @@ bool Entity::inCollision(CMat map, unsigned x, unsigned y) {
 
 
 bool Entity::canTakeDamage() {
-    return this->hasEffect(EffectType::INVICIBLE);
+    return !this->hasEffect(EffectType::INVICIBLE);
 }
 
 void Entity::kill() {
