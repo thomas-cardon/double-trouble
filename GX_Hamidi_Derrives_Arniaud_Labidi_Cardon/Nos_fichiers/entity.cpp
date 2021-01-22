@@ -77,6 +77,10 @@ void Entity::spawn() {
 double Entity::getMovementSpeed() {
     return this->movementSpeed;
 }
+void Entity::setMovementSpeed(double speed) {
+    this->movementSpeed = speed;
+    Cooldowns::setCooldownDelay(this->id + "_move", 140 / movementSpeed);
+}
 
 std::string Entity::id() {
     return "entity_" + std::to_string(rand());

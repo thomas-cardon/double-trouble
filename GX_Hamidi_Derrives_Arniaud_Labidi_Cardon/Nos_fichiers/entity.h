@@ -9,6 +9,8 @@
 #include "definitions.h"
 #include "type.h"
 
+#include "effectType.h"
+
 /**
  * \file    entity.h
  * \author  Thomas Cardon
@@ -43,8 +45,12 @@ namespace nsGame
             /** \brief Says if entity has been killed */
             bool slain = false;
 
-            /** \brief Entity position */
-            nsGraphics::Vec2D pos;
+            /**
+             * @brief Entity
+             * @param newId - Entity ID
+             * @param newPos - Entity position
+             */
+            Entity(std::string newId, nsGraphics::Vec2D newPos) : id(newId), pos(newPos) {};
 
             /**
              * @brief load
@@ -69,6 +75,19 @@ namespace nsGame
              * @return Entity ID
              */
             std::string id();
+
+            /**
+             * @brief update
+             * @param delta
+             * @param mat
+             */
+            void update(unsigned delta, CMat & mat);
+
+            /**
+             * @brief render
+             * @param window
+             */
+            void render(MinGL & window);
 
             /**
              * @brief This function is used to get the position on the screen/canvas/window, whatever you want to call it
@@ -154,9 +173,21 @@ namespace nsGame
             /**
              * @brief Prevents entity to move for X milliseconds
              */
-            unsigned _getDelay() {
-                return 140 / movementSpeed;
-            }
+            void addEffect(EffectType type, unsigned delay);
+
+            /**
+             * @brief Removes an effect from the entity
+             * @param EffectType - Effect ID
+             * @param Effect - Effect
+             */
+            void removeEffect(EffectType type);
+
+            /**
+             * @brief Says if entity has effect
+             * @param EffectType type
+             * @return true if effect is present
+             */
+            bool hasEffect(EffectType type);
     };
 }
 

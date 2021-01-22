@@ -9,6 +9,7 @@
 
 #include "definitions.h"
 #include "entity.h"
+#include "player.h"
 
 /**
  * \file    monster.h
@@ -30,7 +31,7 @@ namespace nsGame {
             nsAudio::AudioEngine audio;
 
             /** \brief Indicates direction */
-            char IS_FACING, LastMove;
+            char IS_FACING = 'Z';
 
             /** \brief Indicates type of behaviour */
             unsigned behaviourId;
@@ -41,21 +42,15 @@ namespace nsGame {
             /** \brief Sprites for every direction */
             nsGui::Sprite top, left, right, bottom;
 
-            Monster(unsigned behaviourId) : top(RES_PATH + "/entities/monsters/" + std::to_string(behaviourId) + "M/2.i2s"), left(RES_PATH + "/entities/monsters/" + std::to_string(behaviourId) + "M/1.i2s"), right(RES_PATH + "/entities/monsters/" + std::to_string(behaviourId) + "M/5.i2s"), bottom(RES_PATH + "/entities/monsters/" + std::to_string(behaviourId) + "M/3.i2s") {
+            Monster(unsigned behaviourId) : Entity("monster-" + std::to_string(behaviourId), nsGraphics::Vec2D()), top(RES_PATH + "/entities/monsters/" + std::to_string(behaviourId) + "M/2.i2s"), left(RES_PATH + "/entities/monsters/" + std::to_string(behaviourId) + "M/2.i2s"), right(RES_PATH + "/entities/monsters/" + std::to_string(behaviourId) + "M/2.i2s"), bottom(RES_PATH + "/entities/monsters/" + std::to_string(behaviourId) + "M/2.i2s") {
                 this->behaviourId = behaviourId;
-            };
+            }
 
             /**
-             * @brief Returns an entity ID, allows the game to set cooldowns or whatever associated with its ID
-             * @return Entity ID
+             * @brief Updates the monster
+             * @fn void update(unsigned delta, CMat & mat, Player *p1, Player *p2);
              */
             std::string id();
-
-            /**
-             * @brief Updates the ennemy
-             * @fn void update(unsigned delta, CMat & mat);
-             */
-            void update(unsigned delta, CMat & mat);
 
             /**
              * @brief Renders resources
